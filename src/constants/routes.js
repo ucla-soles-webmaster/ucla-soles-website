@@ -7,3 +7,10 @@ export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
+
+// Added Pages
+export const ABOUT = '/about';
+export const INITIATIVES = '/initiatives';
+export const EBOARD = '/eboard';
+export const CONTACT = '/contact';
+export const SPONSORS = '/sponsors';

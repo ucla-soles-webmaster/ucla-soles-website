@@ -22,10 +22,22 @@ const Navigation = () => (
 const NavigationAuth = () => (
     <ul>
       <li>
-        <Link to={ROUTES.LANDING}>Landing</Link>
+        <Link to={ROUTES.LANDING}>LANDING</Link>
       </li>
       <li>
-        <Link to={ROUTES.HOME}>Home</Link>
+        <Link to={ROUTES.ABOUT}>ABOUT</Link>
+      </li>
+      <li>
+        <Link to={ROUTES.INITIATIVES}>OUR INITIATIVES</Link>
+      </li>
+      <li>
+        <Link to={ROUTES.EBOARD}>EBOARD</Link>
+      </li>
+      <li>
+        <Link to={ROUTES.SPONSORS}>SPONSORS</Link>
+      </li>
+      <li>
+        <Link to={ROUTES.CONTACT}>CONTACT</Link>
       </li>
       <li>
         <Link to={ROUTES.ACCOUNT}>Account</Link>
@@ -43,10 +55,25 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
     <ul>
         <li>
-        <Link to={ROUTES.LANDING}>Landing</Link>
+          <Link to={ROUTES.LANDING}>LANDING</Link>
         </li>
         <li>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+          <Link to={ROUTES.ABOUT}>ABOUT</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.INITIATIVES}>OUR INITIATIVES</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.EBOARD}>EBOARD</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.SPONSORS}>SPONSORS</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.CONTACT}>CONTACT</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.SIGN_IN}>SIGN IN</Link>
         </li>
     </ul>
 );

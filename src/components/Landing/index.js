@@ -37,14 +37,7 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                <section>
-                </section>
-                <section>
-                    <div>
-                        <ul>
-                        </ul>
-                    </div>
-                </section>
+                this is the landing page
             </div>
         );
     }
