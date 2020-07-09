@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SignOutButton from '../SignOut';
+import SignOutButton from '../../pages/SignOut';
 import * as ROUTES from '../../constants/routes'
 
-import { AuthUserContext } from '../Session';
+import { AuthUserContext } from '../../pages/Session';
 
 // Choose Navigation type depending on if user is signed in or not
 const Navigation = () => (
