@@ -36,7 +36,7 @@ class SignUpFormBase extends Component {
 
 
         this.props.firebase.doCreateUserWithEmailAndPassword(email, passwordOne);
-        const docRef = firestore.collection("users").doc("XYEx3ATt5lXqWFAJiCuOCJvt5Rv1");
+        // const docRef = firestore.collection("users").doc("XYEx3ATt5lXqWFAJiCuOCJvt5Rv1");
         
         firestore.collection('users').add({
             name: username,
