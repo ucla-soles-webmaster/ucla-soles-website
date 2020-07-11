@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 //import firebase from '../Firebase'
 
+import StaticCoverPhoto from '../../components/StaticCoverPhoto';
+//import ucla from './ucla.jpg'
+import './landingStyle.css'
+
 class Landing extends Component {
     constructor(props) {
         super(props);
@@ -36,9 +40,8 @@ class Landing extends Component {
 
     render() {
         return (
-            <div>
-                this is the landing page
-            </div>
+            // <img className="coverImg" src={ucla} alt="ucla"/>
+            <StaticCoverPhoto></StaticCoverPhoto>
         );
     }
 }

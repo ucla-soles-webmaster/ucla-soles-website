@@ -22,17 +22,6 @@ const App = () => (
   <Router>
     <div>
       <Navigation />
- 
-      <hr />
- 
-
-
-
-
-
-
-
-
 
 
 

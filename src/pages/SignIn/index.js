@@ -6,7 +6,9 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
- 
+
+
+// Actual Page. Contains SignIn Component
 const SignInPage = () => (
   <div>
     <h1>SignIn</h1>
@@ -21,7 +23,8 @@ const INITIAL_STATE = {
   password: '',
   error: null,
 };
- 
+
+// SignIn Component
 class SignInFormBase extends Component {
   constructor(props) {
     super(props);

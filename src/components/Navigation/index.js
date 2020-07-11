@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import SignOutButton from '../../pages/SignOut';
 import * as ROUTES from '../../constants/routes'
 
 import { AuthUserContext } from '../../pages/Session';
+
+import './navStyle.css';
+import SOLESLogo from './logo.svg'
+import SOLESLogoColor from './logo3.svg';
+
 
 // Choose Navigation type depending on if user is signed in or not
 const Navigation = () => (
@@ -19,64 +24,122 @@ const Navigation = () => (
 );
 
 // When user Signed In
-const NavigationAuth = () => (
-    <ul>
-      <li>
-        <Link to={ROUTES.LANDING}>LANDING</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.ABOUT}>ABOUT</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.INITIATIVES}>OUR INITIATIVES</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.EBOARD}>EBOARD</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.SPONSORS}>SPONSORS</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.CONTACT}>CONTACT</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.ACCOUNT}>Account</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.ADMIN}>Admin</Link>
-      </li>
-      <li>
-        <SignOutButton />
-      </li>
-    </ul>
-);
+class NavigationAuth extends Component {
+
+    render() {
+      return (
+        <nav>
+          <div className="logo">
+            <img src={SOLESLogo} alt="SOLES Logo" fill="#EE1919" />
+          </div>
+          <ul>
+            <li>
+              <Link to={ROUTES.LANDING} style={linkStyle} >LANDING</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.ABOUT} style={linkStyle} >ABOUT</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.INITIATIVES} style={linkStyle} >OUR INITIATIVES</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.EBOARD} style={linkStyle} >EBOARD</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.SPONSORS} style={linkStyle} >SPONSORS</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.CONTACT} style={linkStyle} >CONTACT</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.ACCOUNT} style={linkStyle} >Account</Link>
+            </li>
+            <li>
+              <Link to={ROUTES.ADMIN} style={linkStyle} >Admin</Link>
+            </li>
+            <li>
+              <SignOutButton />
+            </li>
+          </ul>
+        </nav>
+      );
+    }  
+
+}
 
 // When user not Signed In
-const NavigationNonAuth = () => (
-    <ul>
-        <li>
-          <Link to={ROUTES.LANDING}>LANDING</Link>
-        </li>
-        <li>
-          <Link to={ROUTES.ABOUT}>ABOUT</Link>
-        </li>
-        <li>
-          <Link to={ROUTES.INITIATIVES}>OUR INITIATIVES</Link>
-        </li>
-        <li>
-          <Link to={ROUTES.EBOARD}>EBOARD</Link>
-        </li>
-        <li>
-          <Link to={ROUTES.SPONSORS}>SPONSORS</Link>
-        </li>
-        <li>
-          <Link to={ROUTES.CONTACT}>CONTACT</Link>
-        </li>
-        <li>
-          <Link to={ROUTES.SIGN_IN}>SIGN IN</Link>
-        </li>
-    </ul>
-);
+class NavigationNonAuth extends Component {
+    constructor() {
+      super();
+      this.state = {
+        scrolled: false,
+      };
+    }
+
+    componentDidMount() {
+      window.addEventListener('scroll', () => {
+        const isTop = window.scrollY < 100;
+        if (isTop !== true) {
+          this.setState({ scrolled: true });
+        } else {
+          this.setState({ scrolled: false });
+        }
+      });
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener('scroll');
+    }
+
+    render () {
+      return (
+        <nav className={this.state.scrolled ? "navElse" : "navTop"}>
+
+          <div className="logo">
+            <img src={this.state.scrolled ? SOLESLogoColor : SOLESLogo} alt="SOLES Logo" />
+          </div>
+          <ul>
+              <li>
+                <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >LANDING</Link>
+              </li>
+              <li>
+                <Link to={ROUTES.ABOUT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >ABOUT</Link>
+              </li>
+              <li>
+                <Link to={ROUTES.INITIATIVES} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >OUR INITIATIVES</Link>
+              </li>
+              <li>
+                <Link to={ROUTES.EBOARD} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >EBOARD</Link>
+              </li>
+              <li>
+                <Link to={ROUTES.SPONSORS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >SPONSORS</Link>
+              </li>
+              <li>
+                <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >CONTACT</Link>
+              </li>
+              <li>
+                <Link to={ROUTES.SIGN_IN} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >SIGN IN</Link>
+              </li>
+          </ul>
+        </nav>
+      );
+  }
+
+}
 
 // Return (to App)
 export default Navigation;
+
+
+
+
+// Component Styling
+const linkStyle = {
+  textDecoration: "none",
+  color: "black",
+};
+
+const linkStyleScrolled = {
+  textDecoration: "none",
+  color: "#001d3a",
+};
