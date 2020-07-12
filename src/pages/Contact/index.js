@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Navigation from '../../components/Navigation';
+import PagePhoto from '../../components/PagePhoto';
+import coverPhoto from '../../coverImages/contact.JPG';
+
 
 class Contact extends Component {
     
@@ -8,7 +12,44 @@ class Contact extends Component {
     render() {
         return (
             <div>
-                contacts and social medias aqui
+                <Navigation transparentNav={true} />
+                <PagePhoto imageSource={coverPhoto} title={"Contact Us"}></PagePhoto>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         );
     }

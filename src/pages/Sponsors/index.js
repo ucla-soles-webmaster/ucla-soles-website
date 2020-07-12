@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Navigation from '../../components/Navigation';
+
 
 class Sponsors extends Component {
 
@@ -8,7 +10,12 @@ class Sponsors extends Component {
     render() {
         return (
             <div>
-                Sponsor stuff goes here
+                <Navigation transparentNav={false} />
+
+                {/* Do development all within this div */}
+                <div className="navgap">
+                    Sponser stuff goes here fdaf
+                </div>  
             </div>
         )
     }

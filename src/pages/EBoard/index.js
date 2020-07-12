@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Navigation from '../../components/Navigation';
+import PagePhoto from '../../components/PagePhoto';
+import coverPhoto from '../../coverImages/huddle.jpg';
+
 
 class EBoard extends Component {
 
@@ -8,7 +12,44 @@ class EBoard extends Component {
     render() {
         return (
             <div>
-                Eboard!
+                <Navigation transparentNav={true} />
+                <PagePhoto imageSource={coverPhoto} title={"Executive Board"}></PagePhoto>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         );
     }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
+import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/ucla10.jpg';
+import coverPhoto from '../../coverImages/planes.jpg';
 
 
 class Initiatives extends Component {
@@ -11,6 +12,7 @@ class Initiatives extends Component {
     render () {
         return (
             <div>
+                <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"Our Initiatives"}></PagePhoto>
                 <br/>
                 <br/>

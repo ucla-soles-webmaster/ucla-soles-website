@@ -13,23 +13,25 @@ class StaticCoverPhoto extends Component {
         };
       }
   
-      componentDidMount() {
-        window.addEventListener('scroll', () => {
-          const isTop = window.scrollY < 100;
-          if (isTop !== true) {
-            this.setState({ scrolled: true });
-          } else {
-            this.setState({ scrolled: false });
-          }
-        });
-      }
+    componentDidMount() {
+    window.addEventListener('scroll', () => {
+        const isTop = window.scrollY < 100;
+        if (isTop !== true) {
+        this.setState({ scrolled: true });
+        } else {
+        this.setState({ scrolled: false });
+        }
+    });
+    }
 
-      handler = function() {
-      }
-  
-      componentWillUnmount() {
-        window.removeEventListener('scroll', this.handler);
-      }
+    handler = function() {
+        /* Dummy function so that removeEventListener has something to
+           pass into */
+    }
+
+    componentWillUnmount() {
+    window.removeEventListener('scroll', this.handler);
+    }
 
     render() {
         return (

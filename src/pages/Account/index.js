@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
  
+import Navigation from '../../components/Navigation';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { AuthUserContext, withAuthorization } from '../Session';
 
 
 
-const AccountPage = () => (
-  <AuthUserContext.Consumer>
-    {authUser => (
+class AccountPage extends Component {
+
+
+  render() {
+    return (
       <div>
-        <h1>Account: {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
+        <Navigation transparentNav={false} />
+
+        <div className="navgap">
+          <AuthUserContext.Consumer>
+            {authUser => (
+              <div>
+                <h1>Account: {authUser.email}</h1>
+                <PasswordForgetForm />
+                <PasswordChangeForm />
+              </div>
+            )}
+          </AuthUserContext.Consumer>
+        </div>
       </div>
-    )}
-  </AuthUserContext.Consumer>
-);
+    );
+  }
+
+}
  
 const condition = authUser => !!authUser;
  

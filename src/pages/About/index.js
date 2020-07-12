@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Navigation from '../../components/Navigation';
+import PagePhoto from '../../components/PagePhoto';
+import coverPhoto from '../../coverImages/rick.jpg';
+
 
 class About extends Component {
     
@@ -8,7 +12,44 @@ class About extends Component {
     render() {
         return (
             <div>
-                This is the about page
+                <Navigation transparentNav={true} />
+                <PagePhoto imageSource={coverPhoto} title={"About Us"}></PagePhoto>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         );
     }

@@ -2,19 +2,27 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
  
+import Navigation from '../../components/Navigation';
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
+import './signInStyle.css'
+
 
 // Actual Page. Contains SignIn Component
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
+    <Navigation transparentNav={false} />
+
+    {/* Do development all within this div */}
+    <div className="navgap">
+      <h1>SignIn</h1>
+      <SignInForm />
+      <PasswordForgetLink />
+      <SignUpLink />
+    </div>  
   </div>
 );
  
@@ -44,7 +52,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.ACCOUNT);
       })
       .catch(error => {
         this.setState({ error });

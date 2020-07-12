@@ -11,10 +11,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 105px;
+    height: 102px;
     padding: 15px 60px;
     box-sizing: border-box;
-    transition: 0.6s;
+    transition: 0.8s;
 }
 
 .navElse {
@@ -27,6 +27,7 @@ body {
     box-sizing: border-box;
     transition: 0.6s;
     background-color: white;
+    box-shadow: 0.5vw 0.01vw 1.1vw -0.75vw rgba(0, 0, 0, 0.865);
 }
 
 nav .logo {
@@ -68,7 +69,7 @@ nav ul li:hover {
 }
 
 .signin {
-    margin-left: 40px;
+    margin-left: 22px;
     background:  rgba(254, 254, 84, 0.892);
 }
 
@@ -93,7 +94,8 @@ i {
     display: none;
 }
 
-@media (max-width: 1180px) {
+/* For mobile and small devices */
+@media (max-width: 1224px) {
     .checkbtn {
         display: block;
     }
@@ -113,14 +115,15 @@ i {
         transition: all 0.5s;
     }
     nav ul li {
-        font-size: 30px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        font-size: 1.8rem;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        margin-top: 0.7rem;
+        margin-bottom: 0.7rem;
+        margin-left: 0;
     }
     nav ul li:hover {
-        font-size: 32px;
+        font-size: 1.9rem;
     }
     .navElse {
         position: fixed;
@@ -142,8 +145,20 @@ i {
         box-sizing: border-box;
         background-color: white;
     }
+    .signin {
+        margin-left: 0em;
+    }
     #check:checked ~ ul {
         left: 0;
         -webkit-text-stroke-width: 0.0px;
+    }
+    #check:checked ~ .centered {
+        -webkit-text-stroke-width: 0.0px;
+        -webkit-text-stroke-color: red;
+    }
+    #check:checked ~ .HRcentered {
+        border: 2vw solid #001d3a;
+        width: 51%;
+        transition: 0.15s;
     }
 }

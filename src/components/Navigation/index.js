@@ -12,12 +12,12 @@ import SOLESLogoColor from './logoColored.svg';
 
 
 // Choose Navigation type depending on if user is signed in or not
-const Navigation = () => (
+const Navigation = (props) => (
   <div>
     <AuthUserContext.Consumer>
       {authUser => authUser 
-        ? <NavigationAuth /> 
-        : <NavigationNonAuth />
+        ? <NavigationAuth noTopNav={props.transparentNav}/> 
+        : <NavigationNonAuth noTopNav={props.transparentNav} />
       }
     </AuthUserContext.Consumer>
   </div>
@@ -26,38 +26,76 @@ const Navigation = () => (
 // When user Signed In
 class NavigationAuth extends Component {
 
+  constructor(props) {
+    super();
+    this.state = {
+      scrolled: false,
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 100;
+      if (isTop !== true) {
+        this.setState({ scrolled: true });
+      } else {
+        this.setState({ scrolled: false });
+      }
+    });
+  }
+
+  handler = function() {
+    /* Dummy function so that removeEventListener has something to
+      pass into */
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handler);
+  } 
+
     render() {
       return (
-        <nav>
+        <nav className={ (this.state.scrolled) || ( (this.state.scrolled || !this.props.noTopNav) && (this.props.noTopNav ? false : true) ) ? "navElse" : "navTop"}>
+
+          {/* Stuff for mobile devices */}
+          <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+          <input type="checkbox" id="check" />
+          <label for="check" class="checkbtn">
+            <i> = </i>
+          </label>
+
+          {/* Logo */}
           <div className="logo">
-            <img src={SOLESLogo} alt="SOLES Logo" fill="#EE1919" />
+            <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >
+              <img src={this.state.scrolled ? SOLESLogoColor : SOLESLogo} alt="SOLES Logo" />
+            </Link>
           </div>
+
+          {/* Rest of Navbar */}
           <ul>
             <li>
-              <Link to={ROUTES.LANDING} style={linkStyle} >LANDING</Link>
+              <Link to={ROUTES.LANDING} style={linkStyle} >Home</Link>
             </li>
             <li>
-              <Link to={ROUTES.ABOUT} style={linkStyle} >ABOUT</Link>
+              <Link to={ROUTES.ABOUT} style={linkStyle} >About</Link>
             </li>
             <li>
-              <Link to={ROUTES.INITIATIVES} style={linkStyle} >OUR INITIATIVES</Link>
+              <Link to={ROUTES.INITIATIVES} style={linkStyle} >Our Initiatives</Link>
             </li>
             <li>
-              <Link to={ROUTES.EBOARD} style={linkStyle} >EBOARD</Link>
+              <Link to={ROUTES.EBOARD} style={linkStyle} >Board</Link>
             </li>
             <li>
-              <Link to={ROUTES.SPONSORS} style={linkStyle} >SPONSORS</Link>
+              <Link to={ROUTES.SPONSORS} style={linkStyle} >Sponsers</Link>
             </li>
             <li>
-              <Link to={ROUTES.CONTACT} style={linkStyle} >CONTACT</Link>
+              <Link to={ROUTES.CONTACT} style={linkStyle} >Contacts</Link>
             </li>
             <li>
               <Link to={ROUTES.ACCOUNT} style={linkStyle} >Account</Link>
             </li>
-            <li>
-              <Link to={ROUTES.ADMIN} style={linkStyle} >Admin</Link>
-            </li>
-            <li>
+
+            <li className="signin">
               <SignOutButton />
             </li>
           </ul>
@@ -69,7 +107,7 @@ class NavigationAuth extends Component {
 
 // When user not Signed In
 class NavigationNonAuth extends Component {
-    constructor() {
+    constructor(props) {
       super();
       this.state = {
         scrolled: false,
@@ -87,13 +125,18 @@ class NavigationNonAuth extends Component {
       });
     }
 
+    handler = function() {
+      /* Dummy function so that removeEventListener has something to
+        pass into */
+    }
+
     componentWillUnmount() {
-      window.removeEventListener('scroll');
+      window.removeEventListener('scroll', this.handler);
     }
 
     render () {
       return (
-        <nav className={this.state.scrolled ? "navElse" : "navTop"}>
+        <nav className={ (this.state.scrolled) || ( (this.state.scrolled || !this.props.noTopNav) && (this.props.noTopNav ? false : true) ) ? "navElse" : "navTop"}>
 
           {/* Stuff for mobile devices */}
           <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -127,8 +170,8 @@ class NavigationNonAuth extends Component {
                 <Link to={ROUTES.SPONSORS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Sponsers</Link>
               </li>
               <li>
-                <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Contact</Link>
-              </li>
+                <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Contacts</Link>
+              </li>             
               <li className="signin">
                 <Link to={ROUTES.SIGN_IN} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Sign In</Link>
               </li>
