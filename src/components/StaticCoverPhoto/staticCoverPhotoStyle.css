@@ -1,6 +1,6 @@
 section.sec1 {
     width: 100%;
-    height: 90vh;
-    background: url(ucla.jpg);
+    height: calc(100vh - 80px);
+    background: url(ucla.jpg) no-repeat;
     background-size: cover;
 }

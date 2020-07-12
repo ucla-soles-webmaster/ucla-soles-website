@@ -8,7 +8,7 @@ import { AuthUserContext } from '../../pages/Session';
 
 import './navStyle.css';
 import SOLESLogo from './logo.svg'
-import SOLESLogoColor from './logo3.svg';
+import SOLESLogoColor from './logoColored.svg';
 
 
 // Choose Navigation type depending on if user is signed in or not
@@ -95,9 +95,21 @@ class NavigationNonAuth extends Component {
       return (
         <nav className={this.state.scrolled ? "navElse" : "navTop"}>
 
+          {/* Stuff for mobile devices */}
+          <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+          <input type="checkbox" id="check" />
+          <label for="check" class="checkbtn">
+            <i> = </i>
+          </label>
+
+          {/* Logo */}
           <div className="logo">
-            <img src={this.state.scrolled ? SOLESLogoColor : SOLESLogo} alt="SOLES Logo" />
+            <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >
+              <img src={this.state.scrolled ? SOLESLogoColor : SOLESLogo} alt="SOLES Logo" />
+            </Link>
           </div>
+
+          {/* Rest of Navbar */}
           <ul>
               <li>
                 <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >LANDING</Link>
@@ -117,7 +129,7 @@ class NavigationNonAuth extends Component {
               <li>
                 <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >CONTACT</Link>
               </li>
-              <li>
+              <li className="signin">
                 <Link to={ROUTES.SIGN_IN} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >SIGN IN</Link>
               </li>
           </ul>

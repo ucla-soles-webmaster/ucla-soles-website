@@ -11,6 +11,16 @@ class StaticCoverPhoto extends Component {
         return (
             <body>
                 <section className="sec1" />
+
+
+
+
+
+
+
+
+
+                
                 <p>
                 Come interact with STEM Professors at our Professor Networking Barbeque, reinvigorate your passion for your field and explore current technology at our 
                 Industry Tours, get ahead in the classroom with our Bank of Knowledge (available at uclatri.org), and come hang out and learn with the rest of the members at our Study Nights.

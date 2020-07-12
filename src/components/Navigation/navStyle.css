@@ -14,7 +14,7 @@ body {
     height: 105px;
     padding: 15px 60px;
     box-sizing: border-box;
-    transition: 0.5s;
+    transition: 0.6s;
 }
 
 .navElse {
@@ -25,7 +25,7 @@ body {
     height: 115px;
     padding: 15px 60px;
     box-sizing: border-box;
-    transition: 0.5s;
+    transition: 0.7s;
     background-color: white;
 }
 
@@ -42,18 +42,107 @@ nav .logo img {
 nav ul {
     float: right;
     margin: 0;
+    margin-top: 16px;
     padding: 0;
     display: flex;
 }
 
 nav ul li {
     list-style: none;
-    line-height: 60px;
-    padding: 15px 16px;
+    line-height: 36px;
+    padding: 10px 12px;
+    margin-left: 16px;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    border-radius: 50px;
+    transition: 0.3s;
 }
 
+nav ul li:hover {
+    background: rgba(245, 245, 93, 0.769);
+    border-radius: 100px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.signin {
+    background: rgba(245, 245, 93, 0.769);
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    height: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+i {
+    color: black;
+    font-style: normal;
+    font-size: 60px;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 1180px) {
+    .checkbtn {
+        display: block;
+    }
+    nav {
+        color: white;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 97px;
+        left: -100%;
+        align-items: center;
+        display: block;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li {
+        font-size: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    nav ul li:hover {
+        font-size: 32px;
+    }
+    .navElse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 115px;
+        padding: 15px 60px;
+        box-sizing: border-box;
+        background-color: white;
+    }
+    .navTop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 115px;
+        padding: 15px 60px;
+        box-sizing: border-box;
+        background-color: white;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
