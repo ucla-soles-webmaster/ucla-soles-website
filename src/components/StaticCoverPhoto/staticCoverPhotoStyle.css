@@ -20,14 +20,14 @@
     color: white;
     transition: 0.25s;
 
-    -webkit-text-stroke-width: 0.02vw;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 0.2vw;
+    -webkit-text-stroke-color: white;
 
 }
 
 .scrolled {
     position: absolute;
-    margin-top: 26%;
+    margin-top: 24%;
     font-family: Montserrat;
     font-size: 4.4vw;
     font-family: Georgia,Times,Times New Roman,serif;
@@ -37,12 +37,12 @@
     transition: 0.25s;
 
     -webkit-text-stroke-width: 0.0px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: white;
 }
 
 .HRcentered {
-    border: 0.2vw solid #001d3a;
-    width: 51%;
+    border: 0.4vw solid #001d3a;
+    width: 58%;
     transition: 0.15s;
 }
 
