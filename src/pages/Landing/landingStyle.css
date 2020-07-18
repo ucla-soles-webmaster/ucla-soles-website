@@ -1,3 +1,53 @@
-.coverImg {
-    right: 0;
+@keyframes slideup {
+    0% {
+        background-image: url("SOLESyel.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color:white;
+        transform: translateY(-50%);
+        transform: rotate(360deg);
+    }
+
+    21% {
+        background-color:rgb(250, 250, 239);
+    }
+    
+    29% {
+        transform: translateY(-50%);
+    }
+    29% {
+        background-color: rgb(250, 239, 196);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    55% {
+        transform: translateY(-20%);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    60% {
+        background-color: rgba(255, 255, 255, 0);
+    }
 }
+
+@keyframes trans {
+    10% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+#startupdiv {
+    position: fixed;
+
+    align-content: center;
+    align-self: center;
+    background-position: center;
+
+    height: 500vh;
+    width: 100%;
+    top: 0px;
+    pointer-events: none;
+
+    animation: 7s ease-in-out 0s 1 slideup;
+}
+

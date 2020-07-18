@@ -21,6 +21,8 @@
     color: white;
     transition: 0.3s;
 
+    pointer-events: none;
+
     -webkit-text-stroke-width: 0.11vw;
     -webkit-text-stroke-color: white;
 
@@ -37,6 +39,7 @@
     width: 100%;
     color: rgba(255, 255, 255, 0);
     transition: 0.5s;
+    pointer-events: none;
 
     -webkit-text-stroke-width: 0.0px;
     -webkit-text-stroke-color: white;
