@@ -15,7 +15,7 @@ class PagePhoto extends Component {
   
     componentDidMount() {
     window.addEventListener('scroll', () => {
-        const isTop = window.scrollY < 250;
+        const isTop = window.scrollY < 270;
         if (isTop !== true) {
         this.setState({ scrolled: true });
         } else {

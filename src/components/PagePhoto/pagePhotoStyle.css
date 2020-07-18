@@ -17,9 +17,8 @@
     width: 100%;
     color: white;
     transition: 0.3s;
-    -webkit-text-stroke-width: 0.4vw;
+    -webkit-text-stroke-width: 0.25vw;
     -webkit-text-stroke-color: white;
-
 }
 
 .scrolled2 {

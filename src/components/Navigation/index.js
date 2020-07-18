@@ -35,7 +35,7 @@ class NavigationAuth extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 100;
+      const isTop = window.scrollY < 55;
       if (isTop !== true) {
         this.setState({ scrolled: true });
       } else {
@@ -55,6 +55,7 @@ class NavigationAuth extends Component {
 
     render() {
       return (
+        
         <nav className={ (this.state.scrolled) || ( (this.state.scrolled || !this.props.noTopNav) && (this.props.noTopNav ? false : true) ) ? "navElse" : "navTop"}>
 
           {/* Stuff for mobile devices */}

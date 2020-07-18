@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+#rightsun {
+    height: 10%;
+    width: 4%;
+    margin-left: 0%;
+    margin-top: -5.4%;
+    align-self: auto;
+}
+
+#leftsun {
+    height: 10%;
+    width: 4%;
+    margin-top: -5.4%;
+    margin-left: 92%;
+}
+
+.initIntro {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2vw;
+    margin-top: -1%;
+    margin-bottom: -3.4%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.introBar {
+    width: 50%;
+    border: 0.1vw solid #001d3a;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.containerInititiatives {
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+h1 {
+    margin-top: 1vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vw;
+    margin-bottom: 3.1vw;
+    color: #001d3a;
+}
+
+.picture-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50%, 1fr));
+    justify-items: center;
+    grid-column-gap: 2vw;
+    grid-row-gap: 9.5vw;
+    margin-right: 9%;
+    margin-left: 9%;
+    margin-bottom: 14.5vw;
+    justify-content: center;
+}
+
+#imgA {
+    width: 75%;
+    border-radius: 3%;
+    position: unset;
+    transition: ease 0.15s;
+    box-shadow: 0vw 0vw 0.1vw 0.005vw rgba(0, 0, 0, 0.413);
+}
+
+#initTitle {
+    margin-top: -28%;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.1vw;
+    transition: ease 0.275s;
+
+    -webkit-text-stroke-width: 0.04rem;
+    -webkit-text-stroke-color: white;
+
+    pointer-events: none;
+}
+
+#description {
+    margin-top: -17.5%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1vw;
+    color: rgba(255, 255, 255, 0);
+    transition: ease 0.2s;
+
+    pointer-events: none;
+}
+
+
+
+/* Responsive */
+
+
+
+#imgA:hover {
+    width: 75.75%;
+    transition:  0.15s;
+    box-shadow: 0vw 0vw 0.1vw 0.26vw rgba(250, 250, 72, 0.201);
+}
+
+#imgA:hover + #initTitle {
+    color: rgba(255, 255, 255, 0);
+    transition: ease 0.6s;
+    -webkit-text-stroke-width: 0.00vw;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0);
+}
+
+#imgA:hover ~ #description {
+    color: #001d3acb;
+    transition: ease 0.6s;
+}
+
+
+
