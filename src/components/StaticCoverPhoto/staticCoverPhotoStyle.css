@@ -41,6 +41,8 @@
     transition: 0.5s;
     pointer-events: none;
 
+    perspective: 100px;
+
     -webkit-text-stroke-width: 0.0px;
     -webkit-text-stroke-color: white;
 }
