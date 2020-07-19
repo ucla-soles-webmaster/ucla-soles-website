@@ -4,9 +4,10 @@ import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import Footer from '../../components/Footer';
 
-import coverPhoto from '../../coverImages/planes.jpg';
+import coverPhoto from '../../coverImages/planesOpL.png';
 import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png'
+import leftsun from '../../coverImages/leftsun.png';
+import sun from './suny.png';
 
 import jrOp from './jrOp.png';
 import jrCol from './jrCol.png';
@@ -15,6 +16,8 @@ import eitCol from './eitCol.png';
 
 import studynightOp from '../../coverImages/studynightOp.png';
 import studynightCol from '../../coverImages/studynightCol.png';
+import lunarOp from './lunarOp.png';
+import lunarCol from './lunarCol.png';
 import ExpEduOp from './ExpEduOp.png';
 import ExpEduCol from './ExpEduCol.png';
 
@@ -65,6 +68,7 @@ class Initiatives extends Component {
 
                 <br/><br/>
 
+                <img src={sun} className="minisun" alt="mini sun" />
                 <h1>Outreach</h1>
                 <div className="container">
                     <div class="picture-grid">
@@ -137,6 +141,7 @@ class Initiatives extends Component {
                     </div>
                 </div>
 
+                <img src={sun} className="minisun" alt="mini sun" />
                 <h1>Academic Development</h1>
                 <div className="container">
                     <div class="picture-grid">
@@ -160,9 +165,9 @@ class Initiatives extends Component {
                         <div className="grid-box">
                             <img 
                                 id="imgA" 
-                                src={jrCol} 
-                                onMouseOver={e => (e.currentTarget.src = jrOp)}
-                                onMouseLeave={e => (e.currentTarget.src = jrCol)}
+                                src={lunarCol} 
+                                onMouseOver={e => (e.currentTarget.src = lunarOp)}
+                                onMouseLeave={e => (e.currentTarget.src = lunarCol)}
                                 alt="SHPE Jr Leadership Retreat" 
                             />
                             <p id="initTitle"><b>Lunabotics</b></p>
@@ -193,6 +198,7 @@ class Initiatives extends Component {
                     </div>
                 </div>
 
+                <img src={sun} className="minisun" alt="mini sun" />
                 <h1>Professional Development</h1>
                 <div className="container">
                     <div class="picture-grid">
@@ -250,7 +256,8 @@ class Initiatives extends Component {
                     </div>
                 </div>
 
-                <h1>Student Body</h1>
+                <img src={sun} className="minisun" alt="mini sun" />
+                <h1>Chapter Development</h1>
                 <div className="container">
                     <div class="picture-grid">
 

@@ -20,6 +20,7 @@
     width: 100%;
     color: white;
     transition: 0.3s;
+    letter-spacing: 0.04rem;
 
     pointer-events: none;
 
@@ -74,5 +75,6 @@
     transition: ease 0.2s;
     margin-top: 3%;
     color: rgba(255, 255, 255, 0);
+    letter-spacing: 0.1rem;
 
 }

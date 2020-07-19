@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/huddle.jpg';
+import coverPhoto from '../../coverImages/huddleOpL.png';
 
 
 class EBoard extends Component {

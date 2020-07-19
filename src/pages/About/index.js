@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/rick.jpg';
+import coverPhoto from '../../coverImages/abt2.jpg';
 
 
 class About extends Component {
