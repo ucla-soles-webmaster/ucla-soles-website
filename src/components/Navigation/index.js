@@ -9,6 +9,7 @@ import { AuthUserContext } from '../../pages/Session';
 import './navStyle.css';
 import SOLESLogo from './logo.svg'
 import SOLESLogoColor from './logoColored.svg';
+import soles1 from './solesshpe.svg';
 
 
 // Choose Navigation type depending on if user is signed in or not
@@ -68,7 +69,7 @@ class NavigationAuth extends Component {
           {/* Logo */}
           <div className="logo">
             <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >
-              <img src={this.state.scrolled ? SOLESLogoColor : SOLESLogo} alt="SOLES Logo" />
+              <img src={this.state.scrolled ? soles1 : soles1} alt="SOLES Logo" />
             </Link>
           </div>
 
@@ -143,7 +144,7 @@ class NavigationNonAuth extends Component {
           <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           <input type="checkbox" id="check" />
           <label for="check" class="checkbtn">
-            <i> = </i>
+            <i className="iE"> = </i>
           </label>
 
           {/* Logo */}

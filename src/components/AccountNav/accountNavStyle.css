@@ -1,0 +1,37 @@
+.accountNav {
+    background-color: #001d3a;
+    height: 50px;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.ulist {
+    margin: 0;
+    margin-top: 9px;
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+}
+
+.mininavli {
+    display: inline;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 22px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 12.2px;
+    padding-bottom: 9px;
+}
+
+.mininavli:hover {
+    transition: ease 0.3s;
+    background: gray;
+    padding-top: 12.2px;
+    padding-bottom: 9px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
