@@ -1,0 +1,170 @@
+
+container{
+    flex: 1;
+    justify-content: 'center';
+    align-items: 'center';
+}
+
+.h1{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: 2em;
+   text-align: center;
+   line-height: 20px;
+    font-weight: 'bold';
+    color: #051c5c;
+    vertical-align: 'middle';
+    
+}
+.h2{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: .9em;
+   text-align: center;
+   line-height: 25px;
+    font-weight: 'bold';
+    color: white;
+    vertical-align: 'middle';
+}
+.h3{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: .45em;
+   text-align: center;
+   line-height: 25px;
+    font-weight: 'bold';
+    color: white;
+    vertical-align: 'middle';
+}
+
+.setFontSizePosition{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: 1.4em;
+   line-height: 30px;
+}
+
+.row {
+    display: flex;
+    padding: 0 4px;
+    text-align: center;
+  }
+
+.column{
+    flex: 33.3%;
+    max-width: 33.3%;
+    padding: 0 4px;
+    text-align: center;
+    margin: auto;
+}
+@media screen and (max-width: 945px){
+    .column{
+        flex: 50%;
+        width: 50%;
+        text-align: center;
+        align-items: center;
+        float: right;
+    }
+    .row {
+        display: flex;
+        padding: 0 4px;
+        flex-wrap: wrap;
+      
+      }
+}
+
+@media screen and (max-width: 700px){
+    .column{
+        flex: 100%;
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+    .row {
+        display: flex;
+        padding: 0 4px;
+        flex-wrap: wrap;
+      
+      }
+}
+
+
+
+.flipCard {
+    perspective: 800;
+    -webkit-perspective: 800;
+    -ms-perspective: 800;
+    -moz-perspective: 800;
+    -o-perspective: 800;
+    width: 300px;
+    height: 320px;
+    position: relative;
+    margin: 25px auto;
+ }
+ .flipCard .card.flipped {
+   transform:rotatey(-180deg);
+   -ms-transform:rotatey(-180deg); /* IE 9 */
+   -moz-transform:rotatey(-180deg); /* Firefox */
+   -webkit-transform:rotatey(180deg); /* Safari and Chrome */
+   -o-transform:rotatey(-180deg); /* Opera */
+ }
+ .flipCard .card {
+   width: 100%;
+   height: 100%;
+   -webkit-transform-style: preserve-3d;
+   -webkit-transition: 0.5s;
+   -moz-transform-style: preserve-3d;
+   -moz-transition: 0.5s;
+   -ms-transform-style: preserve-3d;
+   -ms-transition: 0.5s;
+   -o-transform-style: preserve-3d;
+   -o-transition: 0.5s;
+   transform-style: preserve-3d;
+   transition: 0.5s;
+ }
+ .flipCard .card .side {
+   width: 100%;
+   height: 100%;
+   padding: 10px;
+   cursor: pointer;
+   position: absolute;
+   box-sizing: border-box;
+   z-index: 2;
+   backface-visibility: hidden;  /* W3C */
+   -webkit-backface-visibility: hidden; /* Safari & Chrome */
+   -moz-backface-visibility: hidden; /* Firefox */
+   -ms-backface-visibility: hidden; /* Internet Explorer */
+   -o-backface-visibility: hidden; /* Opera */
+   box-shadow: 0 0 10px rgba(0,0,0,0.6);
+   overflow: auto;
+ }
+
+ .flipCard .card .back {
+    background: white;
+    color: black;
+    transform:rotatey(-180deg);
+    -ms-transform:rotatey(-180deg); /* IE 9 */
+    -moz-transform:rotatey(-180deg); /* Firefox */
+    -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+    -o-transform:rotatey(-180deg); /* Opera */
+  }
+ 
+ .flipCard .card .front {
+   font-family: Georgia;
+   font-size: 3em;
+   text-align: center;
+   line-height: 160px;
+   
+   border: 5px solid #051c5c;
+   color: white;
+ 
+ }
+ .flipCard .card .back {
+   background-color: #051c5c;
+   border: 5px solid white;
+   text-align: center;
+   color: white;
+   padding-top: 50px;
+   font-family: Georgia;
+   font-size: 2em;
+ }
