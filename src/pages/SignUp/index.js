@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Form from 'react-bootstrap/Form';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -100,16 +97,6 @@ class SignUpFormBase extends Component {
             <form onSubmit={this.onSubmit}>
 
                 {/* Items needed for sign up */}
-
-                <Form.Group controlId="formSignUpCareer">
-                  <ButtonGroup aria-label="Career">
-                    <Button name="career" value="UGRAD" variant="secondary" size="sm"  onClick={this.onChange} type="button">Undergraduate</Button>
-                    <Button name="career" value="GRAD" variant="secondary" size="sm" onClick={this.onChange} type="button">Graduate</Button>
-                    <Button name="career" value="ALUM" variant="secondary" size="sm" onClick={this.onChange} type="button">Alumni</Button>
-                    <Button name="career" value="IND" variant="secondary" size="sm" onClick={this.onChange} type="button">Industry</Button>
-                  </ButtonGroup>
-                </Form.Group>
-
                 <input
                     name="username"
                     value={username}
