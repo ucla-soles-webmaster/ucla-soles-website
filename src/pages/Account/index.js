@@ -5,6 +5,7 @@ import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
+
 import { AuthUserContext, withAuthorization } from '../Session';
 
 import './accountStyle.css'

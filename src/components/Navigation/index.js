@@ -7,8 +7,6 @@ import * as ROUTES from '../../constants/routes'
 import { AuthUserContext } from '../../pages/Session';
 
 import './navStyle.css';
-import SOLESLogo from './logo.svg'
-import SOLESLogoColor from './logoColored.svg';
 import soles1 from './solesshpe.svg';
 
 
@@ -36,7 +34,7 @@ class NavigationAuth extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 55;
+      const isTop = window.scrollY < 75;
       if (isTop !== true) {
         this.setState({ scrolled: true });
       } else {
@@ -118,7 +116,7 @@ class NavigationNonAuth extends Component {
 
     componentDidMount() {
       window.addEventListener('scroll', () => {
-        const isTop = window.scrollY < 100;
+        const isTop = window.scrollY < 75;
         if (isTop !== true) {
           this.setState({ scrolled: true });
         } else {
@@ -150,7 +148,7 @@ class NavigationNonAuth extends Component {
           {/* Logo */}
           <div className="logo">
             <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >
-              <img src={this.state.scrolled ? SOLESLogoColor : SOLESLogo} alt="SOLES Logo" />
+              <img src={this.state.scrolled ? soles1 : soles1} alt="SOLES Logo" />
             </Link>
           </div>
 

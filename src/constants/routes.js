@@ -14,3 +14,7 @@ export const INITIATIVES = '/initiatives';
 export const EBOARD = '/eboard';
 export const CONTACT = '/contact';
 export const SPONSORS = '/sponsors';
+
+// Account Pages
+export const TESTBANK = '/testbank';
+export const MERCH = '/merch';

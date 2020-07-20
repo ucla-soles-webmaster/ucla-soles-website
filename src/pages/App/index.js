@@ -6,13 +6,16 @@ import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
-import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import About from '../About';
 import Initiatives from '../Initiatives' 
 import EBoard from '../EBoard'
 import Contact from '../Contact'
 import Sponsors from '../Sponsors'
+
+import AccountPage from '../Account';
+import TestBank from '../TestBank';
+import Merch from '../Merch';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -42,6 +45,10 @@ const App = () => (
       <Route path={ROUTES.EBOARD} component={EBoard} />
       <Route path={ROUTES.CONTACT} component={Contact} />
       <Route path={ROUTES.SPONSORS} component={Sponsors} />
+
+      {/* Account Pages */}
+      <Route path={ROUTES.TESTBANK} component={TestBank} />
+      <Route path={ROUTES.MERCH} component={Merch} />
 
       
     </div>
