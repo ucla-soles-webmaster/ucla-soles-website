@@ -1,14 +1,24 @@
-
-container{
-    flex: 1;
+/*
+.container{
+    display: flex;
+    flex-direction: column;
+    flex: 1 ;
     justify-content: 'center';
     align-items: 'center';
+}
+
+.setBorder{
+    background-color: #051c5c;
+   border: 5px solid white;
+   text-align: center;
+   color: white;
+   
 }
 
 .h1{
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-    font-size: 2em;
+    font-size: 1.8em;
    text-align: center;
    line-height: 20px;
     font-weight: 'bold';
@@ -40,8 +50,16 @@ container{
 .setFontSizePosition{
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    font-size: 1.2em;
+    line-height: 30px;
+    text-align: center;
+}
+
+.titleFont{
+    font-family: "Times New Roman", Times, serif, monospace;
     font-size: 1.4em;
-   line-height: 30px;
+    line-height: 30px;
+    text-align: center;
 }
 
 .row {
@@ -56,6 +74,7 @@ container{
     padding: 0 4px;
     text-align: center;
     margin: auto;
+    justify-content: left inherit;
 }
 @media screen and (max-width: 945px){
     .column{
@@ -69,7 +88,7 @@ container{
         display: flex;
         padding: 0 4px;
         flex-wrap: wrap;
-      
+
       }
 }
 
@@ -101,12 +120,12 @@ container{
     position: relative;
     margin: 25px auto;
  }
- .flipCard .card.flipped {
+ .flipped {
    transform:rotatey(-180deg);
-   -ms-transform:rotatey(-180deg); /* IE 9 */
-   -moz-transform:rotatey(-180deg); /* Firefox */
-   -webkit-transform:rotatey(180deg); /* Safari and Chrome */
-   -o-transform:rotatey(-180deg); /* Opera */
+   -ms-transform:rotatey(-180deg); 
+   -moz-transform:rotatey(-180deg); 
+   -webkit-transform:rotatey(-180deg); 
+   -o-transform:rotatey(-180deg); 
  }
  .flipCard .card {
    width: 100%;
@@ -130,11 +149,11 @@ container{
    position: absolute;
    box-sizing: border-box;
    z-index: 2;
-   backface-visibility: hidden;  /* W3C */
-   -webkit-backface-visibility: hidden; /* Safari & Chrome */
-   -moz-backface-visibility: hidden; /* Firefox */
-   -ms-backface-visibility: hidden; /* Internet Explorer */
-   -o-backface-visibility: hidden; /* Opera */
+   backface-visibility: hidden;  
+   -webkit-backface-visibility: hidden; 
+   -moz-backface-visibility: hidden; 
+   -ms-backface-visibility: hidden; 
+   -o-backface-visibility: hidden; 
    box-shadow: 0 0 10px rgba(0,0,0,0.6);
    overflow: auto;
  }
@@ -143,10 +162,10 @@ container{
     background: white;
     color: black;
     transform:rotatey(-180deg);
-    -ms-transform:rotatey(-180deg); /* IE 9 */
-    -moz-transform:rotatey(-180deg); /* Firefox */
-    -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
-    -o-transform:rotatey(-180deg); /* Opera */
+    -ms-transform:rotatey(-180deg); 
+    -moz-transform:rotatey(-180deg); 
+    -webkit-transform:rotatey(-180deg); 
+    -o-transform:rotatey(-180deg); 
   }
  
  .flipCard .card .front {
@@ -159,6 +178,7 @@ container{
    color: white;
  
  }
+
  .flipCard .card .back {
    background-color: #051c5c;
    border: 5px solid white;
@@ -167,4 +187,79 @@ container{
    padding-top: 50px;
    font-family: Georgia;
    font-size: 2em;
- }
+ }*/
+
+ body1 {
+    width: 80%;
+    margin: 30px auto;
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  .ad {
+    display: inline-block;
+    margin-bottom: 8px;
+    width: calc(50% - 4px);
+    margin-right: 8px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .ad:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  
+  @media screen and (min-width: 50em) {
+    .ad {
+      width: calc(25% - 6px);
+    }
+    
+    .ad:nth-of-type(2n) {
+      margin-right: 8px;
+    }
+    
+    .ad:nth-of-type(4n) {
+      margin-right: 0;
+    }
+  }
+
+
+  .fig {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .h1 {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: 1.8em;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 'bold';
+    color: #051c5c;
+    text-align: match-parent;
+    margin-top: 15px;
+  }
+
+  .setFontSizePosition{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: 1.2em;
+    line-height: 30px;
+    text-align: match-parent;
+    margin-top: 10px;
+}
+  
+  .image {
+    border: 6px solid #051c5c;
+    width:  250px;
+    height: 250px;
+    
+    
+    display: block;
+    background: #ccc;
+    transition: transform .2s ease-in-out;
+  }
+  
