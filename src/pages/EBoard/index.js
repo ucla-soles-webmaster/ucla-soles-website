@@ -4,15 +4,15 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import '../../eBoard.css';
-import Andy from '../../boardImages/apple.jpg'
-import Trevor from '../../boardImages/banana.jpg'
+import Andy from '../../boardImages/andy.jpg'
+import Trevor from '../../boardImages/trevor.jpg'
 import Jasmine from '../../boardImages/dragonfruit.jpg'
 
-import Mayra from '../../boardImages/kiwi.jpg'
+import Mayra from '../../boardImages/apple.jpg'
 import Robert from '../../boardImages/lemon.jpg'
 import Michael from '../../boardImages/orange.jpg'
 
-import Aidan from '../../boardImages/peach.jpg'
+import Aidan from '../../boardImages/aiden.jpg'
 import Mat from '../../boardImages/avocado.jpg'
 import Eric from '../../boardImages/pear.jpg'
 
@@ -37,100 +37,100 @@ class EBoard extends Component {
             <div>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"Executive Board"}></PagePhoto>
-            <body1>    
+            <body1 className = "eBoardPage">    
             
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Andy} alt="Andy Muraltalla"></img>
-                        <div className = "h1">Andy Muraltalla</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Andy} alt="Andy Muraltalla"></img>
+                        <div className = "setFontSizeName">Andy Muraltalla</div>
                         <div className = "setFontSizePosition">President</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Trevor} alt="Trevor Gomez"></img>
-                        <div className = "h1">Trevor Gomez</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Trevor} alt="Trevor Gomez"></img>
+                        <div className = "setFontSizeName">Trevor Gomez</div>
                         <div className = "setFontSizePosition">External Vice President</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Jasmine} alt="Jasmine Raya"></img>
-                        <div className = "h1">Jasmine Raya</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Jasmine} alt="Jasmine Raya"></img>
+                        <div className = "setFontSizeName">Jasmine Raya</div>
                         <div className = "setFontSizePosition">Internal Vice President</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Michael} alt="Michael Munguia"></img>
-                        <div className = "h1">Michael Munguia</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Michael} alt="Michael Munguia"></img>
+                        <div className = "setFontSizeName">Michael Munguia</div>
                         <div className = "setFontSizePosition">Transfer Representative</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Mayra} alt="Mayra Lara"></img>
-                        <div className = "h1">Mayra Lara</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Mayra} alt="Mayra Lara"></img>
+                        <div className = "setFontSizeName">Mayra Lara</div>
                         <div className = "setFontSizePosition">Treasurer</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Robert} alt="Robert Valencia"></img>
-                        <div className = "h1">Robert Valencia</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Robert} alt="Robert Valencia"></img>
+                        <div className = "setFontSizeName">Robert Valencia</div>
                         <div className = "setFontSizePosition">Secretary</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Aidan} alt="Aidan Hasegawa"></img>
-                        <div className = "h1">Aidan Hasegawa</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Aidan} alt="Aidan Hasegawa"></img>
+                        <div className = "setFontSizeName">Aidan Hasegawa</div>
                         <div className = "setFontSizePosition">Tutoring Director</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Mat} alt="Matthew Ruiz"></img>
-                        <div className = "h1">Matthew Ruiz</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Mat} alt="Matthew Ruiz"></img>
+                        <div className = "setFontSizeName">Matthew Ruiz</div>
                         <div className = "setFontSizePosition">Academic Chair</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Eric} alt="Eric Saavedra Garcia"></img>
-                        <div className = "h1">Eric Saavedra Garcia</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Eric} alt="Eric Saavedra Garcia"></img>
+                        <div className = "setFontSizeName">Eric Saavedra Garcia</div>
                         <div className = "setFontSizePosition">Activities Director</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Fabrezio} alt="Fabrezio Castaneda"></img>
-                        <div className = "h1">Fabrezio Castaneda</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Fabrezio} alt="Fabrezio Castaneda"></img>
+                        <div className = "setFontSizeName">Fabrezio Castaneda</div>
                         <div className = "setFontSizePosition">Ciencias Director</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Josh} alt="Joshua Diaz"></img>
-                        <div className = "h1">Joshua Diaz</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Josh} alt="Joshua Diaz"></img>
+                        <div className = "setFontSizeName">Joshua Diaz</div>
                         <div className = "setFontSizePosition">Technical Chair</div>
                     </figure>
                 </a>
 
-                <a className = "ad">
-                    <figure className = "fig">
-                    <img className = "image" src={Kelly} alt="Kelly Espino"></img>
-                        <div className = "h1">Kelly Espino</div>
+                <a className = "eBoardPerson">
+                    <figure className = "eBoardPerson2">
+                    <img className = "BoardPageImages" src={Kelly} alt="Kelly Espino"></img>
+                        <div className = "setFontSizeName">Kelly Espino</div>
                         <div className = "setFontSizePosition">LeaderSHPE Jr. Director</div>
                     </figure>
                 </a>

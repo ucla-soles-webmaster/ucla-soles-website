@@ -8,7 +8,7 @@
 }
 
 .setBorder{
-    background-color: #051c5c;
+    background-color: #001d3a;
    border: 5px solid white;
    text-align: center;
    color: white;
@@ -22,7 +22,7 @@
    text-align: center;
    line-height: 20px;
     font-weight: 'bold';
-    color: #051c5c;
+    color: #001d3a;
     vertical-align: 'middle';
     
 }
@@ -102,164 +102,107 @@
     .row {
         display: flex;
         padding: 0 4px;
-        flex-wrap: wrap;
+        flex-wrap : wrap;
       
       }
-}
+}*/
 
-
-
-.flipCard {
-    perspective: 800;
-    -webkit-perspective: 800;
-    -ms-perspective: 800;
-    -moz-perspective: 800;
-    -o-perspective: 800;
-    width: 300px;
-    height: 320px;
-    position: relative;
-    margin: 25px auto;
- }
- .flipped {
-   transform:rotatey(-180deg);
-   -ms-transform:rotatey(-180deg); 
-   -moz-transform:rotatey(-180deg); 
-   -webkit-transform:rotatey(-180deg); 
-   -o-transform:rotatey(-180deg); 
- }
- .flipCard .card {
-   width: 100%;
-   height: 100%;
-   -webkit-transform-style: preserve-3d;
-   -webkit-transition: 0.5s;
-   -moz-transform-style: preserve-3d;
-   -moz-transition: 0.5s;
-   -ms-transform-style: preserve-3d;
-   -ms-transition: 0.5s;
-   -o-transform-style: preserve-3d;
-   -o-transition: 0.5s;
-   transform-style: preserve-3d;
-   transition: 0.5s;
- }
- .flipCard .card .side {
-   width: 100%;
-   height: 100%;
-   padding: 10px;
-   cursor: pointer;
-   position: absolute;
-   box-sizing: border-box;
-   z-index: 2;
-   backface-visibility: hidden;  
-   -webkit-backface-visibility: hidden; 
-   -moz-backface-visibility: hidden; 
-   -ms-backface-visibility: hidden; 
-   -o-backface-visibility: hidden; 
-   box-shadow: 0 0 10px rgba(0,0,0,0.6);
-   overflow: auto;
- }
-
- .flipCard .card .back {
-    background: white;
-    color: black;
-    transform:rotatey(-180deg);
-    -ms-transform:rotatey(-180deg); 
-    -moz-transform:rotatey(-180deg); 
-    -webkit-transform:rotatey(-180deg); 
-    -o-transform:rotatey(-180deg); 
-  }
- 
- .flipCard .card .front {
-   font-family: Georgia;
-   font-size: 3em;
-   text-align: center;
-   line-height: 160px;
-   
-   border: 5px solid #051c5c;
-   color: white;
- 
- }
-
- .flipCard .card .back {
-   background-color: #051c5c;
-   border: 5px solid white;
-   text-align: center;
-   color: white;
-   padding-top: 50px;
-   font-family: Georgia;
-   font-size: 2em;
- }*/
-
- body1 {
+ .eBoardPage {
     width: 80%;
     margin: 30px auto;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-wrap: wrap;
   }
   
   
-  .ad {
+  .eBoardPerson {
+    display: inline-block;
+    margin-bottom: 8px;
+    width: calc(33% - 6px);
+    margin-right: 8px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+  }
+  
+  .eBoardPerson:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  
+  /*
+  @media screen and (min-width: 50em) {
+    .eBoardPerson {
+      width: calc(25% - 6px);
+    }
+    
+    .eBoardPerson:nth-of-type(2n) {
+      margin-right: 8px;
+    }
+    
+    .eBoardPerson:nth-of-type(4n) {
+      margin-right: 0;
+    }
+  }
+*/
+
+@media screen and (max-width: 1050px){
+  .eBoardPerson {
     display: inline-block;
     margin-bottom: 8px;
     width: calc(50% - 4px);
     margin-right: 8px;
     text-decoration: none;
     color: black;
+    text-align: center;
   }
-  
-  .ad:nth-of-type(2n) {
-    margin-right: 0;
-  }
-  
-  @media screen and (min-width: 50em) {
-    .ad {
-      width: calc(25% - 6px);
-    }
-    
-    .ad:nth-of-type(2n) {
-      margin-right: 8px;
-    }
-    
-    .ad:nth-of-type(4n) {
-      margin-right: 0;
-    }
-  }
+}
 
+@media screen and (max-width: 700px){
+  .eBoardPerson {
+    display: inline-block;
+    margin-bottom: 8px;
+    width: calc(100% - 4px);
+    
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    
+  }
+}
 
-  .fig {
+  .eBoardPerson2 {
     margin: 0;
     overflow: hidden;
   }
   
-  .h1 {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  .setFontSizeName {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.8em;
-    text-align: center;
+    text-align: match-parent;
     line-height: 20px;
     font-weight: 'bold';
-    color: #051c5c;
-    text-align: match-parent;
+    color: #001d3a;
     margin-top: 15px;
   }
 
   .setFontSizePosition{
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2em;
     line-height: 30px;
     text-align: match-parent;
     margin-top: 10px;
 }
   
-  .image {
-    border: 6px solid #051c5c;
+  .BoardPageImages {
+    border: 6px solid #001d3a;
     width:  250px;
     height: 250px;
-    
-    
     display: block;
     background: #ccc;
-    transition: transform .2s ease-in-out;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
   }
   
