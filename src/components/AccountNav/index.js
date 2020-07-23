@@ -16,15 +16,26 @@ class AccountNav extends Component {
       return (
         <nav className="accountNav">
             <ul className="ulist">
-                <li className="mininavli">
-                    <Link to={ROUTES.ACCOUNT} style={linkStyle} >Profile</Link>
-                </li>
-                <li className="mininavli">
-                    <Link to={ROUTES.TESTBANK} style={linkStyle} >Test Bank Hub</Link>
-                </li>
-                <li className="mininavli">
-                    <Link to={ROUTES.MERCH} style={linkStyle} >Merch</Link>
-                </li>
+                <Link to={ROUTES.ACCOUNT} style={linkStyle} >
+                    <li className="mininavli">
+                        Profile
+                    </li>
+                </Link>
+                <Link to={ROUTES.TESTBANK} style={linkStyle} >
+                    <li className="mininavli">
+                        Test Bank Hub
+                    </li>
+                </Link>
+                <Link to={ROUTES.MERCH} style={linkStyle} >
+                    <li className="mininavli">
+                        Alumni Network
+                    </li>
+                </Link>
+                <Link to={ROUTES.MERCH} style={linkStyle}>
+                    <li className="mininavli">
+                        Merch
+                    </li>
+                </Link>
             </ul>
         </nav>
       );
