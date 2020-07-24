@@ -113,7 +113,6 @@
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-wrap: wrap;
-    
   }
   
   
@@ -151,6 +150,7 @@
   .eBoardPerson {
     display: inline-block;
     margin-bottom: 8px;
+    width:20vw;
     width: calc(50% - 4px);
     margin-right: 8px;
     text-decoration: none;
@@ -162,13 +162,11 @@
 @media screen and (max-width: 700px){
   .eBoardPerson {
     display: inline-block;
-    margin-bottom: 8px;
+    margin: 1vw;
     width: calc(100% - 4px);
-    
     text-align: center;
     text-decoration: none;
     color: black;
-    
   }
 }
 
@@ -179,41 +177,39 @@
   
   .setFontSizeName {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.8em;
+    font-size: 1.8vw;
     text-align: match-parent;
-    line-height: 20px;
+    line-height: 1.4vw;
     font-weight: 'bold';
     color: #001d3a;
-    margin-top: 15px;
+    margin-top: 1.1vw;
   }
 
   .setFontSizePosition{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2em;
-    line-height: 28px;
+    font-size: 1.2vw;
+    line-height: 1vw;
     text-align: match-parent;
-    margin-top: 10px;
+    margin-top: 1.2vw;
 }
   
   .BoardPageImages {
-    border: 6px solid #001d3a;
-    width:  250px;
-    height: 250px;
+    border: .3vw solid #001d3a;
+    width:  20vw;
+    height: 20vw;
     display: block;
     background: #ccc;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
   }
   
   .flip-card {
     overflow: hidden;
-    margin: 30px auto;
+    margin: 1vw auto;
     background-color: transparent;
-    width: 266px;
-    height: 266px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    width: 20.6vw;
+    height: 20.6vw;
   }
   
   /* This container is needed to position the front and back side */
@@ -224,6 +220,7 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    z-index: -1;
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -242,20 +239,49 @@
   
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
-    width: 266px;
+    width: 20.3vw;
   }
 
   .backSideText{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
-    color: white
+    font-size: 1.8vw;
+    line-height: 2vw;
+    color: white;
+    margin: 5px;
   }
 
   .backSideTextSmall{
     font-family: 'Poppins', sans-serif;
-    font-size: .5 em;
-    line-height: 20px;
-    color: white
+    font-size: 1.1vw;
+    line-height: 1.2vw;
+    color: white;
+    margin: 5px;
+  }
+
+  .majorFont{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3vw;
+    line-height: 1.2vw;
+    margin: 5px;
+    color: yellow;
+  }
+
+  .majorFontLong{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.16vw;
+    line-height: 1.2vw;
+    margin: 5px;
+    color: yellow;
+  }
+
+  .emailFont{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    position: absolute;
+    text-align: center;
+    bottom: 5px;
+    color: yellow;
   }
   
   /* Style the back side */
@@ -267,7 +293,16 @@
 
   .titleFont{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.4em;
-    line-height: 30px;
+    font-size: 1.5vw;
+    line-height: 1.8vw;
     text-align: center;
+    margin: 1.2vw;
+}
+
+.staffMembersBoard{
+  font-family: 'Poppins', sans-serif;
+  font-size: 3vw;
+  line-height: 1.8vw;
+  text-align: center;
+  margin: 1.2vw;
 }

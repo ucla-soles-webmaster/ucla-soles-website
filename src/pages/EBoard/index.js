@@ -12,16 +12,18 @@ import Robert from '../../boardImages/lemon.jpg'
 import Michael from '../../boardImages/michael.jpg'
 
 import Aidan from '../../boardImages/aiden.jpg'
-import Mat from '../../boardImages/avocado.jpg'
+import Mat from '../../boardImages/mat.jpg'
 import Eric from '../../boardImages/pear.jpg'
 
-import Fabrezio from '../../boardImages/pomegranate.jpg'
+import Fabrizio from '../../boardImages/fabrizio.jpg'
 import Josh from '../../boardImages/strawberry.jpg'
 import Kelly from '../../boardImages/tomato.jpg'
 
 import Sherry from '../../boardImages/peach.jpg'
 import Anabella from '../../boardImages/orange.jpg'
 import Cathy from '../../boardImages/kiwi.jpg'
+
+import Juan from '../../boardImages/juan.jpg'
 
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
@@ -40,105 +42,7 @@ class EBoard extends Component {
             <div>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"Executive Board"}></PagePhoto>
-            <body1 className = "eBoardPage">    
-            
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Andy} alt="Andy Muraltalla"></img>
-                        <div className = "setFontSizeName">Andy Muraltalla</div>
-                        <div className = "setFontSizePosition">President</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Trevor} alt="Trevor Gomez"></img>
-                        <div className = "setFontSizeName">Trevor Gomez</div>
-                        <div className = "setFontSizePosition">External Vice President</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Jasmine} alt="Jasmine Raya"></img>
-                        <div className = "setFontSizeName">Jasmine Raya</div>
-                        <div className = "setFontSizePosition">Internal Vice President</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Michael} alt="Michael Munguia"></img>
-                        <div className = "setFontSizeName">Michael Munguia</div>
-                        <div className = "setFontSizePosition">Transfer Representative</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Mayra} alt="Mayra Lara"></img>
-                        <div className = "setFontSizeName">Mayra Lara</div>
-                        <div className = "setFontSizePosition">Treasurer</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Robert} alt="Robert Valencia"></img>
-                        <div className = "setFontSizeName">Robert Valencia</div>
-                        <div className = "setFontSizePosition">Secretary</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Aidan} alt="Aidan Hasegawa"></img>
-                        <div className = "setFontSizeName">Aidan Hasegawa</div>
-                        <div className = "setFontSizePosition">Tutoring Director</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Mat} alt="Matthew Ruiz"></img>
-                        <div className = "setFontSizeName">Matthew Ruiz</div>
-                        <div className = "setFontSizePosition">Academic Chair</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Eric} alt="Eric Saavedra Garcia"></img>
-                        <div className = "setFontSizeName">Eric Saavedra Garcia</div>
-                        <div className = "setFontSizePosition">Activities Director</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Fabrezio} alt="Fabrezio Castaneda"></img>
-                        <div className = "setFontSizeName">Fabrezio Castaneda</div>
-                        <div className = "setFontSizePosition">Ciencias Director</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Josh} alt="Joshua Diaz"></img>
-                        <div className = "setFontSizeName">Joshua Diaz</div>
-                        <div className = "setFontSizePosition">Technical Chair</div>
-                    </figure>
-                </div>
-
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "BoardPageImages" src={Kelly} alt="Kelly Espino"></img>
-                        <div className = "setFontSizeName">Kelly Espino</div>
-                        <div className = "setFontSizePosition">LeaderSHPE Jr. Director</div>
-                    </figure>
-                </div>
-
-                
+            <body1 className = "eBoardPage">                 
 
                 <div className = "eBoardPerson">
                     <div class="flip-card">
@@ -148,9 +52,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Andy Muraltalla</div>
-                            <div className = "backSideTextSmall">4th Year Aerospace Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.president@gmail.com</div>    
+                            <div className = "majorFontLong">4th Year Aerospace Engineering</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is the SOLES White Elephant party back in December of my 2nd Year, where I got to share some quality Christmas spirit with members of all class levels.</div>
+                            <div className = "emailFont">uclasoles.president@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -168,9 +72,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Trevor Gomez</div>
-                            <div className = "backSideTextSmall">3rd Year Mechanical Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.evp@gmail.com</div>     
+                            <div className = "majorFontLong">3rd Year Mechanical Engineering</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is hanging out at the tailgates freshman year with the SOLES fam.</div>
+                            <div className = "emailFont">uclasoles.evp@gmail.com</div>     
                         </div>
                     </div>
                     </div>
@@ -188,9 +92,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Jasmine Raya</div>
-                            <div className = "backSideTextSmall">3rd Year * * Engineering</div>
+                            <div className = "majorFont">3rd Year * * Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.ivp@gmail.com</div>    
+                            <div className = "emailFont">uclasoles.ivp@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -208,9 +112,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Michael Munguia</div>
-                            <div className = "backSideTextSmall">*th Year * * Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.transferrep@gmail.com</div>    
+                            <div className = "majorFont">*th Year * * Engineering</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is going to the SOLES tailgates and watching the football games.</div>
+                            <div className = "emailFont">uclasoles.transferrep@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -227,9 +131,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Mayra Lara</div>
-                            <div className = "backSideTextSmall">2nd Year Civil Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.treasurer@gmail.com</div>    
+                            <div className = "majorFont">2nd Year Civil Engineering</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is the October mentorSHPE event my freshman year; I got to bond with my mentor by carving a pumpkin together and also got to meet a lot of other SOLES members, both my year and older.</div>
+                            <div className = "emailFont">uclasoles.treasurer@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -245,9 +149,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Robert Valencia</div>
-                            <div className = "backSideTextSmall">3rd Year Mechanical Engineering</div>
+                            <div className = "majorFontLong">3rd Year Mechanical Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles@gmail.com</div>    
+                            <div className = "emailFont">uclasoles@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -263,9 +167,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Aidan Hasegawa</div>
-                            <div className = "backSideTextSmall">*rd Year * * Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.tutoring@gmail.com</div>    
+                            <div className = "majorFont">*rd Year * * Engineering</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is selling churros out on Bruin Walk.</div>
+                            <div className = "emailFont">uclasoles.tutoring@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -281,9 +185,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Matthew Ruiz</div>
-                            <div className = "backSideTextSmall">2nd Year Computer Science</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.academicchair@gmail.com</div>    
+                            <div className = "majorFont">2nd Year Computer Science</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.</div>
+                            <div className = "emailFont">uclasoles.academicchair@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -299,9 +203,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Eric Saavedra Garcia</div>
-                            <div className = "backSideTextSmall">2nd Year * * Engineering</div>
+                            <div className = "majorFontLong">2nd Year Mechanical Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.activities@gmail.com</div>    
+                            <div className = "emailFont">uclasoles.activities@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -313,17 +217,18 @@ class EBoard extends Component {
                     <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img className = "BoardPageImages" src= {Fabrezio} alt="Fabrezio Castaneda" ></img>
+                            <img className = "BoardPageImages" src= {Fabrizio} alt="Fabrizio Castañeda" ></img>
                         </div>
                         <div class="flip-card-back">
-                            <div className = "backSideText">Fabrezio Castaneda</div>
-                            <div className = "backSideTextSmall">2nd Year Computer Engineering*</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.cienciasdirector@gmail.com</div>    
+                            <div className = "backSideText">Fabrizio Castañeda</div>
+                            <div className = "majorFontLong">2nd Year Computer Engineering</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is when I attended the LeaderSHPE Jr. Retreat, and I got to play the fictional role of the owner of Rick's Steakhouse in an event planning workshop. 
+                                    It warmed my heart to see the kids having fun and gain confidence in their negotiating abilities. Also, we found out that the school we visited is where they filmed All American! What a day that was!</div>
+                            <div className = "emailFont">uclasoles.cienciasdirector@gmail.com</div>    
                         </div>
                     </div>
                     </div>
-                    <div className = "setFontSizeName">Fabrezio Castaneda</div>
+                    <div className = "setFontSizeName">Fabrizio Castañeda</div>
                     <div className = "setFontSizePosition">Ciencias Director</div>
                 </div>
 
@@ -335,9 +240,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Joshua Diaz</div>
-                            <div className = "backSideTextSmall">4th Year Aerospace Engineering</div>
+                            <div className = "majorFontLong">4th Year Aerospace Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.technicalchair@gmail.com</div>    
+                            <div className = "emailFont">uclasoles.technicalchair@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -353,9 +258,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Kelly Espino</div>
-                            <div className = "backSideTextSmall">2nd Year Civil Engineering</div>
+                            <div className = "majorFont">2nd Year Civil Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "backSideTextSmall">uclasoles.leadershpe@gmail.com</div>    
+                            <div className = "emailFont">uclasoles.leadershpe@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -363,21 +268,42 @@ class EBoard extends Component {
                     <div className = "setFontSizePosition">LeaderSHPE Jr. Director</div>
                 </div>
 
-                
-
-                <div className = "titleFont">                                
-                                If you are interested in joining one of our board 
-                                member’s committee or learning more about their position, please do not 
-                                hesitate to contact them, via GroupMe, email, social media, etc.
+                <div className = "eBoardPerson">
+                    <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img className = "BoardPageImages" src= {Juan} alt="Juan Banchs" ></img>
+                        </div>
+                        <div class="flip-card-back">
+                            <div className = "backSideText">Juan Banchs</div>
+                            <div className = "majorFont">*nd Year * Engineering</div>
+                            <div className = "backSideTextSmall">(I've been very little at SOLES, but) My favorite SOLES memory is the free chicken nuggets at the last Winter quarter meeting!</div>
+                            <div className = "emailFont">*@gmail.com</div>    
+                        </div>
+                    </div>
+                    </div>
+                    <div className = "setFontSizeName">Juan Banchs</div>
+                    <div className = "setFontSizePosition">Intern</div>
                 </div>
 
                 
+                    <div className = "titleFont">                                
+                                    If you are interested in joining one of our board 
+                                    member’s committee or learning more about their position, please do not 
+                                    hesitate to contact them, via GroupMe, email, social media, etc.
+                    </div>
 
+                    <div className = "staffMembersBoard">                                
+                            Our Wonderful CEED Staff
+                    </div>
+                
+                
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "BoardPageImages" src={Sherry} alt="Sherry Hormozi"></img>
                         <div className = "setFontSizeName">Sherry Hormozi</div>
                         <div className = "setFontSizePosition">Undergraduate Counselor</div>
+                        <div className = "setFontSizePosition">sherry@seas.ucla.edu</div>
                     </figure>
                 </div>
 
@@ -385,7 +311,8 @@ class EBoard extends Component {
                     <figure className = "eBoardPerson2">
                     <img className = "BoardPageImages" src={Cathy} alt="Catherine Douglas"></img>
                         <div className = "setFontSizeName">Catherine Douglas</div>
-                        <div className = "setFontSizePosition">Associate Director, Precollege Programs</div>
+                        <div className = "setFontSizePosition">Intermin CEED SEAS Board Advisor</div>
+                        <div className = "setFontSizePosition">add email</div>
                     </figure>
                 </div>
 
