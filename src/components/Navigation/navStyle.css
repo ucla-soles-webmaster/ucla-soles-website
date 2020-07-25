@@ -121,6 +121,7 @@ body {
     margin-right: 40px;
     cursor: pointer;
     display: none;
+    color: rgb(255, 255, 128);
 }
 
 .iEq {

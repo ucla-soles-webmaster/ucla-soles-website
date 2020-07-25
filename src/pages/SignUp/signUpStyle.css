@@ -1,0 +1,243 @@
+.suform {
+    margin: auto;
+    margin-top: 3vw;
+    padding-top: 3%;
+    width: 50%;
+    background-color: rgba(245, 245, 245, 0.954); /* yellow: rgba(255, 255, 213, 0.954);  gray: rgba(245, 245, 245, 0.954) */
+    border-radius: 1.2vw;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 1px 2px rgb(215, 215, 218), 0 2px 4px rgb(223, 223, 223),
+    inset 0 1px 0 #f2f2f2;
+}
+
+.suh1 {
+    text-align: center;
+    margin-top: 60px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 7vw;
+    padding-top: 3.9vw;
+    letter-spacing: 0.15vw;
+    color: whitesmoke;
+    -webkit-text-stroke-width: 0.01rem;
+    -webkit-text-stroke-color: whitesmoke;
+}
+
+.photoback {
+    position: absolute;
+    z-index: -1;
+}
+
+.photobackphoto {
+    width: 100%;
+}
+
+.FormRow {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.FormRow:first-child {
+    border-top: none;
+}
+
+.FormRowLabel {
+    min-width: 26%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left: 1%;
+    font-size: 1.2vw;
+    color: rgb(150, 150, 150);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.FormRowLabelDropDown {
+    min-width: 49.5%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left: 1%;
+    font-size: 1.2vw;
+    color: rgb(150, 150, 150);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.FormRowInput:-webkit-autofill {
+    -webkit-text-fill-color: #001d3a;
+    font-family: 'Poppins', sans-serif;
+    /* Hack to hide the default webkit autofill */
+    transition: background-color 100000000s;
+    animation: 1ms void-animation-out;
+  }
+  
+.FormRowInput {
+    font-size: 1.2vw;
+    width: 80%;
+    padding-top: 0.0%;
+    color: #001d3a;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    animation: 1ms void-animation-out;
+}
+
+.graydd {
+    font-size: 1.2vw;
+    width: 55%;
+    padding-top: 0.0%;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    animation: 1ms void-animation-out;
+    color: #001d3a17;
+}
+
+.FormRowInput::placeholder {
+    color: #001d3a17;
+}
+
+.FormGroup {
+    margin: auto;
+    width: 87%;
+    padding: 0;
+    border-style: none;
+    background-color: #ffffff;
+    color: cornsilk;
+    box-shadow: 0 1px 2px rgb(215, 215, 218), 0 2px 4px rgb(223, 223, 223),
+        inset 0 1px 0 #f2f2f2;
+    border-radius: 4px;
+}
+
+.formlabelsu {
+    color: rgb(150, 150, 150);
+    font-family: 'Poppins', sans-serif;
+}
+
+.formcontrolsu {
+    color: #001d3a;
+    font-family: 'Poppins', sans-serif;
+}
+
+.randomtop {
+    margin-top: 25px;
+}
+
+.disclaimer1 {
+    font-size: 0.8vw;
+    color: rgb(150, 150, 150);
+    margin-left: 11.5%;
+    margin-right: 5.5%;
+    margin-top: -0.2%;
+    font-style: italic;
+}
+
+.disclaimer2 {
+    font-size: 0.8vw;
+    color: rgb(150, 150, 150);
+    margin-left: 11.5%;
+    margin-right: 5.5%;
+    margin-top: 0.4%;
+    margin-bottom: 0%;
+    font-style: italic;
+}
+
+.checksu {
+    padding-bottom: 1%;
+}
+
+.checkboxsu {
+    margin-left: 4%;
+    margin-right: 3%;
+    background: #001d3a;
+}
+
+.checkboxsu:checked:after {
+    background: #001d3a;
+}
+
+.checklabelsu {
+    font-size: 1.1vw;
+    width: 87%;
+    padding: 0;
+    margin-top: -5%;
+    color: #001d3a;
+}
+
+.membergrid {
+    margin: auto;
+    width: 50%;
+    padding: 0;
+    padding-top: 4%;
+    padding-left: 10%;
+    color: black;
+}
+
+.newslettersu {
+    margin: 0;
+    margin-left: 25%;
+    margin-right: 2.5%;
+}
+
+.newsletterlabelsu {
+    font-size: 1.1vw;
+    width: 87%;
+    padding: 0;
+    margin-top: -5%;
+    color: #001d3a;
+}
+
+.buttonsu {
+    margin: 0;
+    margin-top: -2vw;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    font-size: 16px;
+    width: 20%;
+    height: 40px;
+    color: white;
+    background-color: #001d3a;
+    box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    will-change: transform, background-color, box-shadow;
+}
+
+.buttonsu:disabled {
+    background-color: rgb(230, 230, 230);
+    color: rgb(155, 155, 155);
+    pointer-events: none;
+}
+.buttonsu:disabled:hover {
+    background-color: rgb(221, 221, 221);
+    color: rgb(155, 155, 155);
+    pointer-events: none;
+}
+
+.buttonsu:hover {
+    background-color: #ffff7d;
+    color: #a7a7a7;
+    box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+.FormRowInput,
+.graydd,
+.buttonsu,
+.formcontrolsu,
+.formlabelsu {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+}

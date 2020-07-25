@@ -20,35 +20,6 @@ class Firebase {
     constructor() {
         firebase.initializeApp(config);
 
-        var firestore = firebase.firestore();
-        const docRef = firestore.collection("users").doc("XYEx3ATt5lXqWFAJiCuOCJvt5Rv1");
-
-        docRef.get().then(function(doc) {
-            if (doc.exists) {
-                console.log("Document data:", doc.data());
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch(function(error) {
-            console.log("Error getting document:", error);
-        });
-
-
-        /*
-        firestore.collection('users').add({
-            name: 'um hello?'
-        })
-        .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch(function(error) {
-            console.error("Error adding document: ", error);
-        });
-        */
-
-
-
         this.auth = app.auth();
         this.db = app.database();
     }
@@ -73,6 +44,22 @@ class Firebase {
     user = uid => this.db.ref(`users/${uid}`);
     
     users = () => this.db.ref('users');
+
+    getUserDict() {
+        var temp = null;
+        firebase.firestore().collection("users").where("email", "==", firebase.auth().currentUser.email)
+            .get()
+            .then(function(querySnapshot) {
+                querySnapshot.forEach(function(doc) {
+                    console.log(doc.id, "==", doc.data());
+                    temp = doc.data();
+                });
+            })
+            .catch(function(error) {
+                console.log("Error getting documents: ", error);
+            })
+        return temp;
+    }
 
     getFirestore = () => firebase.firestore();
 

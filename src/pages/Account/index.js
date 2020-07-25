@@ -12,7 +12,30 @@ import './accountStyle.css'
 
 
 class AccountPage extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      user: {},
+      firestore: this.props.firebase.getFirestore(),
+      userEmail: this.props.firebase.auth.currentUser.email,
+    }
 
+
+  }
+
+  componentWillMount() {
+    var that = this;
+    this.props.firebase.getFirestore().collection("users")
+      .where("email", "==", this.state.userEmail)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          console.log(doc.id, " => ", doc.data());
+          that.setState({ user: doc.data() })
+        });
+      })
+  }
 
   render() {
     return (
@@ -24,7 +47,7 @@ class AccountPage extends Component {
           <AuthUserContext.Consumer>
             {authUser => (
               <div>
-                <h1 className="haccount">Mat's Profile</h1>
+                <h1 className="haccount">{this.state.user["first_name"]}'s Profile</h1>
               </div>
             )}
           </AuthUserContext.Consumer>

@@ -69,7 +69,7 @@ class Initiatives extends Component {
                 <br/><br/>
 
                 <img src={sun} className="minisun" alt="mini sun" />
-                <h1>Outreach</h1>
+                <h1 className="h1init">Outreach</h1>
                 <div className="container">
                     <div class="picture-grid">
 
@@ -142,7 +142,7 @@ class Initiatives extends Component {
                 </div>
 
                 <img src={sun} className="minisun" alt="mini sun" />
-                <h1>Academic Development</h1>
+                <h1 className="h1init">Academic Development</h1>
                 <div className="container">
                     <div class="picture-grid">
 
@@ -199,7 +199,7 @@ class Initiatives extends Component {
                 </div>
 
                 <img src={sun} className="minisun" alt="mini sun" />
-                <h1>Professional Development</h1>
+                <h1 className="h1init">Professional Development</h1>
                 <div className="container">
                     <div class="picture-grid">
 
@@ -257,7 +257,7 @@ class Initiatives extends Component {
                 </div>
 
                 <img src={sun} className="minisun" alt="mini sun" />
-                <h1>Chapter Development</h1>
+                <h1 className="h1init">Chapter Development</h1>
                 <div className="container">
                     <div class="picture-grid">
 
