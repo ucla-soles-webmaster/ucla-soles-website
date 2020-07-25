@@ -15,7 +15,10 @@ import Sponsors from '../Sponsors'
 
 import AccountPage from '../Account';
 import TestBank from '../TestBank';
+import TestBankView from '../TestView';
+import TestBankSubmit from '../TestSubmit';
 import Merch from '../Merch';
+import AlumNet from '../AlumNet';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -48,7 +51,10 @@ const App = () => (
 
       {/* Account Pages */}
       <Route path={ROUTES.TESTBANK} component={TestBank} />
+      <Route path={ROUTES.TESTBANK_SUBMIT} component={TestBankSubmit} />
+      <Route path={ROUTES.TESTBANK_VIEW} component={TestBankView} />
       <Route path={ROUTES.MERCH} component={Merch} />
+      <Route path={ROUTES.ALUMNET} component={AlumNet} />
 
       
     </div>

@@ -72,26 +72,26 @@ class NavigationAuth extends Component {
           </div>
 
           {/* Rest of Navbar */}
-          <ul>
-            <li>
+          <ul className="ulNav">
+            <li className="liNav">
               <Link to={ROUTES.LANDING} style={linkStyle} >Home</Link>
             </li>
-            <li>
+            <li className="liNav">
               <Link to={ROUTES.ABOUT} style={linkStyle} >About</Link>
             </li>
-            <li>
+            <li className="liNav">
               <Link to={ROUTES.INITIATIVES} style={linkStyle} >Our Initiatives</Link>
             </li>
-            <li>
+            <li className="liNav">
               <Link to={ROUTES.EBOARD} style={linkStyle} >Board</Link>
             </li>
-            <li>
+            <li className="liNav">
               <Link to={ROUTES.SPONSORS} style={linkStyle} >Sponsers</Link>
             </li>
-            <li>
+            <li className="liNav">
               <Link to={ROUTES.CONTACT} style={linkStyle} >Contacts</Link>
             </li>
-            <li>
+            <li className="liNav">
               <Link to={ROUTES.ACCOUNT} style={linkStyle} >Account</Link>
             </li>
 
@@ -153,23 +153,23 @@ class NavigationNonAuth extends Component {
           </div>
 
           {/* Rest of Navbar */}
-          <ul>
-              <li>
+          <ul className="ulNav">
+              <li className="liNav">
                 <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Home</Link>
               </li>
-              <li>
+              <li className="liNav">
                 <Link to={ROUTES.ABOUT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >About</Link>
               </li>
-              <li>
+              <li className="liNav">
                 <Link to={ROUTES.INITIATIVES} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Our Initiatives</Link>
               </li>
-              <li>
+              <li className="liNav">
                 <Link to={ROUTES.EBOARD} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Board</Link>
               </li>
-              <li>
+              <li className="liNav">
                 <Link to={ROUTES.SPONSORS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Sponsers</Link>
               </li>
-              <li>
+              <li className="liNav">
                 <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Contacts</Link>
               </li>             
               <li className="signin">

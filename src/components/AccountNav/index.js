@@ -18,7 +18,7 @@ class AccountNav extends Component {
             <ul className="ulist">
                 <Link to={ROUTES.ACCOUNT} style={linkStyle} >
                     <li className="mininavli">
-                        Profile
+                        Account
                     </li>
                 </Link>
                 <Link to={ROUTES.TESTBANK} style={linkStyle} >
@@ -26,12 +26,12 @@ class AccountNav extends Component {
                         Test Bank Hub
                     </li>
                 </Link>
-                <Link to={ROUTES.MERCH} style={linkStyle} >
+                <Link to={ROUTES.ALUMNET} style={linkStyle} >
                     <li className="mininavli">
                         Alumni Network
                     </li>
                 </Link>
-                <Link to={ROUTES.MERCH} style={linkStyle}>
+                <Link to={ROUTES.MERCH} style={linkStyle} >
                     <li className="mininavli">
                         Merch
                     </li>

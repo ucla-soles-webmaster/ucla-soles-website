@@ -20,14 +20,12 @@ class AccountPage extends Component {
       firestore: this.props.firebase.getFirestore(),
       userEmail: this.props.firebase.auth.currentUser.email,
     }
-
-
   }
 
   componentWillMount() {
-    var that = this;
+    var that = this;  // must have this for the setState inside lamda
     this.props.firebase.getFirestore().collection("users")
-      .where("email", "==", this.state.userEmail)
+      .where("email", "==", this.state.userEmail)  // can have multiple .where calls
       .get()
       .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -47,7 +45,7 @@ class AccountPage extends Component {
           <AuthUserContext.Consumer>
             {authUser => (
               <div>
-                <h1 className="haccount">{this.state.user["first_name"]}'s Profile</h1>
+                <h1 className="haccount">{this.state.user["first_name"]}'s Account</h1>
               </div>
             )}
           </AuthUserContext.Consumer>

@@ -406,7 +406,7 @@ class SignUpFormBase extends Component {
                                     <Grid container item xs={12} spacing={3}>
                                         <FormRow 
                                             item="More than $2 million in scholarship offerings" 
-                                            row_height="1.7vw"
+                                            row_height="1.74vw"
                                             padding_top="0.7vw"
                                             check_height="1.5vw"
                                             national_check="Yes"
@@ -565,7 +565,7 @@ class SignUpFormBase extends Component {
                                         className="checkboxsu"
                                     />
                                     <label className="checklabelsu"  for="vehicle1"> 
-                                        No thank you / later.
+                                        No thank you / later
                                     </label>
                                 </div>
                                 <br/>

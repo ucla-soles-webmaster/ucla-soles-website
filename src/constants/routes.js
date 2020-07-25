@@ -17,4 +17,7 @@ export const SPONSORS = '/sponsors';
 
 // Account Pages
 export const TESTBANK = '/testbank';
+export const TESTBANK_SUBMIT = '/testbank_submit';
+export const TESTBANK_VIEW = '/testbank_view';
 export const MERCH = '/merch';
+export const ALUMNET = '/alumni';

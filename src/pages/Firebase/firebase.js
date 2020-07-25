@@ -22,6 +22,8 @@ class Firebase {
 
         this.auth = app.auth();
         this.db = app.database();
+
+
     }
 
     // *** Auth API ***
@@ -46,19 +48,19 @@ class Firebase {
     users = () => this.db.ref('users');
 
     getUserDict() {
-        var temp = null;
-        firebase.firestore().collection("users").where("email", "==", firebase.auth().currentUser.email)
+        firebase.firestore().collection("users")
+            .where("email", "==", firebase.auth().currentUser.email)
             .get()
             .then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                     console.log(doc.id, "==", doc.data());
-                    temp = doc.data();
+                    return doc.data();
                 });
             })
             .catch(function(error) {
                 console.log("Error getting documents: ", error);
             })
-        return temp;
+        return null;
     }
 
     getFirestore = () => firebase.firestore();
