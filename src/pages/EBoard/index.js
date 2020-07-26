@@ -74,7 +74,7 @@ class EBoard extends Component {
                             <div className = "backSideText">Trevor Gomez</div>
                             <div className = "majorFontLong">3rd Year Mechanical Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is hanging out at the tailgates freshman year with the SOLES fam.</div>
-                            <div className = "emailFont">uclasoles.evp@gmail.com</div>     
+                            <div className = "emailFontShort">uclasoles.evp@gmail.com</div>     
                         </div>
                     </div>
                     </div>
@@ -94,7 +94,7 @@ class EBoard extends Component {
                             <div className = "backSideText">Jasmine Raya</div>
                             <div className = "majorFont">3rd Year * * Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "emailFont">uclasoles.ivp@gmail.com</div>    
+                            <div className = "emailFontShort">uclasoles.ivp@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -151,7 +151,7 @@ class EBoard extends Component {
                             <div className = "backSideText">Robert Valencia</div>
                             <div className = "majorFontLong">3rd Year Mechanical Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "emailFont">uclasoles@gmail.com</div>    
+                            <div className = "emailFontShort">uclasoles@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -187,7 +187,7 @@ class EBoard extends Component {
                             <div className = "backSideText">Matthew Ruiz</div>
                             <div className = "majorFont">2nd Year Computer Science</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.</div>
-                            <div className = "emailFont">uclasoles.academicchair@gmail.com</div>    
+                            <div className = "emailFontLong">uclasoles.academicchair@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -225,7 +225,7 @@ class EBoard extends Component {
                             <div className = "majorFontLong">2nd Year Computer Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is when I attended the LeaderSHPE Jr. Retreat, and I got to play the fictional role of the owner of Rick's Steakhouse in an event planning workshop. 
                                     It warmed my heart to see the kids having fun and gain confidence in their negotiating abilities. Also, we found out that the school we visited is where they filmed All American! What a day that was!</div>
-                            <div className = "emailFont">uclasoles.cienciasdirector@gmail.com</div>    
+                            <div className = "emailFontLong">uclasoles.cienciasdirector@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -243,7 +243,7 @@ class EBoard extends Component {
                             <div className = "backSideText">Joshua Diaz</div>
                             <div className = "majorFontLong">4th Year Aerospace Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
-                            <div className = "emailFont">uclasoles.technicalchair@gmail.com</div>    
+                            <div className = "emailFontLong">uclasoles.technicalchair@gmail.com</div>    
                         </div>
                     </div>
                     </div>

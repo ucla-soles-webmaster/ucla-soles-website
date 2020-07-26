@@ -272,7 +272,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.3vw;
     line-height: 1.2vw;
-    margin: 5px;
+    margin: .4vw;
     color: yellow;
   }
 
@@ -280,7 +280,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.16vw;
     line-height: 1.2vw;
-    margin: 5px;
+    margin: .4vw;
     color: yellow;
   }
 
@@ -290,8 +290,31 @@
     line-height: 1.2vw;
     position: absolute;
     text-align: center;
-    bottom: 5px;
+    bottom: .4vw;
     color: yellow;
+    margin-left: 2vw;
+  }
+
+  .emailFontShort{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    position: absolute;
+    text-align: center;
+    bottom: .4vw;
+    color: yellow;
+    margin-left: 4vw;
+  }
+
+  .emailFontLong{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    position: absolute;
+    text-align: center;
+    bottom: .4vw;
+    color: yellow;
+    margin-left: .8vw;
   }
   
   /* Style the back side */
