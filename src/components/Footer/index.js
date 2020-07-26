@@ -11,7 +11,7 @@ class Footer extends Component {
         return (
             <div className="footer">
                 <p className="randomtext">
-                    This website was made with love
+                    this website was made with love (replace later)
                 </p>
             </div>
 

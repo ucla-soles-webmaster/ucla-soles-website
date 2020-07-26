@@ -10,6 +10,7 @@
     "bootstrap": "^4.5.0",
     "firebase": "^7.15.5",
     "firebase-admin": "^8.13.0",
+    "flatlist-react": "^1.4.2",
     "http2": "^3.3.7",
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
@@ -17,7 +18,9 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "recompose": "^0.30.0"
+    "react-swipe": "^6.0.4",
+    "recompose": "^0.30.0",
+    "swipe-js-iso": "^2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",

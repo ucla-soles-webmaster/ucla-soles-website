@@ -32,7 +32,7 @@ const App = () => (
       {/*
         These Route components not shown visually.
         Only used behind the scenes with routing the DOM.
-        Add a Route component when you want to add a new page in nav bar. 
+        Add a Route component when you want to add a new page (in nav bar). 
       */}
 
       <Route exact path={ROUTES.LANDING} component={LandingPage} />

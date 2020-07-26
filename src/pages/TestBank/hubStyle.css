@@ -1,6 +1,12 @@
-@keyframes rot {
+@keyframes rotl {
     0% {
         transform: rotate(180deg);
+    }
+}
+
+@keyframes rotr {
+    0% {
+        transform: rotate(-180deg);
     }
 }
 
@@ -11,7 +17,7 @@
 }
 
 #rightsuntb:hover {
-    animation: 1.2s 0s 1 rot;
+    animation: 1.2s 0s 1 rotl;
 }
 
 #leftsuntb {
@@ -21,7 +27,7 @@
 }
 
 #leftsuntb:hover {
-    animation: 1.2s 0s 1 rot;
+    animation: 1.2s 0s 1 rotr;
 }
 
 .hubbox {
@@ -33,7 +39,7 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 1.2vw;
-    margin-top: 0.8%;
+    margin-top: 0.4%;
     margin-bottom: -3.4%;
     margin-right: 3.5%;
     margin-left: 3.5%;

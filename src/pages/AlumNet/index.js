@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import { withAuthorization } from '../Session';
 
 import '../Account/accountStyle.css';
+import sun from '../../coverImages/sunblue.png';
 
 
 class AlumNet extends Component {
@@ -20,7 +21,16 @@ class AlumNet extends Component {
                 <div className="navgapA">
                     <AccountNav />
 
-                    AlumNet
+                    <h1 className="haccount">
+                        Alumni Network
+                    </h1>
+                    <div className="hubbox">
+                        <img src={sun} id="leftsuntb" alt="Left SOLES Sun" />
+                        <p className="introMerch">
+                            Coming soon.
+                        </p>
+                        <img src={sun} id="rightsuntb" alt="Right SOLES Sun" />
+                    </div>
 
                     <br/>
                     <br/>

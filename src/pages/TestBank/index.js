@@ -75,10 +75,13 @@ class TestBank extends Component {
                                                 to you receiving Test View Passes
                                             </li>
                                             <li className="liTB" >
-                                                Distribution of tests from the Test Bank is not allowed
+                                                Distribution of tests from the Test Bank is not permitted
                                             </li>
                                             <li className="liTB" >
                                                 See the Submit a Test page for more info on test submissions
+                                            </li>
+                                            <li className="liTB" >
+                                                Email uclasoles.academicchair@gmail.com for any questions or issues
                                             </li>
                                         </ul>
                                     </p>
@@ -110,7 +113,7 @@ class TestBank extends Component {
                                 <div className="hubbox">
                                     <img src={sun} id="leftsuntb" alt="Right SOLES Sun" />
                                     <p className="hubintro">
-                                        The SOLES Test Bank is only authorized for student use.
+                                        The SOLES Test Bank is authorized for student use only.
                                     </p>
                                     <img src={sun} id="rightsuntb" alt="Left SOLES Sun" />
                                 </div>
