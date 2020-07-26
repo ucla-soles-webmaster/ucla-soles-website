@@ -13,15 +13,15 @@ import Michael from '../../boardImages/michael.jpg'
 
 import Aidan from '../../boardImages/aiden.jpg'
 import Mat from '../../boardImages/mat.jpg'
-import Eric from '../../boardImages/pear.jpg'
+import Eric from '../../boardImages/eric.jpeg'
 
 import Fabrizio from '../../boardImages/fabrizio.jpg'
 import Josh from '../../boardImages/strawberry.jpg'
 import Kelly from '../../boardImages/tomato.jpg'
 
-import Sherry from '../../boardImages/peach.jpg'
-import Anabella from '../../boardImages/orange.jpg'
-import Cathy from '../../boardImages/kiwi.jpg'
+import Sherry from '../../boardImages/sherry.jpg'
+import Anabella from '../../boardImages/anabella.jpg'
+import Cathy from '../../boardImages/cathy.jpg'
 
 import Juan from '../../boardImages/juan.jpg'
 
@@ -204,7 +204,8 @@ class EBoard extends Component {
                         <div class="flip-card-back">
                             <div className = "backSideText">Eric Saavedra Garcia</div>
                             <div className = "majorFontLong">2nd Year Mechanical Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is when we invited Hispanic Caltech professor Mauro Rodriguez to speak for a general meeting. Mauro did an amazing job 
+                                                                    to empower and educate members that made it out to the meeting and I hope I can hear another presentation of his soon.</div>
                             <div className = "emailFont">uclasoles.activities@gmail.com</div>    
                         </div>
                     </div>
@@ -291,11 +292,13 @@ class EBoard extends Component {
                                     If you are interested in joining one of our board 
                                     member’s committee or learning more about their position, please do not 
                                     hesitate to contact them, via GroupMe, email, social media, etc.
+                        <div className = "staffMembersBoard">
+                                    
+                                    Our Wonderful CEED Staff
+                                    </div>
                     </div>
 
-                    <div className = "staffMembersBoard">                                
-                            Our Wonderful CEED Staff
-                    </div>
+                    
                 
                 
                 <div className = "eBoardPerson">
@@ -303,7 +306,7 @@ class EBoard extends Component {
                     <img className = "BoardPageImages" src={Sherry} alt="Sherry Hormozi"></img>
                         <div className = "setFontSizeName">Sherry Hormozi</div>
                         <div className = "setFontSizePosition">Undergraduate Counselor</div>
-                        <div className = "setFontSizePosition">sherry@seas.ucla.edu</div>
+                        <div className = "setFontSizeStaffEmail">sherry@seas.ucla.edu</div>
                     </figure>
                 </div>
 
@@ -312,7 +315,7 @@ class EBoard extends Component {
                     <img className = "BoardPageImages" src={Cathy} alt="Catherine Douglas"></img>
                         <div className = "setFontSizeName">Catherine Douglas</div>
                         <div className = "setFontSizePosition">Intermin CEED SEAS Board Advisor</div>
-                        <div className = "setFontSizePosition">add email</div>
+                        <div className = "setFontSizeStaffEmail">cathyd@seas.ucla.edu</div>
                     </figure>
                 </div>
 
@@ -320,7 +323,9 @@ class EBoard extends Component {
                     <figure className = "eBoardPerson2">
                     <img className = "BoardPageImages" src={Anabella} alt="Anabella Gonzalez"></img>
                         <div className = "setFontSizeName">Anabella Gonzalez</div>
-                        <div className = "setFontSizePosition">Office Manager</div>
+                        <div className = "setFontSizeStaffEmail">Office Manager</div>
+                        <div className = "setFontSizeStaffEmail">anabella@seas.ucla.edu</div>
+
                     </figure>
                 </div>
             

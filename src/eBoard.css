@@ -191,6 +191,16 @@
     line-height: 1vw;
     text-align: match-parent;
     margin-top: 1.2vw;
+
+}
+
+.setFontSizeStaffEmail{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2vw;
+  line-height: 1vw;
+  text-align: match-parent;
+  margin: 1.2vw;
+  
 }
   
   .BoardPageImages {
@@ -303,6 +313,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 3vw;
   line-height: 1.8vw;
-  text-align: center;
-  margin: 1.2vw;
+  color: #001d3a;
+  padding-top: 5vw;
+  padding-bottom: 2vw;
 }
