@@ -208,10 +208,10 @@
     width:  20vw;
     height: 20vw;
     display: block;
-    background: #ccc;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: black;
   }
   
   .flip-card {
@@ -324,19 +324,66 @@
     transform: rotateY(180deg);
   }
 
-  .titleFont{
+  .titleFont1{
     font-family: 'Poppins', sans-serif;
     font-size: 1.5vw;
     line-height: 1.8vw;
     text-align: center;
     margin: 1.2vw;
+    padding: 1vw;
+    
 }
 
-.staffMembersBoard{
+.introFont{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5vw;
+  line-height: 1.8vw;
+  position: absolute;
+  margin: 1.2vw;
+}
+
+.titleFont2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5vw;
+  line-height: 1.8vw;
+  text-align: center;
+  margin-left: 1.2vw;
+  margin-right: 1.2vw;
+  padding: 2vw;
+  
+}
+
+.staffMembersBoard2{
   font-family: 'Poppins', sans-serif;
   font-size: 3vw;
   line-height: 1.8vw;
   color: #001d3a;
+  line-height: 1.8vw;
   padding-top: 5vw;
   padding-bottom: 2vw;
+}
+.staffMembersBoard{
+  margin-top: 0.1vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vw;
+    margin-bottom: 3.1vw;
+    color: #001d3a;
+    font-weight: bold;
+}
+
+.BoardPageSun {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5%;
+    padding: 1vw;
+    margin-top: 2vw;
+}
+
+.BoardIntroBar {
+  width: 50%;
+  border: 0.1vw solid #001d3a;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }

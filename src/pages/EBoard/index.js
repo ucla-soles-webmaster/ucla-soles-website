@@ -3,19 +3,19 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import '../../eBoard.css';
-import Andy from '../../boardImages/andy.jpg'
-import Trevor from '../../boardImages/trevor.jpg'
+import Andy from '../../boardImages/andy2.JPG'
+import Trevor from '../../boardImages/trevor1.JPG'
 import Jasmine from '../../boardImages/dragonfruit.jpg'
 
-import Mayra from '../../boardImages/mayra.jpg'
+import Mayra from '../../boardImages/mayra1.JPG'
 import Robert from '../../boardImages/lemon.jpg'
-import Michael from '../../boardImages/michael.jpg'
+import Michael from '../../boardImages/michael1.JPG'
 
-import Aidan from '../../boardImages/aiden.jpg'
-import Mat from '../../boardImages/mat.jpg'
-import Eric from '../../boardImages/eric.jpeg'
+import Aidan from '../../boardImages/aiden1.JPG'
+import Mat from '../../boardImages/mat1.JPG'
+import Eric from '../../boardImages/eric1.JPG'
 
-import Fabrizio from '../../boardImages/fabrizio.jpg'
+import Fabrizio from '../../boardImages/fabrizio1.JPG'
 import Josh from '../../boardImages/strawberry.jpg'
 import Kelly from '../../boardImages/tomato.jpg'
 
@@ -23,7 +23,9 @@ import Sherry from '../../boardImages/sherry.jpg'
 import Anabella from '../../boardImages/anabella.jpg'
 import Cathy from '../../boardImages/cathy.jpg'
 
-import Juan from '../../boardImages/juan.jpg'
+import Juan from '../../boardImages/juan1.PNG'
+
+import Sun from '../../boardImages/sun.png'
 
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
@@ -42,8 +44,13 @@ class EBoard extends Component {
             <div>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"Executive Board"}></PagePhoto>
+                
+                
+
+
             <body1 className = "eBoardPage">                 
 
+                
                 <div className = "eBoardPerson">
                     <div class="flip-card">
                     <div class="flip-card-inner">
@@ -92,7 +99,7 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Jasmine Raya</div>
-                            <div className = "majorFont">3rd Year * * Engineering</div>
+                            <div className = "majorFontLong">3rd Year Mechanical Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
                             <div className = "emailFontShort">uclasoles.ivp@gmail.com</div>    
                         </div>
@@ -112,7 +119,7 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Michael Munguia</div>
-                            <div className = "majorFont">*th Year * * Engineering</div>
+                            <div className = "majorFontLong">4th Year Mechanical Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is going to the SOLES tailgates and watching the football games.</div>
                             <div className = "emailFont">uclasoles.transferrep@gmail.com</div>    
                         </div>
@@ -167,7 +174,7 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Aidan Hasegawa</div>
-                            <div className = "majorFont">*rd Year * * Engineering</div>
+                            <div className = "majorFont">3rd Year Civil Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is selling churros out on Bruin Walk.</div>
                             <div className = "emailFont">uclasoles.tutoring@gmail.com</div>    
                         </div>
@@ -277,9 +284,9 @@ class EBoard extends Component {
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Juan Banchs</div>
-                            <div className = "majorFont">*nd Year * Engineering</div>
+                            <div className = "majorFontLong">3rd Year Electrical Engineering</div>
                             <div className = "backSideTextSmall">(I've been very little at SOLES, but) My favorite SOLES memory is the free chicken nuggets at the last Winter quarter meeting!</div>
-                            <div className = "emailFont">*@gmail.com</div>    
+                            <div className = "emailFont">uclasoles.intern@gmail.com</div>    
                         </div>
                     </div>
                     </div>
@@ -288,16 +295,19 @@ class EBoard extends Component {
                 </div>
 
                 
-                    <div className = "titleFont">                                
+                    <div className = "titleFont1">                                
+                         <div className = "titleFont2">
                                     If you are interested in joining one of our board 
                                     member’s committee or learning more about their position, please do not 
                                     hesitate to contact them, via GroupMe, email, social media, etc.
+                        </div>
+                        <hr ClassName = "BoardIntroBar" ></hr>
+                        <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
                         <div className = "staffMembersBoard">
-                                    
                                     Our Wonderful CEED Staff
                                     </div>
                     </div>
-
+                
                     
                 
                 
