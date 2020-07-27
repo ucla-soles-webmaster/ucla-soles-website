@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
  
 import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
@@ -13,16 +14,19 @@ import './signInStyle.css'
 
 // Actual Page. Contains SignIn Component
 const SignInPage = () => (
-  <div>
+  <div className="graa">
     <Navigation transparentNav={false} />
 
     {/* Do development all within this div */}
-    <div className="navgap">
-      <h1>SignIn</h1>
+    <div className="navgap" style={{minHeight: "100vh"}}>
+      <h1 className="hsignin">Sign In</h1>
       <SignInForm />
-      <PasswordForgetLink />
-      <SignUpLink />
+      <div className="signinlinks">
+        <PasswordForgetLink />
+        <SignUpLink />
+      </div>
     </div>  
+    <Footer />
   </div>
 );
  
@@ -71,27 +75,35 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
  
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
- 
-        {error && <p>{error.message}</p>}
-      </form>
+      <fieldset className="FormGroupPC">
+        <form onSubmit={this.onSubmit}>
+          <div className="FormRowPC">
+            <input
+              name="email"
+              value={email}
+              className="FormRowInput"
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="FormRowPC">
+            <input
+              name="password"
+              value={password}
+              className="FormRowInput"
+              onChange={this.onChange}
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <button disabled={isInvalid} type="submit" className="buttonRESET">
+            Sign In
+          </button>
+  
+          {error && <p>{error.message}</p>}
+        </form>
+      </fieldset>
     );
   }
 }

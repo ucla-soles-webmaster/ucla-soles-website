@@ -55,7 +55,7 @@ class AccountPage extends Component {
           <AuthUserContext.Consumer>
             {authUser => (
               <div>
-                <PasswordForgetForm />
+                {/* <PasswordForgetForm /> */}
                 <PasswordChangeForm />
               </div>
             )}

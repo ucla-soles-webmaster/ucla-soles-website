@@ -57,8 +57,7 @@ class SignUpFormBase extends Component {
             /* Predetermined attributes: */
             local_member: false,
             national_member: false,
-            testbank_access: false,
-            testbank_one_pass: false, /* This will be set to True ONCE they choose & pay local/national member */
+            testbank_passes: 1,
             admin: false,
             error: null,
         };                                                                                                                                                                                  
@@ -105,8 +104,7 @@ class SignUpFormBase extends Component {
             /* Predetermined */
             local_member: false,
             national_member: false,
-            testbank_access: false,
-            testbank_one_pass: false,
+            testbank_passes: 1,
             admin: false,
         })
         .then(function(docRef) {

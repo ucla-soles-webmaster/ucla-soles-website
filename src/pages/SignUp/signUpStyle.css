@@ -224,8 +224,8 @@
 }
 
 .buttonsu:hover {
-    background-color: #ffff7d;
-    color: #a7a7a7;
+    background-color: #98b7b6;
+    color: #f5f4f4;
     box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
@@ -235,6 +235,7 @@
 .buttonsu,
 .buttonSlider,
 .buttonADD,
+.buttonRESET,
 .formcontrolsu,
 .formlabelsu {
   -webkit-appearance: none;

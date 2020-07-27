@@ -145,7 +145,7 @@ class TestBankView extends Component {
                     <AccountNav />
 
                     <h1 className="haccount">
-                        Test Bank View
+                        View a Test
                     </h1>
 
                     {/* Only students have access to this page */}
@@ -155,7 +155,7 @@ class TestBankView extends Component {
                                 <div className="hubbox">
                                     <img src={sun} id="leftsuntb" alt="Left SOLES Sun" />
                                     <p className="hubintroTS">
-                                        You have # View Passes.
+                                        You currently have <div style={{color: "gray", fontWeight: "bolder"}}>{this.state.user["testbank_passes"]}</div> View Passes left.
                                         You are free to browse.
                                     </p>
                                     <img src={sun} id="rightsuntb" alt="Right SOLES Sun" />
@@ -242,7 +242,7 @@ class TestBankView extends Component {
                                         <div>
                                             <fieldset className="FormGroupTS"> 
                                                 <Form.Group className="FormRowTS" controlId="exampleForm.ControlSelect1">
-                                                    <Form.Label className="FormRowLabelDropDownTS">Choose a test</Form.Label>                          
+                                                    <Form.Label className="FormRowLabelDropDownTestUpload">Choose a test from {this.state.department.replace(/_/g, " ")} {this.state.class}</Form.Label>                          
                                                     <Form.Control 
                                                         className={false ? "graydd" : "FormRowInput"}
                                                         as="select"
