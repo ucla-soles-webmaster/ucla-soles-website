@@ -371,32 +371,3 @@ const condition = authUser => !!authUser;
  
 export default withAuthorization(condition)(TestBankView);
 
-
-
-const Field = ({
-    label,
-    id,
-    type,
-    placeholder,
-    required,
-    autoComplete,
-    value,
-    onChange,
-    formrowclass
-  }) => (
-    <div className="FormRow">
-      <label htmlFor={id} className={formrowclass === "" ? "FormRowLabel" : formrowclass}>
-        {label}
-      </label>
-      <input
-        className="FormRowInput"
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        autoComplete={autoComplete}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
-  );

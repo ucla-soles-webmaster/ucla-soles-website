@@ -22,8 +22,8 @@ const SignInPage = () => (
       <h1 className="hsignin">Sign In</h1>
       <SignInForm />
       <div className="signinlinks">
-        <PasswordForgetLink />
         <SignUpLink />
+        <PasswordForgetLink />
       </div>
     </div>  
     <Footer />

@@ -185,7 +185,7 @@ class TestBankSubmit extends Component {
                         
 
                                         {/* STEP 2: Class Option and Add Class */}
-                                        <div>
+                                        <div>                                      
                                             <fieldset className="FormGroupTS"> 
                                             <Form.Group className="FormRowTS" controlId="exampleForm.ControlSelect1">
                                                 <Form.Label className="FormRowLabelDropDownTS">Which class?</Form.Label>                          
