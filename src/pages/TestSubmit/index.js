@@ -32,6 +32,7 @@ class TestBankSubmit extends Component {
             currentCard: 0,
             censorName: false,
             censorWork: false,
+            file_data: "",
           }
     }
 
@@ -114,6 +115,26 @@ class TestBankSubmit extends Component {
     /* Returns true if a string has whitespace */
     hasWhiteSpace(s) {
         return s.indexOf(' ') >= 0;
+    }
+
+    uploadFile(e) {
+        var that = this;
+            var file = e.target.files;
+            var reader = new FileReader();
+            reader.readAsDataURL(file[0]);
+            reader.onload=(e)=>{
+                that.setState({file_data:e.target.result});
+            }
+    }
+
+    fileSubmitToDataBase = event => {
+        var storageRef = this.props.firebase.storage.ref();
+        var mountainImagesRef = storageRef.child('tests/' + this.state.department + '/' + this.state.class + '/' + 'exampletest.pdf');
+
+        var message = this.state.file_data;
+        mountainImagesRef.putString(message, 'data_url').then(function(snapshot) {
+            console.log('Uploaded a data_url string!');
+        });
     }
 
     render() {
@@ -253,6 +274,7 @@ class TestBankSubmit extends Component {
                                                 type="file"
                                                 required
                                                 formrowclass="FormRowLabelDropDownTestUpload"
+                                                onChange = {(e)=>this.uploadFile(e)}
                                             /> 
 
                                            
@@ -297,6 +319,7 @@ class TestBankSubmit extends Component {
                                                 routing to another page */}
                                             <button 
                                                 className="buttonADD"
+                                                onClick={this.fileSubmitToDataBase}
                                             >
                                                 SUBMIT
                                             </button>
