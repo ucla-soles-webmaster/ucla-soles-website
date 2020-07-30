@@ -56,6 +56,15 @@
     margin-right: 15px;
 }
 
+.FormRowTV {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 0px;
+}
+
 .FormRowTS:first-child {
     border-top: none;
 }
@@ -79,6 +88,20 @@
     padding-top: 2%;
     padding-left: 3%;
     margin-right: 4%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2vw;
+    color: rgb(150, 150, 150);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.FormRowLabelDropDownTestView {
+    width: 100%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left: 3%;
+    margin-right: -2%;
     font-family: 'Poppins', sans-serif;
     font-size: 1.2vw;
     color: rgb(150, 150, 150);
@@ -113,6 +136,17 @@
     font-family: 'Poppins', sans-serif;
     background-color: transparent;
     animation: 1ms void-animation-out;
+}
+
+.FormRowInputViewTests {
+    font-size: 1.2vw;
+    width: 80%;
+    padding-top: 0.0%;
+    color: #001d3a;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    animation: 1ms void-animation-out;
+    margin-left: -5vw;
 }
 
 .hrTS {

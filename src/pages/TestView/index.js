@@ -112,9 +112,17 @@ class TestBankView extends Component {
 
     /* Frontend: Used to render individual test in the 2nd FlatList in render() */
     renderTest = (testN, idx) => {
+        let position = 0
+        if (testN.length > 2) {
+             position = testN.indexOf('at');
+        }
+        else {
+            position = testN.length;
+        }
+
         return (
             <option className="FormRowLabelDropDownTS">
-                {testN}
+                {testN.substring(0,position)}
             </option>
         )
     }
@@ -241,10 +249,10 @@ class TestBankView extends Component {
                                         {/* STEP 3: View List of tests from class */}
                                         <div>
                                             <fieldset className="FormGroupTS"> 
-                                                <Form.Group className="FormRowTS" controlId="exampleForm.ControlSelect1">
-                                                    <Form.Label className="FormRowLabelDropDownTestUpload">Choose a test from {this.state.department.replace(/_/g, " ")} {this.state.class}</Form.Label>                          
+                                                <Form.Group className="FormRowTV" controlId="exampleForm.ControlSelect1">
+                                                    <Form.Label className="FormRowLabelDropDownTestView">Choose a test from {this.state.department.replace(/_/g, " ")} {this.state.class}</Form.Label>                          
                                                     <Form.Control 
-                                                        className={false ? "graydd" : "FormRowInput"}
+                                                        className={false ? "graydd" : "FormRowInputViewTests"}
                                                         as="select"
                                                         onChange={this.selectTest.bind(this)}
                                                     >

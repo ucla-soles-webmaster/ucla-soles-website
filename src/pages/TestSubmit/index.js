@@ -140,17 +140,24 @@ class TestBankSubmit extends Component {
         var that = this;
             var file = e.target.files;
             var reader = new FileReader();
-            reader.readAsDataURL(file[0]);
-            reader.onload=(e)=>{
-                that.setState({file_data:e.target.result});
+
+            try {
+                reader.readAsDataURL(file[0]);
+                reader.onload=(e)=>{
+                    that.setState({file_data:e.target.result});
+                }
             }
+            catch(error) {
+                that.setState({ file_data: "" });
+            }
+
     }
 
     fileSubmitToDataBase = event => {
         var d = new Date();
         var that = this;
 
-        var storageName = this.state.testType + ' -- from ' + monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() +
+        var storageName = this.state.testType + ' -- from ' + d.getFullYear() + ' ' + monthNames[d.getMonth()] + ' ' + d.getDate() +
                             ' at ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds(); 
 
         var storageRef = this.props.firebase.storage.ref();
