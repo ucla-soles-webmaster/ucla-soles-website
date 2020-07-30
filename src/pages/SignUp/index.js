@@ -177,7 +177,7 @@ class SignUpFormBase extends Component {
             email === '' ||
             firstName === '' ||
             career === '' ||
-            ( career === 'student' && !(email.includes("@ucla.edu") )) ||
+            ( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
             ( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||
             ( career === 'alumni' && alumnet === '') ||
             ( (career === 'alumni' || career === 'industry') && employer === '' ) ||
@@ -225,7 +225,7 @@ class SignUpFormBase extends Component {
                             this.setState({ email: e.target.value });  
                         }}
                     />
-                    { career === "student" && !email.includes("ucla.edu")
+                    { career === "student" && !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") )
                         ?   <p className="disclaimer1" style={{color: "red", marginLeft: "7%"}}>
                                 Students must use their @ucla.edu email.
                             </p>

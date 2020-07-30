@@ -3,11 +3,13 @@ import ReactSwipe from 'react-swipe';
 
 import Navigation from '../../components/Navigation';
 import AccountNav from '../../components/AccountNav';
+import Progress from 'react-progressbar';
 import FlatList from 'flatlist-react';
 import Form from 'react-bootstrap/Form'
 import Footer from '../../components/Footer';
 
 import { withAuthorization } from '../Session';
+import * as ROUTES from '../../constants/routes';
 
 import '../Account/accountStyle.css';
 import '../TestBank/hubStyle.css';
@@ -28,11 +30,14 @@ class TestBankSubmit extends Component {
             department: "",
             departmentClasses: [],
             class: "",
+            classID: "",
             addClass: "",
             currentCard: 0,
             censorName: false,
             censorWork: false,
             file_data: "",
+            testType: "",
+            uploadProgress: 0,
           }
     }
 
@@ -62,6 +67,10 @@ class TestBankSubmit extends Component {
         this.setState({ class: event.target.value })
     }
 
+    selectTestType(event) {
+        this.setState({ testType: event.target.value })
+    }
+
     /*  Getting the classes from a department from Firebase  */
     getClassesFromDepartment() {
         var that = this;
@@ -71,6 +80,7 @@ class TestBankSubmit extends Component {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 var classID = doc.id;
+                that.setState({ classID: doc.id })
                 that.setState({ departmentClasses: [...that.state.departmentClasses, classID] });
             });    
         });
@@ -108,6 +118,15 @@ class TestBankSubmit extends Component {
                 console.error("Error writing document: ", error);
             });
 
+        // Add a 'tests' subcollection with new document with '-' blank test
+        firestore.collection('tests').doc(this.state.department).collection('classes').doc(this.state.addClass).collection('tests').doc('-').set({})
+        .then(function() {
+            console.log("First document of new subcollection successfully written");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+
         this.setState({ departmentClasses: [] });
         this.getClassesFromDepartment();
     }
@@ -128,13 +147,90 @@ class TestBankSubmit extends Component {
     }
 
     fileSubmitToDataBase = event => {
-        var storageRef = this.props.firebase.storage.ref();
-        var mountainImagesRef = storageRef.child('tests/' + this.state.department + '/' + this.state.class + '/' + 'exampletest.pdf');
+        var d = new Date();
+        var that = this;
 
+        var storageName = this.state.testType + ' -- from ' + monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() +
+                            ' at ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds(); 
+
+        var storageRef = this.props.firebase.storage.ref();
+        var mountainImagesRef = storageRef.child('tests/' + this.state.department + '/' + this.state.class + '/' + storageName);
+
+        // Store file on Firebase Storage
         var message = this.state.file_data;
-        mountainImagesRef.putString(message, 'data_url').then(function(snapshot) {
-            console.log('Uploaded a data_url string!');
+        var uploadTask = mountainImagesRef.putString(message, 'data_url');
+
+        // Upload the file and track upload status
+        uploadTask.on('state_changed',
+        function(snapshot) {
+            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            that.setState({ uploadProgress: progress });
+            console.log('Upload is ' + progress + '% done');
+            switch (snapshot.state) {
+            case 'paused': 
+                console.log('Upload is paused');
+                break;
+            case 'running': 
+                console.log('Upload is running');
+                break;
+            default:
+                break;
+            }
+        }, function(error) {
+        
+        // A full list of error codes is available at
+        // https://firebase.google.com/docs/storage/web/handle-errors
+        switch (error.code) {
+            case 'storage/unauthorized':
+            // User doesn't have permission to access the object
+                break;
+        
+            case 'storage/canceled':
+            // User canceled the upload
+                break;
+        
+            case 'storage/unknown':
+            // Unknown error occurred, inspect error.serverResponse
+                break;
+
+            default:
+                // Idk if this should even happe 
+                break;
+        }
+        }, function() {
+        // Upload completed successfully, now we can get the download URL
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            console.log('File available at', downloadURL);
+            });
         });
+
+        // Store filename/reference on Firestore
+        this.props.firebase.getFirestore().collection('tests').doc(this.state.department).collection('classes').doc(this.state.classID).collection('tests').doc(storageName).set({
+            storage_name: storageName,
+            test_type: that.state.testType,
+            user_submitted: that.state.user["email"],
+            censor_name: that.state.censorName,
+            censor_work: that.state.censorWork,
+            date_submitted: {
+                day: d.getDate(),
+                year: d.getFullYear(),
+                hour: d.getHours(),
+                minute: d.getMinutes(),
+                second: d.getSeconds()
+            }
+        })
+        .then(function(docRef) {
+            console.log('Added test to Firestore /tests/' + that.state.department + '/classes/' + 
+                that.state.classID + '/tests/ with ID: ',  
+                docRef.id);
+            that.props.history.push(ROUTES.TESTBANK);
+        })
+        .catch(function(error) {
+            console.error('Error adding document: ', error);
+        })
+
+        console.log('End of function')
     }
 
     render() {
@@ -157,10 +253,10 @@ class TestBankSubmit extends Component {
                                 <div className="hubbox">
                                     <img src={sun} id="leftsuntb" alt="Left SOLES Sun" />
                                     <p className="hubintroTS">
-                                        Test submissions cannot have someone else's name on it. <br/>
                                         Your name and/or work can be censored at your request. <br/>
+                                        Test submissions cannot have someone else's name on it. <br/>
+                                        Tests can be an actual worked out test, blank copy, or practice test. <br/>
                                         You will receive a Test View Pass upon verification of the validity of your test. <br/>
-                                        Time to verify your test should take less than an hour, 24 hours at most.
                                     </p>
                                     <img src={sun} id="rightsuntb" alt="Right SOLES Sun" />
                                 </div>
@@ -250,11 +346,24 @@ class TestBankSubmit extends Component {
                                                         </p>
                                                         <button 
                                                             className="buttonADD"
-                                                            disabled={this.hasWhiteSpace(this.state.addClass) || this.state.addClass === ""}
+                                                            disabled={this.hasWhiteSpace(this.state.addClass) ||
+                                                                        this.state.addClass === "" ||
+                                                                        this.state.departmentClasses.includes(this.state.addClass)
+                                                                    }
                                                             onClick={this.addClass}
                                                         >
                                                             ADD
                                                         </button>
+                                                        
+                                                        { this.state.departmentClasses.includes(this.state.addClass)
+                                                            ?
+                                                                <p className="disclaimer3">
+                                                                    This class is already added.
+                                                                </p>
+                                                            :
+                                                                <div className="" />
+                                                        }
+
                                                     </div>
 
                                                 :   <div className="" />
@@ -268,63 +377,114 @@ class TestBankSubmit extends Component {
 
                                         {/* STEP 3: Test Submission (with Field to add PDF) */}
                                         <div>
-                                        <fieldset className="FormGroupTS"> 
-                                            <Field
-                                                label={"Upload PDF of your " + this.state.class + " test: "}
-                                                type="file"
-                                                required
-                                                formrowclass="FormRowLabelDropDownTestUpload"
-                                                onChange = {(e)=>this.uploadFile(e)}
-                                            /> 
+                                            <fieldset className="FormGroupTS"> 
 
+                                            { this.state.uploadProgress !== 100 ? <div>
+                                                <Field
+                                                    label={"Upload PDF of your " + this.state.class + " test: "}
+                                                    type="file"
+                                                    required
+                                                    formrowclass="FormRowLabelDropDownTestUpload"
+                                                    onChange = {(e)=>this.uploadFile(e)}
+                                                /> 
+                                                <Form.Group className="FormRowTS" controlId="exampleForm.ControlSelect1">
+                                                    <Form.Label className="FormRowLabelDropDownTS">What type of test?</Form.Label>                                   
+                                                        <Form.Control 
+                                                            className={false ? "graydd" : "FormRowInput"}
+                                                            as="select"
+                                                            onChange={this.selectTestType.bind(this)}
+                                                        >
+                                                            <option value="">-</option>
+                                                            <option value="Midterm 1" >Midterm 1</option>
+                                                            <option value="Midterm 2" >Midterm 2</option>
+                                                            <option value="Final" >Final</option>                                                                      
+                                                        </Form.Control>
+                                                </Form.Group>
                                            
 
+                                            
+                                                {/* Censor Options */}
+                                                <div className="checksu">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        disabled={false}
+                                                        onChange={(e) => {
+                                                            this.setState({ censorName: !this.state.censorName })
+                                                        }}
+                                                        className="checkboxTS"
+                                                    />
+                                                    <label className="checklabelsu"  for="vehicle1"> 
+                                                        Black out (censor) my name
+                                                    </label>
+                                                </div>
+                                                <div className="checksu">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        disabled={false}
+                                                        onChange={(e) => {
+                                                            this.setState({ censorWork: !this.state.censorWork })
+                                                        }}
+                                                        className="checkboxTS"
+                                                    />
+                                                    <label className="checklabelsu"  for="vehicle1"> 
+                                                        Black out (censor) my work
+                                                    </label>
+                                                </div>
+
+
+                                                {/* SUBMIT button, shoulr register action for backend task and redirect
+                                                    routing to another page */}
+                                                <button 
+                                                    className="buttonADD"
+                                                    onClick={this.fileSubmitToDataBase}
+                                                    disabled={this.state.file_data === "" || 
+                                                            this.state.testType === ""  || 
+                                                            this.state.uploadProgress > 0 }
+                                                >
+                                                    SUBMIT
+                                                </button>
+                                                </div>
+                                            
+                                                : <div className="" />
+                                            }
 
 
                                             
-                                            {/* Censor Options */}
-                                            <div className="checksu">
-                                                <input 
-                                                    type="checkbox" 
-                                                    disabled={false}
-                                                    onChange={(e) => {
-                                                        this.setState({ censorName: !this.state.censorName })
-                                                    }}
-                                                    className="checkboxTS"
-                                                />
-                                                <label className="checklabelsu"  for="vehicle1"> 
-                                                    Black out (censor) my name
-                                                </label>
-                                            </div>
-                                            <div className="checksu">
-                                                <input 
-                                                    type="checkbox" 
-                                                    disabled={false}
-                                                    onChange={(e) => {
-                                                        this.setState({ censorWork: !this.state.censorWork })
-                                                    }}
-                                                    className="checkboxTS"
-                                                />
-                                                <label className="checklabelsu"  for="vehicle1"> 
-                                                    Black out (censor) my work
-                                                </label>
-                                            </div>
+                                                {/* Upload progress bar once user hits submit */}
+                                                { this.state.uploadProgress > 0
+                                                    ?   
+                                                        <div>
 
+                                                            { this.state.uploadProgress === 100
+                                                                ? <br/> : <div className="" />
+                                                            }
+                                                            
+                                                            <Progress 
+                                                                completed={this.state.uploadProgress} 
+                                                                className="progressbarTS"
+                                                            />
+                                                            
+                                                            { this.state.uploadProgress === 100
+                                                                ?
+                                                                    <p className="uploadSuccess">
+                                                                        Upload Success!
+                                                                        <br/>
+                                                                        <br/>
+                                                                        Thank you for your contribution! <br/>
+                                                                        Your 1 new Test Pass and STAR Points will be updated upon <br/>
+                                                                        verification of your test by the Academic Chair. Approximately <br/>
+                                                                        less than 1 hour, 24 hours at most. Feel free to leave this page now :)
+                                                                    </p>
+                                                                :
+                                                                    <p className="uploadSuccess">
+                                                                        {Math.trunc(this.state.uploadProgress)}% complete
+                                                                    </p>
+                                                            }
 
-
-
-
-
-                                            {/* SUBMIT button, shoulr register action for backend task and redirect
-                                                routing to another page */}
-                                            <button 
-                                                className="buttonADD"
-                                                onClick={this.fileSubmitToDataBase}
-                                            >
-                                                SUBMIT
-                                            </button>
-
-
+                                                        </div>
+                                                    :
+                                                        <div className="" />
+                                                }  
 
 
 
@@ -339,51 +499,58 @@ class TestBankSubmit extends Component {
 
                                     {/* Slider Buttons */}
                                     {/* Previous */}
-                                    <div className="nextprevdiv">
-                                        <button 
-                                            className="buttonSlider"
-                                            disabled={
-                                                this.state.currentCard === 0
-                                            }
-                                            onClick={() => {
-                                                reactSwipeEl.prev();
-                                                if (this.state.currentCard === 1) {
-                                                    this.setState({ departmentClasses: [] });
-                                                    this.setState({ class: "" });
+                                    { this.state.uploadProgress === 0 ?
+                                        <div className={this.state.currentCard === 0 ? "nextprevdivlifted" : "nextprevdiv"} >
+                                            <button 
+                                                className="buttonSlider"
+                                                disabled={
+                                                    this.state.currentCard === 0 ||
+                                                    this.state.uploadProgress > 0
                                                 }
-                                                if (this.state.currentCard === 2) {
-                                                    this.setState({ departmentClasses: [] });
-                                                    this.getClassesFromDepartment();
-                                                    this.setState({ class: "" });
+                                                onClick={() => {
+                                                    reactSwipeEl.prev();
+                                                    if (this.state.currentCard === 1) {
+                                                        this.setState({ departmentClasses: [] });
+                                                        this.setState({ class: "" });
+                                                    }
+                                                    if (this.state.currentCard === 2) {
+                                                        this.setState({ departmentClasses: [] });
+                                                        this.getClassesFromDepartment();
+                                                        this.setState({ class: "" });
+                                                    }
+                                                    this.setState({ currentCard: this.state.currentCard - 1 });
+                                                    }
                                                 }
-                                                this.setState({ currentCard: this.state.currentCard - 1 });
-                                                }
-                                            }
-                                        >
-                                                Previous
-                                        </button>
+                                            >
+                                                    Previous
+                                            </button>
 
-                                        {/* Next */}
-                                        <button
-                                            className="buttonSlider"
-                                            disabled={
-                                                (this.state.currentCard === 0 && this.state.department === "") ||
-                                                (this.state.currentCard === 1 && this.state.class === this.state.department.replace(/_/g, " ") + " -" ) ||
-                                                (this.state.currentCard === 1 && this.state.class === "" ) ||
-                                                this.state.currentCard === 2
-                                            }
-                                            onClick={() => {
-                                                reactSwipeEl.next();
-                                                this.setState({ currentCard: this.state.currentCard + 1 });
-                                                if (this.state.department.length > 2) {
-                                                    this.getClassesFromDepartment();
+                                            {/* Next */}
+                                            <button
+                                                className="buttonSlider"
+                                                disabled={
+                                                    (this.state.currentCard === 0 && this.state.department === "") ||
+                                                    (this.state.currentCard === 1 && this.state.class === this.state.department.replace(/_/g, " ") + " -" ) ||
+                                                    (this.state.currentCard === 1 && this.state.class === "" ) ||
+                                                    this.state.currentCard === 2
                                                 }
+                                                onClick={() => {
+                                                    reactSwipeEl.next();
+                                                    this.setState({ currentCard: this.state.currentCard + 1 });
+                                                    if (this.state.department.length > 2) {
+                                                        this.getClassesFromDepartment();
+                                                    }
+                                                    }
                                                 }
-                                            }
-                                        >
-                                            Next
-                                        </button>
-                                    </div>
+                                            >
+                                                Next
+                                            </button>
+                                        </div>
+                                    
+                                        : <div className="" />
+                                    }
+
+
                                 </div>
                             </div>
                         
@@ -415,6 +582,9 @@ const condition = authUser => !!authUser;
 export default withAuthorization(condition)(TestBankSubmit);
 
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
 const Field = ({
     label,
