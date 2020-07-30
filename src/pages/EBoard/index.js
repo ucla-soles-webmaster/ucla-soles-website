@@ -15,7 +15,7 @@ import Eric from '../../boardImages/eric1.JPG'
 
 import Fabrizio from '../../boardImages/fabrizio1.JPG'
 import Josh from '../../boardImages/strawberry.jpg'
-import Kelly from '../../boardImages/tomato.jpg'
+import Kelly from '../../boardImages/kelly1.jpeg'
 
 import Sherry from '../../boardImages/sherry.jpg'
 import Anabella from '../../boardImages/anabella.jpg'
