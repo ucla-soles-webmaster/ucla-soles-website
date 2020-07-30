@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
+import Footer from '../../components/Footer';
 //import ucla from './ucla.jpg'
 import './landingStyle.css'
 import coverPhoto from '../../coverImages/landingImageMain.jpg';
@@ -62,6 +63,7 @@ class Landing extends Component {
                 <div id="startupdiv" >
                     
                 </div>
+                <Footer/>
             </div>
         );
     }

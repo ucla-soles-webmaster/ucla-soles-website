@@ -8,6 +8,28 @@
     margin-left: 3.5%;
 }
 
+#rightsunTS {
+    height: 6%;
+    width: 6%;
+    margin-right: 12%;
+    margin-top: -0.6%;
+}
+
+#rightsunTS:hover {
+    animation: 1.2s 0s 1 rotl;
+}
+
+#leftsunTS {
+    height: 6%;
+    width: 6%;
+    margin-left: 12%;
+    margin-top: -0.6%;
+}
+
+#leftsunTS:hover {
+    animation: 1.2s 0s 1 rotr;
+}
+
 .FormGroupTS {
     margin: auto;
     font-family: 'Poppins', sans-serif;
@@ -116,9 +138,34 @@
     background: #001d3a;
 }
 
+.progressbarTS {
+    width: 60%;
+    margin-top: 1vw;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    border: 0.05vw solid rgba(176, 176, 176, 0.701);
+    border-radius: 0.1vw;
+}
+
+.uploadSuccess {
+    text-align: center;
+    font-size: 0.9vw;
+    font-family: 'Poppins';
+    color: #001d3a;
+}
+
 .nextprevdiv {
     margin-top: 1vw;
     margin: auto;
+    padding: 0;
+    width: 50%;
+    text-align: center;
+}
+
+.nextprevdivlifted {
+    margin: auto;
+    margin-top: -11vw;
     padding: 0;
     width: 50%;
     text-align: center;
