@@ -494,7 +494,7 @@ class TestBankSubmit extends Component {
                                                             onChange={this.selectQuarter.bind(this)}
                                                         >
                                                             <FlatList
-                                                                list={["-","Fall","Winter","Spring"]}
+                                                                list={["-","Fall","Winter","Spring","Summer"]}
                                                                 renderItem={this.renderQuarter}
                                                                 ListEmptyComponent={this.renderEmptyClass()}
                                                             />                                                         

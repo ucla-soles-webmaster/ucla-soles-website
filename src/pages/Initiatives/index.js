@@ -11,6 +11,10 @@ import sun from './suny.png';
 
 import jrOp from './jrOp.png';
 import jrCol from './jrCol.png';
+import cienciasOp from './CienciasOp.png';
+import cienciasCol from './CienciasCol.png';
+import tutoringOp from './TutoringOp.png';
+import tutoringCol from './TutoringCol.png';
 import eitOp from './eitOp.png';
 import eitCol from './eitCol.png';
 
@@ -23,6 +27,8 @@ import ExpEduCol from './ExpEduCol.png';
 
 import natConOp from './NatConOp.png';
 import natConCol from './NatConCol.png';
+import RLDCOp from './RLDCOp.png';
+import RLDCCol from './RLDCCol.png';
 import IndWorkOp from './IndWorkOp.png';
 import IndWorkCol from './IndWorkCol.png';
 
@@ -108,9 +114,9 @@ class Initiatives extends Component {
                         <div className="grid-box">
                             <img 
                                 id="imgA" 
-                                src={jrCol} 
-                                onMouseOver={e => (e.currentTarget.src = jrOp)}
-                                onMouseLeave={e => (e.currentTarget.src = jrCol)}
+                                src={cienciasCol} 
+                                onMouseOver={e => (e.currentTarget.src = cienciasOp)}
+                                onMouseLeave={e => (e.currentTarget.src = cienciasCol)}
                                 alt="Dia de Ciencias" 
                             />
                             <p id="initTitle"><b>Noche de Ciencias</b></p>
@@ -124,9 +130,9 @@ class Initiatives extends Component {
                         <div className="grid-box">
                             <img 
                                 id="imgA" 
-                                src={jrCol} 
-                                onMouseOver={e => (e.currentTarget.src = jrOp)}
-                                onMouseLeave={e => (e.currentTarget.src = jrCol)}
+                                src={tutoringCol} 
+                                onMouseOver={e => (e.currentTarget.src = tutoringOp)}
+                                onMouseLeave={e => (e.currentTarget.src = tutoringCol)}
                                 alt="MESA Tutoring" 
                             />
                             <p id="initTitle"><b>MESA Tutoring</b></p>
@@ -221,9 +227,9 @@ class Initiatives extends Component {
                         <div className="grid-box">
                             <img 
                                 id="imgA" 
-                                src={jrCol} 
-                                onMouseOver={e => (e.currentTarget.src = jrOp)}
-                                onMouseLeave={e => (e.currentTarget.src = jrCol)}
+                                src={RLDCCol} 
+                                onMouseOver={e => (e.currentTarget.src = RLDCOp)}
+                                onMouseLeave={e => (e.currentTarget.src = RLDCCol)}
                                 alt="SHPE Jr Leadership Retreat" 
                             />
                             <p id="initTitle"><b>RLDC</b></p>
