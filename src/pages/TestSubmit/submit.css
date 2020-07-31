@@ -30,6 +30,10 @@
     animation: 1.2s 0s 1 rotr;
 }
 
+.carousel {
+    z-index: 0;
+}
+
 .FormGroupTS {
     margin: auto;
     font-family: 'Poppins', sans-serif;

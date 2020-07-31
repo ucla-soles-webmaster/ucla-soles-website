@@ -100,8 +100,7 @@ class SignInFormBase extends Component {
           <button disabled={isInvalid} type="submit" className="buttonRESET">
             Sign In
           </button>
-  
-          {error && <p>{error.message}</p>}
+          {error && <p className="disclaimer2" style={{textAlign: 'center', margin: '0', padding: '0', paddingTop: '10px', paddingBottom: '10px'}}>{error.message}</p>}
         </form>
       </fieldset>
     );
