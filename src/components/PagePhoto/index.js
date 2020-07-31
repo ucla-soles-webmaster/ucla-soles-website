@@ -36,11 +36,11 @@ class PagePhoto extends Component {
     render() {
         return (
             <body>
-                <div className="container2">
+                <div className="container2" style={{backgroundImage: `url(${this.props.imageSource})`}}>
                     <div className={this.state.scrolled ? "scrolled2" : "centered2"}>
                             &nbsp; &nbsp; {this.props.title}
                     </div>
-                    <img src={this.props.imageSource} className="parallax2" alt="Cover"></img>
+                    
                 </div>
             </body>
 

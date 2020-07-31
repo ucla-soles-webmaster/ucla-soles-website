@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+
 .container {
     text-align: center;
-    
+    background-image: url("uclaM.jpg");
+
+    /* Set a specific height */
+    width: 100%;
+    height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100vh;
+
+    z-index: -3;
 }
 
 .parallax {
@@ -15,6 +29,7 @@
 .centered {
     position: absolute;
     margin-top: 19.5%;
+    margin-top: calc(38vh);
     /*font-family: Georgia,Times,Times New Roman,serif; */
     font-family: Poppins;
     font-family: Georgia,Times,Times New Roman,serif;
@@ -35,7 +50,7 @@
 
 .scrolled {
     position: absolute;
-    margin-top: 24%;
+    margin-top: 57vh;
     font-family: Montserrat;
     font-size: 4.4vw;
     font-family: Georgia,Times,Times New Roman,serif;
@@ -84,9 +99,26 @@
 
 }
 
+.container3 {
+    text-align: center;
+
+    /* Set a specific height */
+    width: 100%;
+    height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100vh;
+
+    z-index: -3;
+}
+
 
 @media (max-width: 650px) {
     .centered {
-        margin-top: 29%;
+        margin-top: 46vh;
     }
 }

@@ -35,16 +35,13 @@ class StaticCoverPhoto extends Component {
 
     render() {
         return (
-            <body>
-                <div className="container">
-                    <div className={this.state.scrolled ? "scrolled" : "centered"}>
-                            Society of Latinx Engineers and Scientists
-                            <hr className={this.state.scrolled ? "HRscrolled" : "HRcentered"}/>
-                            <div className={this.state.scrolled ? "bottomscrolled" : "bottom"}>University of California, Los Angeles</div>
-                    </div>
-                    <img src={this.props.imageSource} className="parallax" alt="Cover"></img>
+            <div className="container">
+                <div className={this.state.scrolled ? "scrolled" : "centered"}>
+                        Society of Latinx Engineers and Scientists
+                        <hr className={this.state.scrolled ? "HRscrolled" : "HRcentered"}/>
+                        <div className={this.state.scrolled ? "bottomscrolled" : "bottom"}>University of California, Los Angeles</div>
                 </div>
-            </body>
+            </div>
 
         );
     }
