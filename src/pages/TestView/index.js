@@ -23,6 +23,7 @@ class TestBankView extends Component {
 
         this.state = {
             user: {},
+            userID: "",
             firestore: this.props.firebase.getFirestore(),
             userEmail: this.props.firebase.auth.currentUser.email,
             department: "",
@@ -30,6 +31,8 @@ class TestBankView extends Component {
             class: "",  // DIFFERENT from TestSubmit's class. This is the pure class ID, department name isn't included
             classTests: [],
             test: "",
+            linkToTest: "",
+            cantView: false,
             currentCard: 0,
           }
 
@@ -48,6 +51,7 @@ class TestBankView extends Component {
           .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
               that.setState({ user: doc.data() })
+              that.setState({ userID: doc.id })
             });
           })        
     }
@@ -112,17 +116,19 @@ class TestBankView extends Component {
 
     /* Frontend: Used to render individual test in the 2nd FlatList in render() */
     renderTest = (testN, idx) => {
-        let position = 0
+        /*
+        let position = 0;
         if (testN.length > 2) {
              position = testN.indexOf('at');
         }
         else {
             position = testN.length;
         }
-
+        */
         return (
             <option className="FormRowLabelDropDownTS">
-                {testN.substring(0,position)}
+                {/*testN.substring(0,position)*/}
+                {testN}
             </option>
         )
     }
@@ -135,6 +141,58 @@ class TestBankView extends Component {
                 Contact uclasoles.webmaster@gmail.com about your issue.
             </div>
         );
+    }
+
+    /* Get link from Firestore to view test */
+    viewTest = event => {
+        var that = this;
+
+        if (this.state.user["testbank_passes"] <= 0) {
+            that.setState({ cantView: true });
+            return
+        }
+            
+        // Get link to view test
+        this.props.firebase.getFirestore().collection("tests").doc(this.state.department).collection("classes").doc(this.state.class).collection("tests").doc(this.state.test)
+            .get()
+            .then(function(doc) {
+                if (doc.exists) {
+                    console.log("Document data:", doc.data());
+                    that.setState({ linkToTest:  doc.data()["downloadURL"] });
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });
+        
+
+        // Update user's testbank_passes by subtracting 1
+        this.props.firebase.getFirestore().collection("users").doc(this.state.userID)
+          .update({
+                testbank_passes: that.state.user["testbank_passes"] - 1
+            })
+            .then(function() {
+                console.log("Updated testbank_passes successfuly");
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });   
+
+
+        // Get user's updated data
+        this.props.firebase.getFirestore().collection("users")
+          .where("email", "==", this.state.userEmail)  // can have multiple .where calls
+          .get()
+          .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+              that.setState({ user: doc.data() })
+              that.setState({ userID: doc.id })
+            });
+          })    
+
     }
 
     /* Returns true if a string has whitespace */
@@ -271,19 +329,49 @@ class TestBankView extends Component {
                                                     </Form.Control>           
                                                 </Form.Group>
 
-
-
                                                 {/* SUBMIT button, shoulr register action for backend task and redirect
                                                     routing to another page */}
                                                 <button 
                                                     className="buttonADD"
-                                                    disabled={this.state.classTests.length === 0}
+                                                    disabled={this.state.classTests.length === 0 ||
+                                                              this.state.linkToTest !== "" ||
+                                                              this.state.test === "" ||
+                                                              this.state.test === "-" }
+                                                    onClick={this.viewTest}
                                                 >
                                                     VIEW
                                                 </button>
 
+                                                {/* If they don't have enough passes */}
+                                                { this.state.cantView === true
+                                                    ?
+                                                        <p className="disclaimer3">
+                                                            You don't have enough test passes :(
+                                                        </p>
+                                                    :
+                                                        <div className="" />
 
+                                                }
                                             </fieldset>
+
+
+                                            <div style={{textAlign: "center"}}>
+                                                {/* Show link to view test */}
+                                                { this.state.linkToTest === ""
+                                                        ?
+                                                            <div className="" />
+                                                        :  
+                                                            <a  href={this.state.linkToTest}
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer" 
+                                                                className="disclaimer4"
+                                                            >
+                                                                <br/> Click here to view your test
+                                                            </a>
+                                                    }
+                                            </div>
+                                            <br/>
+                                            <br/>
                                         </div>
                                 
                                     </ReactSwipe>
@@ -307,7 +395,10 @@ class TestBankView extends Component {
                                                     this.setState({ classTests: [] });
                                                     this.getClassesFromDepartment();
                                                     this.setState({ class: "" });
+                                                    this.setState({ linkToTest: "" });
+                                                    this.setState({ test: "" });
                                                 }
+
                                                 this.setState({ currentCard: this.state.currentCard - 1 });
                                                 }
                                             }

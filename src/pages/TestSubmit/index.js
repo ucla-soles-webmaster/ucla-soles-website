@@ -38,6 +38,7 @@ class TestBankSubmit extends Component {
             file_data: "",
             testType: "",
             uploadProgress: 0,
+            downloadURL: "",
           }
     }
 
@@ -154,6 +155,7 @@ class TestBankSubmit extends Component {
     }
 
     fileSubmitToDataBase = event => {
+
         var d = new Date();
         var that = this;
 
@@ -209,35 +211,44 @@ class TestBankSubmit extends Component {
         // Upload completed successfully, now we can get the download URL
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
             console.log('File available at', downloadURL);
+            that.setState({ downloadURL: downloadURL });
             });
         });
 
-        // Store filename/reference on Firestore
-        this.props.firebase.getFirestore().collection('tests').doc(this.state.department).collection('classes').doc(this.state.classID).collection('tests').doc(storageName).set({
-            storage_name: storageName,
-            test_type: that.state.testType,
-            user_submitted: that.state.user["email"],
-            censor_name: that.state.censorName,
-            censor_work: that.state.censorWork,
-            date_submitted: {
-                day: d.getDate(),
-                year: d.getFullYear(),
-                hour: d.getHours(),
-                minute: d.getMinutes(),
-                second: d.getSeconds()
-            }
-        })
-        .then(function(docRef) {
-            console.log('Added test to Firestore /tests/' + that.state.department + '/classes/' + 
-                that.state.classID + '/tests/ with ID: ',  
-                docRef.id);
-            that.props.history.push(ROUTES.TESTBANK);
-        })
-        .catch(function(error) {
-            console.error('Error adding document: ', error);
-        })
+        var delayInMilliseconds = 10000; // 10 second
 
-        console.log('End of function')
+        setTimeout(function() {
+        // your code to be executed after 10 second
+        // Store filename/reference on Firestore
+            that.props.firebase.getFirestore().collection('tests').doc(that.state.department).collection('classes').doc(that.state.classID).collection('tests').doc(storageName).set({
+                storage_name: storageName,
+                downloadURL: that.state.downloadURL,
+                test_type: that.state.testType,
+                user_submitted: that.state.user["email"],
+                censor_name: that.state.censorName,
+                censor_work: that.state.censorWork,
+                date_submitted: {
+                    day: d.getDate(),
+                    year: d.getFullYear(),
+                    hour: d.getHours(),
+                    minute: d.getMinutes(),
+                    second: d.getSeconds()
+                }
+            })
+            .then(function(docRef) {
+                console.log('Added test to Firestore /tests/' + that.state.department + '/classes/' + 
+                    that.state.classID + '/tests/ with ID: ',  
+                    docRef.id);
+                that.props.history.push(ROUTES.TESTBANK);
+            })
+            .catch(function(error) {
+                console.error('Error adding document: ', error);
+            })
+
+            console.log('End of Delay')
+
+        }, delayInMilliseconds);
+
     }
 
     render() {

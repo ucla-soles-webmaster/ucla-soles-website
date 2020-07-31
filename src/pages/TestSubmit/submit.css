@@ -166,6 +166,21 @@
     font-style: italic;
 }
 
+.disclaimer4 {
+    font-size: 0.9vw;
+    font-family: 'Poppins', sans-serif;
+    color: #001d3a;
+    margin-left: 40%;
+    margin-right: 5.5%;
+    margin-top: 0%;
+    margin-bottom: 2%;
+    margin: auto;
+    width: 30%;
+    padding-left: 40%;
+    text-align: center;
+    font-style: italic;
+}
+
 .checkboxTS {
     margin-left: 5.2%;
     margin-right: 3%;
