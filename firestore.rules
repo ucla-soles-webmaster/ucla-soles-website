@@ -1,0 +1,73 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	// returns the existing data
+  	function existingData() {
+      return resource.data
+    }
+		
+    // returns incoming data
+    function incomingData() {
+      return request.resource.data
+    }
+    
+		// returns the current user
+    function currentUser() {
+      return request.auth
+    }
+    
+    // returns the current user id
+    function currentUserUid() {
+    	return currentUser().uid
+    }
+    
+    // returns true if the user is signed in
+    function isSignedIn() {
+  		return currentUser() != null;
+		}
+    
+  	// returns true if user is admin or owner
+		function adminOrOwner() {
+    	return /databases/$(database)/documents/users/$(currentUserUid).data.roles.admin == true || /databases/$(database)/documents/users/$(request.auth.uid).data.roles.owner == true;
+    }
+    
+    // returns true if current uid matches given uid
+    function isOwner(userId) {
+  		return currentUserUid() == userId
+		}
+    
+    // gets reference to user's data
+    function getUserData() {
+  		return get(/databases/$(database)/documents/accounts/$(currentUserUid())).data
+		}
+    
+    // returns true if user has this role
+    function userHasRole(role) {
+  		return getUserData().roles[role] == true;
+		}
+    
+  	// majors available to members
+    match /majors/{major} {
+      allow read, write: if true;
+    }
+    
+    // tests available to members
+  	match /tests/{test} {
+    	allow read;
+      allow write;
+    }
+    
+    // users available
+    match /tests/{anything=**} {
+    	allow read, write: if true;
+    }
+    match /tests/COM_SCI/classes/{anything=**} {
+    	allow read, write: if true;
+    }
+    
+    // users available
+    match /users/{anything=**} {
+    	allow read, write: if true;
+    }
+    
+  }
+}
