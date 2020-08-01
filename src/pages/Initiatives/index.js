@@ -303,9 +303,6 @@ class Initiatives extends Component {
                     </div>
                 </div>
 
-                <br/>
-                <br/>
-                <br/>
                 <Footer />
             </div>
         );

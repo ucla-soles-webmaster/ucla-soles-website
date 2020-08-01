@@ -642,7 +642,6 @@ class SignUpFormBase extends Component {
                                     <Field 
                                         label="Bio (optional)"
                                         placeholder="My interests are..."
-                                        required
                                         value={bio}
                                         formrowclass="FormRowLabelDropDown"
                                         onChange={(e) => {

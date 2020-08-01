@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
+import STARLeaderboard from '../../components/STARLeaderboard';
 import PasswordChangeForm from '../PasswordChange';
 
 import { AuthUserContext, withAuthorization } from '../Session';
@@ -44,12 +45,12 @@ class AccountPage extends Component {
           <AuthUserContext.Consumer>
             {authUser => (
               <div>
-                <h1 className="haccount">{this.state.user["first_name"]}'s Account</h1>
+                <h1 className="haccount">{this.state.user["first_name"]}'s Profile</h1>
               </div>
             )}
           </AuthUserContext.Consumer>
 
-
+          <STARLeaderboard />
 
           <AuthUserContext.Consumer>
             {authUser => (

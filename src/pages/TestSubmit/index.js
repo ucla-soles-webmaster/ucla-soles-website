@@ -504,7 +504,7 @@ class TestBankSubmit extends Component {
 
                                             
                                                 {/* Censor Options */}
-                                                <div className="checksu">
+                                                <div className="checksu" style={{paddingTop: '1%'}}>
                                                     <input 
                                                         type="checkbox" 
                                                         disabled={false}
@@ -604,7 +604,8 @@ class TestBankSubmit extends Component {
                                     {/* Slider Buttons */}
                                     {/* Previous */}
                                     { this.state.uploadProgress === 0 ?
-                                        <div className={this.state.currentCard === 0 ? "nextprevdivlifted" : "nextprevdiv"} >
+                                        <div className={this.state.currentCard === 0 ? "nextprevdivlifted" : 
+                                                        this.state.currentCard === 1 ? "nextprevdivlifted2" : "nextprevdiv"  } >
                                             <button 
                                                 className="buttonSlider"
                                                 disabled={

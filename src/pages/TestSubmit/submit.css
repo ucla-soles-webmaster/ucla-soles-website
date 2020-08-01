@@ -218,7 +218,15 @@
 
 .nextprevdivlifted {
     margin: auto;
-    margin-top: -11vw;
+    margin-top: -18.5vw;
+    padding: 0;
+    width: 50%;
+    text-align: center;
+}
+
+.nextprevdivlifted2 {
+    margin: auto;
+    margin-top: -6.5vw;
     padding: 0;
     width: 50%;
     text-align: center;
