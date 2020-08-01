@@ -19,7 +19,7 @@ class Merch extends Component {
         return (
             <div className="graa"> 
                 <Navigation transparentNav={false} />
-                <div className="navgapA">
+                <div className="navgapA" style={{minHeight: "100vh"}}>
                     <AccountNav />
 
                     <h1 className="haccount">
@@ -35,35 +35,6 @@ class Merch extends Component {
 
                     <br/>
                     <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-
                 </div>
                 <Footer />
             </div>

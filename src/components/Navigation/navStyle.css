@@ -16,6 +16,7 @@ body {
     box-sizing: border-box;
     transition: 0.8s;
     overflow: hidden;
+    z-index: 1;
 }
 
 .navElse {
@@ -30,6 +31,7 @@ body {
     background-color: white;
     box-shadow: 0vw 0.01vw 1.3vw -0.75vw rgba(0, 0, 0, 0.865);
     overflow: hidden;
+    z-index: 1;
 }
 
 .navTop .logo {
@@ -45,13 +47,13 @@ body {
     height: 80px;
     padding-top: 3px;
     transition: 0.5s;
-    margin-left: -30px;
+    margin-left: -40px;
 }
 .navElse .logo img {
     height: 80px;
     padding-top: 3px;
     transition: 0.5s;
-    margin-left: -30px;
+    margin-left: -40px;
 }
 
 .navTop .ulNav {
@@ -60,6 +62,7 @@ body {
     margin-top: 16px;
     padding: 0;
     display: flex;
+    margin-right: -30px;
 }
 .navElse .ulNav {
     float: right;
@@ -67,6 +70,7 @@ body {
     margin-top: 16px;
     padding: 0;
     display: flex;
+    margin-right: -30px;
 }
 
 .navTop .ulNav .liNav {
@@ -145,15 +149,17 @@ body {
 }
 
 /* For mobile and small devices */
-@media (max-width: 1292px) {
+@media (max-width: 1250px) {
     .checkbtn {
         display: block;
     }
     .navTop {
         color: white;
+        z-index: 1;
     }
     .navElse {
         color: white;
+        z-index: 1;
     }
     .navTop .ulNav {
         position: fixed;
@@ -194,6 +200,7 @@ body {
         margin-top: 0.7rem;
         margin-bottom: 0.7rem;
         margin-left: 0;
+        position: relative;
     }
     .navTop .ulNav .liNav:hover {
         font-size: 1.9rem;
@@ -239,18 +246,36 @@ body {
         margin-bottom: 0.7rem;
         margin-left: 0;
         margin-left: 0em;
+        color: black;
+    }
+    .centered {
+        color: red;
     }
     #check:checked ~ .ulNav {
         left: 0;
         -webkit-text-stroke-width: 0.0px;
     }
-    #check:checked ~ .centered {
-        -webkit-text-stroke-width: 0.0px;
-        -webkit-text-stroke-color: red;
+
+}
+
+
+@media (max-width: 650px) {
+    .navTop .logo img {
+        height: 55px;
+        padding-top: 17px;
+        transition: 0.5s;
+        margin-left: -40px;
     }
-    #check:checked ~ .HRcentered {
-        border: 2vw solid #001d3a;
-        width: 51%;
-        transition: 0.15s;
+    .navElse .logo img {
+        height: 55px;
+        padding-top: 17px;
+        transition: 0.5s;
+        margin-left: -40px;
+    }
+    .iEq {
+        color: black;
+        font-style: normal;
+        font-size: 60px;
+        margin-right: -60px;
     }
 }

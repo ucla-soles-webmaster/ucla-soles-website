@@ -37,8 +37,14 @@ class TestBankSubmit extends Component {
             censorWork: false,
             file_data: "",
             testType: "",
+            recentYears: [],
+            testYear: "",
+            testQuarter: "",
             uploadProgress: 0,
+            downloadURL: "",
           }
+
+
     }
 
     
@@ -57,6 +63,20 @@ class TestBankSubmit extends Component {
               that.setState({ user: doc.data() })
             });
           })        
+
+        // Get list of recent years
+        var d = new Date();
+        var tempList = []; tempList.push("-");
+        let currentYear = d.getFullYear()
+        
+        var i, year;
+        for (i = 0; i < 10; i++) {
+            year = currentYear - i;
+            tempList.push(year.toString(10));
+        }
+
+        that.setState({ recentYears: tempList });
+        
     }
 
     selectDepartment(event) {
@@ -69,6 +89,14 @@ class TestBankSubmit extends Component {
 
     selectTestType(event) {
         this.setState({ testType: event.target.value })
+    }
+
+    selectTestYear(event) {
+        this.setState({ testYear: event.target.value })
+    }
+
+    selectQuarter(event) {
+        this.setState({ testQuarter: event.target.value })
     }
 
     /*  Getting the classes from a department from Firebase  */
@@ -105,6 +133,24 @@ class TestBankSubmit extends Component {
         );
     }
 
+    /* Frontend: Used to render individual years in the FlatList in render() */
+    renderYear = (year, idx) => {
+        return (
+            <option className="FormRowLabelDropDownTS">
+                {year}
+            </option>
+        );
+    }
+
+    /* Frontend: Used to render individual years in the FlatList in render() */
+    renderQuarter = (quarter, idx) => {
+        return (
+            <option className="FormRowLabelDropDownTS">
+                {quarter}
+            </option>
+        );
+    }
+
     /* Add a class document to the tests/DEPARTMENT/ collection */
     addClass = event => {
         //const classToBeAdded = this.state.addClass;
@@ -138,20 +184,27 @@ class TestBankSubmit extends Component {
 
     uploadFile(e) {
         var that = this;
-            var file = e.target.files;
-            var reader = new FileReader();
+        var file = e.target.files;
+        var reader = new FileReader();
+
+        try {
             reader.readAsDataURL(file[0]);
             reader.onload=(e)=>{
                 that.setState({file_data:e.target.result});
             }
+        }
+        catch(error) {
+            that.setState({ file_data: "" });
+        }
     }
 
     fileSubmitToDataBase = event => {
+
         var d = new Date();
         var that = this;
 
-        var storageName = this.state.testType + ' -- from ' + monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() +
-                            ' at ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds(); 
+        var storageName = this.state.testType + ', ' + this.state.testQuarter + ' ' + this.state.testYear + ' -- Submitted on: ' + monthNames[d.getMonth()] + ' ' + d.getDate() +
+                            ', ' + + d.getFullYear() + ' at ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds(); 
 
         var storageRef = this.props.firebase.storage.ref();
         var mountainImagesRef = storageRef.child('tests/' + this.state.department + '/' + this.state.class + '/' + storageName);
@@ -202,35 +255,48 @@ class TestBankSubmit extends Component {
         // Upload completed successfully, now we can get the download URL
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
             console.log('File available at', downloadURL);
+            that.setState({ downloadURL: downloadURL });
             });
         });
 
-        // Store filename/reference on Firestore
-        this.props.firebase.getFirestore().collection('tests').doc(this.state.department).collection('classes').doc(this.state.classID).collection('tests').doc(storageName).set({
-            storage_name: storageName,
-            test_type: that.state.testType,
-            user_submitted: that.state.user["email"],
-            censor_name: that.state.censorName,
-            censor_work: that.state.censorWork,
-            date_submitted: {
-                day: d.getDate(),
-                year: d.getFullYear(),
-                hour: d.getHours(),
-                minute: d.getMinutes(),
-                second: d.getSeconds()
-            }
-        })
-        .then(function(docRef) {
-            console.log('Added test to Firestore /tests/' + that.state.department + '/classes/' + 
-                that.state.classID + '/tests/ with ID: ',  
-                docRef.id);
-            that.props.history.push(ROUTES.TESTBANK);
-        })
-        .catch(function(error) {
-            console.error('Error adding document: ', error);
-        })
+        var delayInMilliseconds = 10000; // 10 second
 
-        console.log('End of function')
+        setTimeout(function() {
+        // your code to be executed after 10 second
+        // Store filename/reference on Firestore
+            that.props.firebase.getFirestore().collection('tests').doc(that.state.department).collection('classes').doc(that.state.classID).collection('tests').doc(storageName).set({
+                storage_name: storageName,
+                downloadURL: that.state.downloadURL,
+                test_type: that.state.testType,
+                user_submitted: that.state.user["email"],
+                censor_name: that.state.censorName,
+                censor_work: that.state.censorWork,
+                from: {
+                    year: that.state.testYear,
+                    quarter: that.state.testQuarter
+                },
+                date_submitted: {
+                    day: d.getDate(),
+                    year: d.getFullYear(),
+                    hour: d.getHours(),
+                    minute: d.getMinutes(),
+                    second: d.getSeconds()
+                }
+            })
+            .then(function(docRef) {
+                console.log('Added test to Firestore /tests/' + that.state.department + '/classes/' + 
+                    that.state.classID + '/tests/ with ID: ',  
+                    docRef.id);
+                that.props.history.push(ROUTES.TESTBANK);
+            })
+            .catch(function(error) {
+                console.error('Error adding document: ', error);
+            })
+
+            console.log('End of Delay')
+
+        }, delayInMilliseconds);
+
     }
 
     render() {
@@ -239,7 +305,7 @@ class TestBankSubmit extends Component {
         return (
             <div className="graa"> 
                 <Navigation transparentNav={false} />
-                <div className="navgapA">
+                <div className="navgapA" style={{minHeight: "100vh"}}>
                     <AccountNav />
 
                     <h1 className="haccount">
@@ -332,23 +398,29 @@ class TestBankSubmit extends Component {
                                             { this.state.currentCard === 1
                                                 ?   <div>
                                                         <Field
-                                                            label="Add a course number"
+                                                            label={this.state.department !== "GE" ? "Add a course number" : "Add a course"}
                                                             type="text"
-                                                            placeholder={"35L"} 
+                                                            placeholder={this.state.department !== "GE" ? "35L" : "SCAN 50"} 
                                                             required
                                                             formrowclass="FormRowLabelDropDownTS"
                                                             onChange={(e) => {
                                                                 this.setState({ addClass: e.target.value });  
                                                             }}
                                                         />   
-                                                        <p className="disclaimer3">
-                                                                Only include course identifier. Examples: 32, M51A, 31A, 4BL
-                                                        </p>
+                                                        { this.state.department !== "GE"
+                                                            ?
+                                                                <p className="disclaimer3">
+                                                                        Only include course identifier. Examples: 32, M51A, 31A, 4BL
+                                                                </p>
+                                                            :   <div className="" />
+                                                        }
                                                         <button 
                                                             className="buttonADD"
-                                                            disabled={this.hasWhiteSpace(this.state.addClass) ||
-                                                                        this.state.addClass === "" ||
-                                                                        this.state.departmentClasses.includes(this.state.addClass)
+                                                            disabled={  this.state.department !== "GE" && (
+                                                                            this.hasWhiteSpace(this.state.addClass) ||
+                                                                            this.state.addClass === "" ||
+                                                                            this.state.departmentClasses.includes(this.state.addClass)
+                                                                        )
                                                                     }
                                                             onClick={this.addClass}
                                                         >
@@ -400,6 +472,34 @@ class TestBankSubmit extends Component {
                                                             <option value="Final" >Final</option>                                                                      
                                                         </Form.Control>
                                                 </Form.Group>
+                                                <Form.Group className="FormRowTS" controlId="exampleForm.ControlSelect1">
+                                                    <Form.Label className="FormRowLabelDropDownTS">From what year?</Form.Label>                                   
+                                                        <Form.Control 
+                                                            className={false ? "graydd" : "FormRowInput"}
+                                                            as="select"
+                                                            onChange={this.selectTestYear.bind(this)}
+                                                        >
+                                                            <FlatList
+                                                                list={this.state.recentYears}
+                                                                renderItem={this.renderYear}
+                                                                ListEmptyComponent={this.renderEmptyClass()}
+                                                            />                                                         
+                                                        </Form.Control>
+                                                </Form.Group>
+                                                <Form.Group className="FormRowTS" controlId="exampleForm.ControlSelect1">
+                                                    <Form.Label className="FormRowLabelDropDownTS">Which Quarter?</Form.Label>                                   
+                                                        <Form.Control 
+                                                            className={false ? "graydd" : "FormRowInput"}
+                                                            as="select"
+                                                            onChange={this.selectQuarter.bind(this)}
+                                                        >
+                                                            <FlatList
+                                                                list={["-","Fall","Winter","Spring"]}
+                                                                renderItem={this.renderQuarter}
+                                                                ListEmptyComponent={this.renderEmptyClass()}
+                                                            />                                                         
+                                                        </Form.Control>
+                                                </Form.Group>
                                            
 
                                             
@@ -439,7 +539,11 @@ class TestBankSubmit extends Component {
                                                     onClick={this.fileSubmitToDataBase}
                                                     disabled={this.state.file_data === "" || 
                                                             this.state.testType === ""  || 
-                                                            this.state.uploadProgress > 0 }
+                                                            this.state.uploadProgress > 0 ||
+                                                            this.state.testYear === "" || 
+                                                            this.state.testYear === "-" ||
+                                                            this.state.testQuarter === "" || 
+                                                            this.state.testQuarter === "-"}
                                                 >
                                                     SUBMIT
                                                 </button>

@@ -18,7 +18,7 @@ class AlumNet extends Component {
         return (
             <div className="graa"> 
                 <Navigation transparentNav={false} />
-                <div className="navgapA">
+                <div className="navgapA" style={{minHeight: "100vh"}}>
                     <AccountNav />
 
                     <h1 className="haccount">
@@ -32,34 +32,6 @@ class AlumNet extends Component {
                         <img src={sun} id="rightsuntb" alt="Right SOLES Sun" />
                     </div>
 
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
                     <br/>
                     <br/>
 

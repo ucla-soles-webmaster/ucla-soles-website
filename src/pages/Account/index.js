@@ -38,7 +38,7 @@ class AccountPage extends Component {
     return (
       <div className="graa">
         <Navigation transparentNav={false} />
-        <div className="navgapA">
+        <div className="navgapA" style={{minHeight: "100vh"}}>
           <AccountNav />
 
           <AuthUserContext.Consumer>
@@ -60,38 +60,10 @@ class AccountPage extends Component {
             )}
           </AuthUserContext.Consumer>
 
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
 
         </div>
+        <br/>
+        <br/>
         <Footer />
       </div>
     );
