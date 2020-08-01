@@ -279,3 +279,25 @@ body {
         margin-right: -60px;
     }
 }
+
+
+@media (max-width: 300px) {
+    .navTop .logo img {
+        height: 25px;
+        padding-top: 25px;
+        transition: 0.5s;
+        margin-left: -40px;
+    }
+    .navElse .logo img {
+        height: 25px;
+        padding-top: 25px;
+        transition: 0.5s;
+        margin-left: -40px;
+    }
+    .iEq {
+        color: black;
+        font-style: normal;
+        font-size: 60px;
+        margin-right: -60px;
+    }
+}
