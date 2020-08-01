@@ -104,6 +104,15 @@
     margin-right: auto;
     background-color: black;
   }
+
+  .SponsorPageImages {
+    width:  20vw;
+    height: 20vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+  }
   
   .flip-card {
     overflow: hidden;
