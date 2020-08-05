@@ -148,6 +148,7 @@
     margin-left: 10vw;
     margin-right: auto;
     background-color: black;
+    
   }
   
   .flip-card {
@@ -210,6 +211,16 @@
     line-height: 1.2vw;
     margin: .4vw;
     color: yellow;
+  }
+
+  .sponsorLevels{
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vw;
+    line-height: 1.2vw;
+    margin: .4vw;  
+    color: black;
+    z-index: 1;
+   
   }
 
   .majorFontLong{

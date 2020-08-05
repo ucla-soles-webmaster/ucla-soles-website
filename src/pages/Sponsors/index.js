@@ -67,6 +67,7 @@ class Sponsors extends Component {
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorGoldImages" src={Big} alt="Gold Level"></img>
+                    <div className = "sponsorLevels">Gold Level ($2500+)</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
