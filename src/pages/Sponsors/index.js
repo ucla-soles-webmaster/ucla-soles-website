@@ -61,27 +61,64 @@ class Sponsors extends Component {
                     We’d like to extend a special thanks to our corporate sponsors. If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!
                 </div>
                 
-                
+                <div className = "eBoardPerson">
+                    <div class="flip-card2">
+                    <div class="flip-card2-inner">
+                        <div class="flip-card2-front">
+                            <div className = "sponsorLevels">Gold Level ($2500+)</div>
+                            <img className = "SponsorGoldImages" src={Big} alt="Gold Level"></img>
+                        </div>
+                        <div class="flip-card2-back">
+                        <div className = "titleFont5">Benefits: </div>
+                        <ul>
+                            <li className = "titleFont4">Access to student resumes</li>
+                            <li className = "titleFont4">Company logo and link on website</li>
+                            <li className = "titleFont4">Table at Tri-Org End-of-Year Banquet (2 representatives)</li>
+                            <li className = "titleFont4">Company logo on major outreach event t-shirts</li>
+                        </ul> 
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-                
                 <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "SponsorGoldImages" src={Big} alt="Gold Level"></img>
-                    <div className = "sponsorLevels">Gold Level ($2500+)</div>
-                    </figure>
+                    <div class="flip-card3">
+                    <div class="flip-card3-inner">
+                        <div class="flip-card3-front">
+                        <div className = "sponsorLevels">Silver Level ($1001 - $2499)</div>
+                        <img className = "SponsorSilverImages" src={Medium} alt="Silver Level"></img>
+                        
+                        </div>
+                        <div class="flip-card3-back">
+                        <div className = "titleFont5">Benefits: </div>
+                        <ul>
+                            <li className = "titleFont4">Access to student resumes</li>
+                            <li className = "titleFont4">Company logo and link on website</li>
+                            <li className = "titleFont4">Table at Tri-Org End-of-Year Banquet (2 representatives)</li>
+                        </ul>  
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "SponsorSilverImages" src={Medium} alt="Silver Level"></img>
-                    </figure>
-                </div>
-                <div className = "eBoardPerson">
-                    <figure className = "eBoardPerson2">
-                    <img className = "SponsorBronzeImages" src={Small} alt="Bronze Level"></img>
-                    </figure>
-                </div>
-                
 
+                <div className = "eBoardPerson">
+                    <div class="flip-card4">
+                    <div class="flip-card4-inner">
+                        <div class="flip-card4-front">
+                            <div className = "sponsorLevels">Bronze Level </div>
+                            <div className = "sponsorLevels">($1 - $1000)</div>
+                            <img className = "SponsorBronzeImages" src={Small} alt="Bronze Level"></img>
+                        </div>
+                        <div class="flip-card4-back">
+                        <div className = "titleFont5">Benefits: </div>
+                        <ul>
+                            <li className = "titleFont4">Access to student resumes</li>
+                            <li className = "titleFont4">Company logo and link on website</li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 
 
                 <div className = "titleFont1">  
@@ -103,63 +140,63 @@ class Sponsors extends Component {
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Boeing} alt="Boeing Logo"></img>
                         <div className = "setFontSizeName">Boeing</div>
-                        <div className = "setFontSizePosition">Gold Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Gold Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Chevron} alt="Chevron Logo"></img>
                         <div className = "setFontSizeName">Chevron</div>
-                        <div className = "setFontSizePosition">Gold Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Gold Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Facebook} alt="Facebook Logo"></img>
                         <div className = "setFontSizeName">Facebook</div>
-                        <div className = "setFontSizePosition">Gold Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Gold Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Google} alt="Google Logo"></img>
                         <div className = "setFontSizeName">Google</div>
-                        <div className = "setFontSizePosition">Gold Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Gold Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Lockheed} alt="Lockheed Martin Logo"></img>
                         <div className = "setFontSizeName">Lockheed Martin</div>
-                        <div className = "setFontSizePosition">Gold Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Gold Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Northrup} alt="Northrop Grumman Logo"></img>
                         <div className = "setFontSizeName">Northoup Grumman</div>
-                        <div className = "setFontSizePosition">Gold Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Gold Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Accenture} alt="Accenture Logo"></img>
                         <div className = "setFontSizeName">Accenture</div>
-                        <div className = "setFontSizePosition">Bronze Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={SCEdison} alt="Southern California Edison Logo"></img>
                         <div className = "setFontSizeName">Southern California Edison</div>
-                        <div className = "setFontSizePosition">Bronze Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
                     </figure>
                 </div>
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Twitter} alt="Twitter Logo"></img>
                         <div className = "setFontSizeName">Twitter</div>
-                        <div className = "setFontSizePosition">Bronze Level Sponsor</div>
+                        <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
                     </figure>
                 </div>
                 <br/>

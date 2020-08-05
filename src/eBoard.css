@@ -94,6 +94,15 @@
 
 }
 
+.setFontSizeLevel{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2vw;
+  line-height: 2vw;
+  text-align: match-parent;
+  margin-top: 1.2vw;
+
+}
+
 .setFontSizeStaffEmail{
   font-family: 'Poppins', sans-serif;
   font-size: 1.2vw;
@@ -124,17 +133,17 @@
   }
 
   .SponsorBronzeImages {
-    width:  23vw;
-    height: 22vw;
+    width:  28vw;
+    height: 30vw;
     display: block;
     margin-left: auto;
-    margin-right: 10vw;
+    
     background-color: black;
   }
 
   .SponsorSilverImages {
-    width:  23vw;
-    height: 27vw;
+    width:  28vw;
+    height: 35vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -142,10 +151,10 @@
   }
 
   .SponsorGoldImages {
-    width:  23vw;
-    height: 32vw;
+    width:  28vw;
+    height: 40vw;
     display: block;
-    margin-left: 10vw;
+    /* margin-left: 10vw; */
     margin-right: auto;
     background-color: black;
     
@@ -158,9 +167,11 @@
     width: 20.6vw;
     height: 20.6vw;
   }
+
+  
   
   /* This container is needed to position the front and back side */
-  .flip-card-inner {
+  .flip-card-inner{
     position: relative;
     width: 100%;
     height: 100%;
@@ -170,8 +181,10 @@
     z-index: -1;
   }
   
+
+  
   /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
+  .flip-card:hover .flip-card-inner{
     transform: rotateY(180deg);
   }
   
@@ -188,6 +201,8 @@
   .flip-card-front {
     width: 20.3vw;
   }
+
+  
 
   .backSideText{
     font-family: 'Poppins', sans-serif;
@@ -216,11 +231,12 @@
   .sponsorLevels{
     font-family: 'Poppins', sans-serif;
     font-size: 3vw;
-    line-height: 1.2vw;
+    line-height: 3.5vw;
     margin: .4vw;  
+    position: fixed;
     color: black;
-    z-index: 1;
-   
+    padding-top: 2vw;
+    
   }
 
   .majorFontLong{
@@ -307,7 +323,27 @@
   margin-left: 8.5vw;
   margin-right: 8.5vw;
   padding-bottom: 2vw;
-  
+}
+
+.titleFont4{
+  font-family: 'Poppins', sans-serif;
+  font-size: 2vw;
+  line-height: 2.3vw;
+  text-align: left;
+  margin-left: .8vw;
+  margin-right: .8vw;
+  padding-bottom: .8vw;
+}
+
+.titleFont5{
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5vw;
+  line-height: 2.5vw;
+  text-align: center;
+  margin-top:1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding-bottom: .5vw;
 }
 
 .staffMembersBoard2{
@@ -344,4 +380,111 @@
   border: 0.1vw solid #001d3a;
   margin-top: 3%;
   margin-bottom: 3%;
+}
+
+
+.flip-card2 {
+  overflow:hidden;
+  margin: 1vw auto;
+  background-color: transparent;
+  width: 27vw;
+  height: 40vw;
+}
+.flip-card2-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.flip-card2:hover .flip-card2-inner{
+  transform: rotateY(180deg);
+}
+.flip-card2-front, .flip-card2-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.flip-card2-front {
+  width: 27vw;
+}
+.flip-card2-back {
+  background-color: #001d3a;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card3 {
+  overflow:hidden;
+  margin: 1vw auto;
+  background-color: transparent;
+  width: 27vw;
+  height: 35vw;
+}
+.flip-card3-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.flip-card3:hover .flip-card3-inner{
+  transform: rotateY(180deg);
+}
+.flip-card3-front, .flip-card3-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.flip-card3-front {
+  width: 27vw;
+}
+.flip-card3-back {
+  background-color: #001d3a;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card4 {
+  overflow:hidden;
+  margin: 1vw auto;
+  background-color: transparent;
+  width: 27vw;
+  height: 30vw;
+  text-align: center;
+}
+.flip-card4-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.flip-card4:hover .flip-card4-inner{
+  transform: rotateY(180deg);
+}
+.flip-card4-front, .flip-card4-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.flip-card4-front {
+  width: 27vw;
+}
+.flip-card4-back {
+  background-color: #001d3a;
+  color: white;
+  transform: rotateY(180deg);
 }
