@@ -57,8 +57,10 @@ class Sponsors extends Component {
                     </div>
                 </div>
 
-                <div className = "titleFont3">
-                    We’d like to extend a special thanks to our corporate sponsors. If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!
+                <div className = "titleFont1">
+                    <div className = "titleFont3">
+                        We’d like to extend a special thanks to our corporate sponsors. If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!
+                    </div>
                 </div>
                 
                 <div className = "eBoardPerson">
@@ -72,9 +74,12 @@ class Sponsors extends Component {
                         <div className = "titleFont5">Benefits: </div>
                         <ul>
                             <li className = "titleFont4">Access to student resumes</li>
-                            <li className = "titleFont4">Company logo and link on website</li>
-                            <li className = "titleFont4">Table at Tri-Org End-of-Year Banquet (2 representatives)</li>
-                            <li className = "titleFont4">Company logo on major outreach event t-shirts</li>
+                            <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
+                            <li className = "titleFont4">One compnay information session or event for up to 3 representatives quarterly and seating at the end-of-year Senior Banquet</li>
+                            <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
+                            <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
+                            <li className = "titleFont4">Publication and advertising throughout the school of engineering</li>
+                            <li className = "titleFont4">Recognition on our event shirts and logos branded on merchandise</li>
                         </ul> 
                         </div>
                     </div>
@@ -93,8 +98,10 @@ class Sponsors extends Component {
                         <div className = "titleFont5">Benefits: </div>
                         <ul>
                             <li className = "titleFont4">Access to student resumes</li>
-                            <li className = "titleFont4">Company logo and link on website</li>
-                            <li className = "titleFont4">Table at Tri-Org End-of-Year Banquet (2 representatives)</li>
+                            <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
+                            <li className = "titleFont4">One compnay information session or event for up to 3 representatives</li>
+                            <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
+                            <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
                         </ul>  
                         </div>
                     </div>
@@ -105,20 +112,21 @@ class Sponsors extends Component {
                     <div class="flip-card4">
                     <div class="flip-card4-inner">
                         <div class="flip-card4-front">
-                            <div className = "sponsorLevels">Bronze Level </div>
-                            <div className = "sponsorLevels">($1 - $1000)</div>
+                            <div className = "sponsorLevels">Bronze Level <br/>($1 - $1000)</div>
                             <img className = "SponsorBronzeImages" src={Small} alt="Bronze Level"></img>
                         </div>
                         <div class="flip-card4-back">
                         <div className = "titleFont5">Benefits: </div>
                         <ul>
-                            <li className = "titleFont4">Access to student resumes</li>
-                            <li className = "titleFont4">Company logo and link on website</li>
+                            <li className = "titleFont4">One compnay information session or event for up to 3 representatives</li>
+                            <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
+                            <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
                         </ul>
                         </div>
                     </div>
                     </div>
                 </div>
+                
                 
 
                 <div className = "titleFont1">  
@@ -134,8 +142,8 @@ class Sponsors extends Component {
                         Our Current Sponsors
                     </div>
                 </div>
-
-
+                </body1>
+                <body1 className = "eBoardPage">
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Boeing} alt="Boeing Logo"></img>
@@ -202,9 +210,12 @@ class Sponsors extends Component {
                 <br/>
                 <br/>
                 <br/>
-                <br/>
+                
                 </body1>
                 </div>  
+                <br/>
+                <br/>
+                
             </div>
         )
     }

@@ -13,6 +13,7 @@
     
     flex-wrap: wrap;
     text-align: center;
+    
   }
   
   
@@ -137,13 +138,13 @@
     height: 30vw;
     display: block;
     margin-left: auto;
-    
+    margin-right: auto;
     background-color: black;
   }
 
   .SponsorSilverImages {
     width:  28vw;
-    height: 35vw;
+    height: 38vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -152,8 +153,9 @@
 
   .SponsorGoldImages {
     width:  28vw;
-    height: 40vw;
+    height: 46vw;
     display: block;
+    margin-left: auto;
     /* margin-left: 10vw; */
     margin-right: auto;
     background-color: black;
@@ -233,10 +235,10 @@
     font-size: 3vw;
     line-height: 3.5vw;
     margin: .4vw;  
-    position: fixed;
+    position: relative;
     color: black;
     padding-top: 2vw;
-    
+
   }
 
   .majorFontLong{
@@ -317,7 +319,7 @@
 
 .titleFont3{
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   line-height: 1.8vw;
   text-align: center;
   margin-left: 8.5vw;
@@ -327,12 +329,12 @@
 
 .titleFont4{
   font-family: 'Poppins', sans-serif;
-  font-size: 2vw;
-  line-height: 2.3vw;
+  font-size: 1.4vw;
+  line-height: 1.7vw;
   text-align: left;
-  margin-left: .8vw;
-  margin-right: .8vw;
-  padding-bottom: .8vw;
+  margin-left: .3vw;
+  margin-right: .4vw;
+  padding-bottom: .4vw;
 }
 
 .titleFont5{
@@ -343,7 +345,7 @@
   margin-top:1vw;
   margin-left: 1vw;
   margin-right: 1vw;
-  padding-bottom: .5vw;
+  
 }
 
 .staffMembersBoard2{
@@ -388,7 +390,7 @@
   margin: 1vw auto;
   background-color: transparent;
   width: 27vw;
-  height: 40vw;
+  height: 46vw;
 }
 .flip-card2-inner{
   position: relative;
@@ -423,7 +425,7 @@
   margin: 1vw auto;
   background-color: transparent;
   width: 27vw;
-  height: 35vw;
+  height: 38vw;
 }
 .flip-card3-inner{
   position: relative;
