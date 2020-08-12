@@ -43,21 +43,6 @@
     margin-right: 0;
   }
   
-  /*
-  @media screen and (min-width: 50em) {
-    .eBoardPerson {
-      width: calc(25% - 6px);
-    }
-    
-    .eBoardPerson:nth-of-type(2n) {
-      margin-right: 8px;
-    }
-    
-    .eBoardPerson:nth-of-type(4n) {
-      margin-right: 0;
-    }
-  }
-*/
 
 @media screen and (max-width: 1050px){
   .eBoardPerson {
@@ -232,7 +217,7 @@
     font-size: 1.8vw;
     line-height: 2vw;
     color: white;
-    margin: 5px;
+    margin: .5vw;
   }
 
   .backSideTextSmall{
@@ -240,7 +225,7 @@
     font-size: 1.1vw;
     line-height: 1.2vw;
     color: white;
-    margin: 5px;
+    margin: .5vw;
   }
 
   .majorFont{
