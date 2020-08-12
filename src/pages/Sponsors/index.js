@@ -63,7 +63,7 @@ class Sponsors extends Component {
                     </div>
                 </div>
                 
-                <div className = "eBoardPerson">
+                <div className = "eBoardPerson3">
                     <div class="flip-card2">
                     <div class="flip-card2-inner">
                         <div class="flip-card2-front">
@@ -72,7 +72,7 @@ class Sponsors extends Component {
                         </div>
                         <div class="flip-card2-back">
                         <div className = "titleFont5">Benefits: </div>
-                        <ul>
+                        <ul className = "myList">
                             <li className = "titleFont4">Access to student resumes</li>
                             <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
                             <li className = "titleFont4">One compnay information session or event for up to 3 representatives quarterly and seating at the end-of-year Senior Banquet</li>
@@ -86,17 +86,17 @@ class Sponsors extends Component {
                     </div>
                 </div>
 
-                <div className = "eBoardPerson">
+                <div className = "eBoardPerson3">
                     <div class="flip-card3">
                     <div class="flip-card3-inner">
                         <div class="flip-card3-front">
-                        <div className = "sponsorLevels">Silver Level ($1001 - $2499)</div>
+                        <div className = "sponsorLevels">Silver Level <br/> ($1001 - $2499)</div>
                         <img className = "SponsorSilverImages" src={Medium} alt="Silver Level"></img>
                         
                         </div>
                         <div class="flip-card3-back">
                         <div className = "titleFont5">Benefits: </div>
-                        <ul>
+                        <ul className = "myList">
                             <li className = "titleFont4">Access to student resumes</li>
                             <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
                             <li className = "titleFont4">One compnay information session or event for up to 3 representatives</li>
@@ -108,7 +108,7 @@ class Sponsors extends Component {
                     </div>
                 </div>
 
-                <div className = "eBoardPerson">
+                <div className = "eBoardPerson3">
                     <div class="flip-card4">
                     <div class="flip-card4-inner">
                         <div class="flip-card4-front">
@@ -117,7 +117,7 @@ class Sponsors extends Component {
                         </div>
                         <div class="flip-card4-back">
                         <div className = "titleFont5">Benefits: </div>
-                        <ul>
+                        <ul className = "myList">
                             <li className = "titleFont4">One compnay information session or event for up to 3 representatives</li>
                             <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
                             <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
