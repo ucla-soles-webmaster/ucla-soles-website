@@ -14,8 +14,8 @@ import Mat from '../../boardImages/mat1.JPG'
 import Eric from '../../boardImages/eric1.JPG'
 
 import Fabrizio from '../../boardImages/fabrizio1.JPG'
-import Josh from '../../boardImages/strawberry.jpg'
-import Kelly from '../../boardImages/tomato.jpg'
+import Josh from '../../boardImages/josh.jpeg'
+import Kelly from '../../boardImages/kelly1.jpeg'
 
 import Sherry from '../../boardImages/sherry.jpg'
 import Anabella from '../../boardImages/anabella.jpg'
@@ -247,7 +247,7 @@ class EBoard extends Component {
                         <div class="flip-card-back">
                             <div className = "backSideText">Joshua Diaz</div>
                             <div className = "majorFontLong">4th Year Aerospace Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is definitely the Dia de los Reyes social with the baby Jesus figures. It was a lot of fun to play some games with the SOLES fam and enjoy some hot chocolate!</div>
                             <div className = "emailFontLong">uclasoles.technicalchair@gmail.com</div>    
                         </div>
                     </div>
@@ -265,7 +265,7 @@ class EBoard extends Component {
                         <div class="flip-card-back">
                             <div className = "backSideText">Kelly Espino</div>
                             <div className = "majorFont">2nd Year Civil Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is going to the LeaderSHPE Jr. Retreat. Seeing all of our hard work turn into such a fruitful experience for both the volunteers and attendees was absolutely incredible. Being able to make an impact on these young lives and give them a reason to smile, is the reason I wanted to continue it.</div>
                             <div className = "emailFont">uclasoles.leadershpe@gmail.com</div>    
                         </div>
                     </div>
