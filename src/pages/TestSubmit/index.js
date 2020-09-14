@@ -33,11 +33,13 @@ class TestBankSubmit extends Component {
             classID: "",
             addClass: "",
             currentCard: 0,
+            hasAnswers: false,
             censorName: false,
             censorWork: false,
             file_data: "",
             testType: "",
             recentYears: [],
+            professor: "",
             testYear: "",
             testQuarter: "",
             uploadProgress: 0,
@@ -70,7 +72,7 @@ class TestBankSubmit extends Component {
         let currentYear = d.getFullYear()
         
         var i, year;
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < 20; i++) {
             year = currentYear - i;
             tempList.push(year.toString(10));
         }
@@ -84,6 +86,9 @@ class TestBankSubmit extends Component {
     }
 
     selectClass(event) {
+        var n = event.target.value.lastIndexOf(" ");
+        var res = event.target.value.substring(n+1);
+        this.setState({ classID: res })
         this.setState({ class: event.target.value })
     }
 
@@ -108,7 +113,6 @@ class TestBankSubmit extends Component {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 var classID = doc.id;
-                that.setState({ classID: doc.id })
                 that.setState({ departmentClasses: [...that.state.departmentClasses, classID] });
             });    
         });
@@ -202,8 +206,10 @@ class TestBankSubmit extends Component {
 
         var d = new Date();
         var that = this;
+        var answers = this.state.hasAnswers === false ? "" : " with answers";
+        var professor = this.state.professor === "" ? "" : " (" + this.state.professor + ")"
 
-        var storageName = this.state.testType + ', ' + this.state.testQuarter + ' ' + this.state.testYear + ' -- Submitted on: ' + monthNames[d.getMonth()] + ' ' + d.getDate() +
+        var storageName = this.state.testType + professor + ', ' + this.state.testQuarter + ' ' + this.state.testYear + answers + ' -- Submitted on: ' + monthNames[d.getMonth()] + ' ' + d.getDate() +
                             ', ' + + d.getFullYear() + ' at ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds(); 
 
         var storageRef = this.props.firebase.storage.ref();
@@ -285,8 +291,8 @@ class TestBankSubmit extends Component {
             })
             .then(function(docRef) {
                 console.log('Added test to Firestore /tests/' + that.state.department + '/classes/' + 
-                    that.state.classID + '/tests/ with ID: ',  
-                    docRef.id);
+                    that.state.classID + '/tests/ with ID: ' 
+                    , docRef.id);
                 that.props.history.push(ROUTES.TESTBANK);
             })
             .catch(function(error) {
@@ -294,8 +300,19 @@ class TestBankSubmit extends Component {
             })
 
             console.log('End of Delay')
+            
 
         }, delayInMilliseconds);
+
+        this.setState({ class: "" });
+        this.setState({ professor: "" });
+        this.setState({ hasAnswers: false });
+        this.setState({ censorName: false });
+        this.setState({ censorWork: false });
+        this.setState({ file_data: "" });
+        this.setState({ testType: "" });
+        this.setState({ testYear: "" });
+        this.setState({ testQuarter: "" });
 
     }
 
@@ -303,9 +320,9 @@ class TestBankSubmit extends Component {
         let reactSwipeEl;
 
         return (
-            <div className="graa"> 
+            <div className="graa" style={{minHeight: "150vh"}}> 
                 <Navigation transparentNav={false} />
-                <div className="navgapA" style={{minHeight: "100vh"}}>
+                <div className="navgapA" style={{minHeight: "150vh"}}>
                     <AccountNav />
 
                     <h1 className="haccount">
@@ -459,6 +476,16 @@ class TestBankSubmit extends Component {
                                                     formrowclass="FormRowLabelDropDownTestUpload"
                                                     onChange = {(e)=>this.uploadFile(e)}
                                                 /> 
+                                                <Field
+                                                    label={"Professor name"}
+                                                    type="text"
+                                                    placeholder={"Eggert"} 
+                                                    required
+                                                    formrowclass="FormRowLabelDropDownTS"
+                                                    onChange={(e) => {
+                                                        this.setState({ professor: e.target.value });  
+                                                    }}
+                                                />   
                                                 <Form.Group className="FormRowTS" controlId="exampleForm.ControlSelect1">
                                                     <Form.Label className="FormRowLabelDropDownTS">What type of test?</Form.Label>                                   
                                                         <Form.Control 
@@ -530,6 +557,19 @@ class TestBankSubmit extends Component {
                                                         Black out (censor) my work
                                                     </label>
                                                 </div>
+                                                <div className="checksu">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        disabled={this.state.censorWork}
+                                                        onChange={(e) => {
+                                                            this.setState({ hasAnswers: !this.state.hasAnswers })
+                                                        }}
+                                                        className="checkboxTS"
+                                                    />
+                                                    <label className="checklabelsu"  for="vehicle1"> 
+                                                        Has answers
+                                                    </label>
+                                                </div>
 
 
                                                 {/* SUBMIT button, shoulr register action for backend task and redirect
@@ -592,7 +632,7 @@ class TestBankSubmit extends Component {
 
 
 
-
+                                                {console.log(this.state.classID)}
 
                                             </fieldset>
                                         </div>
@@ -622,6 +662,10 @@ class TestBankSubmit extends Component {
                                                         this.setState({ departmentClasses: [] });
                                                         this.getClassesFromDepartment();
                                                         this.setState({ class: "" });
+                                                        this.setState({ professor: "" });
+                                                        this.setState({ hasAnswers: false });
+                                                        this.setState({ censorName: false });
+                                                        this.setState({ censorWork: false });
                                                     }
                                                     this.setState({ currentCard: this.state.currentCard - 1 });
                                                     }
@@ -641,11 +685,12 @@ class TestBankSubmit extends Component {
                                                 }
                                                 onClick={() => {
                                                     reactSwipeEl.next();
+                                                    
                                                     this.setState({ currentCard: this.state.currentCard + 1 });
                                                     if (this.state.department.length > 2) {
                                                         this.getClassesFromDepartment();
                                                     }
-                                                    }
+                                                  }
                                                 }
                                             >
                                                 Next

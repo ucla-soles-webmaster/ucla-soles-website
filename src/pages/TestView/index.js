@@ -34,6 +34,7 @@ class TestBankView extends Component {
             linkToTest: "",
             cantView: false,
             currentCard: 0,
+            clickedView: false
           }
 
     }
@@ -151,7 +152,7 @@ class TestBankView extends Component {
             that.setState({ cantView: true });
             return
         }
-            
+
         // Get link to view test
         this.props.firebase.getFirestore().collection("tests").doc(this.state.department).collection("classes").doc(this.state.class).collection("tests").doc(this.state.test)
             .get()
@@ -159,6 +160,7 @@ class TestBankView extends Component {
                 if (doc.exists) {
                     console.log("Document data:", doc.data());
                     that.setState({ linkToTest:  doc.data()["downloadURL"] });
+                    that.setState({ clickedView: true });
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
@@ -207,7 +209,7 @@ class TestBankView extends Component {
         return (
             <div className="graa"> 
                 <Navigation transparentNav={false} />
-                <div className="navgapA">
+                <div className="navgapA" style={{minHeight: "100vh"}}>
                     <AccountNav />
 
                     <h1 className="haccount">
@@ -313,6 +315,7 @@ class TestBankView extends Component {
                                                         className={false ? "graydd" : "FormRowInputViewTests"}
                                                         as="select"
                                                         onChange={this.selectTest.bind(this)}
+                                                        disabled={this.state.clickedView}
                                                     >
                                                         { this.state.classTests.length > 0
                                                             ?   
@@ -378,7 +381,9 @@ class TestBankView extends Component {
 
                                     {/* Slider Buttons */}
                                     {/* Previous */}
-                                    <div className="nextprevdiv">
+                                    <div className="nextprevdiv" style={this.state.currentCard === 0 ? {marginTop: '-5vw'} 
+                                                                        : this.state.currentCard === 1 ? {marginTop: '-0.9vw'}
+                                                                        : {marginTop: '-1.5vw'} }>
                                         <button 
                                             className="buttonSlider"
                                             disabled={
@@ -397,6 +402,7 @@ class TestBankView extends Component {
                                                     this.setState({ class: "" });
                                                     this.setState({ linkToTest: "" });
                                                     this.setState({ test: "" });
+                                                    this.setState({ clickedView: false });
                                                 }
 
                                                 this.setState({ currentCard: this.state.currentCard - 1 });

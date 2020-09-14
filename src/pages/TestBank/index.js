@@ -109,10 +109,10 @@ class TestBank extends Component {
 
                             </div>
                         
-                        :   <div>
-                                <div className="hubbox">
+                        :   <div style={{minHeight: "100vh"}}> 
+                                <div className="hubbox" >
                                     <img src={sun} id="leftsuntb" alt="Right SOLES Sun" />
-                                    <p className="hubintro">
+                                    <p className="hubintro" style={{paddingTop: "1.6vw"}}>
                                         The SOLES Test Bank is authorized for student use only.
                                     </p>
                                     <img src={sun} id="rightsuntb" alt="Left SOLES Sun" />

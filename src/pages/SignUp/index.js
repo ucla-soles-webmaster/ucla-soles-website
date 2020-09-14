@@ -50,6 +50,7 @@ class SignUpFormBase extends Component {
             alumnet: '',
             bio: '',
             join_reason: '',
+            first_year: false,
             newsletter: false,
             signup_local: false,
             signup_national: false,
@@ -76,6 +77,7 @@ class SignUpFormBase extends Component {
             alumnet,
             bio,
             join_reason,
+            first_year,
             newsletter,
             signup_local,
             signup_national,
@@ -84,6 +86,9 @@ class SignUpFormBase extends Component {
         
         var firestore = this.props.firebase.getFirestore();
         var changeView = false;
+
+        // Determine amount of testbank passes, if first year or not
+        var tb_passes = this.state.first_year === true ? 2 : 1;
         
         // Add user to Cloud Firestore
         firestore.collection('users').add({
@@ -97,20 +102,21 @@ class SignUpFormBase extends Component {
             alumnet: alumnet,
             bio: bio,
             join_reason: join_reason,
+            first_year: first_year,
+            testbank_passes: tb_passes,
             newsletter: newsletter,
             signup_local: signup_local,
             signup_national: signup_national,
             no_membership: no_membership,
             /* Predetermined */
             local_member: false,
+            starpoints: 0,
             national_member: false,
-            testbank_passes: 1,
             admin: false,
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
             changeView = true;
-            this.props.history.push(ROUTES.SIGN_IN);
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
@@ -164,6 +170,7 @@ class SignUpFormBase extends Component {
             alumnet,
             bio,
             join_reason,
+            first_year,
             newsletter,
             signup_local,
             signup_national,
@@ -177,7 +184,9 @@ class SignUpFormBase extends Component {
             email === '' ||
             firstName === '' ||
             career === '' ||
-            ( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
+            passwordOne.length < 6 ||
+            passwordTwo.length < 6 ||
+            //( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
             ( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||
             ( career === 'alumni' && alumnet === '') ||
             ( (career === 'alumni' || career === 'industry') && employer === '' ) ||
@@ -266,6 +275,13 @@ class SignUpFormBase extends Component {
                                 Passwords do not match.
                             </p>
                     }
+                    { passwordOne !== '' && (passwordOne.length < 6)
+                        ? <p className="disclaimer1" style={{color: "red", marginLeft: "6.5%"}}>
+                            Password must be at least 6 characters.
+                          </p>
+                        :   
+                          <div className="" />
+                    }
                 </fieldset>
 
                 <br />
@@ -327,6 +343,20 @@ class SignUpFormBase extends Component {
                                         this.setState({ graduation: e.target.value });  
                                     }}
                                 />
+                                {console.log(this.state.first_year)}
+                                <div className="checksu" style={{paddingTop: "1vw", paddingBottom: "1vw"}}>
+                                    <input 
+                                        type="checkbox" 
+                                        disabled={signup_local || no_membership}
+                                        onChange={(e) => {
+                                            this.setState({ first_year: !first_year });  
+                                        }}
+                                        className="checkboxsu"
+                                    />
+                                    <label className="checklabelsu"  for="vehicle1"> 
+                                        Is this your first year as a UCLA student? (Freshman or Transfer)
+                                    </label>
+                                </div>
                             </fieldset>
                             <br/>
                             <fieldset className="FormGroup">
@@ -349,10 +379,10 @@ class SignUpFormBase extends Component {
                                                 <Paper square elevation={2} style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", backgroundColor: "lightgrey" }} ></Paper>
                                             </Grid>
                                             <Grid item xs={2} spacing={0}>
-                                                <Paper square style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", textAlign: "center", backgroundColor: "#e05f2f", color: "white" }} >National ($15)</Paper>
+                                                <Paper square style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", textAlign: "center", backgroundColor: "#e05f2f", color: "white" }} >National ($10)</Paper>
                                             </Grid>
                                             <Grid item xs={2} spacing={0}>
-                                                <Paper square style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", textAlign: "center", backgroundColor: "#ffff7d" }} >&nbsp; Local &nbsp; ($5)</Paper>
+                                                <Paper square style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", textAlign: "center", backgroundColor: "#ffff7d" }} >&nbsp; Local &nbsp; ($1)</Paper>
                                             </Grid>
                                         </Grid>
                                     </Grid>
@@ -524,7 +554,7 @@ class SignUpFormBase extends Component {
                                     { signup_local ? 
                                         <p className="disclaimer2">
                                             * Your online SOLES account will become fully functional with Local Member benefits
-                                            once we verify your Venmo payment of $5 directed to @UCLA-SOLES *
+                                            once we verify your Venmo payment of $1 directed to @UCLA-SOLES *
                                         </p>
                                         : <div className=""/>
                                     }
@@ -546,7 +576,8 @@ class SignUpFormBase extends Component {
                                     { signup_national ? 
                                         <p className="disclaimer2">
                                             * Your online SOLES account will become fully functional with National Member benefits
-                                            once we verify your Venmo payment of $15 directed to @UCLA-SOLES *
+                                            once we verify that you signed up on <a href="https://shpeconnect.org/" target="_blank" rel="noopener noreferrer">SHPE CONNECT</a> 
+                                            &nbsp; and joined our chapter *
                                         </p>
                                         : <div className=""/>
                                     }
@@ -709,7 +740,8 @@ class SignUpFormBase extends Component {
                         : <div>Submit</div>}
                 </button>
                 <br/>
- 
+                
+
                 {error && <p>{error.message}</p>}
 
 

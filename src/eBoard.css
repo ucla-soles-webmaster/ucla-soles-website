@@ -204,7 +204,7 @@
 }
   
   .BoardPageImages {
-    border: .3vw solid #001d3a;
+    border: .1vw solid #001d3a;
     width:  20vw;
     height: 20vw;
     display: block;
@@ -319,8 +319,7 @@
   
   /* Style the back side */
   .flip-card-back {
-    background-color: #001d3a;
-    color: white;
+    background-color: #001d3aa0;
     transform: rotateY(180deg);
   }
 
