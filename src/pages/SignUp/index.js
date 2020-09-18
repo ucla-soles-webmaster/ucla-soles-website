@@ -670,15 +670,17 @@ class SignUpFormBase extends Component {
                                         shared with verified UCLA students.
                                 </p>
                                 {alumnet === "yes" ?
-                                    <Field 
-                                        label="Bio (optional)"
-                                        placeholder="My interests are..."
-                                        value={bio}
-                                        formrowclass="FormRowLabelDropDown"
-                                        onChange={(e) => {
-                                            this.setState({ bio: e.target.value });  
-                                        }}
-                                    />
+                                    <div>
+                                        <Field 
+                                            label="Bio (optional)"
+                                            placeholder="My interests are..."
+                                            value={bio}
+                                            formrowclass="FormRowLabelDropDown"
+                                            onChange={(e) => {
+                                                this.setState({ bio: e.target.value });  
+                                            }}
+                                        />
+                                    </div>
                                     : <div className=""/>
                                 }
                             </fieldset>    

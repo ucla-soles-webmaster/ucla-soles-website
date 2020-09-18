@@ -1,0 +1,25 @@
+.adminUsersList {
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.adminUserCell {
+    border: 1px solid black;
+    width: 70%;
+    height: 12px;
+    padding: 0.5rem;
+}
+
+.adminUserName {
+    float: left;
+    min-width: 40%;
+}
+
+.userActions {
+    float: right;
+    margin-right: 2%;
+}
+
+.adminAction {
+    width: 10%;
+}
