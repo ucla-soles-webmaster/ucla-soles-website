@@ -1,6 +1,8 @@
 import FlatList from 'flatlist-react';
 import React, { Component } from 'react';
 
+import { AuthUserContext, withAuthorization } from '../Session';
+
 import { withFirebase } from '../Firebase';
 import './admin.css';
 
@@ -12,14 +14,28 @@ class AdminPage extends Component {
       loading: false,
       userList: [],
       userIDList: [],
+      isAdmin: false,
+      firestore: this.props.firebase.getFirestore(),
+      userEmail: this.props.firebase.auth.currentUser.email,
+
+      user: {},
     };
 
   }
 
   componentDidMount() {
       // Used to get a list of all the users
-
       var that = this;
+      that.props.firebase.getFirestore().collection("users")
+      .where("email", "==", this.state.userEmail)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          console.log(doc.id, " => ", doc.data());
+          that.setState({ user: doc.data() })
+        });   
+    });
+
       this.props.firebase.getFirestore().collection("users")
         .get()
         .then(function(querySnapshot) {
@@ -101,15 +117,22 @@ class AdminPage extends Component {
         {loading && <div>Loading ...</div>}
       
         <div class="adminUsersList">
+        { this.state.user["admin"] === true ?
           <FlatList
-            list={userList}
-            renderItem={this.renderUser}
+          list={userList}
+          renderItem={this.renderUser}
           />
+                :
+                  <div>
+                    <p>No Access</p>
+                  </div>
+          }
         </div>
       </div>
     );
   }
 }
 
-
-export default withFirebase(AdminPage);
+const condition = authUser => !!authUser;
+ 
+export default withAuthorization(condition)(AdminPage);
