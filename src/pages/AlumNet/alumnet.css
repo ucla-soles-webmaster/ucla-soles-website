@@ -13,13 +13,63 @@
     border-radius: 3px;
     background-color: white;
 }
+.alumniList {
+    float: left;
+    min-width: 96%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
 
 .alumnetbio {
-    font-size: 1.2vw;
+    font-size: 1.4vw;
+    line-height: 1.5vw;
     color: rgb(150, 150, 150);
-    margin-left: 11.5%;
-    margin-right: 5.5%;
+    margin-left: 5%;
+    margin-right: 5%; 
     margin-top: 0.4%;
     margin-bottom: 0%;
     
+}
+
+.alumName{
+    color: #001d3acf;
+    margin: auto;
+    font-size: 2.2vw;
+    line-height: 2.6vw;
+    float: left;
+}
+
+.alumGradYear {
+    color: #001d3acf;
+    margin: auto;
+    font-size: 2.2vw;
+    line-height: 2.6vw;
+    float: right;
+}
+
+.alumMajor {
+    color: black;
+    margin: auto;
+    font-size: 1.9vw;
+    float: left;
+    line-height: 2.3vw;
+}
+
+.alumEmployer{
+    color: black;
+    margin: auto;
+    font-size: 1.9vw;
+    float: right;
+    line-height: 2.3vw;
+}
+
+.alumContact{
+    text-align: center;
+}
+
+@media screen and (max-width: 500px){
+    .alumBreak{
+        line-height: 0vw;
+        height: 0vw;
+    }
 }
