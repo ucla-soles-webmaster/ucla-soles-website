@@ -32,8 +32,10 @@ class Sponsors extends Component {
                 {/* Do development all within this div */}
                 <div className="navgap">
                 <body1 className = "sponsorPage">
-                <div className = "titleFont1">                                
+                <div className = "titleFont1">
+                <div style = {{width: '80%', margin: 'auto'}}>                                
                     <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                </div>
                     <div className = "staffMembersBoard">
                         We Love Our Sponsors!
                     </div>
@@ -50,8 +52,10 @@ class Sponsors extends Component {
                 </div>
 
                 <div className = "titleFont1">                                
-                    <hr ClassName = "BoardIntroBar" ></hr>
-                    <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                    <hr ClassName = "BoardIntroBar" style = {{width: '80%'}}></hr>
+                    <div style = {{width: '80%', margin: 'auto'}}>
+                        <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                    </div>
                     <div className = "staffMembersBoard">
                         Become a Sponsor Today
                     </div>
@@ -63,6 +67,7 @@ class Sponsors extends Component {
                     </div>
                 </div>
                 
+                <div style = {{width: '80%', alignItems: 'center', margin: 'auto'}}>
                 <div className = "eBoardPerson3">
                     <div class="flip-card2">
                     <div class="flip-card2-inner">
@@ -126,7 +131,7 @@ class Sponsors extends Component {
                     </div>
                     </div>
                 </div>
-                
+                </div>
                 
 
                 <div className = "titleFont1">  
@@ -136,8 +141,10 @@ class Sponsors extends Component {
                      logos are very much appreciated as well.  Some companies offer special services such as graphics and printing.  These services may also be donated for
                       the printing of materials throughout the year.  Note these services will also include complementary recognition in all such contributed products.
                      </div>                              
-                    <hr ClassName = "BoardIntroBar" ></hr>
-                    <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                    <hr ClassName = "BoardIntroBar" style = {{width: '80%'}}></hr>
+                    <div style = {{width: '80%', margin: 'auto'}}>
+                        <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                    </div>
                     <div className = "staffMembersBoard">
                         Our Current Sponsors
                     </div>
