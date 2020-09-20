@@ -49,6 +49,7 @@ class SignUpFormBase extends Component {
             employer: '',
             alumnet: '',
             bio: '',
+            linkedin: '',
             join_reason: '',
             first_year: false,
             newsletter: false,
@@ -76,6 +77,7 @@ class SignUpFormBase extends Component {
             employer,
             alumnet,
             bio,
+            linkedin,
             join_reason,
             first_year,
             newsletter,
@@ -101,6 +103,7 @@ class SignUpFormBase extends Component {
             employer: employer,
             alumnet: alumnet,
             bio: bio,
+            linkedin: linkedin,
             join_reason: join_reason,
             first_year: first_year,
             testbank_passes: tb_passes,
@@ -169,6 +172,7 @@ class SignUpFormBase extends Component {
             employer,
             alumnet,
             bio,
+            linkedin,
             join_reason,
             first_year,
             newsletter,
@@ -680,6 +684,15 @@ class SignUpFormBase extends Component {
                                                 this.setState({ bio: e.target.value });  
                                             }}
                                         />
+                                        <Field 
+                                            label="LinkedIn (Optional)"
+                                            placeholder="Place your LinkedIn link here"
+                                            value={linkedin}
+                                            formrowclass="FormRowLabelDropDown"
+                                            onChange={(e) => {
+                                                this.setState({ linkedin: e.target.value });  
+                                            }}
+                                        />
                                     </div>
                                     : <div className=""/>
                                 }
@@ -721,6 +734,7 @@ class SignUpFormBase extends Component {
                 
 
                 <br/>
+                
                 <input 
                     type="checkbox" 
                     onChange={(e) => {
@@ -728,10 +742,18 @@ class SignUpFormBase extends Component {
                     }}
                     className="newslettersu" 
                 />
-                    <label for="vehicle1" className="newsletterlabelsu"> 
-                        Sign up for the weekly SOLES newsletter
-                    </label>
-                <br />
+                <label for="vehicle1" className="newsletterlabelsu"> 
+                    Sign up for the weekly SOLES newsletter
+                </label>
+                
+                { this.state.newsletter === true
+                    ?
+                        <div>
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQEJK9U-EvaBFuDpoJMEGbBifz0oydO-4CAhilCaZvir38Zg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" className="newletterForm">Loading…</iframe>
+                        </div>
+                    :
+                    <br/>
+                }
 
                 <br/>
                 <br/>

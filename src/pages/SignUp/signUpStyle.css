@@ -22,6 +22,11 @@
     -webkit-text-stroke-color: whitesmoke;
 }
 
+.newletterForm {
+    width: 100%;
+    height: 740px;
+}
+
 .photoback {
     position: absolute;
     z-index: -1;
@@ -182,12 +187,19 @@
     margin-right: 2.5%;
 }
 
+.newsletterDiv {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: -2%;
+}
+
 .newsletterlabelsu {
     font-size: 1.1vw;
     width: 87%;
     padding: 0;
     margin-top: -5%;
     color: #001d3a;
+    vertical-align: middle;
 }
 
 .buttonsu {
