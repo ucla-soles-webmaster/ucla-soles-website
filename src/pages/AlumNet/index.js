@@ -44,25 +44,25 @@ class AlumNet extends Component {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 var userData = doc.data();
-                if(userData.major === "cs" || userData.major === "cse" || userData.major === "ce")
-                    that.setState({csList: [... that.state.csList, userData]});
-                else if(userData.major === "aerospace")
+                if(userData.major === "cs" || userData.major === "cse" || userData.major === "ce") // eslint-disable-next-line
+                    that.setState({ csList: [...that.state.csList, userData]});
+                else if(userData.major === "aerospace") // eslint-disable-next-line
                     that.setState({aeroList: [... that.state.aeroList, userData]});
-                else if(userData.major === "bioengineering" || userData.major === "biology")
+                else if(userData.major === "bioengineering" || userData.major === "biology") // eslint-disable-next-line
                     that.setState({bioList: [... that.state.bioList, userData]});
-                else if(userData.major === "civil")
+                else if(userData.major === "civil") // eslint-disable-next-line
                     that.setState({civilList: [... that.state.civilList, userData]});
-                else if(userData.major === "chemical" || userData.major === "chemistry")
+                else if(userData.major === "chemical" || userData.major === "chemistry") // eslint-disable-next-line
                     that.setState({chemList: [... that.state.chemList, userData]});
-                else if(userData.major === "ee")
+                else if(userData.major === "ee") // eslint-disable-next-line
                     that.setState({eeList: [... that.state.eeList, userData]});
-                else if(userData.major === "materials")
+                else if(userData.major === "materials") // eslint-disable-next-line
                     that.setState({materialsList: [... that.state.materialsList, userData]});
-                else if(userData.major === "math")
+                else if(userData.major === "math") // eslint-disable-next-line
                     that.setState({mathList: [... that.state.mathList, userData]});
-                else if(userData.major === "mechanical")
+                else if(userData.major === "mechanical") // eslint-disable-next-line
                     that.setState({mecheList: [... that.state.mecheList, userData]});
-                else if(userData.major === "physics")
+                else if(userData.major === "physics") // eslint-disable-next-line
                     that.setState({physicsList: [... that.state.physicsList, userData]});
                 else
                     that.setState({ otherList: [...that.state.otherList, userData] }); 
@@ -77,25 +77,25 @@ class AlumNet extends Component {
                 
                 {/* User's name */}
                 <div className="alumniList">
+                    
                     <a className = "alumName" href={user["linkedin"]} rel="noopener noreferrer" target = "_blank">{user["first_name"]} {user["last_name"]}</a>
                     
                     <span className = "alumGradYear">
                             Class of {user["graduation"]}
                     </span>
 
-                    <br/>
-                    <p className = "alumBreak"></p>
+                    <p className = "alumBreak"></p> 
 
                     <span className = "alumMajor">
                         Major: {user["major"]}
                     </span>
 
                     <span className = "alumEmployer">
-                        Current Employer: {user["employer"]}
+                        Current Employer: {user["employer"]} 
                     </span>
-                        
+                     
                     <br/>
-                    <p className = "alumBreak"></p>
+                    
                     
                     <p className="alumnetbio"> 
                         {user["bio"]}
