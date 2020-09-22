@@ -1,6 +1,8 @@
 import FlatList from 'flatlist-react';
 import React, { Component } from 'react';
 
+import { AuthUserContext, withAuthorization } from '../Session';
+
 import { withFirebase } from '../Firebase';
 import './admin.css';
 
@@ -12,14 +14,28 @@ class AdminPage extends Component {
       loading: false,
       userList: [],
       userIDList: [],
+      isAdmin: false,
+      firestore: this.props.firebase.getFirestore(),
+      userEmail: this.props.firebase.auth.currentUser.email,
+
+      user: {},
     };
 
   }
 
   componentDidMount() {
       // Used to get a list of all the users
-
       var that = this;
+      that.props.firebase.getFirestore().collection("users")
+      .where("email", "==", this.state.userEmail)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          console.log(doc.id, " => ", doc.data());
+          that.setState({ user: doc.data() })
+        });   
+    });
+
       this.props.firebase.getFirestore().collection("users")
         .get()
         .then(function(querySnapshot) {
@@ -37,9 +53,25 @@ class AdminPage extends Component {
     this.props.firebase.users().off();
   }
 
-  changeAdmin = () => {
-    var that = this;
-    console.log('yer')
+  changeAdmin = (idx, user) => {
+    var that = this;  // must have this for the setState inside lamda
+    this.props.firebase.getFirestore().collection("users")
+      .doc(that.state.userIDList[idx])  // can have multiple .where calls
+      .update({
+        admin: !user["admin"]
+      })
+      that.setState({userList:[], userIDList:[]})
+      this.props.firebase.getFirestore().collection("users")
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              var userData = doc.data();
+              var userID = doc.id;
+              that.setState({ userList: [...that.state.userList, userData] });
+              that.setState({ userIDList: [...that.state.userIDList, userID] });
+          });    
+      });
   }
 
   renderUser = (user, idx) => {
@@ -55,7 +87,7 @@ class AdminPage extends Component {
         
 
           {/* Admin */}
-          <button onClick={this.changeAdmin()} type="button" class="adminAction">
+          <button onClick={() => this.changeAdmin(idx, user)} type="button" class="adminAction">
               { user["admin"] === true ?
                   <div class="adminButton">
                     remove Admin
@@ -85,15 +117,22 @@ class AdminPage extends Component {
         {loading && <div>Loading ...</div>}
       
         <div class="adminUsersList">
+        { this.state.user["admin"] === true ?
           <FlatList
-            list={userList}
-            renderItem={this.renderUser}
+          list={userList}
+          renderItem={this.renderUser}
           />
+                :
+                  <div>
+                    <p>No Access</p>
+                  </div>
+          }
         </div>
       </div>
     );
   }
 }
 
-
-export default withFirebase(AdminPage);
+const condition = authUser => !!authUser;
+ 
+export default withAuthorization(condition)(AdminPage);
