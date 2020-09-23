@@ -56,13 +56,38 @@ class SignUpFormBase extends Component {
             signup_local: false,
             signup_national: false,
             no_membership: false,
+            join_mentorship: false,
+            mentor: false,
+            mentee: false,
             /* Predetermined attributes: */
             local_member: false,
             national_member: false,
             testbank_passes: 1,
             admin: false,
+            has_access: true, /* This is used to determine if an Industry member has access to our website services */
             error: null,
+            company_code: '',
+            input_code: ''
         };                                                                                                                                                                                  
+    }
+
+    componentDidMount() {
+        var that = this;
+
+        // Get the code needed for industry members to sign up
+        that.props.firebase.getFirestore().collection("misc").doc("company_code")
+            .get()
+            .then(function(doc) {
+                if (doc.exists) {
+                    console.log(doc.data())
+                    that.setState({ company_code: doc.data()["code"]})
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });
     }
 
     onSubmit = event => {
@@ -84,6 +109,9 @@ class SignUpFormBase extends Component {
             signup_local,
             signup_national,
             no_membership,
+            join_mentorship,
+            mentor,
+            mentee
         } = this.state;
         
         var firestore = this.props.firebase.getFirestore();
@@ -111,11 +139,15 @@ class SignUpFormBase extends Component {
             signup_local: signup_local,
             signup_national: signup_national,
             no_membership: no_membership,
+            join_mentorship: join_mentorship,
+            mentor: join_mentorship === true ? mentor : false,
+            mentee: join_mentorship === true ? mentee : false,
             /* Predetermined */
             local_member: false,
             starpoints: 0,
             national_member: false,
             admin: false,
+            has_access: true  /* This is used to determine if an Industry member has access to our website services */
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -160,6 +192,7 @@ class SignUpFormBase extends Component {
     }
 
     render() {
+
         const {
             firstName,
             lastName,
@@ -179,6 +212,10 @@ class SignUpFormBase extends Component {
             signup_local,
             signup_national,
             no_membership,
+            join_mentorship,
+            mentor,
+            mentee,
+            input_code,
             error,
         } = this.state;
 
@@ -194,6 +231,7 @@ class SignUpFormBase extends Component {
             ( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||
             ( career === 'alumni' && alumnet === '') ||
             ( (career === 'alumni' || career === 'industry') && employer === '' ) ||
+            ( career === 'industry' && input_code !== this.state.company_code ) ||
             ( (career === 'student') && (!signup_local && !signup_national && !no_membership));
 
         return (
@@ -347,11 +385,9 @@ class SignUpFormBase extends Component {
                                         this.setState({ graduation: e.target.value });  
                                     }}
                                 />
-                                {console.log(this.state.first_year)}
                                 <div className="checksu" style={{paddingTop: "1vw", paddingBottom: "1vw"}}>
                                     <input 
                                         type="checkbox" 
-                                        disabled={signup_local || no_membership}
                                         onChange={(e) => {
                                             this.setState({ first_year: !first_year });  
                                         }}
@@ -361,6 +397,63 @@ class SignUpFormBase extends Component {
                                         Is this your first year as a UCLA student? (Freshman or Transfer)
                                     </label>
                                 </div>
+                                <div className="checksu" style={{paddingTop: "1vw", paddingBottom: "1vw"}}>
+                                    <input 
+                                        type="checkbox" 
+                                        onChange={(e) => {
+                                            this.setState({ join_mentorship: !join_mentorship });  
+                                        }}
+                                        className="checkboxsu"
+                                    />
+                                    <label className="checklabelsu"  for="vehicle1"> 
+                                        Join SOLES MentorSHPE? (don't miss out, 100% recommended)
+                                    </label>
+                                    <p className="disclaimer2">
+                                        MentorSHPE will be ran a little differently this year... 
+                                        Mentees and mentors will be placed into Familias, where Familias will square off 
+                                        in the quarterly MentorSHPE ChampionSHPE, and have the chance to win a [$### TO BE DETERMINED award].
+                                        ChampionSHPE STAR Points will be given by coming to SOLES socials/meetings and helping out
+                                        at SOLES events/committees. You've read this far, might as well join!
+                                    </p>
+                                    
+                                                <div className="checksu">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        disabled={mentor || !join_mentorship}
+                                                        onChange={(e) => {
+                                                            this.setState({ mentee: !mentee });  
+                                                        }}
+                                                        className="checkboxsu"
+                                                    />
+                                                    <label className="checklabelsu"  for="vehicle1"> 
+                                                        Mentee
+                                                    </label>
+                                                    <p className="disclaimer2">
+                                                        MentorSHPE is a once-in-a-lifetime chance to meet up with SOLES upperclassmen
+                                                        and get help on advice with college life and academics. Mentees never
+                                                        regret joining!
+                                                    </p>
+                                                </div>
+                                                {/* Mentee */}
+                                                <div className="checksu">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        disabled={mentee || !join_mentorship}
+                                                        onChange={(e) => {
+                                                            this.setState({ mentor: !mentor });  
+                                                        }}
+                                                        className="checkboxsu"
+                                                    />
+                                                    <label className="checklabelsu"  for="vehicle1"> 
+                                                        Mentor 
+                                                    </label>
+                                                    <p className="disclaimer2">
+                                                        Join as a mentor and see whats up with the incoming class of SOLES members!
+                                                    </p>
+                                                </div>    
+                                            
+                                    {console.log(this.state.join_mentorship)}
+                                </div>
                             </fieldset>
                             <br/>
                             <fieldset className="FormGroup">
@@ -368,11 +461,6 @@ class SignUpFormBase extends Component {
                                     <Form.Label className="FormRowLabelDropDown">Membership Options</Form.Label>
                                     
                                 </Form.Group>
-                                <p className="disclaimer1">
-                                    Not choosing a membership <b> will not prohibit</b> you from participating in our biweekly meetings, socials, 
-                                    outreach events, or any of our general body gatherings for that matter. Opportunity to join Membership will be available
-                                    anytime on the Profile page.
-                                </p>
 
                                 {/* Insert Membership descriptions here */}
 
@@ -386,7 +474,7 @@ class SignUpFormBase extends Component {
                                                 <Paper square style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", textAlign: "center", backgroundColor: "#e05f2f", color: "white" }} >National ($10)</Paper>
                                             </Grid>
                                             <Grid item xs={2} spacing={0}>
-                                                <Paper square style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", textAlign: "center", backgroundColor: "#ffff7d" }} >&nbsp; Local &nbsp; ($1)</Paper>
+                                                <Paper square style={{height: "3vw", fontSize: "0.95vw", padding: "0.5vw", textAlign: "center", backgroundColor: "#ffff7d" }} >&nbsp; Local &nbsp; (Free!)</Paper>
                                             </Grid>
                                         </Grid>
                                     </Grid>
@@ -555,16 +643,7 @@ class SignUpFormBase extends Component {
                                     <label className="checklabelsu"  for="vehicle1"> 
                                         Local SOLES Member
                                     </label>
-                                    { signup_local ? 
-                                        <p className="disclaimer2">
-                                            * Your online SOLES account will become fully functional with Local Member benefits
-                                            once we verify your Venmo payment of $1 directed to @UCLA-SOLES *
-                                        </p>
-                                        : <div className=""/>
-                                    }
                                 </div>
-
-
                                 <div className="checksu">
                                     <input 
                                         type="checkbox" 
@@ -587,20 +666,6 @@ class SignUpFormBase extends Component {
                                     }
                                 </div>
 
-
-                                <div className="checksu">
-                                    <input 
-                                        type="checkbox" 
-                                        disabled={signup_local || signup_national}
-                                        onChange={(e) => {  
-                                            this.setState({ no_membership: !no_membership });
-                                        }}
-                                        className="checkboxsu"
-                                    />
-                                    <label className="checklabelsu"  for="vehicle1"> 
-                                        No thank you / later
-                                    </label>
-                                </div>
                                 <br/>
                             </fieldset>
                         </div>
@@ -718,7 +783,7 @@ class SignUpFormBase extends Component {
                                 />
                                 <Field 
                                     label="Reason for joining"
-                                    placeholder="Want to partner with SOLES and..."
+                                    placeholder="Recruiting..."
                                     required
                                     value={join_reason}
                                     formrowclass="FormRowLabelDropDown"
@@ -726,6 +791,24 @@ class SignUpFormBase extends Component {
                                         this.setState({ join_reason: e.target.value });  
                                     }}
                                 />
+                                <Field 
+                                    label="Sign Up Code"
+                                    placeholder="Sponsor SOLES to get a code"
+                                    required
+                                    value={input_code}
+                                    formrowclass="FormRowLabelDropDown"
+                                    onChange={(e) => {
+                                        this.setState({ input_code: e.target.value });  
+                                    }}
+                                />
+                                {   this.state.input_code === ''
+                                    ?
+                                        <p className="disclaimer1" style={{color: "red", marginLeft: "6.5%"}}>
+                                            You must enter in a code which you should receive from the SOLES EVP upon sponsoring SOLES.
+                                        </p>
+                                    :
+                                        <p className="" />
+                                }
                             </fieldset>    
                         </div>
                     : <div className=""/>
@@ -749,7 +832,7 @@ class SignUpFormBase extends Component {
                 { this.state.newsletter === true
                     ?
                         <div>
-                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQEJK9U-EvaBFuDpoJMEGbBifz0oydO-4CAhilCaZvir38Zg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" className="newletterForm">Loading…</iframe>
+                            <iframe title="newsletter" src="https://docs.google.com/forms/d/e/1FAIpQLSfQEJK9U-EvaBFuDpoJMEGbBifz0oydO-4CAhilCaZvir38Zg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" className="newletterForm">Loading…</iframe>
                         </div>
                     :
                     <br/>
