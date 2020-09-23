@@ -15,6 +15,7 @@ class STARLeaderboard extends Component {
         
         this.state = {
             userList: [],
+            attributesList: [],
             userEmail: this.props.firebase.auth.currentUser.email,
         }
 
@@ -24,14 +25,16 @@ class STARLeaderboard extends Component {
         
         // Get all users from a user collection
         var that = this;
-        this.props.firebase.getFirestore().collection("users")
-        .where("career", "==", "student")  // can have multiple .where calls
+        this.props.firebase.getFirestore().collection("teams")
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
-                var userData = doc.data();
+                var userData = doc.id;
+                console.log(userData)
+                that.setState({ attributesList: [...that.state.attributesList, doc.data()]});
                 that.setState({ userList: [...that.state.userList, userData] });
+                
             });    
         });
 
@@ -41,16 +44,17 @@ class STARLeaderboard extends Component {
 
     renderUser = (user, idx) => {
         return (
-            <div className={ this.state.userEmail === user["email"] ? "STARleaderboardRowEvenUSER" : idx % 2 === 0 ? "STARleaderboardRowEven" : "STARleaderboardRowOdd"   }>
+            <div className= {idx % 2 === 0 ? "STARleaderboardRowEven" : "STARleaderboardRowOdd"   }>
                 
                 {/* User's name */}
                 <div className="userLeaderboardName">
-                    {user["first_name"]} {user["last_name"]}
+                    {user}
                 </div>
 
                 {/* User's STAR Points */}
                 <div className="userPoints">
-                    {user["starpoints"]}
+                    {console.log(this.state.attributesList)}
+                    {this.state.attributesList[idx]["starpoints"]} points
                 </div>
 
             </div>
@@ -60,7 +64,7 @@ class STARLeaderboard extends Component {
 
     render() {
 
-        this.state.userList.sort(compareGreaterSTARPoints); // Sort users by > STAR Points
+        // this.state.userList.sort(compareGreaterSTARPoints); // Sort users by > STAR Points
 
         return (
             <div className="STARleaderboard">
