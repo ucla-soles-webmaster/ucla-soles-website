@@ -227,6 +227,7 @@ class SignUpFormBase extends Component {
             career === '' ||
             passwordOne.length < 6 ||
             passwordTwo.length < 6 ||
+            ( email !== '' &&  !email.includes('@')) ||
             //( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
             ( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||
             ( career === 'alumni' && alumnet === '') ||
@@ -281,6 +282,14 @@ class SignUpFormBase extends Component {
                                 Students must use their @ucla.edu email.
                             </p>
                         :   <div className="" />
+                    }
+                    { (email !== '' && !email.includes('@'))
+                        ?
+                            <p className="disclaimer1" style={{color: "red", marginLeft: "7%"}}>
+                                Invalid email format
+                            </p>
+                        :
+                            <div className="" />
                     }
                 </fieldset>
 
@@ -846,6 +855,9 @@ class SignUpFormBase extends Component {
                         ? <div>Incomplete</div>
                         : <div>Submit</div>}
                 </button>
+                <p className="submitNotice" style={{textAlign: 'center'}}>
+                    Upon submit, you will be directed to the Sign In page to sign into your new account.
+                </p>
                 <br/>
                 
 
