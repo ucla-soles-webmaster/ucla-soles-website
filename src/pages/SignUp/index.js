@@ -66,7 +66,10 @@ class SignUpFormBase extends Component {
             admin: false,
             has_access: true, /* This is used to determine if an Industry member has access to our website services */
             error: null,
-            company_code: '',
+            company_code_gold: '',
+            company_code_silver: '',
+            company_code_bronze: '',
+            sponsor_level: '',
             input_code: ''
         };                                                                                                                                                                                  
     }
@@ -80,7 +83,9 @@ class SignUpFormBase extends Component {
             .then(function(doc) {
                 if (doc.exists) {
                     console.log(doc.data())
-                    that.setState({ company_code: doc.data()["code"]})
+                    that.setState({ company_code_gold: doc.data()["gold_code"]})
+                    that.setState({ company_code_silver: doc.data()["silver_code"]})
+                    that.setState({ company_code_bronze: doc.data()["bronze_code"]})
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
@@ -110,6 +115,7 @@ class SignUpFormBase extends Component {
             signup_national,
             no_membership,
             join_mentorship,
+            sponsor_level,
             mentor,
             mentee
         } = this.state;
@@ -147,7 +153,8 @@ class SignUpFormBase extends Component {
             starpoints: 0,
             national_member: false,
             admin: false,
-            has_access: true  /* This is used to determine if an Industry member has access to our website services */
+            has_access: true,  /* This is used to determine if an Industry member has access to our website services */
+            sponsor_level: sponsor_level
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -187,6 +194,10 @@ class SignUpFormBase extends Component {
         this.setState({ major: event.target.value });
     }
 
+    changeSponsorLevel(event) {
+        this.setState({ sponsor_level: event.target.value });
+    }
+
     addAlumNet(event) {
         this.setState({alumnet: event.target.value});
     }
@@ -216,6 +227,7 @@ class SignUpFormBase extends Component {
             mentor,
             mentee,
             input_code,
+            sponsor_level,
             error,
         } = this.state;
 
@@ -228,17 +240,21 @@ class SignUpFormBase extends Component {
             passwordOne.length < 6 ||
             passwordTwo.length < 6 ||
             ( email !== '' &&  !email.includes('@')) ||
-            //( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
+            ( career === 'industry' && sponsor_level === '') ||
+            ( sponsor_level === 'gold' && input_code !== this.state.company_code_gold) ||
+            ( sponsor_level === 'silver' && input_code !== this.state.company_code_silver) ||
+            ( sponsor_level === 'bronze' && input_code !== this.state.company_code_bronze) ||
+            ( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
             ( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||
             ( career === 'alumni' && alumnet === '') ||
             ( (career === 'alumni' || career === 'industry') && employer === '' ) ||
-            ( career === 'industry' && input_code !== this.state.company_code ) ||
             ( (career === 'student') && (!signup_local && !signup_national && !no_membership));
 
         return (
             <form onSubmit={this.onSubmit} className="suform">
                 {/* Items needed for sign up */}
-                
+                {console.log(sponsor_level)}
+                {console.log(this.state.company_code_gold)}
                 <fieldset className="FormGroup">
                     <Field 
                         label="First Name"
@@ -790,16 +806,19 @@ class SignUpFormBase extends Component {
                                         this.setState({ employer: e.target.value });  
                                     }}
                                 />
-                                <Field 
-                                    label="Reason for joining"
-                                    placeholder="Recruiting..."
-                                    required
-                                    value={join_reason}
-                                    formrowclass="FormRowLabelDropDown"
-                                    onChange={(e) => {
-                                        this.setState({ join_reason: e.target.value });  
-                                    }}
-                                />
+                                <Form.Group className="FormRow" controlId="exampleForm.ControlSelect1">
+                                    <Form.Label className="FormRowLabelDropDown">Sponsor Level</Form.Label>
+                                        <Form.Control 
+                                            className={sponsor_level === "" ? "graydd" : "FormRowInput"}
+                                            as="select"
+                                            onChange={this.changeSponsorLevel.bind(this)}
+                                        >
+                                            <option value="">-</option>
+                                            <option value="gold" >I am a Gold Sponsor</option>
+                                            <option value="silver" >I am a Silver Sponsor</option>
+                                            <option value="bronze" >I am a Bronze Sponsor</option>
+                                        </Form.Control>
+                                </Form.Group>
                                 <Field 
                                     label="Sign Up Code"
                                     placeholder="Sponsor SOLES to get a code"

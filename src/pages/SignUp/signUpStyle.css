@@ -150,6 +150,15 @@
     font-style: italic;
 }
 
+.submitNotice {
+    font-size: 0.8vw;
+    color: rgb(150, 150, 150);
+    margin-top: 2%;
+    margin-bottom: 0%;
+    font-style: italic;
+    text-align: center;
+}
+
 .checksu {
     padding-bottom: 1%;
 }
