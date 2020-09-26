@@ -4,6 +4,7 @@ import { compose } from 'recompose';
 import Form from 'react-bootstrap/Form'
 import { Grid } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
+import Progress from 'react-progressbar';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -13,7 +14,7 @@ import Footer from '../../components/Footer';
 
 import coverPhoto from '../../coverImages/sign.png';
 import './signUpStyle.css';
-
+// uyeras
 
 const SignUpPage = () => (
     <div>
@@ -70,7 +71,10 @@ class SignUpFormBase extends Component {
             company_code_silver: '',
             company_code_bronze: '',
             sponsor_level: '',
-            input_code: ''
+            input_code: '',
+            resume_file_data: '',
+            resume_file_name: '',
+            uploadProgress: 0
         };                                                                                                                                                                                  
     }
 
@@ -82,7 +86,6 @@ class SignUpFormBase extends Component {
             .get()
             .then(function(doc) {
                 if (doc.exists) {
-                    console.log(doc.data())
                     that.setState({ company_code_gold: doc.data()["gold_code"]})
                     that.setState({ company_code_silver: doc.data()["silver_code"]})
                     that.setState({ company_code_bronze: doc.data()["bronze_code"]})
@@ -96,6 +99,21 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
+
+        // Resume upload
+        var storageName = this.state.firstName + ' ' + this.state.lastName + ' - Resume'
+        var storageRef = this.props.firebase.storage.ref();
+        var mountainImagesRef = storageRef.child('resumes/' + storageName);
+
+        // Store file on Firebase Storage
+        var message = this.state.resume_file_data;
+        console.log(message)
+        var uploadTask = mountainImagesRef.putString(message, 'data_url');
+
+        mountainImagesRef.putString(message, 'data_url').then(function(snapshot) {
+            console.log('Uploaded a data_url string!');
+          });
+
         const { 
             firstName,
             lastName,
@@ -125,54 +143,54 @@ class SignUpFormBase extends Component {
 
         // Determine amount of testbank passes, if first year or not
         var tb_passes = this.state.first_year === true ? 2 : 1;
-        
-        // Add user to Cloud Firestore
-        firestore.collection('users').add({
-            first_name: firstName,
-            last_name: lastName,
-            email: email,
-            career: career,
-            major: major,
-            graduation: graduation,
-            employer: employer,
-            alumnet: alumnet,
-            bio: bio,
-            linkedin: linkedin,
-            join_reason: join_reason,
-            first_year: first_year,
-            testbank_passes: tb_passes,
-            newsletter: newsletter,
-            signup_local: signup_local,
-            signup_national: signup_national,
-            no_membership: no_membership,
-            join_mentorship: join_mentorship,
-            mentor: join_mentorship === true ? mentor : false,
-            mentee: join_mentorship === true ? mentee : false,
-            /* Predetermined */
-            local_member: false,
-            starpoints: 0,
-            national_member: false,
-            admin: false,
-            has_access: true,  /* This is used to determine if an Industry member has access to our website services */
-            sponsor_level: sponsor_level
-        })
-        .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
-            changeView = true;
-        })
-        .catch(function(error) {
-            console.error("Error adding document: ", error);
-        })
-            
+
+            // Add user to Cloud Firestore
+            firestore.collection('users').add({
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                career: career,
+                major: major,
+                graduation: graduation,
+                employer: employer,
+                alumnet: alumnet,
+                bio: bio,
+                linkedin: linkedin,
+                join_reason: join_reason,
+                first_year: first_year,
+                testbank_passes: tb_passes,
+                newsletter: newsletter,
+                signup_local: signup_local,
+                signup_national: signup_national,
+                no_membership: no_membership,
+                join_mentorship: join_mentorship,
+                mentor: join_mentorship === true ? mentor : false,
+                mentee: join_mentorship === true ? mentee : false,
+                /* Predetermined */
+                local_member: false,
+                starpoints: 0,
+                national_member: false,
+                admin: false,
+                has_access: true,  /* This is used to determine if an Industry member has access to our website services */
+                sponsor_level: sponsor_level
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                changeView = true;
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            })
+
         // Add user to User Authentication list
         this.props.firebase
-            .doCreateUserWithEmailAndPassword(email, passwordOne)
-            .then(authUser => {
-                this.props.history.push(ROUTES.SIGN_IN);
-            })
-            .catch(error => {
-                this.setState({ error });
-            });
+        .doCreateUserWithEmailAndPassword(email, passwordOne)
+        .then(authUser => {
+            this.props.history.push(ROUTES.SIGN_IN);
+        })
+        .catch(error => {
+            this.setState({ error });
+        });   
 
         this.props.history.push(ROUTES.SIGN_IN);
         if (changeView === true) {
@@ -180,6 +198,7 @@ class SignUpFormBase extends Component {
         }
 
         event.preventDefault();
+        
     };
 
     onChange = event => {
@@ -202,8 +221,43 @@ class SignUpFormBase extends Component {
         this.setState({alumnet: event.target.value});
     }
 
-    render() {
+    
+    uploadFile(e) {
+        var that = this;
+        var file = e.target.files;
+        var reader = new FileReader();
 
+        try {
+            reader.readAsDataURL(file[0]);
+            reader.onload=(e)=>{
+                that.setState({ resume_file_data: e.target.result });
+            }
+        }
+        catch(error) {
+            that.setState({ resume_file_data: "" });
+        }
+
+        // This get's the file's original name
+        var fullPath = document.getElementById('uploadResumeInp').value;
+        if (fullPath) {
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var filename = fullPath.substring(startIndex);
+            if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                filename = filename.substring(1);
+            }
+            that.setState({ resume_file_name: filename})
+        }
+    }
+    /* ffdafsdf */
+    fileSubmitToDataBase = event => {
+        var that = this;
+
+    }
+
+
+    render() {
+        console.log(this.state.resume_file_data)
+        console.log(typeof this.state.resume_file_data)
         const {
             firstName,
             lastName,
@@ -253,8 +307,7 @@ class SignUpFormBase extends Component {
         return (
             <form onSubmit={this.onSubmit} className="suform">
                 {/* Items needed for sign up */}
-                {console.log(sponsor_level)}
-                {console.log(this.state.company_code_gold)}
+                
                 <fieldset className="FormGroup">
                     <Field 
                         label="First Name"
@@ -477,8 +530,22 @@ class SignUpFormBase extends Component {
                                                     </p>
                                                 </div>    
                                             
-                                    {console.log(this.state.join_mentorship)}
                                 </div>
+
+                                {/* Resume Upload */}
+                                <Field
+                                    label={"Resume Upload (Optional)"}
+                                    type="file"
+                                    required
+                                    id="uploadResumeInp"
+                                    formrowclass="FormRowLabelDropDownTestUpload"
+                                    onChange = {(e)=>this.uploadFile(e)}
+                                /> 
+                                <p className="disclaimer2">
+                                    Have SOLES company sponsors view your resume! If you've recently 
+                                    given us your resume, feel free to skip this.
+                                </p>                       
+                                <br/>
                             </fieldset>
                             <br/>
                             <fieldset className="FormGroup">
