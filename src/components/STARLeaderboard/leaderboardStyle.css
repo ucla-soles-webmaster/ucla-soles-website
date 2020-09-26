@@ -50,14 +50,14 @@
 
 .userLeaderboardName {
     float: left;
-    min-width: 85%;
+    min-width: 75%;
     margin-left: 2%;
 }
 
 .userPoints {
     float: right;
-    width: 10%;
-    min-width: 10%;
+    width: 20%;
+    min-width: 20%;
     text-align: right;
 }
 
@@ -70,10 +70,10 @@
         transition: 0.5s;
     }
     .userPoints {
-        min-width: 15%;
+        min-width: 20%;
         margin-right: 5%;
     }
     .userLeaderboardName {
-        min-width: 80%;
+        min-width: 75%;
     }
 }
