@@ -100,7 +100,7 @@ class SignUpFormBase extends Component {
 
     onSubmit = event => {
 
-        // Resume upload
+        // Resume
         var storageName = this.state.firstName + ' ' + this.state.lastName + ' - Resume'
         var storageRef = this.props.firebase.storage.ref();
         var mountainImagesRef = storageRef.child('resumes/' + storageName);
