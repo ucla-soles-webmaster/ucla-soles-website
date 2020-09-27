@@ -69,7 +69,7 @@ class STARLeaderboard extends Component {
         return (
             <div className="STARleaderboard">
                 <p style={{textAlign: "center"}}>
-                    STAR Point Leaderboard
+                    Mentorship Leaderboard
                 </p>
                 <FlatList
                     list={this.state.userList}

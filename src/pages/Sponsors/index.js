@@ -28,7 +28,7 @@ class Sponsors extends Component {
         return (
             <div>
                 <Navigation transparentNav={false} />
-
+            
                 {/* Do development all within this div */}
                 <div className="navgap">
                 <body1 className = "sponsorPage">
