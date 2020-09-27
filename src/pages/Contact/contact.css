@@ -1,0 +1,24 @@
+.contactTitle{
+    text-align: center;
+    font-size: 2vw;
+}
+
+.contactSocials{
+    padding: '1vw';
+    font-size: '3vw';
+    color: 'black';
+}
+
+.contactForm{
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    width: 40%;
+    margin:auto;
+    padding: 2vw;
+    opacity: 80%;
+    border-radius: 1vw;
+}
+
+.contactComponenet{
+    padding: .5vw;
+}
