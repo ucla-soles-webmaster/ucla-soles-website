@@ -166,6 +166,7 @@ class SignUpFormBase extends Component {
                 join_mentorship: join_mentorship,
                 mentor: join_mentorship === true ? mentor : false,
                 mentee: join_mentorship === true ? mentee : false,
+                mentorTeam: '',
                 /* Predetermined */
                 local_member: false,
                 starpoints: 0,
