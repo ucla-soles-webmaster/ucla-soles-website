@@ -158,19 +158,6 @@ class AccountPage extends Component {
             )}
           </AuthUserContext.Consumer>
 
-          <div class="adminUsersList">
-            { this.state.user["admin"] === true ?
-              <FlatList
-              list={this.state.userList}
-              renderItem={this.renderUser}
-              />
-                    :
-                      <div>
-                        <p>No Access</p>
-                      </div>
-              }
-            </div>
-
 
 
         </div>

@@ -14,6 +14,8 @@ class AdminPage extends Component {
       loading: false,
       userList: [],
       userIDList: [],
+      mentorshipUserList: [],
+      mentorshipUserIDList: [],
       isAdmin: false,
       firestore: this.props.firebase.getFirestore(),
       userEmail: this.props.firebase.auth.currentUser.email,
@@ -63,6 +65,19 @@ class AdminPage extends Component {
                 var userID = doc.id;
                 that.setState({ userList: [...that.state.userList, userData] });
                 that.setState({ userIDList: [...that.state.userIDList, userID] });
+            });    
+        });
+
+        this.props.firebase.getFirestore().collection("users")
+        .where("join_mentorship", "==", true)
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                // doc.data() is never undefined for query doc snapshots
+                var userData = doc.data();
+                var userID = doc.id;
+                that.setState({ mentorshipUserList: [...that.state.mentorshipUserList, userData] });
+                that.setState({ mentorshipUserIDList: [...that.state.mentorshipUserIDList, userID] });
             });    
         });
   }
@@ -169,6 +184,68 @@ class AdminPage extends Component {
     );
   }
 
+  renderMentorUser = (user, idx) => {
+    return (
+      <div class="adminUserCell">
+
+        {/* User name */}
+        <div class="adminUserName">
+          { user["first_name"] } { user["last_name"] }
+        </div>    
+
+        <input type = "text" placeholder="Team Name" id="mentorTeamName" onChange={e=> this.updateTeam(e.target.value)}/>
+      
+        <input type ="submit" className = "btn btn-info" value = "Change Team" onClick={()=>this.changeTeam(user["first_name"], user["last_name"],this.state.userIDList[idx])}></input>
+      
+        <input type = "number" placeholder="Points" id="points" onChange={e=> this.updatePoints(e.target.value)}/>
+        {console.log(this.state.updatePoints)}
+        <input type ="submit" className = "btn btn-info" value = "Add Points" onClick={()=>this.changePoints(this.state.userIDList[idx], user["mentorTeam"])}></input>
+
+      </div>
+    );
+    }
+
+    updateTeam (name){
+      if(name!= null)
+        this.setState({mentorTeam: name});
+    }
+
+    changeTeam = (fName, lName, index) => {
+      if(index == null)
+        return;
+      console.log(index);
+      var document = index;
+      var dbReference = this.props.firebase.getFirestore().collection('users').doc(document);
+      console.log(this.state.mentorTeam);
+      dbReference.update({mentorTeam: this.state.mentorTeam})
+  
+      var name = fName+ " " + lName;
+      dbReference = this.props.firebase.getFirestore().collection('teams').doc(this.state.mentorTeam).collection('teamMembers').doc(name).set({});
+  
+    }
+
+    updatePoints(points){
+      if(points!= 0)
+        this.state.updatePoints = points;
+    }
+  
+    changePoints(index, mentorTeamName){
+      var that = this;
+      
+        if(mentorTeamName != null){
+          var dbReference = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
+          console.log(that.state.updatePoints);
+          var points = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
+          points.get().then(function(doc){
+            var currPoints = doc.data();
+            var add = parseInt(currPoints["starpoints"]) + parseInt(that.state.updatePoints);
+            dbReference.update({starpoints: add});
+          });
+          
+        }
+      
+    }
+
   render() {
     const { userList, loading, Industry, IndustryID } = this.state;
 
@@ -180,33 +257,32 @@ class AdminPage extends Component {
         {loading && <div>Loading ...</div>}
       
         <div class="adminUsersList">
-        { this.state.user["admin"] === true ?
-          <FlatList
-          list={userList}
-          renderItem={this.renderUser}
-          />
-                :
-                  <div>
-                    <p>No Access</p>
-                  </div>
-          }
-        </div>
-        <div>
-        { this.state.user["admin"] === true ?
-          <p> INDUSTRY REPRESENTATIVES </p>
-                :
-                  <div>
-                    <p>No Access</p>
-                  </div>
-          }
-        </div>
-        <div>
-        { this.state.user["admin"] === true ?
-          <FlatList
-          list={Industry}
-          renderItem={this.renderIndustry}
-          />
-            :
+        { this.state.user["admin"] === true 
+          ?
+            <div>
+              <FlatList
+              list={userList}
+              renderItem={this.renderUser}
+              />
+
+              <p> INDUSTRY REPRESENTATIVES </p>
+              <FlatList
+              list={Industry}
+              renderItem={this.renderIndustry}
+              /> 
+
+              <br/>
+              <p> MENTORSHIP </p>
+              <FlatList
+                list={this.state.mentorshipUserList}
+                renderItem={this.renderMentorUser}
+              />
+            
+
+              </div> 
+
+
+          :
             <div>
               <p>No Access</p>
             </div>
