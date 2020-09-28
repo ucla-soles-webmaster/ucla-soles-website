@@ -270,6 +270,8 @@ class AdminPage extends Component {
               list={Industry}
               renderItem={this.renderIndustry}
               /> 
+              
+
 
               <br/>
               <p> MENTORSHIP </p>
@@ -279,9 +281,8 @@ class AdminPage extends Component {
               />
             
 
-              </div> 
 
-
+            </div> 
           :
             <div>
               <p>No Access</p>

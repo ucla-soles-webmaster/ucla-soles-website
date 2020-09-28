@@ -14,14 +14,13 @@ class STARLeaderboard extends Component {
         super(props);
         
         this.state = {
-            userList: [],
-            attributesList: [],
+            teamsList: [],
             userEmail: this.props.firebase.auth.currentUser.email,
         }
 
     }
 
-    componentWillMount() {
+    componentDidMount() {
         
         // Get all users from a user collection
         var that = this;
@@ -29,32 +28,26 @@ class STARLeaderboard extends Component {
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
-                // doc.data() is never undefined for query doc snapshots
-                var userData = doc.id;
-                console.log(userData)
-                that.setState({ attributesList: [...that.state.attributesList, doc.data()]});
-                that.setState({ userList: [...that.state.userList, userData] });
+                // Make a pair of team name and their respective starpoints
+                that.setState({ teamsList: [...that.state.teamsList, [doc.id,doc.data()["starpoints"]]] });
                 
             });    
         });
 
-        // Sort the userList by STAR Points
-
     }
 
-    renderUser = (user, idx) => {
+    renderUser = (team, idx) => {
         return (
-            <div className= {idx % 2 === 0 ? "STARleaderboardRowEven" : "STARleaderboardRowOdd"   }>
+            <div className= {   idx % 2 === 0 ? "STARleaderboardRowEven" : "STARleaderboardRowOdd"   }>
                 
-                {/* User's name */}
+                {/* Familia's name */}
                 <div className="userLeaderboardName">
-                    {user}
+                    {team[0]}
                 </div>
 
-                {/* User's STAR Points */}
+                {/* Familia`'s STAR Points */}
                 <div className="userPoints">
-                    {console.log(this.state.attributesList)}
-                    {this.state.attributesList[idx]["starpoints"]} points
+                    {team[1]} points
                 </div>
 
             </div>
@@ -64,15 +57,17 @@ class STARLeaderboard extends Component {
 
     render() {
 
-        // this.state.userList.sort(compareGreaterSTARPoints); // Sort users by > STAR Points
-
+        // Sort teams by starpoints
+        var teamsLocal = this.state.teamsList;
+        teamsLocal.sort(compareGreaterSTARPoints)
+        
         return (
             <div className="STARleaderboard">
                 <p style={{textAlign: "center"}}>
-                    Mentorship Leaderboard
+                    MentorSHPE ChampionSHPE Leaderboard
                 </p>
                 <FlatList
-                    list={this.state.userList}
+                    list={teamsLocal}
                     renderItem={this.renderUser}
                 />
             </div>
@@ -89,17 +84,12 @@ export default withAuthorization(condition)(STARLeaderboard);
 
 
 function compareGreaterSTARPoints(a, b) {
-    if (a["starpoints"] > b["starpoints"] ) {
+    if (a[1] > b[1] ) {
       return -1;
     }
-    if (a["starpoints"] < b["starpoints"]) {
+    if (a[1] < b[1]) {
       return 1;
     }
-    
-    if ( a["first_name"].localeCompare(b["first_name"]) !== 1 ) {
-        return -1;
-    }
-
     // a must be equal to b
     return 0;
   }
