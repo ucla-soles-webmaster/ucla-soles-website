@@ -5,21 +5,20 @@
 
 .adminUserCell {
     border: 1px solid black;
-    width: 70%;
-    height: 12px;
+    width: 95%;
+    height: 20px;
     padding: 0.5rem;
+    display: flex;
 }
 
 .adminUserName {
     float: left;
-    min-width: 40%;
+    min-width: 25%;
 }
-
-.userActions {
+.adminActions {
     float: right;
-    margin-right: 2%;
 }
-
-.adminAction {
-    width: 10%;
+.adminActionsADMIN {
+    float: right;
+    color: red;
 }

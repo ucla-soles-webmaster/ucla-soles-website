@@ -6,6 +6,9 @@ import Navigation from '../../components/Navigation';
 import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
 
+import rightsun from '../../coverImages/rightsun.png'
+import leftsun from '../../coverImages/leftsun.png';
+
 import { withAuthorization } from '../Session';
 
 import './alumnet.css';
@@ -124,7 +127,7 @@ class AlumNet extends Component {
                         {   user["linkedin"] !== ''
                                 ?
                                     <a href={user["linkedin"]} rel="noopener noreferrer" target = "_blank">
-                                        LinkedIn 
+                                        {user["first_name"]}'s LinkedIn
                                     </a>
                                 : 
                                     <div/>
@@ -148,6 +151,19 @@ class AlumNet extends Component {
                     <h1 className="haccount">
                         Alumni Network
                     </h1>
+
+                    <hr className="introBar" /> 
+                    <div className="introbox" style={{textAlign: 'center'}}>
+                        <p className="initIntro" style={{textAlign: 'center', marginRight: '35%', marginLeft: '35%', fontSize:'1.1vw',fontWeight:'10'}}>
+                            The SOLES Alumni Network is a great tool for students and alumni alike. 
+                            If you are a student, feel free to reach out to any of the below listed
+                            alumni for career advice, job opportunities, or essentially anything! All
+                            the alumni would love to hear from current students.
+                        </p>
+                        <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
+                        <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
+                    </div>
+                <hr className="introBar" />   
                     
                     <div className="alumnilist">
                         <p style={{textAlign: "center", fontSize: "2vw"}}>

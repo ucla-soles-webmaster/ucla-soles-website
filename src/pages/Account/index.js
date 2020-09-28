@@ -134,7 +134,7 @@ class AccountPage extends Component {
 
   render() {
     return (
-      <div className="graa">
+      <div className="graa" style={{fontFamily:'Poppins'}}>
         <Navigation transparentNav={false} />
         <div className="navgapA" style={{minHeight: "100vh"}}>
           <AccountNav />
@@ -161,7 +161,49 @@ class AccountPage extends Component {
                 <div/>
           }
 
-          <STARLeaderboard />
+          {/*
+            User Specific Functionality (based on career level)
+          */}
+          { this.state.user["career"] === 'student'
+              ?
+                <STARLeaderboard />
+              :
+                // Industry
+                this.state.user["career"] === 'industry'
+                  ?
+                    // Industry members with access (hasn't been revoked)
+                    this.state.user["has_access"] === true 
+                      ?
+                        // Industry (GOLD/SILVER) for resumes
+                        ( this.state.user["sponsor_level"] === 'gold' || this.state.user["sponsor_level"] === 'silver')
+                          ?
+                            // Resume Drive
+                            <div style={{marginRight:'10%', marginLeft:'10%', textAlign: 'center'}}>
+                              <br/>
+                              <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
+                                Student Resume Drive
+                              </p>
+                              Our resume drive is an up-to-date ZIP file of all SOLES members who decided to submit their resumes.
+                              The SOLES Web Dev team is currently working on making the resume drive better organized for your benefit.
+                              <br/>
+                              Download <a href="https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Fresume_drive_zip%2FSOLES_Resume_Book_2020.zip?alt=media&token=0223b071-b533-4695-8b41-9a80734ffebb">here.</a>
+                            </div>
+                          :
+                            // BRONZE sponsors
+                            <div style={{marginRight:'10%', marginLeft:'10%', textAlign: 'center', fontStyle: 'italic'}}>
+                              We apologize, there is no account functionality avaliable for Bronze sponsors at this time.
+                            </div>
+                      :
+                        <div>
+                          Your access for the year has revoked. Please sponsor SOLES again this year to gain access.
+                        </div>
+                // Alumni
+                    :
+                      <div>
+                        Alumniiiii
+                      </div>
+                    
+          }
 
           <AuthUserContext.Consumer>
             {authUser => (

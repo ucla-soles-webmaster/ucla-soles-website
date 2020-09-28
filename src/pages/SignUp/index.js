@@ -100,17 +100,19 @@ class SignUpFormBase extends Component {
     onSubmit = event => {
 
         // Resume
-        var storageName = this.state.firstName + ' ' + this.state.lastName + ' - Resume'
-        var storageRef = this.props.firebase.storage.ref();
-        var mountainImagesRef = storageRef.child('resumes/' + storageName);
+        if(this.state.resume_file_data !== '') {
+            var storageName = this.state.firstName + ' ' + this.state.lastName + ' - Resume'
+            var storageRef = this.props.firebase.storage.ref();
+            var mountainImagesRef = storageRef.child('resumes/' + storageName);
 
-        // Store file on Firebase Storage
-        var message = this.state.resume_file_data;
-        console.log(message)
+            // Store file on Firebase Storage
+            var message = this.state.resume_file_data;
+            console.log(message)
 
-        mountainImagesRef.putString(message, 'data_url').then(function(snapshot) {
-            console.log('Uploaded a data_url string!');
-          });
+            mountainImagesRef.putString(message, 'data_url').then(function(snapshot) {
+                console.log('Uploaded a data_url string!');
+            });
+        }
 
         const { 
             firstName,
@@ -295,7 +297,9 @@ class SignUpFormBase extends Component {
             ( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||
             ( career === 'alumni' && alumnet === '') ||
             ( (career === 'alumni' || career === 'industry') && employer === '' ) ||
-            ( (career === 'student') && (!signup_local && !signup_national && !no_membership));
+            ( (career === 'student') && (!signup_local && !signup_national && !no_membership)) ||
+            ( join_mentorship === true && ( mentee === false && mentor === false )  );
+            
 
         return (
             <form onSubmit={this.onSubmit} className="suform">

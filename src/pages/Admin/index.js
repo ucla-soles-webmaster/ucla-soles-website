@@ -1,5 +1,8 @@
+
 import FlatList from 'flatlist-react';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes'
 
 import { withAuthorization } from '../Session';
 
@@ -14,18 +17,29 @@ class AdminPage extends Component {
       userList: [],
       userIDList: [],
       mentorshipUserList: [],
-      mentorshipUserIDList: [],
       isAdmin: false,
       firestore: this.props.firebase.getFirestore(),
       userEmail: this.props.firebase.auth.currentUser.email,
       Industry: [],
       IndustryID: [],
       user: {},
+      gold: '',
+      silver: '',
+      bronze: '',
+      new_code_gold:'',
+      new_code_silver:'',
+      new_code_bronze:''
     };
 
   }
 
   componentDidMount() {
+
+      this.setState({ userList: []});
+      this.setState({ mentorshipUserList: []});
+      this.setState({ Industry: []});
+      this.setState({ IndustryID: []});
+
       // Used to get a list of all the users
       var that = this;
       that.props.firebase.getFirestore().collection("users")
@@ -33,13 +47,9 @@ class AdminPage extends Component {
       .get()
       .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-          console.log(doc.id, " => ", doc.data());
           that.setState({ user: doc.data() })
         });   
     });
-
-
-
 
     //Industry Stuff ///////////////
     that.props.firebase.getFirestore().collection("users")
@@ -54,7 +64,25 @@ class AdminPage extends Component {
       });
     });
 
+    // Industry Codes
+    that.props.firebase.getFirestore().collection("misc").doc("company_code")
+      .get()
+      .then(function(doc) {
+        if (doc.exists) {
+          var codes = doc.data();
+          that.setState({ gold: codes['gold_code'] })
+          that.setState({ silver: codes['silver_code'] })
+          that.setState({ bronze: codes['bronze_code'] })
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("Can't get company codes!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
 
+
+    // User Lists stuff
       this.props.firebase.getFirestore().collection("users")
         .get()
         .then(function(querySnapshot) {
@@ -62,11 +90,11 @@ class AdminPage extends Component {
                 // doc.data() is never undefined for query doc snapshots
                 var userData = doc.data();
                 var userID = doc.id;
-                that.setState({ userList: [...that.state.userList, userData] });
-                that.setState({ userIDList: [...that.state.userIDList, userID] });
+                that.setState({ userList: [...that.state.userList, [userData, userID] ] });
             });    
         });
 
+    // MentorSHPE
         this.props.firebase.getFirestore().collection("users")
         .where("join_mentorship", "==", true)
         .get()
@@ -75,37 +103,34 @@ class AdminPage extends Component {
                 // doc.data() is never undefined for query doc snapshots
                 var userData = doc.data();
                 var userID = doc.id;
-                that.setState({ mentorshipUserList: [...that.state.mentorshipUserList, userData] });
-                that.setState({ mentorshipUserIDList: [...that.state.mentorshipUserIDList, userID] });
+                that.setState({ mentorshipUserList: [...that.state.mentorshipUserList, [userData, userID]  ] });
             });    
         });
+
+        console.log(this.state.userList)
   }
 
   componentWillUnmount() {
     this.props.firebase.users().off();
   }
 
-  changeAdmin = (idx, user) => {
-    var that = this;  // must have this for the setState inside lamda
+  changeAdmin = (user) => {
     this.props.firebase.getFirestore().collection("users")
-      .doc(that.state.userIDList[idx])  // can have multiple .where calls
+      .doc(user[1])  // can have multiple .where calls
       .update({
-        admin: !user["admin"]
+        admin: !user[0]["admin"]
       })
-      that.setState({userList:[], userIDList:[]})
-      this.props.firebase.getFirestore().collection("users")
-      .get()
-      .then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              var userData = doc.data();
-              var userID = doc.id;
-              that.setState({ userList: [...that.state.userList, userData] });
-              that.setState({ userIDList: [...that.state.userIDList, userID] });
-          });    
-      });
+
+    this.componentDidMount()
   }
 
+  
+
+/*
+  ****
+    Page Access Restriction
+  ****
+*/
   HasAccess = (idx, user) => {
     var that = this;  // must have this for the setState inside lamda
     console.log(that.state.IndustryID);
@@ -114,76 +139,47 @@ class AdminPage extends Component {
       .update({
         has_access: !user["has_access"]
       })
-      that.setState({Industry:[], IndustryID:[]})
-      this.props.firebase.getFirestore().collection("users")
-      .where("career", "==", "industry")
-      .get()
-      .then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              var userData = doc.data();
-              var userID = doc.id;
-              that.setState({ Industry: [...that.state.Industry, userData] });
-              that.setState({ IndustryID: [...that.state.IndustryID, userID] });
-          });    
-      });
+      
   }
 
+
+
+/*
+  ****
+    Rendering Users for FlatLists
+  ****
+*/
+
   renderUser = (user, idx) => {
+
+    var adminString = '';
+    user[0]["admin"] === true ? adminString = 'Is Admin' : adminString = 'not Admin';
+
     return (
       <div class="adminUserCell">
 
         {/* User name */}
         <div class="adminUserName">
-          { user["first_name"] } { user["last_name"] }
+          { user[0]["first_name"] } { user[0]["last_name"] }
         </div>
 
         {/* Actions */}
-        
+        <div class={adminString === 'Is Admin' ? "adminActionsADMIN" : "adminActions"}>
 
           {/* Admin */}
-          <button onClick={() => this.changeAdmin(idx, user)} type="button" class="adminAction">
-              { user["admin"] === true ?
-                  <div class="adminButton">
-                    remove Admin
-                  </div>
-                :
-                  <div class="adminButton">
-                    make Admin
-                  </div>
-              }
+          {adminString} &nbsp;
+          <button onClick={() => this.changeAdmin(user)} type="button" >
+                Change
           </button>
-          
-
-       
-
+        
+        </div>
       </div>
     );
   }
 
+
   renderIndustry = (user, idx) => {
-    return (
-      <div>
-        <div>
-          { user["first_name"] } { user["last_name"] }
-        </div>
-
-                <button onClick={() => this.HasAccess(idx, user)} type="button" >
-                { user["has_access"] === true ?
-                    <div>
-                      No Access
-                    </div>
-                  :
-                    <div>
-                      Has Access
-                    </div>
-                }
-            </button>
-            </div>
-    );
-  }
-
-  renderMentorUser = (user, idx) => {
+    
     return (
       <div class="adminUserCell">
 
@@ -192,17 +188,82 @@ class AdminPage extends Component {
           { user["first_name"] } { user["last_name"] }
         </div>    
 
-        <input type = "text" placeholder="Team Name" id="mentorTeamName" onChange={e=> this.updateTeam(e.target.value)}/>
-      
-        <input type ="submit" className = "btn btn-info" value = "Change Team" onClick={()=>this.changeTeam(user["first_name"], user["last_name"],this.state.userIDList[idx])}></input>
-      
-        <input type = "number" placeholder="Points" id="points" onChange={e=> this.updatePoints(e.target.value)}/>
-        {console.log(this.state.updatePoints)}
-        <input type ="submit" className = "btn btn-info" value = "Add Points" onClick={()=>this.changePoints(this.state.userIDList[idx], user["mentorTeam"])}></input>
+        Sponsor Level:&nbsp;<b>{user["sponsor_level"]}</b> &nbsp;
+        <button onClick={() => this.HasAccess(idx, user)} type="button" >Has Access: {user["sponsor_level"]} CLICK TO CHANGE</button>
+
+        &nbsp;&nbsp;&nbsp;Company:&nbsp;<b>{user["employer"]}</b>
+        
+      </div>
+
+    );
+  }
+
+
+  renderMentorUser = (user, idx) => {
+    var familia = user[0]["mentorTeam"] === '' ? 'ASSIGN' : user[0]["mentorTeam"];
+    var role = user[0]['mentee'] === true ? 'mentee' : 'mentor';
+
+    return (
+      <div class="adminUserCell">
+
+        {/* User name */}
+        <div class="adminUserName">
+          { user[0]["first_name"] } { user[0]["last_name"] }
+        </div>    
+
+        Famila:&nbsp;<b>{familia}</b> &nbsp;
+
+        <input type = "number" placeholder="add points" id="points" onChange={e=> this.updatePoints(e.target.value)}/>
+        <input disabled={familia==='ASSIGN'}type ="submit" className = "btn btn-info" value = "Add Points" onClick={()=>this.changePoints(user[1], user[0]["mentorTeam"])}></input>
+
+        <input type = "text" placeholder="change team" id="mentorTeamName" onChange={e=> this.updateTeam(e.target.value)}/>
+        <input type ="submit" className = "btn btn-info" value = "Change Team" onClick={()=>this.changeTeam(user[0]["first_name"], user[0]["last_name"],user[1])}></input>
+        
+        <b>&nbsp;{role}</b>
 
       </div>
     );
     }
+
+/*
+  ****
+    Change industry codes
+  ****
+*/
+
+    changeCodeGold(new_code) {
+      this.props.firebase.getFirestore().collection("misc")
+      .doc('company_code')  // can have multiple .where calls
+      .update({
+        gold_code: new_code
+      })
+      this.componentDidMount()
+    }
+    changeCodeSilver(new_code) {
+      this.props.firebase.getFirestore().collection("misc")
+      .doc('company_code')  // can have multiple .where calls
+      .update({
+        silver_code: new_code
+      })
+      this.componentDidMount()
+    }
+    changeCodeBronze(new_code) {
+      this.props.firebase.getFirestore().collection("misc")
+      .doc('company_code')  // can have multiple .where calls
+      .update({
+        bronze_code: new_code
+      })
+      this.componentDidMount()
+    }
+
+
+
+
+/*
+  ****
+    MentorSHPE functions
+  ****
+*/
 
     updateTeam (name){
       if(name!= null)
@@ -220,7 +281,7 @@ class AdminPage extends Component {
   
       var name = fName+ " " + lName;
       dbReference = this.props.firebase.getFirestore().collection('teams').doc(this.state.mentorTeam).collection('teamMembers').doc(name).set({});
-  
+      this.componentDidMount()
     }
 
     updatePoints(points){
@@ -239,14 +300,20 @@ class AdminPage extends Component {
             var currPoints = doc.data();
             var add = parseInt(currPoints["starpoints"]) + parseInt(that.state.updatePoints);
             dbReference.update({starpoints: add});
+            alert('Successfully added ' + parseInt(that.state.updatePoints) + ' points to ' + mentorTeamName +  '!')
           });
           
         }
-      
     }
+
+/*
+    RENDERING
+*/
 
   render() {
     const { userList, loading, Industry } = this.state;
+    this.state.userList.sort(sortNames);
+    this.state.mentorshipUserList.sort(sortNamesMentorSHPE)
 
     return (
       <div>
@@ -254,32 +321,82 @@ class AdminPage extends Component {
 
         {/* Ignore for now */}
         {loading && <div>Loading ...</div>}
+        <Link to={ROUTES.ACCOUNT}>
+            back to Account page
+        </Link>
       
         <div class="adminUsersList">
+          
         { this.state.user["admin"] === true 
           ?
             <div>
-              <FlatList
-              list={userList}
-              renderItem={this.renderUser}
-              />
-
-              <p> INDUSTRY REPRESENTATIVES </p>
-              <FlatList
-              list={Industry}
-              renderItem={this.renderIndustry}
-              /> 
-
-
-
+              <p>
+                Functionality will be added on a continous basis. Contact Mat Ruiz (949)547-0987
+                for immediate support or issues.
+                <br/><br/>
+                This page is only viewable to admins (EBoard and Web Team).
+              </p>
               <br/>
-              <p> MENTORSHIP </p>
+
+          <h1>MentorSHPE (add points here)</h1>
+              <p>
+                These are only users enrolled with MentorSHPE for 2020-2021. Sorted by familia name.
+              </p>
               <FlatList
                 list={this.state.mentorshipUserList}
                 renderItem={this.renderMentorUser}
               />
-            
+              <br/>
 
+          <h1>All Users</h1>
+              <p>
+                Alphabetically sorted.
+              </p>
+              <FlatList
+                list={userList}
+                renderItem={this.renderUser}
+              />
+              <br/>
+
+          <h1>Industry Reps</h1>
+              <p>
+                All industry reps that have made an account in the past->current.
+              </p>
+              <FlatList
+                list={Industry}
+                renderItem={this.renderIndustry}
+              /> 
+              {/*Company codes*/}
+              <h3>Company Sign Up Codes</h3>
+                Gold Code: &nbsp;<b>{this.state.gold}</b>&nbsp;&nbsp;
+                <input type = "text" placeholder="new gold code" id="mentorTeamName" onChange={ e=> this.setState({new_code_gold: e.target.value}) }/>
+                <input type ="submit" className = "btn btn-info" value = "CHANGE" onClick={()=>this.changeCodeGold(this.state.new_code_gold)}></input>
+                <br/>
+
+                Silver Code:     <b>{this.state.silver}</b>&nbsp;&nbsp;
+                <input type = "text" placeholder="new silver code" id="mentorTeamName" onChange={ e=> this.setState({new_code_silver: e.target.value}) }/>
+                <input type ="submit" className = "btn btn-info" value = "CHANGE" onClick={()=>this.changeCodeSilver(this.state.new_code_silver)}></input>
+                <br/>
+
+                Bronze Code:     <b>{this.state.bronze}</b>&nbsp;&nbsp;
+                <input type = "text" placeholder="new bronze code" id="mentorTeamName" onChange={ e=> this.setState({new_code_bronze: e.target.value}) }/>
+                <input type ="submit" className = "btn btn-info" value = "CHANGE" onClick={()=>this.changeCodeBronze(this.state.new_code_bronze)}></input>
+              <br/>
+              <br/>
+              <br/>
+
+              <h1>Functionality to come</h1>
+                <ul>
+                  <li>
+                    Option to create mentorship familia from here
+                  </li>
+                  <li>
+                    View a list of members from each mentorship familia
+                  </li>
+                </ul>
+            
+              <br/>
+              <br/>
 
             </div> 
           :
@@ -296,3 +413,25 @@ class AdminPage extends Component {
 const condition = authUser => !!authUser;
  
 export default withAuthorization(condition)(AdminPage);
+
+function sortNames(a, b) {
+  if (a[0]["first_name"].localeCompare(b[0]["first_name"]) === -1) {
+    return -1;
+  }
+  if (a[0]["first_name"].localeCompare(b[0]["first_name"]) === 1) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}
+
+function sortNamesMentorSHPE(a, b) {
+  if (a[0]["mentorTeam"].localeCompare(b[0]["mentorTeam"]) === -1) {
+    return -1;
+  }
+  if (a[0]["mentorTeam"].localeCompare(b[0]["mentorTeam"]) === 1) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}
