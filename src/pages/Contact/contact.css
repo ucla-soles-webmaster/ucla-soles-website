@@ -69,3 +69,13 @@
 .contactComponenet::-moz-placeholder {
     font-family: 'Poppins', sans-serif;
 }
+
+.contactInfo{
+    width: 20vw;
+    height: 1.8vw;
+    border-radius: 1vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    border: .1vw solid yellow;
+}
