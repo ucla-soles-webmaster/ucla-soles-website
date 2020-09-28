@@ -17,7 +17,8 @@ class AdminPage extends Component {
       isAdmin: false,
       firestore: this.props.firebase.getFirestore(),
       userEmail: this.props.firebase.auth.currentUser.email,
-
+      Industry: [],
+      IndustryID: [],
       user: {},
     };
 
@@ -35,6 +36,23 @@ class AdminPage extends Component {
           that.setState({ user: doc.data() })
         });   
     });
+
+
+
+
+    //Industry Stuff ///////////////
+    that.props.firebase.getFirestore().collection("users")
+    .where("career", "==", "industry")
+    .get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        var userData = doc.data();
+        var userID = doc.id;
+        that.setState({ Industry: [...that.state.Industry, userData] });
+        that.setState({ IndustryID: [...that.state.IndustryID, userID] });
+      });
+    });
+
 
       this.props.firebase.getFirestore().collection("users")
         .get()
@@ -74,6 +92,29 @@ class AdminPage extends Component {
       });
   }
 
+  HasAccess = (idx, user) => {
+    var that = this;  // must have this for the setState inside lamda
+    console.log(that.state.IndustryID);
+    this.props.firebase.getFirestore().collection("users")
+      .doc(that.state.IndustryID[0])  // can have multiple .where calls
+      .update({
+        has_access: !user["has_access"]
+      })
+      that.setState({Industry:[], IndustryID:[]})
+      this.props.firebase.getFirestore().collection("users")
+      .where("career", "==", "industry")
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              var userData = doc.data();
+              var userID = doc.id;
+              that.setState({ Industry: [...that.state.Industry, userData] });
+              that.setState({ IndustryID: [...that.state.IndustryID, userID] });
+          });    
+      });
+  }
+
   renderUser = (user, idx) => {
     return (
       <div class="adminUserCell">
@@ -106,8 +147,30 @@ class AdminPage extends Component {
     );
   }
 
+  renderIndustry = (user, idx) => {
+    return (
+      <div>
+        <div>
+          { user["first_name"] } { user["last_name"] }
+        </div>
+
+                <button onClick={() => this.HasAccess(idx, user)} type="button" >
+                { user["has_access"] === true ?
+                    <div>
+                      No Access
+                    </div>
+                  :
+                    <div>
+                      Has Access
+                    </div>
+                }
+            </button>
+            </div>
+    );
+  }
+
   render() {
-    const { userList, loading } = this.state;
+    const { userList, loading, Industry, IndustryID } = this.state;
 
     return (
       <div>
@@ -126,6 +189,27 @@ class AdminPage extends Component {
                   <div>
                     <p>No Access</p>
                   </div>
+          }
+        </div>
+        <div>
+        { this.state.user["admin"] === true ?
+          <p> INDUSTRY REPRESENTATIVES </p>
+                :
+                  <div>
+                    <p>No Access</p>
+                  </div>
+          }
+        </div>
+        <div>
+        { this.state.user["admin"] === true ?
+          <FlatList
+          list={Industry}
+          renderItem={this.renderIndustry}
+          />
+            :
+            <div>
+              <p>No Access</p>
+            </div>
           }
         </div>
       </div>
