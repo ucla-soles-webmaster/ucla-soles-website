@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './footerStyle.css'
 import 'font-awesome/css/font-awesome.min.css';
-import {Grid, Cell} from 'react-mdl'
-
 
 
 class Footer extends Component {
@@ -21,7 +19,7 @@ class Footer extends Component {
                     </div>
                     <br/>
                     <div className = "footerTopInfo">
-                        <span stlye= {{marginLeft: '5vw', float: 'left', fontSize: '1vw', marginLeft: '4vw'}}><a style = {{color: 'white', textDecoration: 'none', fontSize: '1vw', marginLeft: '6.2vw'}}href= "mailto:uclasoles.webmaster@gmail.com" >uclasoles.webmaster@gmail.com</a></span>
+                        <span stlye= {{marginLeft: '5vw', float: 'left', fontSize: '1vw'}}><a style = {{color: 'white', textDecoration: 'none', fontSize: '1vw', marginLeft: '6.2vw'}}href= "mailto:uclasoles.webmaster@gmail.com" >uclasoles.webmaster@gmail.com</a></span>
                         <span style={{float: 'right', fontSize: '1vw', marginRight: '-1%'}}><a style = {{color: 'white', textDecoration: 'none', fontSize: '1vw', marginRight: '2.8vw'}}href= "mailto:uclasoles.president@gmail.com" >uclasoles.president@gmail.com</a></span>
                     </div>
                     

@@ -8,8 +8,6 @@ import emailjs from 'emailjs-com';
 import './contact.css';
 
 
-import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
-
 function sendEmail(e){
     e.preventDefault();
 

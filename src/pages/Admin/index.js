@@ -1,9 +1,8 @@
 import FlatList from 'flatlist-react';
 import React, { Component } from 'react';
 
-import { AuthUserContext, withAuthorization } from '../Session';
+import { withAuthorization } from '../Session';
 
-import { withFirebase } from '../Firebase';
 import './admin.css';
 
 class AdminPage extends Component {
@@ -225,14 +224,14 @@ class AdminPage extends Component {
     }
 
     updatePoints(points){
-      if(points!= 0)
-        this.state.updatePoints = points;
+      if(points!== 0)
+        this.setState({updatePoints: points})
     }
   
     changePoints(index, mentorTeamName){
       var that = this;
       
-        if(mentorTeamName != null){
+        if(mentorTeamName !== null){
           var dbReference = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
           console.log(that.state.updatePoints);
           var points = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
@@ -247,7 +246,7 @@ class AdminPage extends Component {
     }
 
   render() {
-    const { userList, loading, Industry, IndustryID } = this.state;
+    const { userList, loading, Industry } = this.state;
 
     return (
       <div>
@@ -270,7 +269,7 @@ class AdminPage extends Component {
               list={Industry}
               renderItem={this.renderIndustry}
               /> 
-              
+
 
 
               <br/>

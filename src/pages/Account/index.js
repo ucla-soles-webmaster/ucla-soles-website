@@ -41,7 +41,6 @@ class AccountPage extends Component {
         });
       })
 
-      var that = this;
       that.props.firebase.getFirestore().collection("users")
       .where("email", "==", this.state.userEmail)
       .get()
@@ -66,12 +65,12 @@ class AccountPage extends Component {
   }
 
   updateTeam (name){
-    if(name!= null)
+    if(name !== null)
       this.setState({mentorTeam: name});
   }
 
   changeTeam = (fName, lName, index) => {
-    if(index == null)
+    if(index === null)
       return;
     console.log(index);
     var document = index;
@@ -85,8 +84,8 @@ class AccountPage extends Component {
   }
 
   updatePoints(points){
-    if(points!= 0)
-      this.state.updatePoints = points;
+    if(points!== 0)
+    this.setState({updatePoints: points});
   }
 
   changePoints(index, mentorTeamName){
@@ -189,7 +188,3 @@ const condition = authUser => !!authUser;
  
 export default withAuthorization(condition)(AccountPage);
 
-const linkStyle = {
-  textDecoration: "none",
-  color: "black",
-};

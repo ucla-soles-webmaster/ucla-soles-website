@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import Form from 'react-bootstrap/Form'
 import { Grid } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-import Progress from 'react-progressbar';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -108,7 +107,6 @@ class SignUpFormBase extends Component {
         // Store file on Firebase Storage
         var message = this.state.resume_file_data;
         console.log(message)
-        var uploadTask = mountainImagesRef.putString(message, 'data_url');
 
         mountainImagesRef.putString(message, 'data_url').then(function(snapshot) {
             console.log('Uploaded a data_url string!');
@@ -249,11 +247,6 @@ class SignUpFormBase extends Component {
             that.setState({ resume_file_name: filename})
         }
     }
-    /* ffdafsdf */
-    fileSubmitToDataBase = event => {
-        var that = this;
-
-    }
 
 
     render() {
@@ -272,7 +265,6 @@ class SignUpFormBase extends Component {
             alumnet,
             bio,
             linkedin,
-            join_reason,
             first_year,
             newsletter,
             signup_local,
