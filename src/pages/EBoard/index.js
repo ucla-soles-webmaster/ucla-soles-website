@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import Footer from '../../components/Footer';
 
 import '../../eBoard.css';
+import rightsun from '../../coverImages/rightsun.png'
+import leftsun from '../../coverImages/leftsun.png';
+
 import Andy from '../../boardImages/andy2.JPG'
 import Trevor from '../../boardImages/trevor1.JPG'
 import Jasmine from '../../boardImages/dragonfruit.jpg'
@@ -43,12 +47,27 @@ class EBoard extends Component {
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"Executive Board"}></PagePhoto>
                 
-                
+                <hr className="introBar" /> 
+                    <div className="introbox" style={{textAlign: 'center'}}>
+                        <p className="initIntro" style={{textAlign: 'center', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
+                            
+                            <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
+                                The Leaders of SOLES
+                            </p>
+                            
+                            These are the amazing individuals that help SOLES operate day to day! 
+                            Interested in working with or learning more about our
+                            Board members? Our Board will be more than happy! 
+                            Please feel free to reach out to them via their email.
+                            
+                        </p>
+                        <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
+                        <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
+                    </div>
+                <hr className="introBar" />    
 
-
-            <body1 className = "eBoardPage">                 
-
-                
+            <br/>
+            <body1 className = "eBoardPage">              
                 <div className = "eBoardPerson">
                     <div class="flip-card">
                     <div class="flip-card-inner">
@@ -293,11 +312,10 @@ class EBoard extends Component {
                 </div>
 
                 
-                    <div className = "titleFont1">                                
+                <div className = "titleFont1">                                
                          <div className = "titleFont2">
-                                    If you are interested in joining one of our board 
-                                    member’s committee or learning more about their position, please do not 
-                                    hesitate to contact them, via GroupMe, email, social media, etc.
+                                    Elections for SOLES Executive Board positions occur annually during Spring Quarter. 
+                                    All members are encouraged to run for positions!
                         </div>
                         <hr ClassName = "BoardIntroBar" ></hr>
                         <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
@@ -345,7 +363,7 @@ class EBoard extends Component {
                 <br/>
                 <br/>
                 <br/>
-
+                <Footer/>
             </div>
             
         );

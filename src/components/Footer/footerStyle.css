@@ -20,6 +20,7 @@
 
 .gradient-line-hor {
     margin: auto;
+    margin-top: 0.8vw;
     height: .4vw;
     width: 100%;
     background: linear-gradient(to right,#fd662f 0,#fd662f 9%,#72a8be 9%,#72a8be 22%,#0070c0 22%,#0070c0 50%,#9ee0f9 50%,#9ee0f9 100%);
@@ -34,4 +35,5 @@
     color: white;
     font-size: '1vw';
     padding: '1vw';
+    margin-top: -1vw;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
 
 import Boeing from '../../boardImages/boeing.jpg'
 import Chevron from '../../boardImages/chevron.png'
@@ -23,6 +24,15 @@ import Sun from '../../boardImages/sun.png'
 class Sponsors extends Component {
 
     // Add constructor here when necessary
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+          gold: false,
+          silver: false,
+          bronze: false
+        }
+      }
 
     render() {
         return (
@@ -41,14 +51,16 @@ class Sponsors extends Component {
                     </div>
                 </div>
 
-                <div className = "titleFont3">
+                <div className = "titleFont3Sponsor">
                     SOLES|SHPE at UCLA relies on its industry partners and corporate relations to help elevate their efforts in empowering the Latinx engineering community
                     at UCLA. Through generous contributions of monetary donations, technical supplies, and company merch, SOLES can help eliminate thr financial instability
                     for its members and give back to the community that supports it. <br/><br/>
                     
                     In addition to uplifting community outreach efforts, professional and academic development, and recruitment initiatives, SOLES looks for Sponsorship to 
                     expand on its SOLES Scholarship Fund to help those most impacted by the current world circumstances (an initiative recently developed that only utilizes 
-                    fundrasing until corporate support is obtained).
+                    fundrasing until corporate support is obtained). <br/><br/>
+
+                    See a list of our current sponsors at the bottom.
                 </div>
 
                 <div className = "titleFont1">                                
@@ -62,40 +74,48 @@ class Sponsors extends Component {
                 </div>
 
                 <div className = "titleFont1">
-                    <div className = "titleFont3">
+                    <div className = "titleFont3Sponsor">
                         We’d like to extend a special thanks to our corporate sponsors. If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!
                     </div>
                 </div>
                 
                 <div style = {{width: '80%', alignItems: 'center', margin: 'auto'}}>
                 <div className = "eBoardPerson3">
-                    <div class="flip-card2">
-                    <div class="flip-card2-inner">
-                        <div class="flip-card2-front">
-                            <div className = "sponsorLevels">Gold Level ($2500+)</div>
-                            <img className = "SponsorGoldImages" src={Big} alt="Gold Level"></img>
+                    <div class="flip-card2" 
+                        onMouseEnter={() => this.setState({gold:true})}
+                        onMouseLeave={() => this.setState({gold:false})}
+                    >
+                        <div class="flip-card2-inner">
+                            <div class="flip-card2-front">
+                                <div className = {this.state.gold ? "sponsorLevelsNoColor" : "sponsorLevels"}>Gold Level ($2500+)</div>
+                                <img className = "SponsorGoldImages" src={Big} alt="Gold Level"></img>
+                            </div>
+                            <div class="flip-card2-back">
+                                <div className = "titleFont5">
+                                    Benefits: 
+                                </div>
+                                <ul className = "myList">
+                                    <li className = "titleFont4">Access to student resumes</li>
+                                    <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
+                                    <li className = "titleFont4">One compnay information session or event for up to 3 representatives quarterly and seating at the end-of-year Senior Banquet</li>
+                                    <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
+                                    <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
+                                    <li className = "titleFont4">Publication and advertising throughout the school of engineering</li>
+                                    <li className = "titleFont4">Recognition on our event shirts and logos branded on merchandise</li>
+                                </ul> 
+                            </div>
                         </div>
-                        <div class="flip-card2-back">
-                        <div className = "titleFont5">Benefits: </div>
-                        <ul className = "myList">
-                            <li className = "titleFont4">Access to student resumes</li>
-                            <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
-                            <li className = "titleFont4">One compnay information session or event for up to 3 representatives quarterly and seating at the end-of-year Senior Banquet</li>
-                            <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
-                            <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
-                            <li className = "titleFont4">Publication and advertising throughout the school of engineering</li>
-                            <li className = "titleFont4">Recognition on our event shirts and logos branded on merchandise</li>
-                        </ul> 
-                        </div>
-                    </div>
                     </div>
                 </div>
 
                 <div className = "eBoardPerson3">
-                    <div class="flip-card3">
+                    <div class="flip-card3"
+                        onMouseEnter={() => this.setState({silver:true})}
+                        onMouseLeave={() => this.setState({silver:false})}
+                    >
                     <div class="flip-card3-inner">
                         <div class="flip-card3-front">
-                        <div className = "sponsorLevels">Silver Level <br/> ($1001 - $2499)</div>
+                        <div className = {this.state.silver ? "sponsorLevelsNoColor" : "sponsorLevels"}>Silver Level <br/> ($1001 - $2499)</div>
                         <img className = "SponsorSilverImages" src={Medium} alt="Silver Level"></img>
                         
                         </div>
@@ -114,10 +134,13 @@ class Sponsors extends Component {
                 </div>
 
                 <div className = "eBoardPerson3">
-                    <div class="flip-card4">
+                    <div class="flip-card4"
+                        onMouseEnter={() => this.setState({bronze:true})}
+                        onMouseLeave={() => this.setState({bronze:false})}
+                    >
                     <div class="flip-card4-inner">
                         <div class="flip-card4-front">
-                            <div className = "sponsorLevels">Bronze Level <br/>($1 - $1000)</div>
+                            <div className = {this.state.bronze ? "sponsorLevelsNoColor" : "sponsorLevels"}>Bronze Level <br/>($1 - $1000)</div>
                             <img className = "SponsorBronzeImages" src={Small} alt="Bronze Level"></img>
                         </div>
                         <div class="flip-card4-back">
@@ -135,7 +158,7 @@ class Sponsors extends Component {
                 
 
                 <div className = "titleFont1">  
-                    <div className = "titleFont3">
+                    <div className = "titleFont3Sponsor">
                     Note: Sponsorship is also available for individual events and programs (i.e. National and Regional Conferences, outreach workshops, and other events).  
                     We also greatly appreciate any materials that can be used for giveaways, goody bags, or prizes.  T-shirts, sweatshirts, or hats with company printed
                      logos are very much appreciated as well.  Some companies offer special services such as graphics and printing.  These services may also be donated for
@@ -146,7 +169,7 @@ class Sponsors extends Component {
                         <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        Our Current Sponsors
+                        2019-2020 Sponsors
                     </div>
                 </div>
                 </body1>
@@ -172,6 +195,7 @@ class Sponsors extends Component {
                         <div className = "setFontSizeLevel">Gold Level Sponsor</div>
                     </figure>
                 </div>
+                
                 <div className = "eBoardPerson">
                     <figure className = "eBoardPerson2">
                     <img className = "SponsorPageImages" src={Google} alt="Google Logo"></img>
@@ -222,6 +246,9 @@ class Sponsors extends Component {
                 </div>  
                 <br/>
                 <br/>
+                <br/>
+                <br/>
+                <Footer/>
                 
             </div>
         )

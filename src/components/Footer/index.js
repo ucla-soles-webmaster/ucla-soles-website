@@ -22,12 +22,12 @@ class Footer extends Component {
                     <br/>
                     <div className = "footerTopInfo">
                         <span stlye= {{marginLeft: '5vw', float: 'left', fontSize: '1vw', marginLeft: '4vw'}}><a style = {{color: 'white', textDecoration: 'none', fontSize: '1vw', marginLeft: '6.2vw'}}href= "mailto:uclasoles.webmaster@gmail.com" >uclasoles.webmaster@gmail.com</a></span>
-                        <span style={{float: 'right', fontSize: '1vw'}}><a style = {{color: 'white', textDecoration: 'none', fontSize: '1vw', marginRight: '2.8vw'}}href= "mailto:uclasoles.president@gmail.com" >uclasoles.president@gmail.com</a></span>
+                        <span style={{float: 'right', fontSize: '1vw', marginRight: '-1%'}}><a style = {{color: 'white', textDecoration: 'none', fontSize: '1vw', marginRight: '2.8vw'}}href= "mailto:uclasoles.president@gmail.com" >uclasoles.president@gmail.com</a></span>
                     </div>
                     
                         <div className = "footerSocials">
                             <a style = {{paddingTop: '1vw', float: 'left', height: '2vw', marginLeft: '7vw'}}href="https://docs.google.com/forms/d/e/1FAIpQLSfQEJK9U-EvaBFuDpoJMEGbBifz0oydO-4CAhilCaZvir38Zg/viewform" class="btn btn-primary btn-lg active" rel="noopener noreferrer" target = "_blank">
-                                <button style = {{height: '2vw', backgroundColor: 'white', fontSize: '1vw', marginLeft: '.8vw'}} type="button" class="btn btn-secondary btn-sm">Subscribe to Newsletter</button>
+                                <button style = {{height: '2vw', backgroundColor: 'gray', color: 'white', fontFamily: 'Poppins', fontSize: '1vw', marginLeft: '.8vw', borderRadius: '8px'}} type="button" class="btn btn-secondary btn-sm">Subscribe to Newsletter</button>
                             </a>
 
                             <a href="https://www.facebook.com/uclasoles/ " rel="noopener noreferrer" target = "_blank" >
@@ -42,7 +42,7 @@ class Footer extends Component {
                     
                     <div className = "gradient-line-hor"></div>
 
-                    <div style={{color: 'white', textAlign: 'center', padding: '1vw', fontSize: '1vw'}}>
+                    <div style={{color: 'white', textAlign: 'center', padding: '1vw', fontSize: '0.85vw'}}>
                         Society of Latino Engineers and Scientists <i class="fa fa-copyright"></i> {(new Date().getFullYear())}
                     </div>
 

@@ -59,18 +59,23 @@ class Initiatives extends Component {
                 <br/><br/><br/>
 
                 <hr className="introBar" /> 
-                <div className="introbox">
-                    <p className="initIntro">
-                        Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                        Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                        Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                        Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                        Our initiatives combine to form the heart of SOLES.
-                    </p>
-                    <img id="rightsun" src={rightsun} alt="Right SOLES Sun" />
-                    <img id="leftsun" src={leftsun} alt="Left SOLES Sun" />
-                </div>
-                <hr className="introBar" /> 
+                    <div className="introbox" style={{textAlign: 'center'}}>
+                        <p className="initIntro" style={{textAlign: 'center', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
+                            
+                            <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
+                                What We Pride In
+                            </p>
+                            
+                            Our initiatives and events form the heart of SOLES. They help 
+                            bring together our members, create opportunities for both K-12
+                            and college students, and flourish memories and experiences our
+                            members won't forget.
+                            
+                        </p>
+                        <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
+                        <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
+                    </div>
+                <hr className="introBar" />   
 
                 <br/><br/>
 

@@ -119,7 +119,17 @@ class AlumNet extends Component {
                     </p>
 
                     <p className = "alumContact">
-                        Email: {user["email"]}
+                        Email: {user["email"]}  
+                        {   user["linkedin"] !== '' ? <br/>  : <div/>  }
+                        {   user["linkedin"] !== ''
+                                ?
+                                    <a href={user["linkedin"]} rel="noopener noreferrer" target = "_blank">
+                                        LinkedIn 
+                                    </a>
+                                : 
+                                    <div/>
+                                
+                        }
                     </p>
                 </div>
 
@@ -355,6 +365,9 @@ class AlumNet extends Component {
                                     />
                         }
                     </div>
+                    <br/>
+                    <br/>
+                    <br/>
                     <br/>
                 </div>
                 <Footer />

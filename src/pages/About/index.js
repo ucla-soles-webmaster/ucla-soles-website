@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import coverPhoto from '../../coverImages/abt2.jpg';
+import Footer from '../../components/Footer';
 import './index.css'
 
 
@@ -83,6 +84,7 @@ class About extends Component {
                         Place Timeline here.
                     </p>
                 </div>
+                <Footer/>
             </div>
         );
     }
