@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './footerStyle.css'
 import 'font-awesome/css/font-awesome.min.css';
-import {Grid, Cell} from 'react-mdl'
 
 
 

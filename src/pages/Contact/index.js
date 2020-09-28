@@ -8,8 +8,6 @@ import emailjs from 'emailjs-com';
 import './contact.css';
 
 
-import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
-
 function sendEmail(e){
     e.preventDefault();
 
@@ -17,8 +15,7 @@ function sendEmail(e){
         .then((result) => {
         console.log(result.text);
     }, (error) => {
-        console.log("hello");
-      console.log(error.text);
+        console.log(error.text);
     });
     e.target.reset();
 }
@@ -41,16 +38,16 @@ class Contact extends Component {
                     <form onSubmit={sendEmail}>
                         <div>
                             <div className = "contactComponenet">
-                                <input type= "text" placeholder = "Name" name = "name"/>
+                                <input className = "contactInfo" type= "text" placeholder = "Name" name = "name" required/>
                             </div>
                             <div className = "contactComponenet">
-                                <input type = "email" placeholder= "Email Address" name = "email"/>
+                                <input className = "contactInfo" type = "email" placeholder= "Email Address" name = "email" required/>
                             </div>
                             <div className = "contactComponenet">
-                                <input type = "text" placeholder="Subject" name = 'subject'/>
+                                <input className = "contactInfo" type = "text" placeholder="Subject" name = 'subject'/>
                             </div>
                             <div className = "contactComponenet">
-                                <textarea id="" cols="30" rows="8" placeholder="Your Message" name = "message"></textarea>
+                                <textarea className = "contactInfo" style = {{height: '10vw'}} id="" cols="30" rows="8" placeholder="Your Message" name = "message" required></textarea>
                             </div>
                             
                             <div className = "contactComponenet">
