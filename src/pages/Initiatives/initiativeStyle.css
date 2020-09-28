@@ -8,10 +8,25 @@
     align-self: auto;
 }
 
+#rightsunLanding {
+    height: 10%;
+    width: 4%;
+    margin-left: 0%;
+    margin-top: -5%;
+    align-self: auto;
+}
+
 #leftsun {
     height: 10%;
     width: 4%;
     margin-top: -5.4%;
+    margin-left: 92%;
+}
+
+#leftsunLanding {
+    height: 10%;
+    width: 4%;
+    margin-top: -5%;
     margin-left: 92%;
 }
 

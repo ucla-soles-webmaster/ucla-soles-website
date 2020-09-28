@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 //import firebase from '../Firebase'
 
 import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
 import Footer from '../../components/Footer';
+import * as ROUTES from '../../constants/routes'
 //import ucla from './ucla.jpg'
 
 import './landingStyle.css'
@@ -25,16 +27,21 @@ class Landing extends Component {
 
                     <br/>
                     <hr className="introBar" /> 
-                    <div className="introbox">
-                        <p className="initIntro">
-                            Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                            Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                            Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                            Our initiatives combine to form the heart of SOLES.Our initiatives combine to form the heart of SOLES.
-                            Our initiatives combine to form the heart of SOLES.
+                    <div className="introbox" style={{textAlign: 'center'}}>
+                        <p className="initIntro" style={{textAlign: 'center', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
+                            
+                            <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
+                                Who We Are
+                            </p>
+                            
+                                The Society of Latino Engineers and Scientists at UCLA (SOLES) is a student 
+                                organization in the Henry Samueli School of Engineering and Applied Science,
+                                and is a student chapter of SHPE. We center around empowering Latinos 
+                                in engineering and science both at the UCLA and at nearby K-12 schools. Learn more <Link to={ROUTES.ABOUT}>here.</Link>
+                            
                         </p>
-                        <img id="rightsun" src={rightsun} alt="Right SOLES Sun" />
-                        <img id="leftsun" src={leftsun} alt="Left SOLES Sun" />
+                        <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
+                        <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
                     </div>
                     <hr className="introBar" /> 
 
@@ -42,6 +49,7 @@ class Landing extends Component {
                     <br/>
                     <br/>
                     <br/>
+                    fdfasdf
                     <br/>
                     <br/>
                     <br/>

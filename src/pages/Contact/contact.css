@@ -1,6 +1,7 @@
 .contactTitle{
     text-align: center;
     font-size: 2vw;
+    color: #001d3a;
 }
 
 .contactSocials{
@@ -21,4 +22,50 @@
 
 .contactComponenet{
     padding: .5vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+.buttoncontact {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    margin-top: 1%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    font-size: 16px;
+    width: 10%;
+    height: 40px;
+    color: white;
+    background-color: #001d3a;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    will-change: transform, background-color, box-shadow;
+}
+
+.addPoppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.contactComponenet::placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+
+.contactComponenet::-webkit-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+  }
+
+.contactComponenet:-ms-input-placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+
+.contactComponenet:-moz-placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+
+.contactComponenet::-moz-placeholder {
+    font-family: 'Poppins', sans-serif;
 }

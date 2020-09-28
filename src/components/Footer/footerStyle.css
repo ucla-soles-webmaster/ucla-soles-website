@@ -3,6 +3,7 @@
     height: max-content;
     background-color:#001d3a;
     z-index: 1;
+    font-family: 'Poppins', sans-serif;
 }
 
 .footerTitle{

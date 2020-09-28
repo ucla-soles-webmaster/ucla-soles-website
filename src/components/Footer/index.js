@@ -43,7 +43,7 @@ class Footer extends Component {
                     <div className = "gradient-line-hor"></div>
 
                     <div style={{color: 'white', textAlign: 'center', padding: '1vw', fontSize: '1vw'}}>
-                        <i class="fa fa-copyright"></i> {(new Date().getFullYear())}
+                        Society of Latino Engineers and Scientists <i class="fa fa-copyright"></i> {(new Date().getFullYear())}
                     </div>
 
                 </div>

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import coverPhoto from '../../coverImages/contact.JPG';
+import Footer from '../../components/Footer';
 import emailjs from 'emailjs-com';
 import './contact.css';
 
@@ -29,11 +30,12 @@ class Contact extends Component {
 
     render() {
         return (
-            <div>
+            <div className="addPoppins">
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"Contact Us"}></PagePhoto>
+                <br/>
                 <h1 className = "contactTitle">Have any questions? Send them our way!</h1>
-
+                <br/>
 
                 <div className = "contactForm">
                     <form onSubmit={sendEmail}>
@@ -50,8 +52,10 @@ class Contact extends Component {
                             <div className = "contactComponenet">
                                 <textarea id="" cols="30" rows="8" placeholder="Your Message" name = "message"></textarea>
                             </div>
+                            
                             <div className = "contactComponenet">
-                                <input type ="submit" className = "btn btn-info" value = "Send Message"></input>
+                                <input type ="submit" className = "buttoncontact" value = "Send Message"></input>
+                                <br/>
                             </div>
                         </div>
                     </form>
@@ -62,7 +66,7 @@ class Contact extends Component {
 
 
 
-
+                <br/>
                 <div style = {{textAlign: 'center'}}>
                     <h1 className = "contactTitle">Follow us on social media!</h1>
                     <a  href="https://www.facebook.com/uclasoles/ " rel="noopener noreferrer" target = "_blank" >
@@ -78,37 +82,7 @@ class Contact extends Component {
                 <br/>
                 <br/>
                 <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+                <Footer/>
             </div>
         );
     }
