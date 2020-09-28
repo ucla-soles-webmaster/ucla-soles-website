@@ -72,6 +72,23 @@ class AlumNet extends Component {
     }
     
     renderUser = (user, idx) => {
+        var major = user["major"];
+        if (major === "aerospace") { major = "Aerospace"}
+        else if (major === "bioengineering") { major = "BioE"}
+        else if (major === "biology") { major = "Bio"}
+        else if (major === "chemical") { major = "ChemE"}
+        else if (major === "civil") { major = "Civil"}
+        else if (major === "ce") { major = "Computer Engineering"}
+        else if (major === "cs") { major = "CS"}
+        else if (major === "cse") { major = "CS and Engineering"}
+        else if (major === "ee") { major = "EE"}
+        else if (major === "materials") { major = "Materials"}
+        else if (major === "math") { major = "Math"}
+        else if (major === "mechanical") { major = "MechE"}
+        else if (major === "physics") { major = "Physics"}
+        else if (major === "other") { major = "Other"}
+        else if (major === "undeclared") { major = "Undecided"}
+
         return (
             <div className={ this.state.userEmail === user["email"] ? "STARleaderboardRowEvenUSER" : idx % 2 === 0 ? "STARleaderboardRowEven" : "STARleaderboardRowOdd"   }>
                 
@@ -87,7 +104,7 @@ class AlumNet extends Component {
                     <p className = "alumBreak"></p> 
 
                     <span className = "alumMajor">
-                        Major: {user["major"]}
+                        Graduating Major: {major}
                     </span>
 
                     <span className = "alumEmployer">
@@ -98,11 +115,11 @@ class AlumNet extends Component {
                     
                     
                     <p className="alumnetbio"> 
-                        {user["bio"]}
+                        "{user["bio"]}"
                     </p>
 
                     <p className = "alumContact">
-                        Contact Info: {user["email"]}
+                        Email: {user["email"]}
                     </p>
                 </div>
 
@@ -123,154 +140,220 @@ class AlumNet extends Component {
                     </h1>
                     
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Aerospace Engineering Alumni
                         </p>
-                        {console.log(this.state.aeroList)}
-                        <FlatList
-                            list={this.state.aeroList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.aeroList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.aeroList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Bioengineering and Biology Alumni
                         </p>
-                        {console.log(this.state.bioList)}
-                        <FlatList
-                            list={this.state.bioList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.bioList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.bioList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Chemical Engineering and Chemistry Alumni
                         </p>
-                        {console.log(this.state.chemList)}
-                        <FlatList
-                            list={this.state.chemList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.chemList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.chemList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Civil Engineering Alumni
                         </p>
-                        {console.log(this.state.civilList)}
-                        <FlatList
-                            list={this.state.civilList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.civilList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.civilList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Computer Science Alumni
                         </p>
-                        {console.log(this.state.userList)}
-                        <FlatList
-                            list={this.state.csList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.csList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.csList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Electrical Engineering Alumni
                         </p>
-                        {console.log(this.state.eeList)}
-                        <FlatList
-                            list={this.state.eeList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.eeList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.eeList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Materials Engineering Alumni
                         </p>
-                        {console.log(this.state.materialsList)}
-                        <FlatList
-                            list={this.state.materialsList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.materialsList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.materialsList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Mathematics Alumni
                         </p>
-                        {console.log(this.state.mathList)}
-                        <FlatList
-                            list={this.state.mathList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.mathList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.mathList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
                     
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Mechanical Engineering Alumni
                         </p>
-                        {console.log(this.state.mecheList)}
-                        <FlatList
-                            list={this.state.mecheList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.mecheList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.mecheList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Physics Alumni
                         </p>
-                        {console.log(this.state.physicsList)}
-                        <FlatList
-                            list={this.state.phyiscsList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.physicsList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.physicsList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
 
                     <br/>
                     <br/>
 
                     <div className="alumnilist">
-                        <p style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center", fontSize: "2vw"}}>
                             Other Alumni
                         </p>
-                        {console.log(this.state.otherList)}
-                        <FlatList
-                            list={this.state.otherList}
-                            renderItem={this.renderUser}
-                        />
+                        {   this.state.otherList.length === 0
+                                ?
+                                    <p className="noAlum"> 
+                                        Still waiting on alumni here!
+                                    </p>
+                                :
+                                    <FlatList
+                                        list={this.state.otherList}
+                                        renderItem={this.renderUser}
+                                    />
+                        }
                     </div>
                     <br/>
                 </div>

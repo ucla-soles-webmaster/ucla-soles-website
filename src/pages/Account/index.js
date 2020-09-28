@@ -5,7 +5,8 @@ import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
 import STARLeaderboard from '../../components/STARLeaderboard';
 import PasswordChangeForm from '../PasswordChange';
-import FlatList from 'flatlist-react';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes'
 
 import { AuthUserContext, withAuthorization } from '../Session';
 
@@ -147,6 +148,20 @@ class AccountPage extends Component {
             )}
           </AuthUserContext.Consumer>
 
+          {/*Link to admin dashboard */}
+          { this.state.user["admin"] === true
+              ?
+                <Link to={ROUTES.ADMIN} style={{textDecoration: 'none'}}>
+                  <div className="adminPageLink">
+                    ADMIN PAGE
+                  </div>
+                  <br/>
+                  <br/>
+                </Link>
+              :
+                <div/>
+          }
+
           <STARLeaderboard />
 
           <AuthUserContext.Consumer>
@@ -173,3 +188,8 @@ class AccountPage extends Component {
 const condition = authUser => !!authUser;
  
 export default withAuthorization(condition)(AccountPage);
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "black",
+};

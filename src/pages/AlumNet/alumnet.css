@@ -20,19 +20,31 @@
     margin-left: 2%;
 }
 
-.alumnetbio {
-    font-size: 1vw;
+.noAlum {
+    font-size: 1.2vw;
     line-height: 1.2vw;
     color: rgb(150, 150, 150);
    
     text-align: left;
+    margin-left: 5%;
+    font-style: italic;
+    
+}
+
+.alumnetbio {
+    font-size: 1vw;
+    line-height: 1.2vw;
+    color: rgb(114, 114, 114);
+    font-style: italic;
+    text-align: left;
+    margin-left: 3%;
     
 }
 
 .alumName{
     color: #001d3acf;
     margin: auto;
-    font-size: 1.7vw;
+    font-size: 1.6vw;
     line-height: 2.1vw;
     float: left;
 }
