@@ -34,16 +34,17 @@
     transform: translate(-50%, -50%);
     font-family: 'Poppins', sans-serif;
     display: block;
-    font-size: 16px;
+    font-size: 1vw;
     width: 10%;
-    height: 40px;
+    height: 2.5vw;
     color: white;
     background-color: #001d3a;
-    border-radius: 4px;
+    border-radius: .1vw;
     font-weight: 600;
     cursor: pointer;
     transition: all 200ms ease-in-out;
     will-change: transform, background-color, box-shadow;
+    text-align: center;
 }
 
 .addPoppins {
