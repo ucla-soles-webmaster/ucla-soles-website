@@ -8,6 +8,7 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 
 import './index.css'
+import sun from '../Initiatives/suny.png';
 
 
 class About extends Component {
@@ -16,7 +17,7 @@ class About extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{fontFamily: 'Poppins'}}>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"About Us"}></PagePhoto>
                 <br/><br/><br/><br/>
@@ -42,87 +43,111 @@ class About extends Component {
                     </div>
                     
                 </div>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
+                <div style={{backgroundColor: '#f3f3f3'}}>
+                    <br/><br/><br/>
 
-                
-
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                <hr ClassName = "BoardIntroBar" style = {{width: '88%'}}></hr>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-
-
-
-
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                <div class="headings">
-                    <h2>
-                        Mission Statement
-                    </h2>
-                    <p>
-                        SHPE changes lives by empowering the Hispanic community to realize its fullest potential and to impact the world through STEM awareness, access, support, and development.
-                    </p>
+                    <div className="h1init" style={{fontSize:'3vw', color:'#001d3a', marginBottom:'0.4vw'}}>
+                       HISTORY
+                    </div>
+                    <br/>
+        
+                    <VerticalTimeline >
+                        <VerticalTimelineElement
+                            className="vertical-timeline-element--work"
+                            date="1992"
+                            iconStyle={{ background: 'black', color: '#fff' }}
+                        >
+                            <h3 className="vertical-timeline-element-title" style={{color: '#001d3a'}}>UCLA Tri-Org Founded</h3>
+                            <h4 className="vertical-timeline-element-subtitle"></h4>
+                            <p style={{color: '#898c8c'}}>
+                                Comprising of the Society of Latino Engineers, the National Society of Black 
+                                Engineers and the American Indian Science and Engineering Society, the UCLA 
+                                Tri-Org was formed in 1992 to increase the representation of minority peoples in STEM fields.
+                            </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement
+                            className="vertical-timeline-element--work"
+                            date="1983"
+                            iconStyle={{ background: 'lightblue', color: '#fff' }}
+                        >
+                            <h3 className="vertical-timeline-element-title">CEED Founded</h3>
+                            <h4 className="vertical-timeline-element-subtitle"></h4>
+                            <p style={{color: '#898c8c'}}>
+                                In 1983 The Center for Excellence in Engineering and Diversity was established at UCLA to bolster
+                                the representation of underrepresented minorities in engineering at UCLA.
+                            </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement
+                            className="vertical-timeline-element--work"
+                            date="1978"
+                            iconStyle={{ background: 'rgba(254, 254, 84, 1)', color: '#fff' }}
+                        >
+                            <h3 className="vertical-timeline-element-title">SOLES Founded</h3>
+                            <h4 className="vertical-timeline-element-subtitle"></h4>
+                            <p style={{color: '#898c8c'}}>
+                                The Society of Latino Engineers was established in 1978 as a chapter of SHPE at UCLA with the 
+                                intent of increasing Hispanic representation amongst STEM majors at the university.
+                            </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement
+                            className="vertical-timeline-element--work"
+                            date="1974"
+                            iconStyle={{ background: '#fd662f', color: '#fff' }}
+                        >
+                            <h3 className="vertical-timeline-element-title">SHPE Founded</h3>
+                            <h4 className="vertical-timeline-element-subtitle"></h4>
+                            <p>
+                                The Society of Hispanic Professional Engineers was founded in the Los Angeles area in 1974. Their 
+                                objective is to form a national organization of professional Engineers to serve as role models in 
+                                the Hispanic community.
+                            </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement
+                            iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+                            //icon={<StarIcon />}
+                        />
+                    </VerticalTimeline>
+                    <br/><br/><br/><br/>
                 </div>
-                <div class="headings">
-                    <h2>
-                        Vision
-                    </h2>
-                    <p>
-                        SHPE’s vision is a world where Hispanics are highly valued and influential as the leading innovators, scientists, mathematicians and engineers.
-                    </p>
+
+
+                {/* Awards Section */}
+                <br/><br/><br/><br/>
+                <div id="Awards" >
+                    <div className="h1init" style={{fontSize:'3.2vw', color:'#001d3a', marginBottom:'0.4vw'}}>
+                        AWARDS
+                    </div>
+                    <br/>
+                    <div id='award'>
+                        <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
+                            Runner Up for Bruin Development Award<br/>
+                        </div>
+                        <div style={{fontSize: '1.1vw', fontFamily: 'Poppins', textAlign:'center', lineHeight:'1.4vw', color: '#001d3a', marginLeft:'30%',marginRight:'30%'}}>
+                            Recognized by UCLA's Engineering Society for our commitment to developing our
+                            members.
+                        </div>
+                    </div>
+                    <br/>
+                    <div id='award'>
+                        <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
+                            Blue Chip Chapter Award 2015-2017 & 2020<br/>
+                        </div>
+                        <div style={{fontSize: '1.1vw', fontFamily: 'Poppins', textAlign:'center', lineHeight:'1.4vw', color: '#001d3a', marginLeft:'30%',marginRight:'30%'}}>
+                            Awarded during the annual SHPE Regional Leadership Development Conference to chapters 
+                            shown to provide outstanding metrics throughout the year, exhibiting growth and success.
+                        </div>
+                    </div>
+                    <br/>
+                    <div id='award'>
+                        <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
+                            Best Medium Engineering Student Organization at UCLA 2017<br/>
+                        </div>
+                    </div>
                 </div>
-                <div class="headings">
-                    <h2>
-                        About SHPE
-                    </h2>
-                    <p>
-                        The Society of Hispanic Professional Engineers (SHPE) is a non-profit organization dedicated to increasing the participation<br></br>
-                        of Hispanic professionals and college students in the fields of engineering, science, and math. Founded in Los Angeles, California,<br></br>
-                        in 1974 by a group of engineers employed by the city of Los Angeles, their objective was to form an organization of professional<br></br> 
-                        engineers to serve as role models in the Hispanic community. National in scope, the organization is composed of 50 professional <br></br>
-                        chapters with about 2000 members and 200 student chapters with a membership of more than 10,000 college students.<br></br>
-                        SHPE engages in outreach programs, provides leadership and networking opportunities to its members, and helps in furthering<br></br>
-                        their education, advancing their careers, and promoting their recognition.<br></br>
-                        Visit <a href="https://shpe.org/">shpe.org</a> for more information.
-                    </p>
-                </div>
-                <div class="headings">
-                    <h2>
-                        About SOLES
-                    </h2>
-                    <p>
-                        The Society of Latino Engineers and Scientists at UCLA (SOLES) is a student organization in the Henry Samueli School of Engineering and Applied Science,<br></br>
-                        and is a student chapter of SHPE. Established in 1978 at the University of California, Los Angeles, SOLES partners with UCLA NSBE <br></br>
-                        and AISES chapters to form the Triad-Organizations, or Tri-Org.<br></br>  
-                        SOLES is also supported by the UCLA Center for Excellence in Engineering and Diversity (CEED).<br></br>
-                        Visit <a href="http://uclatri.org/">uclatri.org</a> for more information.<br></br>
-                        Visit <a href="http://ceed.ucla.edu/">ceed.ucla.edu</a> for more information.
-                    </p>
-                </div>
-                <div class="headings">
-                    <h2>
-                        Our Awards
-                    </h2>
-                    <p>
-                        Include Awards here.
-                    </p>
-                </div>
-                <div class="headings">
-                    <h2>
-                        Club Developments
-                    </h2>
-                    <p>
-                        Add Developments here.
-                    </p>
-                </div>
-                <div class="headings">
-                    <h2>
-                        Timeline
-                    </h2>
-                    <p>
-                        Place Timeline here.
-                    </p>
-                </div>
+
+                <br/><br/><br/><br/>
                 <Footer/>
             </div>
         );
