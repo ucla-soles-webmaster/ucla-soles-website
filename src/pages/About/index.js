@@ -4,6 +4,9 @@ import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import coverPhoto from '../../coverImages/abt2.jpg';
 import Footer from '../../components/Footer';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
 import './index.css'
 
 
@@ -16,6 +19,42 @@ class About extends Component {
             <div>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"About Us"}></PagePhoto>
+                <br/><br/><br/><br/>
+
+                {/* Mission Statement and Vision */}
+                <div class="MissionVision" style={{marginLeft: '11%', marginRight: '12%'}}>
+
+                    {/* Mission Statement */}
+                    <div className="mission" style={{fontSize:'2.4vw', fontFamily:'Poppins', color:'#001d3a', marginBottom:'0.4vw'}}>
+                            MISSION STATEMENT
+                            <p style={{fontSize:'1.2vw', fontFamily:'Poppins', color:'gray', marginLeft:'10%'}}>
+                            SOLES changes lives by empowering the Hispanic community to realize its fullest potential 
+                            and to impact the world through STEM awareness, access, support, and development.
+                            </p>
+                    </div>
+                    {/* Vision */}
+                    <div className="vision" style={{fontSize:'2.4vw', fontFamily:'Poppins', color:'#001d3a', marginBottom:'0.4vw'}}>
+                        VISION
+                        <p style={{fontSize:'1.2vw', fontFamily:'Poppins', color:'gray', marginLeft:'10%'}}>
+                        SOLE's vision is a world where Hispanics are highly valued and influential as the leading
+                        innovators, scientists, mathematicians and engineers. 
+                        </p>
+                    </div>
+                    
+                </div>
+
+
+                
+
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <hr ClassName = "BoardIntroBar" style = {{width: '88%'}}></hr>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+
+
+
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <div class="headings">
                     <h2>
                         Mission Statement
