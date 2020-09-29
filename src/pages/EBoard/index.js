@@ -5,15 +5,15 @@ import '../../eBoard.css';
 import rightsun from '../../coverImages/rightsun.png'
 import leftsun from '../../coverImages/leftsun.png';
 
-import Andy from '../../boardImages/andy2.JPG'
+import Andy from '../../boardImages/andy2.jpeg'
 import Trevor from '../../boardImages/trevor1.JPG'
 import Jasmine from '../../boardImages/dragonfruit.jpg'
 
 import Mayra from '../../boardImages/mayra1.JPG'
-import Robert from '../../boardImages/lemon.jpg'
+import Robert from '../../boardImages/robert.jpeg'
 import Michael from '../../boardImages/michael1.JPG'
 
-import Aidan from '../../boardImages/aiden1.JPG'
+import Aidan from '../../boardImages/aiden1.jpeg'
 import Mat from '../../boardImages/mat1.JPG'
 import Eric from '../../boardImages/eric1.JPG'
 
@@ -176,7 +176,9 @@ class EBoard extends Component {
                         <div class="flip-card-back">
                             <div className = "backSideText">Robert Valencia</div>
                             <div className = "majorFontLong">3rd Year Mechanical Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is the 2019 Leadership Jr. Retreat. It was such a fun and rewarding experience to spend a day with 
+                            students interested in STEM that have a similar background as I do. To be able to talk to them about my own experiences and hear theirs as well was amazing. 
+                            It was also great because the members of the group I was given that day were very funny!</div>
                             <div className = "emailFontShort">uclasoles@gmail.com</div>    
                         </div>
                     </div>
