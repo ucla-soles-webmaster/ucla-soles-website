@@ -23,7 +23,9 @@ function sendEmail(e){
 class Contact extends Component {
     
     // add constructor if necessary
-    
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
 
     render() {
         return (

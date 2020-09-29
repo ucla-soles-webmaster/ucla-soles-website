@@ -33,6 +33,10 @@ class Sponsors extends Component {
           bronze: false
         }
       }
+    
+      componentDidMount() {
+        window.scrollTo(0, 0)
+      }
 
     render() {
         return (

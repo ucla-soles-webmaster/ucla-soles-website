@@ -48,6 +48,10 @@ class SignInFormBase extends Component {
     };
     
   }
+  
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
  
   onSubmit = event => {
     const { email, password } = this.state;

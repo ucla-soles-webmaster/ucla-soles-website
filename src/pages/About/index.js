@@ -14,6 +14,9 @@ import sun from '../Initiatives/suny.png';
 class About extends Component {
     
     // Add constructor here when necessary
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
 
     render() {
         return (
@@ -98,7 +101,7 @@ class About extends Component {
                         >
                             <h3 className="vertical-timeline-element-title">SHPE Founded</h3>
                             <h4 className="vertical-timeline-element-subtitle"></h4>
-                            <p>
+                            <p style={{color: '#898c8c'}}>
                                 The Society of Hispanic Professional Engineers was founded in the Los Angeles area in 1974. Their 
                                 objective is to form a national organization of professional Engineers to serve as role models in 
                                 the Hispanic community.

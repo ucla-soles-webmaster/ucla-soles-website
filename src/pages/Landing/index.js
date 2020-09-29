@@ -17,7 +17,12 @@ import leftsun from '../../coverImages/leftsun.png';
 
 class Landing extends Component {
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
+
     render() {
+        
         return (
             <div>
 

@@ -72,6 +72,8 @@ class AlumNet extends Component {
             });    
         });
 
+        window.scrollTo(0, 0)
+          
     }
     
     renderUser = (user, idx) => {

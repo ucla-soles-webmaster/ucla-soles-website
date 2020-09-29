@@ -95,6 +95,10 @@ class SignUpFormBase extends Component {
             }).catch(function(error) {
                 console.log("Error getting document:", error);
             });
+
+            
+            window.scrollTo(0, 0)
+              
     }
 
     onSubmit = event => {

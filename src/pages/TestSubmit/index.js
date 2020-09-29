@@ -78,8 +78,11 @@ class TestBankSubmit extends Component {
         }
 
         that.setState({ recentYears: tempList });
-        
     }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
 
     selectDepartment(event) {
         this.setState({ department: event.target.value })

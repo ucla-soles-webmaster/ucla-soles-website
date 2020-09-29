@@ -39,6 +39,9 @@ class AdminPage extends Component {
       this.setState({ mentorshipUserList: []});
       this.setState({ Industry: []});
       this.setState({ IndustryID: []});
+      
+      window.scrollTo(0, 0)
+      
 
       // Used to get a list of all the users
       var that = this;
@@ -139,7 +142,7 @@ class AdminPage extends Component {
       .update({
         has_access: !user["has_access"]
       })
-      
+      this.componentDidMount()
   }
 
 
@@ -179,6 +182,9 @@ class AdminPage extends Component {
 
 
   renderIndustry = (user, idx) => {
+
+    var access = user["has_access"] === true ? 'Yes' : 'No'
+    console.log(user["has_access"])
     
     return (
       <div class="adminUserCell">
@@ -189,7 +195,7 @@ class AdminPage extends Component {
         </div>    
 
         Sponsor Level:&nbsp;<b>{user["sponsor_level"]}</b> &nbsp;
-        <button onClick={() => this.HasAccess(idx, user)} type="button" >Has Access: {user["sponsor_level"]} CLICK TO CHANGE</button>
+        <button onClick={() => this.HasAccess(idx, user)} type="button" >Has Access: {access} - CLICK TO CHANGE</button>
 
         &nbsp;&nbsp;&nbsp;Company:&nbsp;<b>{user["employer"]}</b>
         

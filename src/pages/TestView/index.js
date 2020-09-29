@@ -57,6 +57,10 @@ class TestBankView extends Component {
           })        
     }
 
+    componentDidMount() {
+            window.scrollTo(0, 0)
+          }
+
     selectDepartment(event) {
         this.setState({ department: event.target.value })
     }

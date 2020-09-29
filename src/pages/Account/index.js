@@ -30,6 +30,9 @@ class AccountPage extends Component {
   }
 
   componentWillMount() {
+
+    window.scrollTo(0, 0)
+    
     var that = this;  // must have this for the setState inside lamda
     this.props.firebase.getFirestore().collection("users")
       .where("email", "==", this.state.userEmail)  // can have multiple .where calls

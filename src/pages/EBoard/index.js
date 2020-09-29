@@ -37,7 +37,9 @@ import coverPhoto from '../../coverImages/huddleOpL.png';
 class EBoard extends Component {
 
     // Add constructor here when necessary
-
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
     
       
 

@@ -14,6 +14,9 @@ import sun from '../../coverImages/sunblue.png';
 class Merch extends Component {
 
     // Add constructor here when necessary
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
 
     render() {
         return (
