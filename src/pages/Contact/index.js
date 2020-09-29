@@ -11,7 +11,7 @@ import './contact.css';
 function sendEmail(e){
     e.preventDefault();
 
-    emailjs.sendForm('gmail', 'template_d19ecvb', e.target, 'user_2CrH6Hv9biqjQoD3JEFWe')
+    emailjs.sendForm('gmail', 'template_i8maefd', e.target, 'user_4rQekKQSITRKt69qEZzgq')
         .then((result) => {
         console.log(result.text);
     }, (error) => {
