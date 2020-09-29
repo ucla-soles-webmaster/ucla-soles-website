@@ -12,11 +12,10 @@
 
 .contactForm{
     text-align: center;
-    background-color: rgb(0, 0, 0);
+    background-color: #333333;
     width: 40%;
     margin:auto;
     padding: 2vw;
-    opacity: 80%;
     border-radius: 1vw;
 }
 

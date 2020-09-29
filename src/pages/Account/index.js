@@ -169,7 +169,31 @@ class AccountPage extends Component {
           */}
           { this.state.user["career"] === 'student'
               ?
-                <STARLeaderboard />
+                <div>
+                  {/* MentorSHPE leaderboard */}
+                  <STARLeaderboard />
+                  {/* MentorSHPE points breakdown */}
+                  <ul className="ulTB" style={{width:'30%',marginLeft:'30%',marginRight:'30%'}}>
+                      <li className="liTB" >
+                          5 points
+                      </li>
+                      <li className="liTB" >
+                          10 points
+                      </li>
+                      <li className="liTB" >
+                          10 points
+                      </li>
+                      <li className="liTB" >
+                          Distribution of tests from the Test Bank is not permitted
+                      </li>
+                      <li className="liTB" >
+                          See the Submit a Test page for more info on test submissions
+                      </li>
+                      <li className="liTB" >
+                          Email uclasoles.academicchair@gmail.com for any questions or issues
+                      </li>
+                  </ul>
+                </div>
               :
                 // Industry
                 this.state.user["career"] === 'industry'

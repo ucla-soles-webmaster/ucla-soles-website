@@ -7,35 +7,35 @@ import Footer from '../../components/Footer';
 import coverPhoto from '../../coverImages/planesOpL.png';
 import rightsun from '../../coverImages/rightsun.png'
 import leftsun from '../../coverImages/leftsun.png';
-import sun from './suny.png';
+import sun from '../../initiativesPhotos/suny.png';
 
-import jrOp from './jrOp.png';
-import jrCol from './jrCol.png';
-import cienciasOp from './CienciasOp.png';
-import cienciasCol from './CienciasCol.png';
-import tutoringOp from './TutoringOp.png';
-import tutoringCol from './TutoringCol.png';
-import eitOp from './eitOp.png';
-import eitCol from './eitCol.png';
+import jrOp from '../../initiativesPhotos/jrOp.png';
+import jrCol from '../../initiativesPhotos/jrCol.png';
+import cienciasOp from '../../initiativesPhotos/CienciasOp.png';
+import cienciasCol from '../../initiativesPhotos/CienciasCol.png';
+import tutoringOp from '../../initiativesPhotos/TutoringOp.png';
+import tutoringCol from '../../initiativesPhotos/TutoringCol.png';
+import eitOp from '../../initiativesPhotos/eitOp.png';
+import eitCol from '../../initiativesPhotos/eitCol.png';
 
 import studynightOp from '../../coverImages/studynightOp.png';
 import studynightCol from '../../coverImages/studynightCol.png';
-import lunarOp from './lunarOp.png';
-import lunarCol from './lunarCol.png';
-import ExpEduOp from './ExpEduOp.png';
-import ExpEduCol from './ExpEduCol.png';
+import lunarOp from '../../initiativesPhotos/lunarOp.png';
+import lunarCol from '../../initiativesPhotos/lunarCol.png';
+import ExpEduOp from '../../initiativesPhotos/ExpEduOp.png';
+import ExpEduCol from '../../initiativesPhotos/ExpEduCol.png';
 
-import natConOp from './NatConOp.png';
-import natConCol from './NatConCol.png';
-import RLDCOp from './RLDCOp.png';
-import RLDCCol from './RLDCCol.png';
-import IndWorkOp from './IndWorkOp.png';
-import IndWorkCol from './IndWorkCol.png';
+import natConOp from '../../initiativesPhotos/NatConOp.png';
+import natConCol from '../../initiativesPhotos/NatConCol.png';
+import RLDCOp from '../../initiativesPhotos/RLDCOp.png';
+import RLDCCol from '../../initiativesPhotos/RLDCCol.png';
+import IndWorkOp from '../../initiativesPhotos/IndWorkOp.png';
+import IndWorkCol from '../../initiativesPhotos/IndWorkCol.png';
 
-import mentorSHPEOp from './mentorSHPEOp.png';
-import mentorSHPECol from './mentorSHPECol.png';
-import socialOp from './social1Op.png';
-import socialCol from './social1Col.png';
+import mentorSHPEOp from '../../initiativesPhotos/mentorSHPEOp.png';
+import mentorSHPECol from '../../initiativesPhotos/mentorSHPECol.png';
+import socialOp from '../../initiativesPhotos/social1Op.png';
+import socialCol from '../../initiativesPhotos/social1Col.png';
 
 import './initiativeStyle.css'
 

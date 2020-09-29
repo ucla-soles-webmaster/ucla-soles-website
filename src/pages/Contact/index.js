@@ -36,7 +36,7 @@ class Contact extends Component {
                 <h1 className = "contactTitle">Have any questions? Send them our way!</h1>
                 <br/>
 
-                <div className = "contactForm" style={{fontFamily: 'Poppins'}}>
+                <div> {/*className = "contactForm"*/}
                     <form onSubmit={sendEmail}>
                         <div>
                             <div className = "contactComponenet">

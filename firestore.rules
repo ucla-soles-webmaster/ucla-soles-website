@@ -65,6 +65,11 @@ service cloud.firestore {
     }
     
     // users available
+    match /teams/{anything=**} {
+    	allow read, write: if true;
+    }
+    
+    // users available
     match /users/{anything=**} {
     	allow read, write: if true;
     }
