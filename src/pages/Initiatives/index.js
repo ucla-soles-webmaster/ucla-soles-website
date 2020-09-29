@@ -68,7 +68,7 @@ class Initiatives extends Component {
                             
                             Our initiatives and events form the heart of SOLES. They help 
                             bring together our members, create opportunities for both K-12
-                            and college students, and flourish memories and experiences our
+                            and college students, and make memories and experiences our
                             members will never forget.
                             
                         </p>

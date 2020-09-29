@@ -75,7 +75,7 @@ class EBoard extends Component {
                             <img className = "BoardPageImages" src= {Andy} alt="Andy Muraltalla" ></img>
                         </div>
                         <div class="flip-card-back">
-                            <div className = "backSideText">Andy Muraltalla</div>
+                            <div className = "backSideText">Andy Muratalla</div>
                             <div className = "majorFontLong">4th Year Aerospace Engineering</div>
                             <div className = "backSideTextSmall">My favorite SOLES memory is the SOLES White Elephant party back in December of my 2nd Year, where I got to share some quality Christmas spirit with members of all class levels.</div>
                             <div className = "emailFont">uclasoles.president@gmail.com</div>    
