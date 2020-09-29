@@ -8,7 +8,6 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 
 import './index.css'
-import sun from '../Initiatives/suny.png';
 
 
 class About extends Component {
@@ -63,7 +62,6 @@ class About extends Component {
                             iconStyle={{ background: 'black', color: '#fff' }}
                         >
                             <h3 className="vertical-timeline-element-title" style={{color: '#001d3a'}}>UCLA Tri-Org Founded</h3>
-                            <h4 className="vertical-timeline-element-subtitle"></h4>
                             <p style={{color: '#898c8c'}}>
                                 Comprising of the Society of Latino Engineers, the National Society of Black 
                                 Engineers and the American Indian Science and Engineering Society, the UCLA 
@@ -76,7 +74,6 @@ class About extends Component {
                             iconStyle={{ background: 'lightblue', color: '#fff' }}
                         >
                             <h3 className="vertical-timeline-element-title">CEED Founded</h3>
-                            <h4 className="vertical-timeline-element-subtitle"></h4>
                             <p style={{color: '#898c8c'}}>
                                 In 1983 The Center for Excellence in Engineering and Diversity was established at UCLA to bolster
                                 the representation of underrepresented minorities in engineering at UCLA.
@@ -88,7 +85,6 @@ class About extends Component {
                             iconStyle={{ background: 'rgba(254, 254, 84, 1)', color: '#fff' }}
                         >
                             <h3 className="vertical-timeline-element-title">SOLES Founded</h3>
-                            <h4 className="vertical-timeline-element-subtitle"></h4>
                             <p style={{color: '#898c8c'}}>
                                 The Society of Latino Engineers was established in 1978 as a chapter of SHPE at UCLA with the 
                                 intent of increasing Hispanic representation amongst STEM majors at the university.
@@ -100,7 +96,6 @@ class About extends Component {
                             iconStyle={{ background: '#fd662f', color: '#fff' }}
                         >
                             <h3 className="vertical-timeline-element-title">SHPE Founded</h3>
-                            <h4 className="vertical-timeline-element-subtitle"></h4>
                             <p style={{color: '#898c8c'}}>
                                 The Society of Hispanic Professional Engineers was founded in the Los Angeles area in 1974. Their 
                                 objective is to form a national organization of professional Engineers to serve as role models in 
