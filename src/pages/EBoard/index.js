@@ -7,7 +7,7 @@ import leftsun from '../../coverImages/leftsun.png';
 
 import Andy from '../../boardImages/andy2.jpeg'
 import Trevor from '../../boardImages/trevor1.JPG'
-import Jasmine from '../../boardImages/dragonfruit.jpg'
+import Jasmine from '../../boardImages/raya.jpeg'
 
 import Mayra from '../../boardImages/mayra1.JPG'
 import Robert from '../../boardImages/robert.jpeg'
@@ -119,7 +119,7 @@ class EBoard extends Component {
                         <div class="flip-card-back">
                             <div className = "backSideText">Jasmine Raya</div>
                             <div className = "majorFontLong">3rd Year Mechanical Engineering</div>
-                            <div className = "backSideTextSmall">My favorite SOLES memory is...</div>
+                            <div className = "backSideTextSmall">My favorite SOLES memory is volunteering for our high school outreach events.</div>
                             <div className = "emailFontShort">uclasoles.ivp@gmail.com</div>    
                         </div>
                     </div>
