@@ -120,7 +120,7 @@ class About extends Component {
                     <br/>
                     <div id='award'>
                         <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
-                            Runner Up for Bruin Development Award<br/>
+                            2020 Runner Up for Bruin Development Award<br/>
                         </div>
                         <div style={{fontSize: '1.1vw', fontFamily: 'Poppins', textAlign:'center', lineHeight:'1.4vw', color: '#001d3a', marginLeft:'30%',marginRight:'30%'}}>
                             Recognized by UCLA's Engineering Society for our commitment to developing our

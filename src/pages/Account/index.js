@@ -172,25 +172,25 @@ class AccountPage extends Component {
                 <div>
                   {/* MentorSHPE leaderboard */}
                   <STARLeaderboard />
+                  <br/>
                   {/* MentorSHPE points breakdown */}
+                  <p style={{fontSize: '2vw', color: 'gray', marginTop:'2%', marginBottom:'-3%', fontWeight:'300', textAlign:'center'}}>
+                      MENTORSHPE POINTS BREAKDOWN
+                  </p>
                   <ul className="ulTB" style={{width:'30%',marginLeft:'30%',marginRight:'30%'}}>
                       <li className="liTB" >
-                          5 points
+                          <b>{">"}20 points</b> - Winning a MentorSHPE comp-social event, more details
+                          at the next social.
                       </li>
                       <li className="liTB" >
-                          10 points
+                          <b>20 points</b> - Volunteering at a SOLES event (Outreach, etc.)
                       </li>
                       <li className="liTB" >
-                          10 points
+                          <b>10 points</b> - Going to a SOLES GM, committee meeting,
+                          or technical project meeting.
                       </li>
                       <li className="liTB" >
-                          Distribution of tests from the Test Bank is not permitted
-                      </li>
-                      <li className="liTB" >
-                          See the Submit a Test page for more info on test submissions
-                      </li>
-                      <li className="liTB" >
-                          Email uclasoles.academicchair@gmail.com for any questions or issues
+                          <b>7 points</b> - Submitting a test to the Test Bank
                       </li>
                   </ul>
                 </div>
@@ -227,11 +227,11 @@ class AccountPage extends Component {
                 // Alumni
                     :
                       <div>
-                        Alumniiiii
+                         
                       </div>
                     
           }
-
+          <br/>
           <AuthUserContext.Consumer>
             {authUser => (
               <div>

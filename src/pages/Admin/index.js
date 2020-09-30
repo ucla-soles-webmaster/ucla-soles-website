@@ -28,7 +28,8 @@ class AdminPage extends Component {
       bronze: '',
       new_code_gold:'',
       new_code_silver:'',
-      new_code_bronze:''
+      new_code_bronze:'',
+      testsToCheck: []
     };
 
   }
@@ -39,6 +40,7 @@ class AdminPage extends Component {
       this.setState({ mentorshipUserList: []});
       this.setState({ Industry: []});
       this.setState({ IndustryID: []});
+      this.setState({ testsToCheck:[]})
       
       window.scrollTo(0, 0)
       
@@ -52,7 +54,20 @@ class AdminPage extends Component {
         querySnapshot.forEach(function(doc) {
           that.setState({ user: doc.data() })
         });   
-    });
+      });
+
+      // Tests to check in / award star points
+
+      that.props.firebase.getFirestore().collection("testsToCheck")
+      .where("checked", "==", false)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          var test_name = doc.id;
+          var test_meta_data = doc.data()
+          that.setState({ testsToCheck: [...that.state.testsToCheck, [test_meta_data, test_name] ] })
+        });   
+      });
 
     //Industry Stuff ///////////////
     that.props.firebase.getFirestore().collection("users")
@@ -145,6 +160,34 @@ class AdminPage extends Component {
       this.componentDidMount()
   }
 
+  submitTest = (idx, user) => {
+    var that = this;  // must have this for the setState inside lamda
+
+
+    // Give starpoints to mentorship team
+    if(user[0]["has_familia"] === true && user[0]["familia"] !== undefined) {
+      var mentorTeamName = user[0]["familia"]
+      var dbReference = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
+          console.log(that.state.updatePoints);
+          var points = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
+          points.get().then(function(doc){
+            var currPoints = doc.data();
+            var add = parseInt(currPoints["starpoints"]) + parseInt('7');
+            dbReference.update({starpoints: add});
+            alert('Successfully added ' + parseInt('7') + ' points to ' + mentorTeamName +  '!')
+          });
+    }
+
+    this.props.firebase.getFirestore().collection("testsToCheck")
+      .doc(user[1])  // can have multiple .where calls
+      .update({
+        checked: !user[0]["checked"]
+      })
+      this.componentDidMount()
+
+    
+  }
+
 
 
 /*
@@ -229,6 +272,31 @@ class AdminPage extends Component {
 
       </div>
     );
+    }
+
+    renderCheckInTests = (test, idx) => {
+
+      var cen_work = test[0]['censor_WORK'] === true ? 'Yes' : 'No';
+      var cen_name = test[0]['censor_NAME'] === true ? 'Yes' : 'No';
+
+      return (
+        <div class="adminUserCell">
+          {/* TestName */}
+          <div class="adminUserName">
+            { test[1] }
+          </div>  
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          By: {test[0]['submitter']} &nbsp;
+          Censor Name: <b>{cen_name}</b> &nbsp;
+          Censor Work: <b>{cen_work}</b> &nbsp;
+
+          <button onClick={() => this.submitTest(idx, test)} type="button" >VERIFY</button>
+
+        </div>
+      )
+
     }
 
 /*
@@ -366,7 +434,7 @@ class AdminPage extends Component {
 
           <h1>Industry Reps</h1>
               <p>
-                All industry reps that have made an account in the past->current.
+                All industry reps that have made an account in the past{'->'}current.
               </p>
               <FlatList
                 list={Industry}
@@ -387,6 +455,15 @@ class AdminPage extends Component {
                 Bronze Code:     <b>{this.state.bronze}</b>&nbsp;&nbsp;
                 <input type = "text" placeholder="new bronze code" id="mentorTeamName" onChange={ e=> this.setState({new_code_bronze: e.target.value}) }/>
                 <input type ="submit" className = "btn btn-info" value = "CHANGE" onClick={()=>this.changeCodeBronze(this.state.new_code_bronze)}></input>
+              <br/>
+              <br/>
+              <br/>
+
+              <h1>Tests to check in</h1>
+                <FlatList
+                  list={this.state.testsToCheck}
+                  renderItem={this.renderCheckInTests}
+                /> 
               <br/>
               <br/>
               <br/>

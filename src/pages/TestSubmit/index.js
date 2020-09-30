@@ -25,6 +25,7 @@ class TestBankSubmit extends Component {
 
         this.state = {
             user: {},
+            usedID:'',
             firestore: this.props.firebase.getFirestore(),
             userEmail: this.props.firebase.auth.currentUser.email,
             department: "",
@@ -63,6 +64,7 @@ class TestBankSubmit extends Component {
           .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
               that.setState({ user: doc.data() })
+              that.setState({ userID: doc.id })
             });
           })        
 
@@ -217,6 +219,28 @@ class TestBankSubmit extends Component {
 
         var storageRef = this.props.firebase.storage.ref();
         var mountainImagesRef = storageRef.child('tests/' + this.state.department + '/' + this.state.class + '/' + storageName);
+
+        // Store it in TestsToCheck in for Admin
+        this.props.firebase.getFirestore().collection('testsToCheck').doc(storageName).set({
+            userID: this.state.userID,
+            checked: false,
+            censor_NAME: this.state.censorName,
+            censor_WORK: this.state.censorWork,
+            submitted: monthNames[d.getMonth()] + ' ' + d.getDate() +
+            ', ' + + d.getFullYear() + ' at ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds(),
+            submitter: this.state.user["first_name"] + this.state.user["last_name"],
+            has_familia: this.state.user["mentorTeam"] !== '' ? true : false,
+            familia: this.state.user["mentorTeam"]
+        });
+
+        /*
+            userID: this.state.userID,
+            checked: false,
+            censor_NAME: this.state.censorName,
+            censor_WORK: this.state.censorWork,
+            submitter: this.state.user["first_name"] + this.state.user["last_name"]
+        */
+
 
         // Store file on Firebase Storage
         var message = this.state.file_data;
@@ -497,6 +521,7 @@ class TestBankSubmit extends Component {
                                                             onChange={this.selectTestType.bind(this)}
                                                         >
                                                             <option value="">-</option>
+                                                            <option value="Quiz" >Quiz</option>
                                                             <option value="Midterm 1" >Midterm 1</option>
                                                             <option value="Midterm 2" >Midterm 2</option>
                                                             <option value="Final" >Final</option>                                                                      
@@ -563,7 +588,6 @@ class TestBankSubmit extends Component {
                                                 <div className="checksu">
                                                     <input 
                                                         type="checkbox" 
-                                                        disabled={this.state.censorWork}
                                                         onChange={(e) => {
                                                             this.setState({ hasAnswers: !this.state.hasAnswers })
                                                         }}

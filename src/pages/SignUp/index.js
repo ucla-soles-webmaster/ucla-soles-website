@@ -411,11 +411,11 @@ class SignUpFormBase extends Component {
                     <Form.Group className="FormRow" controlId="exampleForm.ControlSelect1">
                         <Form.Label className="FormRowLabelDropDown">Which best describes you?</Form.Label>
                             <Form.Control 
-                                className={career === "" ? "graydd" : "FormRowInput"}
+                                className={career === "" ? "graydd" : "FormRowInput2"}
                                 as="select"
                                 onChange={this.changeCareer.bind(this)}
                             >
-                                <option value="">-</option>
+                                <option value="">Select</option>
                                 <option value="student" >Student</option>
                                 <option value="alumni" >Alumni</option>
                                 <option value="industry" >Industry Member</option>

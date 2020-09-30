@@ -301,3 +301,13 @@ body {
         margin-right: -60px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .iEq {
+        color: black;
+        font-style: normal;
+        font-size: 60px;
+        margin-right: -200px;
+        margin-left: 35px;
+    }
+}

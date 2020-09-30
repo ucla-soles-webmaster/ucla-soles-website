@@ -91,6 +91,17 @@
     animation: 1ms void-animation-out;
 }
 
+.FormRowInput2 {
+    font-size: 1.2vw;
+    width: 80%;
+    padding-top: 0.0%;
+    color: #001d3a;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    animation: 1ms void-animation-out;
+    border: 0;
+}
+
 .graydd {
     font-size: 1.2vw;
     width: 55%;
@@ -252,6 +263,7 @@
 
 
 .FormRowInput,
+.FormRowInput2,
 .FormRowInputViewTests,
 .graydd,
 .buttonsu,
@@ -265,4 +277,55 @@
   appearance: none;
   outline: none;
   border-style: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .suform {
+        width: 90%;
+    }
+
+    .FormRowLabel {
+        font-size: 2.6vw;
+        margin-right: 8%;
+    }
+
+    .FormRowInput {
+        font-size: 1vw;
+    }
+
+    .FormRowInput::placeholder {
+        color: #001d3a17;
+        font-size: 2.6vw;
+    }
+
+    .disclaimer1 {
+        font-size: 1.9vw;
+        margin-top: 0%;
+    }
+
+    .FormRowLabelDropDown {
+        font-size: 2.2vw;
+    }
+
+    .graydd {
+        font-size: 2.2vw;
+    }
+
+    .FormRowInput2 {
+        font-size: 2.2vw;
+        border: 0;
+    }
+    
+    .newsletterlabelsu {
+        font-size: 2.5vw;
+        width: 50%;
+    }
+
+    .submitNotice {
+        font-size: 2vw;
+        margin-top: 9%;
+    }
+
 }
