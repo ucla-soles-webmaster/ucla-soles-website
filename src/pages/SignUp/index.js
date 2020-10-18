@@ -11,7 +11,7 @@ import * as ROUTES from '../../constants/routes';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
-import coverPhoto from '../../coverImages/sign.png';
+import coverPhoto from '../../coverImages/sign2.png';
 import './signUpStyle.css';
 // uyeras
 
@@ -434,7 +434,7 @@ class SignUpFormBase extends Component {
                                 <Form.Group className="FormRow" controlId="exampleForm.ControlSelect1">
                                     <Form.Label className="FormRowLabelDropDown">What is your major?</Form.Label>                                   
                                         <Form.Control 
-                                            className={major === "" ? "graydd" : "FormRowInput"}
+                                            className={major === "" ? "graydd" : "FormRowInput2"}
                                             as="select"
                                             onChange={this.changeMajor.bind(this)}
                                         >
@@ -980,7 +980,7 @@ const Field = ({
         {label}
       </label>
       <input
-        className="FormRowInput"
+        className="FormRowInput2"
         id={id}
         type={type}
         placeholder={placeholder}
