@@ -261,13 +261,13 @@ body {
 
 @media (max-width: 650px) {
     .navTop .logo img {
-        height: 55px;
+        height: 30px;
         padding-top: 17px;
         transition: 0.5s;
         margin-left: -40px;
     }
     .navElse .logo img {
-        height: 55px;
+        height: 30px;
         padding-top: 17px;
         transition: 0.5s;
         margin-left: -40px;
@@ -308,6 +308,6 @@ body {
         font-style: normal;
         font-size: 60px;
         margin-right: -200px;
-        margin-left: 35px;
+        margin-left: 50px;
     }
 }

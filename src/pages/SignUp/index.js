@@ -256,8 +256,6 @@ class SignUpFormBase extends Component {
 
 
     render() {
-        console.log(this.state.resume_file_data)
-        console.log(typeof this.state.resume_file_data)
         const {
             firstName,
             lastName,
@@ -292,16 +290,18 @@ class SignUpFormBase extends Component {
             career === '' ||
             passwordOne.length < 6 ||
             passwordTwo.length < 6 ||
-            ( email !== '' &&  !email.includes('@')) ||
+            /*( email !== '' &&  !email.includes('@')) ||*/
             ( career === 'industry' && sponsor_level === '') ||
-            ( sponsor_level === 'gold' && input_code !== this.state.company_code_gold) ||
-            ( sponsor_level === 'silver' && input_code !== this.state.company_code_silver) ||
-            ( sponsor_level === 'bronze' && input_code !== this.state.company_code_bronze) ||
-            ( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
-            ( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||
+            ( career === 'industry' && sponsor_level === 'gold' && input_code !== this.state.company_code_gold) ||
+            ( career === 'industry' && sponsor_level === 'silver' && input_code !== this.state.company_code_silver) ||
+            ( career === 'industry' && sponsor_level === 'bronze' && input_code !== this.state.company_code_bronze) ||
+            
+            //( career === 'student' && ( !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") ) ) ) ||
+            
+            /*( (career === 'student' || career === 'alumni') && (major === '' || graduation === null) ) ||*/
             ( career === 'alumni' && alumnet === '') ||
             ( (career === 'alumni' || career === 'industry') && employer === '' ) ||
-            ( (career === 'student') && (!signup_local && !signup_national && !no_membership)) ||
+            /*( (career === 'student') && (!signup_local && !signup_national && !no_membership)) ||*/
             ( join_mentorship === true && ( mentee === false && mentor === false )  );
             
 
@@ -347,12 +347,15 @@ class SignUpFormBase extends Component {
                             this.setState({ email: e.target.value });  
                         }}
                     />
+                    {/*
                     { career === "student" && !( email.includes("ucla.edu") || email.includes("@g.ucla.edu") )
                         ?   <p className="disclaimer1" style={{color: "red", marginLeft: "7%"}}>
                                 Students must use their @ucla.edu email.
                             </p>
                         :   <div className="" />
+                    */
                     }
+                    
                     { (email !== '' && !email.includes('@'))
                         ?
                             <p className="disclaimer1" style={{color: "red", marginLeft: "7%"}}>
@@ -485,17 +488,10 @@ class SignUpFormBase extends Component {
                                         className="checkboxsu"
                                     />
                                     <label className="checklabelsu"  for="vehicle1"> 
-                                        Join SOLES MentorSHPE? (don't miss out, 100% recommended)
+                                        Join SOLES MentorSHPE?
                                     </label>
-                                    <p className="disclaimer2">
-                                        MentorSHPE will be ran a little differently this year... 
-                                        Mentees and mentors will be placed into Familias, where Familias will square off 
-                                        in the quarterly MentorSHPE ChampionSHPE, and have the chance to win a [$### TO BE DETERMINED award].
-                                        ChampionSHPE STAR Points will be given by coming to SOLES socials/meetings and helping out
-                                        at SOLES events/committees. You've read this far, might as well join!
-                                    </p>
                                     
-                                                <div className="checksu">
+                                                <div className="checksu" style={{marginLeft: '3%'}}>
                                                     <input 
                                                         type="checkbox" 
                                                         disabled={mentor || !join_mentorship}
@@ -507,14 +503,10 @@ class SignUpFormBase extends Component {
                                                     <label className="checklabelsu"  for="vehicle1"> 
                                                         Mentee
                                                     </label>
-                                                    <p className="disclaimer2">
-                                                        MentorSHPE is a once-in-a-lifetime chance to meet up with SOLES upperclassmen
-                                                        and get help on advice with college life and academics. Mentees never
-                                                        regret joining!
-                                                    </p>
                                                 </div>
+
                                                 {/* Mentee */}
-                                                <div className="checksu">
+                                                <div className="checksu" style={{marginLeft: '3%'}}> 
                                                     <input 
                                                         type="checkbox" 
                                                         disabled={mentee || !join_mentorship}
@@ -526,37 +518,24 @@ class SignUpFormBase extends Component {
                                                     <label className="checklabelsu"  for="vehicle1"> 
                                                         Mentor 
                                                     </label>
-                                                    <p className="disclaimer2">
-                                                        Join as a mentor and see whats up with the incoming class of SOLES members!
-                                                    </p>
+                                                    
                                                 </div>    
                                             
                                 </div>
 
-                                {/* Resume Upload */}
-                                <Field
-                                    label={"Resume Upload (Optional)"}
-                                    type="file"
-                                    required
-                                    id="uploadResumeInp"
-                                    formrowclass="FormRowLabelDropDownTestUpload"
-                                    onChange = {(e)=>this.uploadFile(e)}
-                                /> 
-                                <p className="disclaimer2">
-                                    Have SOLES company sponsors view your resume! If you've recently 
-                                    given us your resume, feel free to skip this.
-                                </p>                       
-                                <br/>
+                                
                             </fieldset>
                             <br/>
+
+                            {/*
                             <fieldset className="FormGroup">
                                 <Form.Group className="FormRow" controlId="exampleForm.ControlSelect1">
                                     <Form.Label className="FormRowLabelDropDown">Membership Options</Form.Label>
                                     
                                 </Form.Group>
 
-                                {/* Insert Membership descriptions here */}
-
+                                
+                                
                                 <Grid className="membergrid" container spacing={3}>
                                     <Grid container item xs={12} spacing={3}>
                                         <Grid container spacing={0}>
@@ -761,6 +740,7 @@ class SignUpFormBase extends Component {
 
                                 <br/>
                             </fieldset>
+                            */}
                         </div>
                     : <div className=""/>
                 } 

@@ -268,7 +268,9 @@ class AdminPage extends Component {
         <input type = "text" placeholder="change team" id="mentorTeamName" onChange={e=> this.updateTeam(e.target.value)}/>
         <input type ="submit" className = "btn btn-info" value = "Change Team" onClick={()=>this.changeTeam(user[0]["first_name"], user[0]["last_name"],user[1])}></input>
         
-        <b>&nbsp;{role}</b>
+        <b style={role === 'mentor'? {color: 'green'} : {color: 'black'}}>&nbsp;{role}</b>
+        
+        &nbsp;&nbsp;{user[0]["major"]}
 
       </div>
     );

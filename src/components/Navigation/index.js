@@ -86,7 +86,7 @@ class NavigationAuth extends Component {
               <Link to={ROUTES.EBOARD} style={linkStyle} >Board</Link>
             </li>
             <li className="liNav">
-              <Link to={ROUTES.SPONSORS} style={linkStyle} >Sponsers</Link>
+              <Link to={ROUTES.SPONSORS} style={linkStyle} >Sponsors</Link>
             </li>
             <li className="liNav">
               <Link to={ROUTES.CONTACT} style={linkStyle} >Contacts</Link>
@@ -148,7 +148,7 @@ class NavigationNonAuth extends Component {
           {/* Logo */}
           <div className="logo">
             <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >
-              <img src={this.state.scrolled ? soles1 : soles1} alt="SOLES Logo" />
+              <img src={this.state.scrolled ? soles1 : soles1} alt="SOLES Logo" className="soleLog"/>
             </Link>
           </div>
 
@@ -167,7 +167,7 @@ class NavigationNonAuth extends Component {
                 <Link to={ROUTES.EBOARD} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Board</Link>
               </li>
               <li className="liNav">
-                <Link to={ROUTES.SPONSORS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Sponsers</Link>
+                <Link to={ROUTES.SPONSORS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Sponsors</Link>
               </li>
               <li className="liNav">
                 <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Contacts</Link>
