@@ -89,6 +89,7 @@
     font-family: 'Poppins', sans-serif;
     background-color: transparent;
     animation: 1ms void-animation-out;
+    
 }
 
 .FormRowInput2 {
@@ -262,6 +263,86 @@
 }
 
 
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .suform {
+        width: 90%;
+    }
+
+    .FormRowLabel {
+        font-size: 2.8vw;
+        margin-right: 8%;
+    }
+
+    .FormRowInput {
+        
+        margin-top: 3vw;
+    }
+
+    .FormGroup {
+        font-size: 2.8vw;
+    }
+
+    .FormRowInput::placeholder {
+        color: #001d3a17;
+        font-size: 2.8vw;
+    }
+
+    .disclaimer1 {
+        font-size: 1.9vw;
+        margin-top: 0%;
+    }
+
+    .FormRowLabelDropDown {
+        font-size: 2.2vw;
+    }
+
+    .graydd {
+        font-size: 2.8vw;
+    }
+
+    .FormRowInput2 {
+        font-size: 2.8vw;
+        border: 0;
+    }
+
+    .FormRowInput2::placeholder {
+        color: #001d3a23;
+    }
+    
+    .newsletterlabelsu {
+        font-size: 2.5vw;
+        width: 50%;
+
+    }
+    .newslettersu {
+        margin-left: 16%;
+    }
+
+    .submitNotice {
+        font-size: 2vw;
+        margin-top: 9%;
+    }
+
+    .buttonsu {
+        font-size: 50%;
+        text-align: center;
+    }
+
+    .checklabelsu {
+        font-size: 2vw;
+    }
+
+    .checksu {
+        margin-top: 1.5%;
+        margin-bottom: 1.5%;
+    }
+
+}
+
 .FormRowInput,
 .FormRowInput2,
 .FormRowInputViewTests,
@@ -277,55 +358,4 @@
   appearance: none;
   outline: none;
   border-style: none;
-}
-
-
-
-@media only screen and (max-width: 600px) {
-    .suform {
-        width: 90%;
-    }
-
-    .FormRowLabel {
-        font-size: 2.6vw;
-        margin-right: 8%;
-    }
-
-    .FormRowInput {
-        font-size: 1vw;
-    }
-
-    .FormRowInput::placeholder {
-        color: #001d3a17;
-        font-size: 2.6vw;
-    }
-
-    .disclaimer1 {
-        font-size: 1.9vw;
-        margin-top: 0%;
-    }
-
-    .FormRowLabelDropDown {
-        font-size: 2.2vw;
-    }
-
-    .graydd {
-        font-size: 2.2vw;
-    }
-
-    .FormRowInput2 {
-        font-size: 2.2vw;
-        border: 0;
-    }
-    
-    .newsletterlabelsu {
-        font-size: 2.5vw;
-        width: 50%;
-    }
-
-    .submitNotice {
-        font-size: 2vw;
-        margin-top: 9%;
-    }
-
 }

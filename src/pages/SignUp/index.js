@@ -518,8 +518,18 @@ class SignUpFormBase extends Component {
                                                     <label className="checklabelsu"  for="vehicle1"> 
                                                         Mentor 
                                                     </label>
+                                                
                                                     
                                                 </div>    
+                                                <Field 
+                                                    label="Mentor/Mentee you want"
+                                                    placeholder="characteristics, etc.."
+                                                    value={bio}
+                                                    formrowclass="FormRowLabelDropDown"
+                                                    onChange={(e) => {
+                                                        this.setState({ bio: e.target.value });  
+                                                    }}
+                                                />
                                             
                                 </div>
 
