@@ -17,7 +17,7 @@ import Aidan from '../../boardImages/aiden1.jpeg'
 import Mat from '../../boardImages/mat1.JPG'
 import Eric from '../../boardImages/eric1.JPG'
 
-import Fabrizio from '../../boardImages/fabrizio1.JPG'
+import Fabrizio from '../../boardImages/fabrizio.JPG'
 import Josh from '../../boardImages/josh.jpeg'
 import Kelly from '../../boardImages/kelly1.jpeg'
 
