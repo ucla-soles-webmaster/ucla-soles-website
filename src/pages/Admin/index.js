@@ -500,6 +500,7 @@ const condition = authUser => !!authUser;
 export default withAuthorization(condition)(AdminPage);
 
 function sortNames(a, b) {
+  if (a[0]["first_name"] === undefined) { return }
   if (a[0]["first_name"].localeCompare(b[0]["first_name"]) === -1) {
     return -1;
   }
@@ -511,6 +512,7 @@ function sortNames(a, b) {
 }
 
 function sortNamesMentorSHPE(a, b) {
+  if (a[0]["mentorTeam"] === undefined) { return }
   if (a[0]["mentorTeam"].localeCompare(b[0]["mentorTeam"]) === -1) {
     return -1;
   }
