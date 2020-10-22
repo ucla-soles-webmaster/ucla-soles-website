@@ -326,6 +326,15 @@ class TestBankSubmit extends Component {
                 console.error('Error adding document: ', error);
             })
 
+            console.log('Supposed to add test bank passes')
+            console.log(that.state.user["testbank_passes"])
+            var new_passes = that.state.user["testbank_passes"] + 1
+            that.props.firebase.getFirestore().collection('users').doc(that.state.userID).update({
+                testbank_passes: new_passes
+            });
+
+
+
             console.log('End of Delay')
             
 
