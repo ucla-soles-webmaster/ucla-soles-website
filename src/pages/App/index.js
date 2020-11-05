@@ -12,6 +12,9 @@ import Initiatives from '../Initiatives'
 import EBoard from '../EBoard'
 import Contact from '../Contact'
 import Sponsors from '../Sponsors'
+import Tutoring from '../Tutoring'
+import Tutor from '../Tutor'
+import TutoringStudent from '../TutStu'
 
 import AccountPage from '../Account';
 import TestBank from '../TestBank';
@@ -48,6 +51,10 @@ const App = () => (
       <Route path={ROUTES.EBOARD} component={EBoard} />
       <Route path={ROUTES.CONTACT} component={Contact} />
       <Route path={ROUTES.SPONSORS} component={Sponsors} />
+      <Route path={ROUTES.TUTORING} component={Tutoring} />
+      <Route path={ROUTES.TUTOR} component={Tutor} />
+      <Route path={ROUTES.TUTORING_STUDENT} component={TutoringStudent} />
+      
 
       {/* Account Pages */}
       <Route path={ROUTES.TESTBANK} component={TestBank} />

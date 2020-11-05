@@ -29,7 +29,8 @@ class AdminPage extends Component {
       new_code_gold:'',
       new_code_silver:'',
       new_code_bronze:'',
-      testsToCheck: []
+      testsToCheck: [],
+      waived_tutoring_students: []
     };
 
   }
@@ -41,6 +42,7 @@ class AdminPage extends Component {
       this.setState({ Industry: []});
       this.setState({ IndustryID: []});
       this.setState({ testsToCheck:[]})
+      this.setState({ waived_tutoring_students:[]})
       
       window.scrollTo(0, 0)
       
@@ -124,6 +126,18 @@ class AdminPage extends Component {
                 that.setState({ mentorshipUserList: [...that.state.mentorshipUserList, [userData, userID]  ] });
             });    
         });
+
+      // Waived tutoring students
+      this.props.firebase.getFirestore().collection("tutoring")
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              var userData = doc.data();
+              var userID = doc.id;
+              that.setState({ waived_tutoring_students: [...that.state.waived_tutoring_students, [userData, userID]  ] });
+          });    
+      });
 
         console.log(this.state.userList)
   }
@@ -247,6 +261,25 @@ class AdminPage extends Component {
     );
   }
 
+  renderWaivedStudent = (user, idx) => {
+    return (
+      <div class="adminUserCell">
+
+        {/* User name */}
+        <div class="adminUserName">
+          <b>Student: </b> &nbsp;
+          { user[0]["student_name"] }
+        </div>    
+
+        &nbsp;&nbsp;
+
+        <b>Guardian: </b> &nbsp; {user[0]["guardian_name"]}
+
+
+      </div>
+    )
+  }
+
 
   renderMentorUser = (user, idx) => {
     var familia = user[0]["mentorTeam"] === '' ? 'ASSIGN' : user[0]["mentorTeam"];
@@ -268,9 +301,16 @@ class AdminPage extends Component {
         <input type = "text" placeholder="change team" id="mentorTeamName" onChange={e=> this.updateTeam(e.target.value)}/>
         <input type ="submit" className = "btn btn-info" value = "Change Team" onClick={()=>this.changeTeam(user[0]["first_name"], user[0]["last_name"],user[1])}></input>
         
-        <b style={role === 'mentor'? {color: 'green'} : {color: 'black'}}>&nbsp;{role}</b>
+        <b style={role === 'mentor'? {color: 'green'} : {color: 'black'}}>&nbsp;{role}</b> &nbsp; 
         
-        &nbsp;&nbsp;{user[0]["major"]}
+        &nbsp;&nbsp;{user[0]["major"]}&nbsp;&nbsp;
+
+        <b>{user[0]["email"]}</b>
+
+        &nbsp;&nbsp;
+
+        <b>{user[0]["bio"]}</b>
+
 
       </div>
     );
@@ -389,7 +429,8 @@ class AdminPage extends Component {
   render() {
     const { userList, loading, Industry } = this.state;
     this.state.userList.sort(sortNames);
-    this.state.mentorshipUserList.sort(sortNamesMentorSHPE)
+    this.state.mentorshipUserList.sort(sortNamesMentorSHPE);
+    this.state.waived_tutoring_students.sort(sortWaived);
 
     return (
       <div>
@@ -413,6 +454,16 @@ class AdminPage extends Component {
                 This page is only viewable to admins (EBoard and Web Team).
               </p>
               <br/>
+
+          <h1>Waived Tutoring Students</h1>
+            <p>
+              Sorted by first name name.
+            </p>
+            <FlatList
+              list={this.state.waived_tutoring_students}
+              renderItem={this.renderWaivedStudent}
+            />
+          <br/>
 
           <h1>MentorSHPE (add points here)</h1>
               <p>
@@ -517,6 +568,18 @@ function sortNamesMentorSHPE(a, b) {
     return -1;
   }
   if (a[0]["mentorTeam"].localeCompare(b[0]["mentorTeam"]) === 1) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}
+
+function sortWaived(a, b) {
+  if (a[0]["student_name"] === undefined) { return }
+  if (a[0]["student_name"].localeCompare(b[0]["student_name"]) === -1) {
+    return -1;
+  }
+  if (a[0]["student_name"].localeCompare(b[0]["student_name"]) === 1) {
     return 1;
   }
   // a must be equal to b

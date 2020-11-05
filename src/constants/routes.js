@@ -15,6 +15,11 @@ export const EBOARD = '/eboard';
 export const CONTACT = '/contact';
 export const SPONSORS = '/sponsors';
 
+// Tutoring Pages
+export const TUTORING = '/tutoring';
+export const TUTOR = '/tutor';
+export const TUTORING_STUDENT = '/tutoring_student'
+
 // Account Pages
 export const TESTBANK = '/testbank';
 export const TESTBANK_SUBMIT = '/testbank_submit';

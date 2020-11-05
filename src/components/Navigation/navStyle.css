@@ -291,15 +291,15 @@ body {
 
 @media (max-width: 600px) {
     .navTop .logo img {
-        height: 30px;
-        padding-top: 30px;
+        height: 50px;
+        padding-top: 22px;
         transition: 0.5s;
         -webkit-transition: 0.5s;
         margin-left: -40px;
     }
     .navElse .logo img {
-        height: 30px;
-        padding-top: 30px;
+        height: 50px;
+        padding-top: 22px;
         transition: 0.5s;
         -webkit-transition: 0.5s;
         margin-left: -40px;
@@ -307,7 +307,7 @@ body {
     .iEq {
         color: black;
         font-style: normal;
-        font-size: 60px;
+        font-size: 40px;
     }
     
     
