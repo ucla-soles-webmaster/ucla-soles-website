@@ -74,7 +74,7 @@ class EBoard extends Component {
                     <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img className = "BoardPageImages" src= {Andy} alt="Andy Muraltalla" ></img>
+                            <img className = "BoardPageImages" src= {Andy} alt="Andy Muratalla" ></img>
                         </div>
                         <div class="flip-card-back">
                             <div className = "backSideText">Andy Muratalla</div>
@@ -84,7 +84,7 @@ class EBoard extends Component {
                         </div>
                     </div>
                     </div>
-                    <div className = "setFontSizeName">Andy Muraltalla</div>
+                    <div className = "setFontSizeName">Andy Muratalla</div>
                     <div className = "setFontSizePosition">President</div>
                 </div>
 

@@ -101,7 +101,7 @@ class Sponsors extends Component {
                                 <ul className = "myList">
                                     <li className = "titleFont4">Access to student resumes</li>
                                     <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
-                                    <li className = "titleFont4">One compnay information session or event for up to 3 representatives quarterly and seating at the end-of-year Senior Banquet</li>
+                                    <li className = "titleFont4">One company information session or event for up to 3 representatives quarterly and seating at the end-of-year Senior Banquet</li>
                                     <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
                                     <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
                                     <li className = "titleFont4">Publication and advertising throughout the school of engineering</li>
@@ -128,7 +128,7 @@ class Sponsors extends Component {
                         <ul className = "myList">
                             <li className = "titleFont4">Access to student resumes</li>
                             <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
-                            <li className = "titleFont4">One compnay information session or event for up to 3 representatives</li>
+                            <li className = "titleFont4">One company information session or event for up to 3 representatives</li>
                             <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
                             <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
                         </ul>  
@@ -150,7 +150,7 @@ class Sponsors extends Component {
                         <div class="flip-card4-back">
                         <div className = "titleFont5">Benefits: </div>
                         <ul className = "myList">
-                            <li className = "titleFont4">One compnay information session or event for up to 3 representatives</li>
+                            <li className = "titleFont4">One company information session or event for up to 3 representatives</li>
                             <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
                             <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
                         </ul>
