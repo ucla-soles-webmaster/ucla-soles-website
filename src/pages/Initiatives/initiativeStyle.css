@@ -16,6 +16,14 @@
     align-self: auto;
 }
 
+#rightsunMerch {
+    height: 10%;
+    width: 4%;
+    margin-left: 0%;
+    margin-top: -25vh;
+    align-self: auto;
+}
+
 #leftsun {
     height: 10%;
     width: 4%;
@@ -27,6 +35,13 @@
     height: 10%;
     width: 4%;
     margin-top: -5%;
+    margin-left: 92%;
+}
+
+#leftsunMerch {
+    height: 10%;
+    width: 4%;
+    margin-top: -25vh;
     margin-left: 92%;
 }
 

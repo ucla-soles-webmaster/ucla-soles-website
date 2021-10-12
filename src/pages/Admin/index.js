@@ -1,4 +1,4 @@
-
+import Form from 'react-bootstrap/Form'
 import FlatList from 'flatlist-react';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -30,7 +30,13 @@ class AdminPage extends Component {
       new_code_silver:'',
       new_code_bronze:'',
       testsToCheck: [],
-      waived_tutoring_students: []
+      waived_tutoring_students: [],
+      merchItems: [],
+      newMerchItem_name: '',
+      newMerchItem_cost: '',
+      newMerchItem_status: 'In Stock.',
+      file_data: '',
+      url_cur: ''
     };
 
   }
@@ -104,6 +110,7 @@ class AdminPage extends Component {
 
     // User Lists stuff
       this.props.firebase.getFirestore().collection("users")
+        .where("career", "==", 'alumni')
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
@@ -139,7 +146,18 @@ class AdminPage extends Component {
           });    
       });
 
-        console.log(this.state.userList)
+      // Merch items
+      that.props.firebase.getFirestore().collection("merchItems")
+        .get()
+        .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+            var userData = doc.data();
+            var userID = doc.id;
+            that.setState({ merchItems: [...that.state.merchItems, userData] });
+          });
+        });
+
+        console.log(this.state.merchItems)
   }
 
   componentWillUnmount() {
@@ -216,22 +234,11 @@ class AdminPage extends Component {
     user[0]["admin"] === true ? adminString = 'Is Admin' : adminString = 'not Admin';
 
     return (
-      <div class="adminUserCell">
+      <div>
 
         {/* User name */}
         <div class="adminUserName">
-          { user[0]["first_name"] } { user[0]["last_name"] }
-        </div>
-
-        {/* Actions */}
-        <div class={adminString === 'Is Admin' ? "adminActionsADMIN" : "adminActions"}>
-
-          {/* Admin */}
-          {adminString} &nbsp;
-          <button onClick={() => this.changeAdmin(user)} type="button" >
-                Change
-          </button>
-        
+          { user[0]["first_name"] } { user[0]["last_name"] } {user[0]["email"]}
         </div>
       </div>
     );
@@ -422,6 +429,159 @@ class AdminPage extends Component {
         }
     }
 
+
+
+/*
+  ****
+    Merch Shop functions
+  ****
+*/
+    // render item in merch list
+    renderMerchItem = (item, idx) => {
+        return (
+          <div class="adminUserCell">
+
+            {/* User name */}
+            <div class="adminUserName">
+              <b>Item: </b> &nbsp;
+              { item["itemName"] } &nbsp;&nbsp;&nbsp; Cost: ${item["cost"]} &nbsp;&nbsp;&nbsp; Stock status: {item["stock_status"]}
+            </div>
+
+
+            &nbsp;&nbsp;
+
+          </div>
+        )
+      }
+
+
+    // Initial selection of stock status of item
+    selectStockStatus(event) {
+      this.setState({ newMerchItem_status: event.target.value })
+    }
+
+
+    // Upload image of item
+    uploadImage(e) {
+      var that = this;
+      var file = e.target.files;
+      var reader = new FileReader();
+
+      try {
+          reader.readAsDataURL(file[0]);
+          reader.onload=(e)=>{
+              that.setState({file_data:e.target.result});
+          }
+      }
+      catch(error) {
+          that.setState({ file_data: "" });
+      }
+  }
+
+    
+    // Add item to shop
+    addItem(new_item) {
+
+        var that = this;
+
+        var d = new Date();
+        var item_image_name = "item" + d.getMonth() + d.getDate() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds() + ".jpg"
+        console.log(that.state.newMerchItem_status)
+        console.log(typeof(that.state.newMerchItem_status))
+
+        this.props.firebase.getFirestore().collection("merchItems").doc(new_item[0]).set({
+          itemName: new_item[0],
+          cost: new_item[1],
+          stock_status: that.state.newMerchItem_status,
+          storage_image_name: 'resumes/' + item_image_name,
+          image_URL: ''
+        })
+          .then(function() {
+            console.log("Document successfully written!");
+          })
+          .catch(function(error) {
+              console.error("Error writing document: ", error);
+          });
+
+
+        // Upload item image to firebase storage
+
+        var storageRef = this.props.firebase.storage.ref();
+        var mountainImagesRef = storageRef.child('resumes/' + item_image_name);
+
+        var message = this.state.file_data;
+        var uploadTask = mountainImagesRef.putString(message, 'data_url');
+
+        uploadTask.on('state_changed',
+        function(snapshot) {
+            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            that.setState({ uploadProgress: progress });
+            console.log('Upload is ' + progress + '% done');
+            switch (snapshot.state) {
+            case 'paused': 
+                console.log('Upload is paused');
+                break;
+            case 'running': 
+                console.log('Upload is running');
+                break;
+            default:
+                break;
+            }
+        }, function(error) {
+        
+        // A full list of error codes is available at
+        // https://firebase.google.com/docs/storage/web/handle-errors
+        switch (error.code) {
+            case 'storage/unauthorized':
+            // User doesn't have permission to access the object
+                break;
+        
+            case 'storage/canceled':
+            // User canceled the upload
+                break;
+        
+            case 'storage/unknown':
+            // Unknown error occurred, inspect error.serverResponse
+                break;
+
+            default:
+                // Idk if this should even happe 
+                break;
+        }
+        }, function() {
+        // Upload completed successfully, now we can get the download URL
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            console.log('File available at', downloadURL);
+            
+            that.props.firebase.getFirestore().collection("merchItems").doc(new_item[0]).update({
+              image_URL: downloadURL
+            })
+              .then(function() {
+                console.log("URL Document successfully written!");
+              })
+              .catch(function(error) {
+                  console.error("URL Error writing document: ", error);
+              });
+
+            });
+        });
+
+
+        
+        
+
+        this.setState({merchItems: [] })
+        this.componentDidMount()
+      }
+
+
+
+
+
+
+
+////////////////////////
 /*
     RENDERING
 */
@@ -455,6 +615,44 @@ class AdminPage extends Component {
               </p>
               <br/>
 
+
+          {console.log(this.state.newMerchItem_status)}
+
+          <h1>Shop Items</h1>
+          {/* Adding new item to shop */}
+
+
+          <p><b>Add a new item: </b><i>(note on image: get highest resolution, transparent or white background only, 1:1 photo ratio only - add white square background for this if needed)</i></p>
+          <input type = "text" placeholder="Item name (no slashes)" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_name: e.target.value}) }/>
+          &nbsp;&nbsp;&nbsp;
+          $<input type = "text" placeholder="Cost" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_cost: e.target.value}) }/>
+          &nbsp;&nbsp;&nbsp;
+          <label>Upload image of item:</label><input type="file" onChange={(e)=>this.uploadImage(e)} /> 
+          <Form.Control as="select" onChange={this.selectStockStatus.bind(this)}>
+              <option value="In Stock.">In Stock.</option>
+              <option value="Out of Stock.">Out of Stock.</option>
+              <option value="Coming Soon.">Coming Soon.</option>                             
+          </Form.Control>
+          &nbsp;&nbsp;&nbsp;
+          <input 
+            type ="submit" 
+            disabled={(this.state.newMerchItem_cost == '' || this.state.newMerchItem_name == '' || this.state.file_data == '')} 
+            className="btn btn-info" 
+            value="ADD MERCH ITEM" 
+            onClick={()=>this.addItem( [this.state.newMerchItem_name, this.state.newMerchItem_cost, this.state.newMerchItem_status] )}>
+          </input>
+          
+          <br/><br/><br/>
+            <FlatList
+              list={this.state.merchItems}
+              renderItem={this.renderMerchItem}
+            />
+
+
+
+
+
+          {/*
           <h1>Waived Tutoring Students</h1>
             <p>
               Sorted by first name name.
@@ -464,7 +662,10 @@ class AdminPage extends Component {
               renderItem={this.renderWaivedStudent}
             />
           <br/>
+          */}
 
+
+          {/*
           <h1>MentorSHPE (add points here)</h1>
               <p>
                 These are only users enrolled with MentorSHPE for 2020-2021. Sorted by familia name.
@@ -493,7 +694,7 @@ class AdminPage extends Component {
                 list={Industry}
                 renderItem={this.renderIndustry}
               /> 
-              {/*Company codes*/}
+              {//Company codes}
               <h3>Company Sign Up Codes</h3>
                 Gold Code: &nbsp;<b>{this.state.gold}</b>&nbsp;&nbsp;
                 <input type = "text" placeholder="new gold code" id="mentorTeamName" onChange={ e=> this.setState({new_code_gold: e.target.value}) }/>
@@ -533,6 +734,7 @@ class AdminPage extends Component {
             
               <br/>
               <br/>
+            */}
 
             </div> 
           :
@@ -585,3 +787,31 @@ function sortWaived(a, b) {
   // a must be equal to b
   return 0;
 }
+
+
+const Field = ({
+  label,
+  id,
+  type,
+  placeholder,
+  required,
+  autoComplete,
+  value,
+  onChange,
+  formrowclass
+}) => (
+  <div>
+    <label >
+      {label}
+    </label>
+    <input
+      id={id}
+      type={type}
+      placeholder={placeholder}
+      required={required}
+      autoComplete={autoComplete}
+      value={value}
+      onChange={onChange}
+    />
+  </div>
+);

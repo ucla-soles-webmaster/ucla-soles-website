@@ -3,7 +3,7 @@
 
 .container {
     text-align: center;
-    background-image: url("uclaM.jpg");
+    background-image: url("royce2.jpeg");
 
     /* Set a specific height */
     width: 100%;
@@ -43,7 +43,7 @@
 
     pointer-events: none;
 
-    -webkit-text-stroke-width: 0.11vw;
+    -webkit-text-stroke-width: 0.001vw;
     -webkit-text-stroke-color: white;
 
 }

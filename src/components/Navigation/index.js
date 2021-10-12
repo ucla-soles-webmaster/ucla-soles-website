@@ -40,6 +40,8 @@ class NavigationAuth extends Component {
       } else {
         this.setState({ scrolled: false });
       }
+
+      
     });
   }
 
@@ -80,7 +82,7 @@ class NavigationAuth extends Component {
               <Link to={ROUTES.ABOUT} style={linkStyle} >About</Link>
             </li>
             <li className="liNav">
-              <Link to={ROUTES.INITIATIVES} style={linkStyle} >Our Initiatives</Link>
+              <Link to={ROUTES.INITIATIVES} style={linkStyle} >Initiatives</Link>
             </li>
             <li className="liNav">
                 <Link to={ROUTES.TUTORING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Tutoring</Link>
@@ -93,6 +95,9 @@ class NavigationAuth extends Component {
             </li>
             <li className="liNav">
               <Link to={ROUTES.CONTACT} style={linkStyle} >Contacts</Link>
+            </li>
+            <li className="liNav">
+              <Link to={ROUTES.SHOP} style={linkStyle} >Merch</Link>
             </li>
             <li className="liNav">
               <Link to={ROUTES.ACCOUNT} style={linkStyle} >Account</Link>
@@ -164,7 +169,7 @@ class NavigationNonAuth extends Component {
                 <Link to={ROUTES.ABOUT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >About</Link>
               </li>
               <li className="liNav">
-                <Link to={ROUTES.INITIATIVES} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Our Initiatives</Link>
+                <Link to={ROUTES.INITIATIVES} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Initiatives</Link>
               </li>
               <li className="liNav">
                 <Link to={ROUTES.TUTORING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Tutoring</Link>
@@ -177,7 +182,10 @@ class NavigationNonAuth extends Component {
               </li>
               <li className="liNav">
                 <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Contacts</Link>
-              </li>             
+              </li>  
+              <li className="liNav">
+                <Link to={ROUTES.SHOP} style={linkStyle} >Merch</Link>
+              </li>           
               <li className="signin">
                 <Link to={ROUTES.SIGN_IN} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Sign In</Link>
               </li>

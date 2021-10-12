@@ -156,7 +156,7 @@ class AlumNet extends Component {
 
                     <hr className="introBar" /> 
                     <div className="introbox" style={{textAlign: 'center'}}>
-                        <p className="initIntro" style={{textAlign: 'center', marginRight: '35%', marginLeft: '35%', fontSize:'1.1vw',fontWeight:'10'}}>
+                        <p className="initIntro" style={{textAlign: 'center', marginRight: '22.5%', marginLeft: '22.5%', fontSize:'1.1vw',fontWeight:'10'}}>
                             The SOLES Alumni Network is a great tool for students and alumni alike. 
                             If you are a student, feel free to reach out to any of the below listed
                             alumni for career advice, job opportunities, or essentially anything! All

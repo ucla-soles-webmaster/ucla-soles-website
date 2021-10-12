@@ -1,0 +1,64 @@
+.headings{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.mission {
+    float: left;
+    width: 45%;
+}
+
+.vision {
+    float: right;
+    margin-left: 2%;
+    width: 46.5%;
+}
+
+.icon-bar-cart {
+  position: fixed;
+  top: 85vh;
+  right: 5vw;
+}
+
+.circle-cart {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 50%;
+  position: fixed;
+  top: 85vh;
+  right: 5vw;
+}
+
+.tableShop {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.itemShop {
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-bottom: 4.5vw;
+  padding-top: 2.3vw;
+  font-size: 1.3em;
+}
+
+.itemShoprow {
+  padding-bottom: 120vw;
+}
+
+.comingSoon {
+  font-size: 0.95em;
+  color: #fcba03;
+}
+
+.outOfStock {
+  font-size: 0.95em;
+  color: red;
+}
+
+.inStock {
+  font-size: 0.95em;
+  color: green;
+}

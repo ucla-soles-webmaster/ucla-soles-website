@@ -31,11 +31,6 @@ class AccountNav extends Component {
                         Alumni Network
                     </li>
                 </Link>
-                <Link to={ROUTES.MERCH} style={linkStyle} >
-                    <li className="mininavli">
-                        Merch
-                    </li>
-                </Link>
             </ul>
         </nav>
       );

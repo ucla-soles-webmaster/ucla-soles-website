@@ -14,6 +14,7 @@ export const INITIATIVES = '/initiatives';
 export const EBOARD = '/eboard';
 export const CONTACT = '/contact';
 export const SPONSORS = '/sponsors';
+export const SHOP = '/merch_shop';
 
 // Tutoring Pages
 export const TUTORING = '/tutoring';
@@ -26,3 +27,6 @@ export const TESTBANK_SUBMIT = '/testbank_submit';
 export const TESTBANK_VIEW = '/testbank_view';
 export const MERCH = '/merch';
 export const ALUMNET = '/alumni';
+
+// Merch pages
+export const ITEM_PAGE = '/merch_item'

@@ -15,6 +15,7 @@ import Sponsors from '../Sponsors'
 import Tutoring from '../Tutoring'
 import Tutor from '../Tutor'
 import TutoringStudent from '../TutStu'
+import Shop from '../Shop';
 
 import AccountPage from '../Account';
 import TestBank from '../TestBank';
@@ -22,6 +23,7 @@ import TestBankView from '../TestView';
 import TestBankSubmit from '../TestSubmit';
 import Merch from '../Merch';
 import AlumNet from '../AlumNet';
+import Item from '../Item';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -54,6 +56,8 @@ const App = () => (
       <Route path={ROUTES.TUTORING} component={Tutoring} />
       <Route path={ROUTES.TUTOR} component={Tutor} />
       <Route path={ROUTES.TUTORING_STUDENT} component={TutoringStudent} />
+      <Route path={ROUTES.SHOP} component={Shop} />
+      <Route path={ROUTES.ITEM_PAGE} component={Item} />
       
 
       {/* Account Pages */}

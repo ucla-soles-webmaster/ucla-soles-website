@@ -157,8 +157,8 @@ class AccountPage extends Component {
                   <div className="adminPageLink">
                     ADMIN PAGE
                   </div>
-                  <br/>
-                  <br/>
+                  
+                  
                 </Link>
               :
                 <div/>
@@ -170,10 +170,12 @@ class AccountPage extends Component {
           { this.state.user["career"] === 'student'
               ?
                 <div>
-                  {/* MentorSHPE leaderboard */}
+
+                  {/*                
+                  {// MentorSHPE leaderboard }
                   <STARLeaderboard />
                   <br/>
-                  {/* MentorSHPE points breakdown */}
+                  {// MentorSHPE points breakdown }
                   <p style={{fontSize: '2vw', color: 'gray', marginTop:'2%', marginBottom:'-3%', fontWeight:'300', textAlign:'center'}}>
                       MENTORSHPE POINTS BREAKDOWN
                   </p>
@@ -193,6 +195,7 @@ class AccountPage extends Component {
                           <b>7 points</b> - Submitting a test to the Test Bank
                       </li>
                   </ul>
+                  */}
                 </div>
               :
                 // Industry
