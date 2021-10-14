@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Carousel } from 'react-carousel-minimal';
-//import Item from "/ui/components/workspace/item.jsx";
-import ReactGridLayout from 'react-grid-layout';
 import FlatList from 'flatlist-react';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +14,6 @@ import sticker1 from '../../photos/sticker1.png'
 import penny from '../../photos/pennyt.png'
 import cart from '../../coverImages/cart1.png';
 import Footer from '../../components/Footer';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import sun from '../../coverImages/sunblue.png';
 
@@ -24,12 +21,12 @@ import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes'
 
 import './index.css'
-import { colors } from '@material-ui/core';
 
-window.current_item = null
-window.current_item_URL = ''
 
-const data = [
+
+
+// Carosel Data Initializations
+    const data = [
         {
         image: "https://www.linkpicture.com/q/sticker_slide.png"
         },
@@ -41,18 +38,16 @@ const data = [
         image: "https://www.linkpicture.com/q/merch3.jpeg"
         }
         */
+        
     ];
-
     const captionStyle = {
         fontSize: '2em',
         fontWeight: 'bold',
-        }
+    };
     const slideNumberStyle = {
         fontSize: '20px',
         fontWeight: 'bold',
-        }
-
-
+    };
 
 
 
@@ -61,13 +56,13 @@ const data = [
 class Shop extends Component {
     
     // Add constructor here when necessary
+    
     constructor(props) {
         super(props);
     
         this.state = {
           merchItems: [],
-          merchItemsImageURLS: [],
-          testCollection: [1,2,3,4,5,6,7,8,9,10]
+          merchItemsImageURLS: []
         };
 
         var that = this;
@@ -76,9 +71,7 @@ class Shop extends Component {
         this.props.firebase.storage.ref("resumes/").listAll().then(function(result) {
             result.items.forEach(function(imageRef) {
               // And finally display them
-              //that.setState({ merchItemsImageURLS: [...that.state.merchItemsImageURLS, imageRef.location.path_] });
               console.log(imageRef.location.path_)
-              
               that.props.firebase.storage
                 .ref("resumes")
                 .child(imageRef.location.path_.split('/')[1])
@@ -91,7 +84,9 @@ class Shop extends Component {
           }).catch(function(error) {
             // Handle any errors
           });
-    
+
+
+
       }
 
 
@@ -100,10 +95,6 @@ class Shop extends Component {
         window.scrollTo(0, 0)
 
         var that = this;
-
-        
-
-        
         // Get list of items in merch shop via firestore
         this.props.firebase.getFirestore().collection("merchItems")
         .get()
@@ -115,63 +106,48 @@ class Shop extends Component {
                 that.setState({ merchItems: [...that.state.merchItems, [itemName, itemData]  ] });
             });    
         });
-        
+    }
 
+    componentWillUnmount() {
+        // Remember state for the next mount
+        localStorage.setItem('appState', JSON.stringify(this.state2));
     }
 
 
 
     // render item in merch list
     renderMerchItemShop = (item, idx) => {
-
-       
-
         var that = this;
         var merchImageIndex = 0;
-
         var image_url = '';
-
-        
-        console.log(item)
 
         var s = item[1]["stock_status"]
         var status_color = s == "In Stock." ? "green" : (s == "Out of Stock." ? "red" : "#fcba03")
-
-        /*
-        <Link to={ROUTES.ITEM_PAGE} style={{textDecoration: "none", color: 'black'}} onClick={(e) => {
-            window.current_item = item;
-            window.current_item_URL = item[1]['image_URL']
-        }}>
-
-        </Link>
-        */
         
         return (
-          
-        
-        
-          <div style={{marginBottom: "10vh"}}>
-            <img
-                src={item[1]["image_URL"]}
-                alt="Uploaded Images"
-                height="410vw"
-                width="410vw"
-                style={{display: "block", marginLeft: "auto", marginRight: "auto"}}
-            />
-            <div style={{textAlign: "center", fontSize: "1.3em", marginTop: "1vw"}}>
-                {item[1]["itemName"]}
-            </div>
-            <div style={{textAlign: "center", fontSize: "1.3em", marginTop: "0vw"}}>
-                ${item[1]["cost"]}
-            </div>
-            <div style={{textAlign: "center", fontSize: "1.3em", marginTop: "0vw", color: status_color}}>
-                {item[1]["stock_status"]}
-            </div>
-            
-          </div>
-        
-        
-        
+            <Link to={ROUTES.ITEM_PAGE} style={{textDecoration: "none", color: 'black'}} onClick={(e) => {
+                window.current_item = item;
+                window.current_item_URL = item[1]['image_URL']
+            }}> 
+                <div style={{marginBottom: "10vh"}}>
+                    <img
+                        src={item[1]["image_URL"]}
+                        alt="Uploaded Images"
+                        height="410vw"
+                        width="410vw"
+                        style={{display: "block", marginLeft: "auto", marginRight: "auto"}}
+                    />
+                    <div style={{textAlign: "center", fontSize: "1.3em", marginTop: "1vw"}}>
+                        {item[1]["itemName"]}
+                    </div>
+                    <div style={{textAlign: "center", fontSize: "1.3em", marginTop: "0vw"}}>
+                        ${item[1]["cost"]}
+                    </div>
+                    <div style={{textAlign: "center", fontSize: "1.3em", marginTop: "0vw", color: status_color}}>
+                        {item[1]["stock_status"]}
+                    </div>
+                </div>
+            </Link>
         )
       }
 
@@ -183,7 +159,6 @@ class Shop extends Component {
             <div style={{fontFamily: 'Poppins'}}>
                 <Navigation transparentNav={false} />
 
-                
                 <div style={{marginTop: '30px', paddingTop: '-10px'}}>
                     <Carousel
                         data={data}
@@ -214,12 +189,7 @@ class Shop extends Component {
                     />
                 </div>
 
-                
-
                 <br/><br/>
- 
-
-                
 
                 <div className="hubbox">
                         <img src={sun} id="leftsunM" alt="Left SOLES Sun" />
@@ -231,25 +201,15 @@ class Shop extends Component {
 
                 <br/><br/>
 
-                
-
                 <div style={{alignSelf: 'center'}}> 
                     <FlatList
                         list={this.state.merchItems}
                         renderItem={this.renderMerchItemShop}
                     />
                 </div>
-            
-
-
-
-
-
-
-
-                <br/>
-                {/*  window.current_item == null ? <br/> : window.current_item[0]  */}
                 
+                <br/>
+
                 <Footer/>
             </div>
         );
