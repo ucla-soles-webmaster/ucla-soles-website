@@ -1,0 +1,133 @@
+.itemOrderForm {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    padding: 1rem;
+    border-style: none;
+    background-color: #ffffff;
+    color: #001d3a;
+    box-shadow: 0 1px 2px rgb(196, 196, 199), 0 1px 3px rgb(184, 181, 181),
+        inset 0 1px 2px #e4e1e1;
+    border-radius: 4px;
+    width: 75%
+}
+
+.itemOrderFormRow {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+
+.itemOrderFormRowInput {
+    font-size: 1.1em;
+    width: 80%;
+    padding-top: 0.0%;
+    color: #001d3a;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    animation: 1ms void-animation-out;
+    outline: none;
+    border-style: none;
+}
+
+.itemOrderFormRowInput::placeholder {
+    color: #a7a7acc6;
+}
+
+.itemOrderFormNumber {
+    outline: none;
+    border-style: none;
+    color: #001d3a;
+    font-size: 1.1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.itemOrderSubmitButton {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    min-width: 20%;
+    text-align: center;
+    margin-left: 40%;
+    height: 2em;
+    color: white;
+    background-color: #001d3a;
+    /* box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08); */
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    will-change: background-color, box-shadow;
+    outline: none;
+    border-style: none;
+}
+
+.itemOrderSubmitButton:hover {
+    background-color: #98b7b6;
+    color: #f5f4f4;
+    box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.orderFormTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 1vh;
+    color: #001d3a;
+    text-align: center;
+}
+
+
+.itemPageOutmostDiv {
+    display: flex;
+}
+
+.itemPageFlex1 {
+    flex: 1;
+    margin-left: 10vh;
+}
+
+.itemPageFlex2 {
+    flex: 1;
+    margin-top: 19vh;
+}
+
+.itemCarousel {
+    margin-top: 20vh;
+    margin-left: 10vh;
+}
+
+
+
+/* Mobile support */
+@media screen and (max-width: 600px) {
+    .itemPageOutmostDiv {
+        display: table-row;
+    }
+
+    .itemPageFlex1 {
+        width: 90vw;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin: auto;
+    }
+    .itemPageFlex2 {
+        width: 90vw;
+        align-items: center;
+        margin-top: 4vh;
+    }
+    .itemCarousel {
+        margin-top: 20vh;
+        margin-left: 0vh;
+        width: 100vw;
+    }
+
+    .haccountMerchItem {
+        font-size: 2.1rem;
+        margin-top: 8vw;
+    }
+
+}

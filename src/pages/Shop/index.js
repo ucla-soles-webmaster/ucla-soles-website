@@ -28,16 +28,14 @@ import './index.css'
 // Carosel Data Initializations
     const data = [
         {
-        image: "https://www.linkpicture.com/q/sticker_slide.png"
+            image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Membership%20Shirts.png?alt=media&token=29edfbb7-9d0b-42a9-b7af-3214a8fb75f1"
         },
         {
-        image: "https://www.linkpicture.com/q/merch4.jpeg",
+            image: "https://www.linkpicture.com/q/sticker_slide.png"
         },
-        /*
         {
-        image: "https://www.linkpicture.com/q/merch3.jpeg"
-        }
-        */
+            image: "https://www.linkpicture.com/q/merch4.jpeg",
+        },
         
     ];
     const captionStyle = {
@@ -53,6 +51,7 @@ import './index.css'
 
 
 
+
 class Shop extends Component {
     
     // Add constructor here when necessary
@@ -62,7 +61,9 @@ class Shop extends Component {
     
         this.state = {
           merchItems: [],
-          merchItemsImageURLS: []
+          merchItemsImageURLS: [],
+          window_width: 0,
+          window_height: 0,
         };
 
         var that = this;
@@ -108,9 +109,15 @@ class Shop extends Component {
         });
     }
 
+    updateWindowDimensions = () => {
+        this.setState({ window_width: window.innerWidth });
+        this.setState({ window_height: window.innerHeight });
+    }
+
     componentWillUnmount() {
         // Remember state for the next mount
         localStorage.setItem('appState', JSON.stringify(this.state2));
+        window.removeEventListener('resize', this.updateWindowDimensions);
     }
 
 
@@ -125,7 +132,7 @@ class Shop extends Component {
         var status_color = s == "In Stock." ? "green" : (s == "Out of Stock." ? "red" : "#fcba03")
         
         return (
-            <Link to={ROUTES.ITEM_PAGE} style={{textDecoration: "none", color: 'black'}} onClick={(e) => {
+            <Link to={idx == 0 ? ROUTES.SHIRT : ROUTES.STICKER} style={{textDecoration: "none", color: 'black'}} onClick={(e) => {
                 window.current_item = item;
                 window.current_item_URL = item[1]['image_URL']
             }}> 
@@ -159,7 +166,7 @@ class Shop extends Component {
             <div style={{fontFamily: 'Poppins'}}>
                 <Navigation transparentNav={false} />
 
-                <div style={{marginTop: '30px', paddingTop: '-10px'}}>
+                <div style={this.state.window_width < 600 ? {marginTop: '12vh', paddingTop: '-10px'} : {marginTop: '30px', paddingTop: '-10px'}}>
                     <Carousel
                         data={data}
                         time={3100}

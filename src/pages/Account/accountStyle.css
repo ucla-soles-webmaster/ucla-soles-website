@@ -19,6 +19,12 @@
     margin-top: 0px;
 }
 
+.haccountMerchItem {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.9em;
+    color: #001d3a;
+}
+
 .graa {
     background-color: rgb(249, 247, 247);
 }

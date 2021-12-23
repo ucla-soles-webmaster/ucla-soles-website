@@ -23,7 +23,11 @@ import TestBankView from '../TestView';
 import TestBankSubmit from '../TestSubmit';
 import Merch from '../Merch';
 import AlumNet from '../AlumNet';
-import Item from '../Item';
+import Shirt from '../Shirt';
+import Sticker from '../Sticker';
+import Orders from '../Orders';
+import Thank_You from '../Thank_You'
+
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -59,7 +63,10 @@ const App = () => (
       <Route path={ROUTES.TUTOR} component={Tutor} />
       <Route path={ROUTES.TUTORING_STUDENT} component={TutoringStudent} />
       <Route path={ROUTES.SHOP} component={Shop} />
-      <Route path={ROUTES.ITEM_PAGE} component={Item} />
+      <Route path={ROUTES.SHIRT} component={Shirt} />
+      <Route path={ROUTES.STICKER} component={Sticker} />
+      <Route path={ROUTES.ORDERS} component={Orders} />
+      <Route path={ROUTES.THANK_YOU} component={Thank_You} />
       
 
       {/* Account Pages */}

@@ -291,23 +291,23 @@ body {
 
 @media (max-width: 600px) {
     .navTop .logo img {
-        height: 50px;
-        padding-top: 22px;
+        height: 40px;
+        padding-top: 27px;
         transition: 0.5s;
         -webkit-transition: 0.5s;
-        margin-left: -40px;
     }
     .navElse .logo img {
-        height: 50px;
-        padding-top: 22px;
+        height: 40px;
+        padding-top: 27px;
         transition: 0.5s;
         -webkit-transition: 0.5s;
-        margin-left: -40px;
     }
     .iEq {
         color: black;
         font-style: normal;
         font-size: 40px;
+        margin-right: -50px;
+        margin-left: 50px;
     }
     
     
@@ -338,7 +338,7 @@ body {
         color: black;
         font-style: normal;
         font-size: 60px;
-        margin-right: -10px;
+        margin-right: -30px;
     }
 
     .navTop .ulNav {
