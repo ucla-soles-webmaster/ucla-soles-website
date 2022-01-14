@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom'
 import { Link } from 'react-router-dom';
 //import firebase from '../Firebase'
 
 import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
 import Footer from '../../components/Footer';
+
+import Calendar from '../../components/Calendar';
+
+//import Document from '../../components/Calendar/index2';
+
 import * as ROUTES from '../../constants/routes'
 import Andy from '../../boardImages/kelly_prez.jpeg'
 import AndySig from '../../boardImages/sig_kelly.png'
@@ -14,19 +20,20 @@ import './landingStyle.css'
 import coverPhoto from '../../coverImages/royce.jpeg';
 import rightsun from '../../coverImages/rightsun.png'
 import leftsun from '../../coverImages/leftsun.png';
+//import DemoApp from '../../components/Calendar';
+//imports for calendar
+
 
 class Landing extends Component {
-
     componentDidMount() {
         window.scrollTo(0, 0)
-      }
+    }
 
     render() {
-        
+
         return (
+            
             <div>
-
-
                 {/* Actual Landing Page */}
                 <div id="landingactual">
                     <Navigation transparentNav={true} />
@@ -53,10 +60,24 @@ class Landing extends Component {
                     <hr className="introBar" /> 
 
                     <br/>
-                    <br/>
-                    <br/>
-                    <br/>
                     
+                    <div className="introbox" style={{textAlign: 'left'}}>
+                        <p className="initIntro" style={{textAlign: 'left', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
+                            
+                            <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
+                                SOLES Calendar
+                            </p>
+                            Take a look at our upcoming events!
+                        </p>
+                    </div>
+                    <br/>
+  
+                    <Calendar/>
+
+                    <br/>
+                    <br/>
+                    <br/>
+          
                     {/* Message from our president message */}
                     <div id="MessageFromPresident" style={{marginLeft:'6.5%', marginRight:'6.5%'}}>
 
@@ -144,6 +165,7 @@ class Landing extends Component {
                     <br/>
                     <br/>
                 </div>
+
 
                 {/* Start up animation */}
                 <div id="startupdiv" >
