@@ -4,38 +4,38 @@ import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import Footer from '../../components/Footer';
 
-import coverPhoto from '../../coverImages/planesOpL.png';
-import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png';
-import sun from '../../initiativesPhotos/suny.png';
+import coverPhoto from '../../Photos/Covers/Initiatives.png';
+import rightsun from '../../Photos/Icons/rightsun.png'
+import leftsun from '../../Photos/Icons/leftsun.png';
+import sun from '../../Photos/InitiativesPage/suny.png';
 
-import jrOp from '../../initiativesPhotos/jrOp.png';
-import jrCol from '../../initiativesPhotos/jrCol.png';
-import cienciasOp from '../../initiativesPhotos/CienciasOp.png';
-import cienciasCol from '../../initiativesPhotos/CienciasCol.png';
-import tutoringOp from '../../initiativesPhotos/TutoringOp.png';
-import tutoringCol from '../../initiativesPhotos/TutoringCol.png';
-import eitOp from '../../initiativesPhotos/eitOp.png';
-import eitCol from '../../initiativesPhotos/eitCol.png';
+import jrOp from '../../Photos/InitiativesPage/jrOp.png';
+import jrCol from '../../Photos/InitiativesPage/jrCol.png';
+import cienciasOp from '../../Photos/InitiativesPage/CienciasOp.png';
+import cienciasCol from '../../Photos/InitiativesPage/CienciasCol.png';
+import tutoringOp from '../../Photos/InitiativesPage/TutoringOp.png';
+import tutoringCol from '../../Photos/InitiativesPage/TutoringCol.png';
+import eitOp from '../../Photos/InitiativesPage/eitOp.png';
+import eitCol from '../../Photos/InitiativesPage/eitCol.png';
 
-import studynightOp from '../../coverImages/studynightOp.png';
-import studynightCol from '../../coverImages/studynightCol.png';
-import lunarOp from '../../initiativesPhotos/lunarOp.png';
-import lunarCol from '../../initiativesPhotos/lunarCol.png';
-import ExpEduOp from '../../initiativesPhotos/ExpEduOp.png';
-import ExpEduCol from '../../initiativesPhotos/ExpEduCol.png';
+import studynightOp from '../../Photos/InitiativesPage/studynightOp.png';
+import studynightCol from '../../Photos/InitiativesPage/studynightCol.png';
+import lunarOp from '../../Photos/InitiativesPage/lunarOp.png';
+import lunarCol from '../../Photos/InitiativesPage/lunarCol.png';
+import ExpEduOp from '../../Photos/InitiativesPage/ExpEduOp.png';
+import ExpEduCol from '../../Photos/InitiativesPage/ExpEduCol.png';
 
-import natConOp from '../../initiativesPhotos/NatConOp.png';
-import natConCol from '../../initiativesPhotos/NatConCol.png';
-import RLDCOp from '../../initiativesPhotos/RLDCOp.png';
-import RLDCCol from '../../initiativesPhotos/RLDCCol.png';
-import IndWorkOp from '../../initiativesPhotos/IndWorkOp.png';
-import IndWorkCol from '../../initiativesPhotos/IndWorkCol.png';
+import natConOp from '../../Photos/InitiativesPage/NatConOp.png';
+import natConCol from '../../Photos/InitiativesPage/NatConCol.png';
+import RLDCOp from '../../Photos/InitiativesPage/RLDCOp.png';
+import RLDCCol from '../../Photos/InitiativesPage/RLDCCol.png';
+import IndWorkOp from '../../Photos/InitiativesPage/IndWorkOp.png';
+import IndWorkCol from '../../Photos/InitiativesPage/IndWorkCol.png';
 
-import mentorSHPEOp from '../../initiativesPhotos/mentorSHPEOp.png';
-import mentorSHPECol from '../../initiativesPhotos/mentorSHPECol.png';
-import socialOp from '../../initiativesPhotos/social1Op.png';
-import socialCol from '../../initiativesPhotos/social1Col.png';
+import mentorSHPEOp from '../../Photos/InitiativesPage/mentorSHPEOp.png';
+import mentorSHPECol from '../../Photos/InitiativesPage/mentorSHPECol.png';
+import socialOp from '../../Photos/InitiativesPage/social1Op.png';
+import socialCol from '../../Photos/InitiativesPage/social1Col.png';
 
 import './initiativeStyle.css'
 

@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes'
 import Navigation from '../../components/Navigation';
-import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/contact.JPG';
 import Footer from '../../components/Footer';
-import emailjs from 'emailjs-com';
 import Sun from '../../boardImages/sun.png';
 
 

@@ -1,41 +1,23 @@
 
 import React, { Component, useRef } from 'react';
-import { GoogleSpreadsheet } from "google-spreadsheet";
-//import Item from "/ui/components/workspace/item.jsx";
-import ReactGridLayout from 'react-grid-layout';
-import FlatList from 'flatlist-react';
 import emailjs from 'emailjs-com';
-import { useHistory, Redirect } from 'react-router-dom';
-import { Player, LoadingSpinner } from 'video-react';
 
 import { Carousel } from 'react-carousel-minimal';
 
 import Navigation from '../../components/Navigation';
-import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/abt2.jpg';
-import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png';
-import shirt1 from '../../photos/shirt1t.png'
-import shirt2 from '../../photos/shirt2.png'
-import sticker1 from '../../photos/sticker1.png'
-import penny from '../../photos/pennyt.png'
-import cart from '../../coverImages/cart1.png';
 import Footer from '../../components/Footer';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import sun from '../../coverImages/sunblue.png';
 
-import back1 from '../../shirtpics/back1.jpg';
-import back2 from '../../shirtpics/back2.jpg';
-import front_dramatic from '../../shirtpics/front-dramatic.jpg';
-import front from '../../shirtpics/front.jpg';
-import graphic from '../../shirtpics/graphic.png';
-import group1 from '../../shirtpics/group1-v1.jpg';
-import group2 from '../../shirtpics/group2.jpg';
+import back1 from '../../Photos/MerchShop/Shirt21-22/back1.jpg';
+import back2 from '../../Photos/MerchShop/Shirt21-22/back2.jpg';
+import front_dramatic from '../../Photos/MerchShop/Shirt21-22/front-dramatic.jpg';
+import front from '../../Photos/MerchShop/Shirt21-22/front.jpg';
+import graphic from '../../Photos/MerchShop/Shirt21-22/graphic.png';
+import group1 from '../../Photos/MerchShop/Shirt21-22/group1-v1.jpg';
+import group2 from '../../Photos/MerchShop/Shirt21-22/group2.jpg';
 
 import { withAuthorization } from '../Session';
 
-import { colors } from '@material-ui/core';
 
 import "./style.css"
 

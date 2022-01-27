@@ -1,39 +1,23 @@
 
 import React, { Component, useRef } from 'react';
 import { GoogleSpreadsheet } from "google-spreadsheet";
-//import Item from "/ui/components/workspace/item.jsx";
-import ReactGridLayout from 'react-grid-layout';
-import FlatList from 'flatlist-react';
 import emailjs from 'emailjs-com';
 import { useHistory } from 'react-router-dom';
 
 import { Carousel } from 'react-carousel-minimal';
 
 import Navigation from '../../components/Navigation';
-import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/abt2.jpg';
-import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png';
-import shirt1 from '../../photos/shirt1t.png'
-import shirt2 from '../../photos/shirt2.png'
-import sticker1 from '../../photos/sticker1.png'
-import penny from '../../photos/pennyt.png'
-import cart from '../../coverImages/cart1.png';
 import Footer from '../../components/Footer';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import sun from '../../coverImages/sunblue.png';
 
-import pic1 from '../../stickerpics/pic1_hor.png';
-import pic2 from '../../stickerpics/pic2.jpg';
-import pic3 from '../../stickerpics/pic3.jpg';
-import pic4 from '../../stickerpics/pic4.jpg';
-import pic5 from '../../stickerpics/pic5.jpg';
-import pic6 from '../../stickerpics/pic6.jpg';
+import pic1 from '../../Photos/MerchShop/Sticker/pic1_hor.png';
+import pic2 from '../../Photos/MerchShop/Sticker/pic2.jpg';
+import pic3 from '../../Photos/MerchShop/Sticker/pic3.jpg';
+import pic4 from '../../Photos/MerchShop/Sticker/pic4.jpg';
+import pic5 from '../../Photos/MerchShop/Sticker/pic5.jpg';
+import pic6 from '../../Photos/MerchShop/Sticker/pic6.jpg';
 
 import { withAuthorization } from '../Session';
-
-import { colors } from '@material-ui/core';
 
 import "./style.css"
 

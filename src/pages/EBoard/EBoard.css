@@ -1,0 +1,523 @@
+.eBoardPage {
+  width: 80%;
+  margin: 30px auto;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sponsorPage {
+  width: 80%;
+  margin: 30px auto;
+  font-family: 'Poppins', sans-serif;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.eBoardPerson {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(33% - 6px);
+  margin-right: 8px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.eBoardPerson3 {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(33% - 6px);
+  margin-right: 4px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-left: 4px;
+}
+
+.eBoardPerson:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+
+@media screen and (max-width: 1050px){
+.eBoardPerson {
+  display: inline-block;
+  margin-bottom: 8px;
+  width:20vw;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+}
+
+@media screen and (max-width: 700px){
+.eBoardPerson {
+  display: inline-block;
+  margin: 1vw;
+  width: calc(100% - 4px);
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.eBoardPerson3 {
+  display: inline-block;
+  margin: 1vw;
+  width: calc(100% - 4px);
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+}
+
+.eBoardPerson2 {
+  margin: 0;
+  overflow: hidden;
+}
+
+.setFontSizeName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8vw;
+  text-align: match-parent;
+  line-height: 1.4vw;
+  font-weight: 'bold';
+  color: #001d3a;
+  margin-top: 1.1vw;
+}
+
+.setFontSizePosition{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2vw;
+  line-height: 1vw;
+  text-align: match-parent;
+  margin-top: 1.2vw;
+
+}
+
+.setFontSizeLevel{
+font-family: 'Poppins', sans-serif;
+font-size: 1.2vw;
+line-height: 2vw;
+text-align: match-parent;
+margin-top: 1.2vw;
+
+}
+
+.setFontSizeStaffEmail{
+font-family: 'Poppins', sans-serif;
+font-size: 1.2vw;
+line-height: 1vw;
+text-align: match-parent;
+margin: 1.2vw;
+
+}
+
+.BoardPageImages {
+  border: .1vw solid #001d3a;
+  width:  20vw;
+  height: 20vw;
+  display: block;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+
+.SponsorPageImages {
+  width:  13vw;
+  height: 13vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+
+.SponsorBronzeImages {
+  width:  29vw;
+  height: 30vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+
+.SponsorSilverImages {
+  width:  29vw;
+  height: 39vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+
+.SponsorGoldImages {
+  width:  29vw;
+  height: 47vw;
+  display: block;
+  margin-left: auto;
+  /* margin-left: 10vw; */
+  margin-right: auto;
+  background-color: black;
+  
+}
+
+.flip-card {
+  overflow: hidden;
+  margin: 1vw auto;
+  background-color: transparent;
+  width: 20.6vw;
+  height: 20.6vw;
+}
+
+
+
+/* This container is needed to position the front and back side */
+.flip-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner{
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  width: 20.3vw;
+}
+
+
+
+.backSideText{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8vw;
+  line-height: 2vw;
+  color: white;
+  margin: .5vw;
+}
+
+.backSideTextSmall{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1vw;
+  line-height: 1.2vw;
+  color: white;
+  margin: .5vw;
+}
+
+.majorFont{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3vw;
+  line-height: 1.2vw;
+  margin: .4vw;
+  color: yellow;
+}
+
+.sponsorLevels{
+  font-family: 'Poppins', sans-serif;
+  font-size: 3vw;
+  line-height: 3.5vw;
+  margin: .4vw;  
+  position: relative;
+  color: black;
+  padding-top: 2vw;
+  transition: 1s;
+}
+
+.sponsorLevelsNoColor{
+  font-family: 'Poppins', sans-serif;
+  font-size: 3vw;
+  line-height: 3.5vw;
+  margin: .4vw;  
+  position: relative;
+  color: rgba(0, 0, 0, 0);
+  padding-top: 2vw;
+  transition: 0.5s;
+}
+
+.majorFontLong{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.16vw;
+  line-height: 1.2vw;
+  margin: .4vw;
+  color: yellow;
+}
+
+.emailFont{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1vw;
+  line-height: 1.2vw;
+  position: absolute;
+  text-align: center;
+  bottom: .4vw;
+  color: yellow;
+  margin-left: 2vw;
+}
+
+.emailFontShort{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1vw;
+  line-height: 1.2vw;
+  position: absolute;
+  text-align: center;
+  bottom: .4vw;
+  color: yellow;
+  margin-left: 4vw;
+}
+
+.emailFontLong{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1vw;
+  line-height: 1.2vw;
+  position: absolute;
+  text-align: center;
+  bottom: .4vw;
+  color: yellow;
+  margin-left: .8vw;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #001d3aa0;
+  transform: rotateY(180deg);
+}
+
+.titleFont1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5vw;
+  line-height: 1.8vw;
+  text-align: center;
+  margin: 1.2vw;
+  padding: 1vw;
+  
+}
+
+.introFont{
+font-family: 'Poppins', sans-serif;
+font-size: 1.5vw;
+line-height: 1.8vw;
+position: absolute;
+margin: 1.2vw;
+}
+
+.titleFont2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2vw;
+  line-height: 1.8vw;
+  text-align: center;
+  color: gray;
+  font-style: none;
+  margin-left: 1.2vw;
+  margin-right: 1.2vw;
+  padding: 2vw;
+}
+
+.titleFont3{
+font-family: 'Poppins', sans-serif;
+font-size: 1.4vw;
+line-height: 1.9vw;
+text-align: center;
+width:80%;
+display: flex;
+margin:auto;
+padding-bottom: 2vw;
+}
+
+.titleFont3Sponsor{
+font-family: 'Poppins', sans-serif;
+font-size: 1.2vw;
+line-height: 1.9vw;
+text-align: center;
+width:80%;
+display: flex;
+margin:auto;
+padding-bottom: 2vw;
+}
+
+.titleFont4{
+font-family: 'Poppins', sans-serif;
+font-size: 1.4vw;
+line-height: 1.7vw;
+text-align: left;
+margin-left: .3vw;
+margin-right: .4vw;
+padding-bottom: .4vw;
+}
+
+.titleFont5{
+font-family: 'Poppins', sans-serif;
+font-size: 2.5vw;
+line-height: 2.5vw;
+text-align: center;
+margin-top:1vw;
+margin-left: 1vw;
+margin-right: 1vw;
+
+}
+
+.myList{
+margin:1vw;
+padding:1vw;
+}
+
+.staffMembersBoard2{
+font-family: 'Poppins', sans-serif;
+font-size: 3vw;
+line-height: 1.8vw;
+color: #001d3a;
+line-height: 1.8vw;
+padding-top: 5vw;
+padding-bottom: 2vw;
+}
+.staffMembersBoard{
+margin-top: 0.1vw;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3vw;
+  margin-bottom: 3.1vw;
+  color: #001d3a;
+  font-weight: bold;
+}
+
+
+.BoardPageSun {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5%;
+  padding: 1vw;
+  margin-top: 2vw;
+}
+
+.BoardIntroBar {
+width: 50%;
+border: 0.1vw solid #001d3a;
+margin-top: 3%;
+margin-bottom: 3%;
+}
+
+
+.flip-card2 {
+overflow:hidden;
+margin: 1vw auto;
+background-color: transparent;
+width: 25vw;
+height: 47vw;
+}
+.flip-card2-inner{
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+z-index: -1;
+}
+.flip-card2:hover .flip-card2-inner{
+transform: rotateY(180deg);
+}
+.flip-card2-front, .flip-card2-back {
+position: absolute;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden; /* Safari */
+backface-visibility: hidden;
+}
+.flip-card2-front {
+width: 25vw;
+}
+.flip-card2-back {
+background-color: #19324d;
+color: white;
+transform: rotateY(180deg);
+}
+
+.flip-card3 {
+overflow:hidden;
+margin: 1vw auto;
+background-color: transparent;
+width: 25vw;
+height: 39vw;
+}
+.flip-card3-inner{
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+z-index: -1;
+}
+.flip-card3:hover .flip-card3-inner{
+transform: rotateY(180deg);
+}
+.flip-card3-front, .flip-card3-back {
+position: absolute;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden; /* Safari */
+backface-visibility: hidden;
+}
+.flip-card3-front {
+width: 25vw;
+}
+.flip-card3-back {
+background-color: #19324d;
+color: white;
+transform: rotateY(180deg);
+}
+
+.flip-card4 {
+overflow:hidden;
+margin: 1vw auto;
+background-color: transparent;
+width: 25vw;
+height: 30vw;
+text-align: center;
+}
+.flip-card4-inner{
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+z-index: -1;
+}
+.flip-card4:hover .flip-card4-inner{
+transform: rotateY(180deg);
+}
+.flip-card4-front, .flip-card4-back {
+position: absolute;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden; /* Safari */
+backface-visibility: hidden;
+}
+.flip-card4-front {
+width: 25vw;
+}
+.flip-card4-back {
+background-color: #19324d;
+color: white;
+transform: rotateY(180deg);
+}
