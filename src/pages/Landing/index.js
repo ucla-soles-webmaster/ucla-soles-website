@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom'
 import { Link } from 'react-router-dom';
-//import firebase from '../Firebase'
 
 import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
@@ -9,19 +7,17 @@ import Footer from '../../components/Footer';
 
 //import Calendar from '../../components/Calendar';
 
-//import Document from '../../components/Calendar/index2';
 
 import * as ROUTES from '../../constants/routes'
-import Andy from '../../boardImages/kelly_prez.jpeg'
-import AndySig from '../../boardImages/sig_kelly.png'
-//import ucla from './ucla.jpg'
+import presidentPhoto from '../../boardImages/kelly_prez.jpeg'
+import presidentSig from '../../boardImages/sig_kelly.png'
 
 import './landingStyle.css'
-import coverPhoto from '../../coverImages/royce.jpeg';
-import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png';
-import DemoApp from '../../components/Calendar';
-//imports for calendar
+import coverPhoto from '../../Photos/Covers/Landing.jpeg';
+import rightsun from '../../Photos/Icons/rightsun.png'
+import leftsun from '../../Photos/Icons/leftsun.png';
+
+
 
 
 class Landing extends Component {
@@ -85,8 +81,8 @@ class Landing extends Component {
                         {/* Picture */}
                         <div className="presidentPhoto">
                             <img 
-                                src= {Andy} 
-                                alt="Andy Muraltalla" 
+                                src= {presidentPhoto} 
+                                alt="SOLES President" 
                                 style={{width:'100%', height:'100%'}}
                             ></img>
                         </div>
@@ -123,7 +119,7 @@ class Landing extends Component {
                                     Kelly Espino
                                 </div>
                                 <img 
-                                    src= {AndySig} 
+                                    src= {presidentSig} 
                                     alt="President Signature" 
                                     style={{width:'6em'}}
                                 ></img>

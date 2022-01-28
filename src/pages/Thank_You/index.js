@@ -10,19 +10,8 @@ import { useHistory, Redirect } from 'react-router-dom';
 import { Carousel } from 'react-carousel-minimal';
 
 import Navigation from '../../components/Navigation';
-import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/abt2.jpg';
-import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png';
-import shirt1 from '../../photos/shirt1t.png'
-import shirt2 from '../../photos/shirt2.png'
-import sticker1 from '../../photos/sticker1.png'
-import penny from '../../photos/pennyt.png'
-import cart from '../../coverImages/cart1.png';
-import Footer from '../../components/Footer';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import sun from '../../coverImages/sunblue.png';
 
 
 import { withAuthorization } from '../Session';

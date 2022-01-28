@@ -12,7 +12,7 @@ import { withAuthorization } from '../Session';
 import '../Account/accountStyle.css';
 import '../TestBank/hubStyle.css';
 import '../TestSubmit/submit.css';
-import sun from '../../coverImages/sunblue.png';
+import sun from '../../Photos/Icons/sunblue.png';
 
 
 class TestBankView extends Component {

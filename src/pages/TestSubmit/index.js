@@ -14,7 +14,7 @@ import * as ROUTES from '../../constants/routes';
 import '../Account/accountStyle.css';
 import '../TestBank/hubStyle.css';
 import './submit.css';
-import sun from '../../coverImages/sunblue.png';
+import sun from '../../Photos/Icons/sunblue.png';
 
 
 class TestBankSubmit extends Component {

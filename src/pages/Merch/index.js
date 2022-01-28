@@ -8,7 +8,7 @@ import { withAuthorization } from '../Session';
 
 import '../Account/accountStyle.css';
 import './merchStyle.css';
-import sun from '../../coverImages/sunblue.png';
+import sun from '../../Photos/Icons/sunblue.png';
 
 
 class Merch extends Component {

@@ -4,18 +4,9 @@ import FlatList from 'flatlist-react';
 import { Link } from 'react-router-dom';
 
 import Navigation from '../../components/Navigation';
-import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/abt2.jpg';
-import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png';
-import shirt1 from '../../photos/shirt1t.png'
-import shirt2 from '../../photos/shirt2.png'
-import sticker1 from '../../photos/sticker1.png'
-import penny from '../../photos/pennyt.png'
-import cart from '../../coverImages/cart1.png';
 import Footer from '../../components/Footer';
 import 'react-vertical-timeline-component/style.min.css';
-import sun from '../../coverImages/sunblue.png';
+import sun from '../../Photos/Icons/sunblue.png';
 
 import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes'
@@ -26,6 +17,7 @@ import './index.css'
 
 
 // Carosel Data Initializations
+// NOTE: for Carousel, images can only be links (not saved on disk) to images, thats why we upload to our Firebase or another website
     const data = [
         {
             image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Membership%20Shirts.png?alt=media&token=29edfbb7-9d0b-42a9-b7af-3214a8fb75f1"
