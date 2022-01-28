@@ -17,7 +17,7 @@ body {
     transition: 0.8s;
     -webkit-transition: 0.8s;
     overflow: hidden;
-    z-index: 1;
+    z-index: 4;
 }
 
 .navElse {
@@ -33,7 +33,7 @@ body {
     background-color: white;
     box-shadow: 0vw 0.01vw 1.3vw -0.75vw rgba(0, 0, 0, 0.865);
     overflow: hidden;
-    z-index: 1;
+    z-index: 4;
 }
 
 .navTop .logo {

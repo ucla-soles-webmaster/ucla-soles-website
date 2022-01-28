@@ -7,7 +7,7 @@ import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
 import Footer from '../../components/Footer';
 
-import Calendar from '../../components/Calendar';
+//import Calendar from '../../components/Calendar';
 
 //import Document from '../../components/Calendar/index2';
 
@@ -20,7 +20,7 @@ import './landingStyle.css'
 import coverPhoto from '../../coverImages/royce.jpeg';
 import rightsun from '../../coverImages/rightsun.png'
 import leftsun from '../../coverImages/leftsun.png';
-//import DemoApp from '../../components/Calendar';
+import DemoApp from '../../components/Calendar';
 //imports for calendar
 
 
@@ -72,7 +72,8 @@ class Landing extends Component {
                     </div>
                     <br/>
   
-                    <Calendar/>
+                    
+                    <DemoApp/>
 
                     <br/>
                     <br/>

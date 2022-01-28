@@ -10,7 +10,6 @@ html, body {
   height:100%
 }
 
-
 h2 {
   margin: 0;
   font-size: 16px;
@@ -65,6 +64,8 @@ b { /* used for event dates/times */
   min-height: 100%;
   font-family: 'Poppins',Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 .demo-app-main {
   flex-grow: 1;
