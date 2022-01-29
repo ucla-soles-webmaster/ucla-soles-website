@@ -8,10 +8,10 @@ import Footer from '../../components/Footer';
 import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes'
 
-import sun from '../../Photos/Icons/sunblue.png';
-import bank from '../../Photos/Icons/bank.svg';
-import view from '../../Photos/Icons/view.svg';
-import upload from '../../Photos/Icons/upload.svg';
+import sun from '../../photos/Icons/sunblue.png';
+import bank from '../../photos/Icons/bank.svg';
+import view from '../../photos/Icons/view.svg';
+import upload from '../../photos/Icons/upload.svg';
 
 import '../Account/accountStyle.css';
 import './hubStyle.css';

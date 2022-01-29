@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import 'react-vertical-timeline-component/style.min.css';
-import sun from '../../Photos/Icons/sunblue.png';
+import sun from '../../photos/Icons/sunblue.png';
 
 import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes'

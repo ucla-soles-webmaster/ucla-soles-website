@@ -6,8 +6,8 @@ import Navigation from '../../components/Navigation';
 import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
 
-import rightsun from '../../Photos/Icons/rightsun.png'
-import leftsun from '../../Photos/Icons/leftsun.png';
+import rightsun from '../../photos/Icons/rightsun.png'
+import leftsun from '../../photos/Icons/leftsun.png';
 
 import { withAuthorization } from '../Session';
 

@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/Covers/EBoard.jpg';
+import coverPhoto from '../../photos/Covers/EBoard.jpg';
 
 
 
 ///////////////////////////////////////////////////////////////
 /* Individual Officer Photo Imports */
 
-/* President */ import Kelly from '../../Photos/EBoard/Kelly.jpg'
-/* EVP */ import Mayra from '../../Photos/EBoard/Mayra.jpg'
-/* IVP */ import Aidan from '../../Photos/EBoard/Aidan.jpg'
+/* President */ import Kelly from '../../photos/EBoard/Kelly.jpg'
+/* EVP */ import Mayra from '../../photos/EBoard/Mayra.jpg'
+/* IVP */ import Aidan from '../../photos/EBoard/Aidan.jpg'
 
-/* Treasurer */ import Kami from '../../Photos/EBoard/Kami.jpg'
-/* Secretary */ import Fabrizio from '../../Photos/EBoard/Fabrizio.jpg'
-/* Transfer */ import Kent from '../../Photos/EBoard/Kent.jpg'
+/* Treasurer */ import Kami from '../../photos/EBoard/Kami.jpg'
+/* Secretary */ import Fabrizio from '../../photos/EBoard/Fabrizio.jpg'
+/* Transfer */ import Kent from '../../photos/EBoard/Kent.jpg'
 
-/* Tutoring */ import Marisa from '../../Photos/EBoard/Marisa.jpg'
-/* Academic */import Mat from '../../Photos/EBoard/Mat.jpg'
-/* Activities */ import Robert from '../../Photos/EBoard/Robert.jpg'
+/* Tutoring */ import Marisa from '../../photos/EBoard/Marisa.jpg'
+/* Academic */import Mat from '../../photos/EBoard/Mat.jpg'
+/* Activities */ import Robert from '../../photos/EBoard/Robert.jpg'
 
-/* Ciencias */ import Itzhary from '../../Photos/EBoard/Itzhary.jpg'
-/* Tech */ import Trevor from '../../Photos/EBoard/Trevor.jpg'
-/* LeaderSHPE Jr */ import Benito from '../../Photos/EBoard/Benito.jpg'
+/* Ciencias */ import Itzhary from '../../photos/EBoard/Itzhary.jpg'
+/* Tech */ import Trevor from '../../photos/EBoard/Trevor.jpg'
+/* LeaderSHPE Jr */ import Benito from '../../photos/EBoard/Benito.jpg'
 
-/* Intern 1 */ import Juan from '../../Photos/EBoard/Juan.jpg'
+/* Intern 1 */ import Juan from '../../photos/EBoard/Juan.jpg'
 
 /* CEED Staff */
-import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
-import Anabella from '../../Photos/EBoard/CEED/anabella.jpg'
-import Cathy from '../../Photos/EBoard/CEED/cathy.jpg'
+import Sherry from '../../photos/EBoard/CEED/sherry.jpg'
+import Anabella from '../../photos/EBoard/CEED/anabella.jpg'
+import Cathy from '../../photos/EBoard/CEED/cathy.jpg'
 
 
 
@@ -38,9 +38,9 @@ import Cathy from '../../Photos/EBoard/CEED/cathy.jpg'
 /* Accent Photo Imports */
 
 import './EBoard.css';
-import rightsun from '../../Photos/Icons/rightsun.png'
-import leftsun from '../../Photos/Icons/leftsun.png';
-import Sun from '../../boardImages/sun.png'
+import rightsun from '../../photos/Icons/rightsun.png'
+import leftsun from '../../photos/Icons/leftsun.png';
+import sun from '../../photos/Icons/sun.png'
 
 
 
@@ -341,13 +341,14 @@ class EBoard extends Component {
                             All members are encouraged to run for positions!
                         </div>                               
                         <hr ClassName = "BoardIntroBar" ></hr>
-                        <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun" ></img>
                         <br/>
                         <div className = "staffMembersBoard">
                             CEED Advisors
                         </div>
                     </div>
                     
+
 
                     {/* CEED Staff Photo Grid */} 
                     {/* Sherry */} 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import Sun from '../../boardImages/sun.png';
+import sun from '../../photos/Icons/sun.png';
 
 
 class Tutor extends Component {
@@ -16,7 +16,7 @@ class Tutor extends Component {
                 <div className="navgapTutoring">
                     <div className = "titleFont1Tutoring">
                         <div className='tutoringSunContainer'>                                
-                            <img className = "TutorPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                            <img className = "TutorPageSun" src= {sun} alt="Yellow Sun" ></img>
                         </div>
                             <div className = "TutorPageTitle">
                                 Tutors:

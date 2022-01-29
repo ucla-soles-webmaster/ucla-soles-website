@@ -9,13 +9,13 @@ import Calendar from '../../components/Calendar';
 
 
 import * as ROUTES from '../../constants/routes'
-import presidentPhoto from '../../boardImages/kelly_prez.jpeg'
-import presidentSig from '../../boardImages/sig_kelly.png'
+import presidentPhoto from '../../photos/PresidentsMsg/president.jpeg'
+import presidentSig from '../../photos/PresidentsMsg/signature.png'
 
 import './landingStyle.css'
-import coverPhoto from '../../Photos/Covers/Landing.jpeg';
-import rightsun from '../../Photos/Icons/rightsun.png'
-import leftsun from '../../Photos/Icons/leftsun.png';
+import coverPhoto from '../../photos/Covers/Landing.jpeg';
+import rightsun from '../../photos/Icons/rightsun.png'
+import leftsun from '../../photos/Icons/leftsun.png';
 
 
 

@@ -5,7 +5,7 @@ import * as ROUTES from '../../constants/routes'
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import './style.css';
-import Sun from '../../boardImages/sun.png';
+import sun from '../../photos/Icons/sun.png';
 
 
 class Tutoring extends Component {
@@ -17,7 +17,7 @@ class Tutoring extends Component {
                 <div className="navgapTutoring">
                     <div className = "titleFont1Tutoring">
                         <div className='tutoringSunContainer'>                                
-                            <img className = "TutorPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                            <img className = "TutorPageSun" src= {sun} alt="Yellow Sun" ></img>
                         </div>
                             <div className = "TutorPageTitle">
                                 Tutoring 

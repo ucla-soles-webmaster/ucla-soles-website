@@ -6,33 +6,33 @@ import Footer from '../../components/Footer';
 ///////////////////////////////////////////////////////////////
 /* Sponsor Logo Photo Imports */
 
-import Boeing from '../../Photos/SponsorLogos/boeing.jpg'
-import Chevron from '../../Photos/SponsorLogos/chevron.png'
-import Facebook from '../../Photos/SponsorLogos/facebook.jpeg'
-import Google from '../../Photos/SponsorLogos/google.jpg'
-import Lockheed from '../../Photos/SponsorLogos/lockheed-martin.png'
-import Northrup from '../../Photos/SponsorLogos/northrop-grumman.jpg'
-import Accenture from '../../Photos/SponsorLogos/accenture.jpg'
-import SCEdison from '../../Photos/SponsorLogos/socaledison.gif'
-import Twitter from '../../Photos/SponsorLogos/twitter.jpg'
-import Granite from '../../Photos/SponsorLogos/granite.jpeg'
-import Qualtrics from '../../Photos/SponsorLogos/qualtrics.jpeg'
-import Qualcomm from '../../Photos/SponsorLogos/qualcomm.png'
-import Oracle from '../../Photos/SponsorLogos/oracle.png'
-import VMware from '../../Photos/SponsorLogos/vmware.png'
-import Medtronic from '../../Photos/SponsorLogos/medtronic.jpeg'
-import Raytheon from '../../Photos/SponsorLogos/raytheon.jpeg'
-import LADWP from '../../Photos/SponsorLogos/ladwp.png'
+import Boeing from '../../photos/SponsorLogos/boeing.jpg'
+import Chevron from '../../photos/SponsorLogos/chevron.png'
+import Facebook from '../../photos/SponsorLogos/facebook.jpeg'
+import Google from '../../photos/SponsorLogos/google.jpg'
+import Lockheed from '../../photos/SponsorLogos/lockheed-martin.png'
+import Northrup from '../../photos/SponsorLogos/northrop-grumman.jpg'
+import Accenture from '../../photos/SponsorLogos/accenture.jpg'
+import SCEdison from '../../photos/SponsorLogos/socaledison.gif'
+import Twitter from '../../photos/SponsorLogos/twitter.jpg'
+import Granite from '../../photos/SponsorLogos/granite.jpeg'
+import Qualtrics from '../../photos/SponsorLogos/qualtrics.jpeg'
+import Qualcomm from '../../photos/SponsorLogos/qualcomm.png'
+import Oracle from '../../photos/SponsorLogos/oracle.png'
+import VMware from '../../photos/SponsorLogos/vmware.png'
+import Medtronic from '../../photos/SponsorLogos/medtronic.jpeg'
+import Raytheon from '../../photos/SponsorLogos/raytheon.jpeg'
+import LADWP from '../../photos/SponsorLogos/ladwp.png'
 
 
 
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
-import Big from '../../boardImages/gold.jpg'
-import Medium from '../../boardImages/silver.jpg'
-import Small from '../../boardImages/bronze.jpg'
-import Sun from '../../boardImages/sun.png'
+import gold_bar from '../../photos/Icons/gold.jpg'
+import silver_bar from '../../photos/Icons/silver.jpg'
+import bronze_bar from '../../photos/Icons/bronze.jpg'
+import sun from '../../photos/Icons/sun.png'
 
 
 
@@ -63,7 +63,7 @@ class Sponsors extends Component {
                     <body1 className = "sponsorPage">
                     <div className = "titleFont1">
                     <div style = {{width: '80%', margin: 'auto'}}>                                
-                        <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun"></img>
+                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard">
                         We Love Our Sponsors!
@@ -87,7 +87,7 @@ class Sponsors extends Component {
                 <div className = "titleFont1">                                
                     <hr ClassName = "BoardIntroBar" style = {{width: '80%'}}></hr>
                     <div style = {{width: '80%', margin: 'auto'}}>
-                        <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun" ></img>
                     </div>
                     <div className = "staffMembersBoard">
                         Become a Sponsor Today
@@ -115,7 +115,7 @@ class Sponsors extends Component {
                                     <div className = {this.state.gold ? "sponsorLevelsNoColor" : "sponsorLevels"}>
                                         Gold Level ($2500+)
                                     </div>
-                                    <img className = "SponsorGoldImages" src={Big} alt="Gold Level"></img>
+                                    <img className = "SponsorGoldImages" src={gold_bar} alt="Gold Level"></img>
                                 </div>
                                 <div class="flip-card2-back">
                                     <div className = "titleFont5">
@@ -148,7 +148,7 @@ class Sponsors extends Component {
                                         <br/> 
                                         ($1001 - $2499)
                                     </div>
-                                    <img className = "SponsorSilverImages" src={Medium} alt="Silver Level"></img>
+                                    <img className = "SponsorSilverImages" src={silver_bar} alt="Silver Level"></img>
                                 </div>
                                 <div class="flip-card3-back">
                                     <div className = "titleFont5">
@@ -179,7 +179,7 @@ class Sponsors extends Component {
                                         <br/>
                                         ($1 - $1000)
                                     </div>
-                                    <img className = "SponsorBronzeImages" src={Small} alt="Bronze Level"></img>
+                                    <img className = "SponsorBronzeImages" src={bronze_bar} alt="Bronze Level"></img>
                                 </div>
                                 <div class="flip-card4-back">
                                     <div className = "titleFont5">
@@ -208,7 +208,7 @@ class Sponsors extends Component {
                      </div>                              
                     <hr ClassName = "BoardIntroBar" style = {{width: '80%'}}></hr>
                     <div style = {{width: '80%', margin: 'auto'}}>
-                        <img className = "BoardPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun" ></img>
                     </div>
                     <div className = "staffMembersBoard">
                         2021-2022 Sponsors

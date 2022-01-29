@@ -10,7 +10,7 @@ import Footer from '../../components/Footer';
 import step1 from './step1.png'
 import step2 from './step2.png'
 
-import Sun from '../../boardImages/sun.png';
+import sun from '../../photos/Icons/sun.png';
 import { Fab } from '@material-ui/core';
 
 
@@ -58,7 +58,7 @@ class TutoringStudent extends Component {
                 <div className="navgapTutoring">
                     <div className = "titleFont1Tutoring">
                         <div className='tutoringSunContainer'>                                
-                            <img className = "TutorPageSun" src= {Sun} alt="Yellow Sun" ></img>
+                            <img className = "TutorPageSun" src= {sun} alt="Yellow Sun" ></img>
                         </div>
                             <div className = "TutorPageTitle">
                                 Tutoring Platform Sign-Up
