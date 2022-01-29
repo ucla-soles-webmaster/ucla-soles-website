@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
 import Footer from '../../components/Footer';
 
-import DemoApp from '../../components/Calendar';
+import Calendar from '../../components/Calendar';
 
 
 import * as ROUTES from '../../constants/routes'
@@ -69,7 +69,7 @@ class Landing extends Component {
                     <br/>
   
                     
-                    <DemoApp/>
+                    <Calendar/>
 
                     <br/>
                     <br/>

@@ -10,7 +10,7 @@ import './calStyle.css'
 let title = " ";
 let date = " ";
 
-class DemoApp extends Component {
+class Calendar extends Component {
   state = {
     weekendsVisible: true,
     currentEvents: []
@@ -32,10 +32,7 @@ class DemoApp extends Component {
             }}
             weekends={this.state.weekendsVisible}
             displayEventTime={false}
-            //eventsSet={this.handleEvents}
-            //eventContent={renderEventContent}
             initialView='dayGridMonth'
-            //eventContent={renderEventContent} // custom render function
             eventClick={this.handleEventClick}
           />
 
@@ -47,7 +44,6 @@ class DemoApp extends Component {
 
 
   handleEventClick = (clickInfo) => {
-    //console.log(clickInfo.event.title);
     clickInfo.jsEvent.preventDefault();   //doesn't take you to google calendar
     title = clickInfo.event.title;
     date = clickInfo.event.start;
@@ -71,31 +67,7 @@ class DemoApp extends Component {
 
   }
 }
-/*
-    //renderEventContent(clickInfo);
-function renderEventBox(event){
-  return(
-      <li key={event.id}>
-        <b>
-          {formatDate(event.start, {
-            year: "numeric",
-            month: "short",
-            day: "numeric"
-          })}
-        </b>
-        <i>{event.title}</i>
-      </li>
-  );
-}
 
-function renderEventContent(eventInfo) {
-  return (
-    <>
-      <b>{eventInfo.timeText}</b>
-      <i>{eventInfo.event.title}</i>
-    </>
-  );
-}
-*/
 
-export default DemoApp;
+
+export default Calendar;

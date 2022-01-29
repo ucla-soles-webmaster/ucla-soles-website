@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+/*
 html, body {
   margin: 0;
   padding: 0;
@@ -25,9 +26,10 @@ li {
   padding: 0;
 }
 
-b { /* used for event dates/times */
+b { // used for event dates/times
   margin-right: 3px;
 }
+*/
 
 .fc .fc-button-primary {
   color: black;
