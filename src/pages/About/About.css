@@ -1,0 +1,15 @@
+.headings{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.mission {
+    float: left;
+    width: 45%;
+}
+
+.vision {
+    float: right;
+    margin-left: 2%;
+    width: 46.5%;
+}
