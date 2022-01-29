@@ -5,10 +5,6 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import googleCalendarPlugin from '@fullcalendar/google-calendar'
-import { useEffect } from 'preact/hooks'
-//import Navigation from '../../components/Navigation';
-
-//<Navigation transparentNav={false} />
 import './calStyle.css'
 
 let title = " ";

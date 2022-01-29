@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
 import Footer from '../../components/Footer';
 
-//import Calendar from '../../components/Calendar';
+import DemoApp from '../../components/Calendar';
 
 
 import * as ROUTES from '../../constants/routes'
