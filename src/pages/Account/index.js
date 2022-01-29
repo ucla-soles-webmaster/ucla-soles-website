@@ -1,20 +1,29 @@
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
+
 import React, { Component } from 'react';
- 
 import Navigation from '../../components/Navigation';
 import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
-import STARLeaderboard from '../../components/STARLeaderboard';
+import STARLeaderboard from '../../components/STARLeaderboard';  // currently not doing STAR points (2021/22)
 import PasswordChangeForm from '../PasswordChange';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
-
 import { AuthUserContext, withAuthorization } from '../Session';
 
-import './accountStyle.css'
+
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
+import './Account.css'
+
 
 
 
 class AccountPage extends Component {
+  
+
   constructor(props) {
     super(props);
     
@@ -28,6 +37,7 @@ class AccountPage extends Component {
       points: 0,
     }
   }
+
 
   componentWillMount() {
 
@@ -44,7 +54,7 @@ class AccountPage extends Component {
         });
       })
 
-      that.props.firebase.getFirestore().collection("users")
+    that.props.firebase.getFirestore().collection("users")
       .where("email", "==", this.state.userEmail)
       .get()
       .then(function(querySnapshot) {
@@ -52,25 +62,26 @@ class AccountPage extends Component {
           console.log(doc.id, " => ", doc.data());
           that.setState({ user: doc.data() })
         });   
-    });
+      });
 
-      this.props.firebase.getFirestore().collection("users")
-        .get()
-        .then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                // doc.data() is never undefined for query doc snapshots
-                var userData = doc.data();
-                var userID = doc.id;
-                that.setState({ userList: [...that.state.userList, userData] });
-                that.setState({ userIDList: [...that.state.userIDList, userID] });
-            });    
-        });
+    this.props.firebase.getFirestore().collection("users")
+      .get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              var userData = doc.data();
+              var userID = doc.id;
+              that.setState({ userList: [...that.state.userList, userData] });
+              that.setState({ userIDList: [...that.state.userIDList, userID] });
+          });    
+      });
   }
+
 
   updateTeam (name){
     if(name !== null)
       this.setState({mentorTeam: name});
   }
+
 
   changeTeam = (fName, lName, index) => {
     if(index === null)
@@ -86,31 +97,28 @@ class AccountPage extends Component {
 
   }
 
+
   updatePoints(points){
-    if(points!== 0)
+    if (points!== 0)
     this.setState({updatePoints: points});
   }
 
+
   changePoints(index, mentorTeamName){
     var that = this;
-    
-      
-    
-      if(mentorTeamName != null){
-        var dbReference = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
-        console.log(that.state.updatePoints);
-        var points = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
-        points.get().then(function(doc){
-          var currPoints = doc.data();
-          var add = parseInt(currPoints["starpoints"]) + parseInt(that.state.updatePoints);
-          dbReference.update({starpoints: add});
-        });
-        
-      }
   
-    
+    if (mentorTeamName != null) {
+      var dbReference = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
+      var points = that.props.firebase.getFirestore().collection('teams').doc(mentorTeamName);
+      points.get().then(function(doc){
+        var currPoints = doc.data();
+        var add = parseInt(currPoints["starpoints"]) + parseInt(that.state.updatePoints);
+        dbReference.update({starpoints: add});
+      });
+    }
     
   }
+
 
   renderUser = (user, idx) => {
     return (
@@ -133,7 +141,6 @@ class AccountPage extends Component {
     );
   }
 
-  
 
   render() {
     return (
@@ -157,8 +164,6 @@ class AccountPage extends Component {
                   <div className="adminPageLink">
                     ADMIN PAGE
                   </div>
-                  
-                  
                 </Link>
               :
                 <div/>
@@ -227,7 +232,7 @@ class AccountPage extends Component {
                         <div>
                           Your access for the year has revoked. Please sponsor SOLES again this year to gain access.
                         </div>
-                // Alumni
+                // Alumni (no account stuff yet)
                     :
                       <div>
                          

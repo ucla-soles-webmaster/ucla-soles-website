@@ -9,7 +9,6 @@ import Footer from '../../components/Footer';
 
 import { withAuthorization } from '../Session';
 
-import '../Account/accountStyle.css';
 import '../TestBank/hubStyle.css';
 import '../TestSubmit/submit.css';
 import sun from '../../photos/Icons/sunblue.png';

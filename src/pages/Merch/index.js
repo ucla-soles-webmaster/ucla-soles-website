@@ -6,7 +6,6 @@ import Footer from '../../components/Footer';
 
 import { withAuthorization } from '../Session';
 
-import '../Account/accountStyle.css';
 import './merchStyle.css';
 import sun from '../../photos/Icons/sunblue.png';
 

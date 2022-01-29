@@ -1,13 +1,22 @@
-import React, { Component } from 'react';
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
 
+import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import coverPhoto from '../../photos/Covers/About.jpg';
 import Footer from '../../components/Footer';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 
-import './index.css'
+
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
+import 'react-vertical-timeline-component/style.min.css';
+import './About.css'
+
+
 
 
 class About extends Component {

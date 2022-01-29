@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
 
+import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import Footer from '../../components/Footer';

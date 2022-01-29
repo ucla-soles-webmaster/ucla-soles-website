@@ -1,11 +1,21 @@
-import React, { Component } from 'react';
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
 
+import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import coverPhoto from '../../photos/Covers/Contact.jpg';
 import Footer from '../../components/Footer';
 import emailjs from 'emailjs-com';
-import './contact.css';
+
+
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
+import './Contact.css';
+
+
 
 
 function sendEmail(e){
@@ -20,12 +30,15 @@ function sendEmail(e){
     e.target.reset();
 }
 
+
+
 class Contact extends Component {
     
     // add constructor if necessary
     componentDidMount() {
         window.scrollTo(0, 0)
-      }
+    }
+
 
     render() {
         return (
@@ -59,11 +72,6 @@ class Contact extends Component {
                         </div>
                     </form>
                 </div>
-
-
-
-
-
 
                 <br/>
                 <div style = {{textAlign: 'center'}}>

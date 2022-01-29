@@ -1,3 +1,6 @@
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
+
 import React, { Component } from 'react';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
@@ -35,9 +38,15 @@ import Cathy from '../../photos/EBoard/CEED/cathy.jpg'
 
 
 ///////////////////////////////////////////////////////////////
-/* Accent Photo Imports */
+/* CSS Imports */
 
 import './EBoard.css';
+
+
+
+///////////////////////////////////////////////////////////////
+/* Accent Photo Imports */
+
 import rightsun from '../../photos/Icons/rightsun.png'
 import leftsun from '../../photos/Icons/leftsun.png';
 import sun from '../../photos/Icons/sun.png'
@@ -51,7 +60,6 @@ class EBoard extends Component {
     componentDidMount() {
         window.scrollTo(0, 0)
     }
-    
     
 
     render() {
@@ -383,7 +391,6 @@ class EBoard extends Component {
                 
                 </body1> {/* End Photo Grid Section */} 
 
-            
 
                 <br/>
                 <br/>

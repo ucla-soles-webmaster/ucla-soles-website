@@ -1,17 +1,28 @@
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
+
 import React, { Component } from 'react';
-
+import { withAuthorization } from '../Session';
 import FlatList from 'flatlist-react';
-
 import Navigation from '../../components/Navigation';
 import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
 
+
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
+import './AlumNetCSS.css';
+
+
+
+///////////////////////////////////////////////////////////////
+/* Accent Photo Imports */
+
 import rightsun from '../../photos/Icons/rightsun.png'
 import leftsun from '../../photos/Icons/leftsun.png';
 
-import { withAuthorization } from '../Session';
-
-import './alumnet.css';
 
 
 

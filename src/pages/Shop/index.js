@@ -20,15 +20,14 @@ import './index.css'
 // NOTE: for Carousel, images can only be links (not saved on disk) to images, thats why we upload to our Firebase or another website
     const data = [
         {
+            image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Fvalentines-merch-sale.png?alt=media&token=0b2669ef-9bb2-47c0-b312-d5b70e05ba34"
+        },
+        {
             image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Membership%20Shirts.png?alt=media&token=29edfbb7-9d0b-42a9-b7af-3214a8fb75f1"
         },
         {
             image: "https://www.linkpicture.com/q/sticker_slide.png"
         },
-        {
-            image: "https://www.linkpicture.com/q/merch4.jpeg",
-        },
-        
     ];
     const captionStyle = {
         fontSize: '2em',

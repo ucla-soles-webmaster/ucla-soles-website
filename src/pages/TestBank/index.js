@@ -13,7 +13,6 @@ import bank from '../../photos/Icons/bank.svg';
 import view from '../../photos/Icons/view.svg';
 import upload from '../../photos/Icons/upload.svg';
 
-import '../Account/accountStyle.css';
 import './hubStyle.css';
 
 

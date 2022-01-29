@@ -1,7 +1,12 @@
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
+
 import React from 'react';
- 
 import { withAuthorization } from '../Session';
- 
+
+
+
+
 const HomePage = () => (
   <div>
     <h1>Home Page</h1>
