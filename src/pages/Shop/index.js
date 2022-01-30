@@ -63,7 +63,6 @@ class Shop extends Component {
         this.props.firebase.storage.ref("resumes/").listAll().then(function(result) {
             result.items.forEach(function(imageRef) {
               // And finally display them
-              console.log(imageRef.location.path_)
               that.props.firebase.storage
                 .ref("resumes")
                 .child(imageRef.location.path_.split('/')[1])
@@ -88,16 +87,21 @@ class Shop extends Component {
 
         var that = this;
         // Get list of items in merch shop via firestore
-        this.props.firebase.getFirestore().collection("merchItems")
+        this.props.firebase.getFirestore().collection("merchItems").orderBy('order')
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 var itemData = doc.data();
                 var itemName = doc.id;
-                that.setState({ merchItems: [...that.state.merchItems, [itemName, itemData]  ] });
+                that.setState({ merchItems: [...that.state.merchItems, [itemName, itemData]  ] })
+
+
+
             });    
         });
+
+
     }
 
     updateWindowDimensions = () => {
@@ -112,7 +116,6 @@ class Shop extends Component {
     }
 
 
-
     // render item in merch list
     renderMerchItemShop = (item, idx) => {
         var that = this;
@@ -121,9 +124,26 @@ class Shop extends Component {
 
         var s = item[1]["stock_status"]
         var status_color = s == "In Stock." ? "green" : (s == "Out of Stock." ? "red" : "#fcba03")
+
+        // Determine link/route per item SUPER SCUFFED PLEASE CHANGE SOON
+        var link_item = ''
+        switch(idx) {
+            case 0: // Shirt
+                link_item = ROUTES.SHIRT
+                break;
+            case 1: // Sticker
+                link_item = ROUTES.STICKER
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break
+        }
         
         return (
-            <Link to={idx == 0 ? ROUTES.SHIRT : ROUTES.STICKER} style={{textDecoration: "none", color: 'black'}} onClick={(e) => {
+            <Link to={link_item} style={{textDecoration: "none", color: 'black'}} onClick={(e) => {
                 window.current_item = item;
                 window.current_item_URL = item[1]['image_URL']
             }}> 
@@ -152,6 +172,8 @@ class Shop extends Component {
     
 
     render() {
+
+    
         
         return (
             <div style={{fontFamily: 'Poppins'}}>
@@ -220,3 +242,15 @@ const condition = authUser => true;
 
 export default withAuthorization(condition)(Shop);
 
+
+
+function sortMerchItems(a, b) {
+    if (a[1]["order"] > b[1]["order"] === -1) {
+      return -1;
+    }
+    if (a[1]["order"] < b[1]["order"] === 1) {
+      return 1;
+    }
+    // a must be equal to b
+    return 0;
+  }

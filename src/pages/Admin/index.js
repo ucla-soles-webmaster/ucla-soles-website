@@ -356,11 +356,11 @@ class AdminPage extends Component {
 
 
 
-/*
-  ****
-    Change industry codes
-  ****
-*/
+  /*
+    ****
+      Change industry codes
+    ****
+  */
 
   changeCodeGold(new_code) {
     this.props.firebase.getFirestore().collection("misc")
