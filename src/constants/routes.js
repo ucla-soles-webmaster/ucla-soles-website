@@ -32,6 +32,6 @@ export const ALUMNET = '/alumni';
 export const STICKER = '/sticker'
 export const SHIRT = '/shirt'
 export const BEANIE = '/beanie'
-export const TOTEBAG = 'tote_bag'
+export const TOTEBAG = '/tote_bag'
 export const ORDERS = '/orders_for_store'
 export const THANK_YOU = '/thank_you'

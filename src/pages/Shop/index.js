@@ -128,15 +128,17 @@ class Shop extends Component {
         // Determine link/route per item SUPER SCUFFED PLEASE CHANGE SOON
         var link_item = ''
         switch(idx) {
-            case 0: // Shirt
+            case 0: // Beanie
+                link_item = ROUTES.BEANIE
+                break;
+            case 1: // ToteBag
+                link_item = ROUTES.TOTEBAG
+                break;
+            case 2: // Shirt
                 link_item = ROUTES.SHIRT
                 break;
-            case 1: // Sticker
+            case 3: // Sticker
                 link_item = ROUTES.STICKER
-                break;
-            case 2:
-                break;
-            case 3:
                 break;
             default:
                 break
