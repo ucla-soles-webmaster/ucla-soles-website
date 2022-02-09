@@ -46,14 +46,13 @@ service cloud.firestore {
 		}
     
   	// majors available to members
-    match /majors/{major} {
+    match /majors/{anything=**} {
       allow read, write: if true;
     }
     
     // tests available to members
-  	match /tests/{test} {
-    	allow read;
-      allow write;
+  	match /tests/{anything=**} {
+    	allow read, write: if true;
     }
     
     // users available
@@ -82,6 +81,9 @@ service cloud.firestore {
     match /merchItems/{anything=**} {
     	allow read, write: if true;
     }
+    match /misc/{anything=**} {
+    	allow read, write: if true;
+    }
     
-  }
+ }
 }

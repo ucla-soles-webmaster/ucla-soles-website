@@ -20,7 +20,10 @@ import './index.css'
 // NOTE: for Carousel, images can only be links (not saved on disk) to images, thats why we upload to our Firebase or another website
     const data = [
         {
-            image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Fvalentines-merch-sale.png?alt=media&token=0b2669ef-9bb2-47c0-b312-d5b70e05ba34"
+            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Winter%20Drop.png?alt=media&token=4ed9a7eb-115e-4bc3-9d4e-66bb579e7a51'
+        },
+        {
+            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Fvalentines-merch-sale.png?alt=media&token=0b2669ef-9bb2-47c0-b312-d5b70e05ba34'
         },
         {
             image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Membership%20Shirts.png?alt=media&token=29edfbb7-9d0b-42a9-b7af-3214a8fb75f1"
@@ -96,8 +99,6 @@ class Shop extends Component {
                 var itemName = doc.id;
                 that.setState({ merchItems: [...that.state.merchItems, [itemName, itemData]  ] })
 
-
-
             });    
         });
 
@@ -131,13 +132,16 @@ class Shop extends Component {
             case 0: // Beanie
                 link_item = ROUTES.BEANIE
                 break;
-            case 1: // ToteBag
+            case 1: // Logo shirt
+                link_item = ROUTES.LOGO_SHIRT
+                break;
+            case 2: // ToteBag
                 link_item = ROUTES.TOTEBAG
                 break;
-            case 2: // Shirt
+            case 3: // Shirt
                 link_item = ROUTES.SHIRT
                 break;
-            case 3: // Sticker
+            case 4: // Sticker
                 link_item = ROUTES.STICKER
                 break;
             default:
@@ -181,7 +185,9 @@ class Shop extends Component {
             <div style={{fontFamily: 'Poppins'}}>
                 <Navigation transparentNav={false} />
 
-                <div style={this.state.window_width < 600 ? {marginTop: '12vh', paddingTop: '-10px'} : {marginTop: '30px', paddingTop: '-10px'}}>
+                <br/><br/>
+
+                <div style={this.state.window_width < 600 ? {marginTop: '12vh', paddingTop: '-10px'} : {marginTop: '30px', paddingTop: '-40px'}}>
                     <Carousel
                         data={data}
                         time={3100}

@@ -146,7 +146,7 @@ export const ContactUs = () => {
             
             <br/>
             <div style={{textAlign: "center", fontSize: "0.85em", width: "85%", marginLeft: "auto", marginRight: "auto"}}>
-                You will receive an email confirmation and be routed to the Merch Shop upon successful order. <br/> DM Mat Ruiz on GroupMe if any errors occur.
+                Order confirmation email will be sent minutes upon order.
             </div>
             <br/>
             <input type="submit" value="ORDER" class="itemOrderSubmitButton"/>
@@ -250,7 +250,7 @@ class Sticker extends Component {
                             <b>SOLES Sticker No. 1</b>
                         </div>
                         <div style={{fontSize: "1.55em"}}>
-                            $3 (or 2 for $5)
+                            $3 (BOGO)
                         </div>
                         <div style={{fontSize: "1.3em", color: "green", marginTop: "0.5vh", marginBottom: "-1.5vh"}}>
                             In Stock.

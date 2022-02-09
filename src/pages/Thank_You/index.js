@@ -66,7 +66,9 @@ class Thank_You extends Component {
                 </h1>
                 
                 <p style={{textAlign: 'center', paddingLeft: '5%', paddingRight: '5%', fontSize: '1.1em'}}>
-                    Order Confirmation email will be sent within 5 minutes containing pick up info. <br/> Pick ups will be done on Finals week Monday 2pm-7pm at CEED Center. Email uclasoles@gmail.com if you can't make this time. <br/>DM Mat Ruiz on GroupMe if no confirmation email is sent or for any technical errors.
+                    Item Pick-Ups will be done at SOLES General Meetings :) <br/>
+                    Order Confirmation email will be sent within 5 minutes containing pick up info. <br/> 
+                    DM Mat Ruiz on GroupMe if no confirmation email is sent or for any technical errors.
                 </p>
                 <div className="haccountRe">
                     <a href="/merch_shop">

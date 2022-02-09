@@ -366,29 +366,27 @@ class TestBankSubmit extends Component {
 
                     {/* Only students have access to this page */}
                     { this.state.user["career"] === "student"
-                        ?   <div>
+                        ?   
+                            <div>
                                 {/* Fixed Submit a Test title/description */}
                                 <div className="hubbox">
                                     <img src={sun} id="leftsuntb" alt="Left SOLES Sun" />
                                     <p className="hubintroTS">
-                                        Your name and/or work can be censored at your request. <br/>
-                                        Test submissions cannot have someone else's name on it. <br/>
+                                        <br/>
+                                        <b>NOTE: go to uclasoles.org/contest to submit under Test Submission Competition $$$ </b><br/>
                                         Tests can be an actual worked out test, blank copy, or practice test. <br/>
-                                        You will receive a Test View Pass upon verification of the validity of your test. <br/>
+                                    
                                     </p>
                                     <img src={sun} id="rightsuntb" alt="Right SOLES Sun" />
                                 </div>
 
                                 {/* Submit a Test process */}
                                 <div>
-                                    {/* React Swipe allows us to have cool swiping animation between
-                                        steps of choosing department -> class -> submit test */}
                                     <ReactSwipe
                                         className="carousel"
                                         swipeOptions={{ continuous: false }}
                                         ref={el => (reactSwipeEl = el)}
                                     >
-                                        
                                         {/* STEP 1: Department Choice */}
                                         <div>
                                             <fieldset className="FormGroupTS">                
@@ -418,7 +416,6 @@ class TestBankSubmit extends Component {
                                         </div>
 
                         
-
                                         {/* STEP 2: Class Option and Add Class */}
                                         <div>                                      
                                             <fieldset className="FormGroupTS"> 
@@ -498,7 +495,6 @@ class TestBankSubmit extends Component {
 
 
 
-
                                         {/* STEP 3: Test Submission (with Field to add PDF) */}
                                         <div>
                                             <fieldset className="FormGroupTS"> 
@@ -574,10 +570,10 @@ class TestBankSubmit extends Component {
                                                         onChange={(e) => {
                                                             this.setState({ censorName: !this.state.censorName })
                                                         }}
-                                                        className="checkboxTS"
+                                                        className="checkboxTSinvis"
                                                     />
                                                     <label className="checklabelsu"  for="vehicle1"> 
-                                                        Black out (censor) my name
+                                                        
                                                     </label>
                                                 </div>
                                                 <div className="checksu">
@@ -587,10 +583,10 @@ class TestBankSubmit extends Component {
                                                         onChange={(e) => {
                                                             this.setState({ censorWork: !this.state.censorWork })
                                                         }}
-                                                        className="checkboxTS"
+                                                        className="checkboxTSinvis"
                                                     />
                                                     <label className="checklabelsu"  for="vehicle1"> 
-                                                        Black out (censor) my work
+                                                        
                                                     </label>
                                                 </div>
                                                 <div className="checksu">

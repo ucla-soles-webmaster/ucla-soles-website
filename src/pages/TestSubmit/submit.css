@@ -191,6 +191,13 @@
     background: #001d3a;
 }
 
+.checkboxTSinvis {
+    margin-left: 5.2%;
+    margin-right: 3%;
+    background: #001d3a;
+    height: 1%;
+}
+
 .progressbarTS {
     width: 60%;
     margin-top: 1vw;
