@@ -21,9 +21,9 @@ class Calendar extends Component {
         <div className='demo-app-main'>
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin, googleCalendarPlugin]}
-            googleCalendarApiKey='AIzaSyAU6gudK-t-mLH21EEfZVJe7cmvBQyhiwY'
+            googleCalendarApiKey='AIzaSyDiELiu3A2AKFICy8JWJE6vWhs9Qg-lsms'
             events= {{
-              googleCalendarId: 'estrada.diana120@gmail.com'
+              googleCalendarId: 'uclasoles@gmail.com'
             }}
             headerToolbar={{
               left: 'prev,next today',

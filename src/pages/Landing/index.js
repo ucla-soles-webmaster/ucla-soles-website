@@ -56,6 +56,9 @@ class Landing extends Component {
                     <hr className="introBar" /> 
 
                     <br/>
+
+
+                    
                     
                     <div className="introbox" style={{textAlign: 'left'}}>
                         <p className="initIntro" style={{textAlign: 'left', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
@@ -69,7 +72,9 @@ class Landing extends Component {
                     <br/>
   
                     
-                    <Calendar/>
+                        <Calendar/>
+                    
+
 
                     <br/>
                     <br/>

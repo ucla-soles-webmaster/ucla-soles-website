@@ -138,7 +138,7 @@ class EBoard extends Component {
                             </div>
                             <div class="flip-card-back">
                                 {/* Name */} <div className = "backSideText">Aidan Hasegawa</div>
-                                {/* Year | Major */} <div className = "majorFontLong">4rd Year | Civil Engineering</div>
+                                {/* Year | Major */} <div className = "majorFontLong">4th Year | Civil Engineering</div>
                                 {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is selling churros out on Bruin Walk.</div>
                                 <div className = "emailFontShort">uclasoles.ivp@gmail.com</div>    
                             </div>
@@ -158,7 +158,7 @@ class EBoard extends Component {
                             <div class="flip-card-back">
                                 {/* Name */} <div className = "backSideText">Kent Bourgoing</div>
                                 {/* Year | Major */} <div className = "majorFontLong">4th Year | Chemical Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">N/A</div>
+                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory was the 1st General Meeting of the quarter and playing games. Even though I still wasn’t part of the board.</div>
                                 <div className = "emailFont">uclasoles.transferrep@gmail.com</div>    
                             </div>
                         </div>
@@ -177,7 +177,7 @@ class EBoard extends Component {
                             <div class="flip-card-back">
                                 {/* Name */} <div className = "backSideText">Kami Kunes</div>
                                 {/* Year | Major */} <div className = "majorFont">2nd Year | Electrical Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall"></div>
+                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory was when we had our first in-person meeting and I got to hand out pizza.</div>
                                 <div className = "emailFont">uclasoles.treasurer@gmail.com</div>    
                             </div>
                         </div>
@@ -234,7 +234,7 @@ class EBoard extends Component {
                             </div>
                             <div class="flip-card-back">
                                 {/* Name */} <div className = "backSideText">Matthew Ruiz</div>
-                                {/* Year | Major */} <div className = "majorFont">2nd Year | Computer Science</div>
+                                {/* Year | Major */} <div className = "majorFont">3rd Year | Computer Science</div>
                                 {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.</div>
                                 <div className = "emailFontLong">uclasoles.academicchair@gmail.com</div>    
                             </div>
@@ -253,7 +253,7 @@ class EBoard extends Component {
                             </div>
                             <div class="flip-card-back">
                                 {/* Name */} <div className = "backSideText">Robert Valencia</div>
-                                {/* Year | Major */} <div className = "majorFontLong">4nd Year | Mechanical Engineering</div>
+                                {/* Year | Major */} <div className = "majorFontLong">4th Year | Mechanical Engineering</div>
                                 {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is the 2019 Leadership Jr. Retreat. It was such a fun and rewarding experience to spend a day with 
                                 students interested in STEM that have a similar background as I do.</div>
                                 <div className = "emailFont">uclasoles.activities@gmail.com</div>    
@@ -274,7 +274,7 @@ class EBoard extends Component {
                             <div class="flip-card-back">
                                 {/* Name */} <div className = "backSideText">Itzhary Tamayo</div>
                                 {/* Year | Major */} <div className = "majorFontLong">3rd Year | Civil Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall"></div>
+                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory was the Xmas party because I enjoyed spending time with cool people and it made it feel like a home away from home.</div>
                                 <div className = "emailFontLong">uclasoles.cienciasdirector@gmail.com</div>    
                             </div>
                         </div>

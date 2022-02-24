@@ -23,9 +23,6 @@ import './index.css'
             image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Winter%20Drop.png?alt=media&token=4ed9a7eb-115e-4bc3-9d4e-66bb579e7a51'
         },
         {
-            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Fvalentines-merch-sale.png?alt=media&token=0b2669ef-9bb2-47c0-b312-d5b70e05ba34'
-        },
-        {
             image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Membership%20Shirts.png?alt=media&token=29edfbb7-9d0b-42a9-b7af-3214a8fb75f1"
         },
         {
