@@ -31,6 +31,7 @@ import ToteBag from '../ToteBag';
 import Beanie from '../Beanie';
 import LogoShirt from '../LogoShirt';
 import TestBankContestSubmit from '../TestBankContestSubmit';
+import Lunabotics from '../lunabotics'
 
 
 import * as ROUTES from '../../constants/routes';
@@ -75,6 +76,7 @@ const App = () => (
       <Route path={ROUTES.LOGO_SHIRT} component={LogoShirt} />
       <Route path={ROUTES.THANK_YOU} component={Thank_You} />
       <Route path={ROUTES.TESTBANK_CONTEST_SUBMIT} component={TestBankContestSubmit} />
+      <Route path={ROUTES.LUNABOTICS} component={Lunabotics} />
       
 
       {/* Account Pages */}
