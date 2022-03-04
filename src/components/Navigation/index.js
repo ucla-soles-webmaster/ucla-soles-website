@@ -84,11 +84,10 @@ class NavigationAuth extends Component {
             <li className="liNav">
               <Link to={ROUTES.INITIATIVES} style={linkStyle} >Initiatives</Link>
             </li>
-            {/*}
+            
             <li className="liNav">
-                <Link to={ROUTES.TUTORING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Tutoring</Link>
-            </li>
-            */}
+                <Link to={ROUTES.LUNABOTICS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Lunabotics</Link>
+              </li>
             <li className="liNav">
               <Link to={ROUTES.EBOARD} style={linkStyle} >Board</Link>
             </li>
@@ -175,7 +174,7 @@ class NavigationNonAuth extends Component {
               </li>
               {/*
               <li className="liNav">
-                <Link to={ROUTES.TUTORING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Tutoring</Link>
+                <Link to={ROUTES.LUNABOTICS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Lunabotics</Link>
               </li>
               */}
               <li className="liNav">

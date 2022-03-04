@@ -15,6 +15,7 @@ export const EBOARD = '/eboard';
 export const CONTACT = '/contact';
 export const SPONSORS = '/sponsors';
 export const SHOP = '/merch_shop';
+export const LUNABOTICS = '/lunabotics'
 
 // Tutoring Pages
 export const TUTORING = '/tutoring';

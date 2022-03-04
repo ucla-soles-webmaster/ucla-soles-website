@@ -1,0 +1,111 @@
+ .mission {
+    float: right;
+    width: 45%;
+    margin-left: 10%;
+    text-align: left;
+    font-size: 1.1vw;
+}
+
+.about {
+    float: left;
+    width: 45%;
+    margin-left: 5%;
+    text-align: left;
+    font-size: 1.1vw;
+}
+
+.sponsor{
+    font-size: 1.5vw;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+.header{
+    text-align: center;
+    font-size: 2.3vw;
+    color: gray;
+    margin-top: -1%;
+    margin-bottom: 1%;
+    font-weight: 300;
+}
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 50%;
+	height: 10%
+}
+.caption {
+    margin-top: 1%;
+    color: '#001d3a';
+    font-size: 1.5vw;
+}
+.slack {
+    margin-top: 3%;
+    margin-bottom: 5%;
+    font-size: 3vw;
+    color:'#001d3a';
+    text-align: center;
+
+}
+
+.a:link {
+    color: blue;
+    text-align: center;
+    background-color: transparent;
+    text-decoration: none;
+  }
+.a:visited{
+    color: blue;
+    text-decoration: none;
+}
+.a:hover{
+    color: purple;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px){
+    .mission {
+        width: 45%;
+        margin-left: 10%;
+        font-size: 1.9vw;
+    }
+    
+    .about {
+        width: 45%;
+        font-size: 1.9vw;
+        margin-left: 1%;
+    }
+
+    .sponsor{
+        font-size: 2.5vw;
+    }
+    
+    .header{
+        font-size: 4vw;
+    }
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+        width: 60%;
+        height: 20%
+    }
+    .caption {
+        margin-top: 1%;
+        color: '#001d3a';
+        font-size: 2.5vw;
+    }
+    .slack {
+        margin-top: 3%;
+        margin-bottom: 5%;
+        font-size: 4vw;
+        color:'#001d3a';
+        text-align: center;
+    
+    }
+    .header{
+        font-size: 4vw;
+    }
+}
