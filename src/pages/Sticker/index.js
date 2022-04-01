@@ -10,12 +10,12 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import 'react-vertical-timeline-component/style.min.css';
 
-import pic1 from '../../photos/MerchShop/Sticker/pic1_hor.png';
-import pic2 from '../../photos/MerchShop/Sticker/pic2.jpg';
-import pic3 from '../../photos/MerchShop/Sticker/pic3.jpg';
-import pic4 from '../../photos/MerchShop/Sticker/pic4.jpg';
-import pic5 from '../../photos/MerchShop/Sticker/pic5.jpg';
-import pic6 from '../../photos/MerchShop/Sticker/pic6.jpg';
+import pic1 from '../../Photos/MerchShop/Sticker/pic1_hor.png';
+import pic2 from '../../Photos/MerchShop/Sticker/pic2.jpg';
+import pic3 from '../../Photos/MerchShop/Sticker/pic3.jpg';
+import pic4 from '../../Photos/MerchShop/Sticker/pic4.jpg';
+import pic5 from '../../Photos/MerchShop/Sticker/pic5.jpg';
+import pic6 from '../../Photos/MerchShop/Sticker/pic6.jpg';
 
 import { withAuthorization } from '../Session';
 

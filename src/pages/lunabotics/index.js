@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../coverImages/contact.JPG';
+import coverPhoto from '../../Photos/Covers/Contact.jpg';
 import Footer from '../../components/Footer';
-import emailjs from 'emailjs-com';
-import rightsun from '../../coverImages/rightsun.png'
-import leftsun from '../../coverImages/leftsun.png';
+import rightsun from '../../Photos/Icons/rightsun.png'
+import leftsun from '../../Photos/Icons/leftsun.png';
 import './lunabotics.css';
 import roverPhoto from '../../lunaboticsPhotos/lunabotics.jpeg'
 

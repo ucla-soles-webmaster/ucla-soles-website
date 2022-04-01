@@ -8,12 +8,12 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import 'react-vertical-timeline-component/style.min.css';
 
-import pic1 from '../../photos/MerchShop/LogoShirt/image1 copy.jpg';
-import pic2 from '../../photos/MerchShop/LogoShirt/image2 copy.jpg';
-import pic3 from '../../photos/MerchShop/LogoShirt/image3 copy.jpg';
-import pic4 from '../../photos/MerchShop/LogoShirt/image4 copy.jpg';
-import pic5 from '../../photos/MerchShop/LogoShirt/image5 copy.jpg';
-import pic6 from '../../photos/MerchShop/LogoShirt/image6 copy.jpg';
+import pic1 from '../../Photos/MerchShop/LogoShirt/image1 copy.jpg';
+import pic2 from '../../Photos/MerchShop/LogoShirt/image2 copy.jpg';
+import pic3 from '../../Photos/MerchShop/LogoShirt/image3 copy.jpg';
+import pic4 from '../../Photos/MerchShop/LogoShirt/image4 copy.jpg';
+import pic5 from '../../Photos/MerchShop/LogoShirt/image5 copy.jpg';
+import pic6 from '../../Photos/MerchShop/LogoShirt/image6 copy.jpg';
 
 
 

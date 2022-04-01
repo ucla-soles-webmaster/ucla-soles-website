@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import sun from '../../photos/Icons/sun.png';
+import sun from '../../Photos/Icons/sun.png';
 
 
 class Tutor extends Component {

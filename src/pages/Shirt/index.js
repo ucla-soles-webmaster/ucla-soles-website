@@ -8,13 +8,13 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import 'react-vertical-timeline-component/style.min.css';
 
-import back1 from '../../photos/MerchShop/Shirt21-22/back1.jpg';
-import back2 from '../../photos/MerchShop/Shirt21-22/back2.jpg';
-import front_dramatic from '../../photos/MerchShop/Shirt21-22/front-dramatic.jpg';
-import front from '../../photos/MerchShop/Shirt21-22/front.jpg';
-import graphic from '../../photos/MerchShop/Shirt21-22/graphic.png';
-import group1 from '../../photos/MerchShop/Shirt21-22/group1-v1.jpg';
-import group2 from '../../photos/MerchShop/Shirt21-22/group2.jpg';
+import back1 from '../../Photos/MerchShop/Shirt21-22/back1.jpg';
+import back2 from '../../Photos/MerchShop/Shirt21-22/back2.jpg';
+import front_dramatic from '../../Photos/MerchShop/Shirt21-22/front-dramatic.jpg';
+import front from '../../Photos/MerchShop/Shirt21-22/front.jpg';
+import graphic from '../../Photos/MerchShop/Shirt21-22/graphic.png';
+import group1 from '../../Photos/MerchShop/Shirt21-22/group1-v1.jpg';
+import group2 from '../../Photos/MerchShop/Shirt21-22/group2.jpg';
 
 import { withAuthorization } from '../Session';
 

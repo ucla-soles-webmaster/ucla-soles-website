@@ -13,7 +13,7 @@ import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes';
 
 import '../TestBank/hubStyle.css';
-import sun from '../../photos/Icons/sunblue.png';
+import sun from '../../Photos/Icons/sunblue.png';
 
 
 class TestBankContestSubmit extends Component {

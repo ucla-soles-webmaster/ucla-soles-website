@@ -10,7 +10,7 @@ import Footer from '../../components/Footer';
 import step1 from './step1.png'
 import step2 from './step2.png'
 
-import sun from '../../photos/Icons/sun.png';
+import sun from '../../Photos/Icons/sun.png';
 import { Fab } from '@material-ui/core';
 
 

@@ -5,7 +5,7 @@ import * as ROUTES from '../../constants/routes'
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import './style.css';
-import sun from '../../photos/Icons/sun.png';
+import sun from '../../Photos/Icons/sun.png';
 
 
 class Tutoring extends Component {

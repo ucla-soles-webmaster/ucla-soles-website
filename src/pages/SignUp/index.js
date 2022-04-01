@@ -11,7 +11,7 @@ import * as ROUTES from '../../constants/routes';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
-import coverPhoto from '../../photos/Covers/Signup.png';
+import coverPhoto from '../../Photos/Covers/Signup.png';
 import './signUpStyle.css';
 // uyeras
 

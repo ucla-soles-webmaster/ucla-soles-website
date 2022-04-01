@@ -10,17 +10,17 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import 'react-vertical-timeline-component/style.min.css';
 
-import pic1 from '../../photos/MerchShop/Beanie/image1.jpg';
-import pic2 from '../../photos/MerchShop/Beanie/image2.jpg';
-import pic3 from '../../photos/MerchShop/Beanie/image3.jpg';
-import pic4 from '../../photos/MerchShop/Beanie/image4.jpg';
-import pic5 from '../../photos/MerchShop/Beanie/image5.jpg';
-import pic6 from '../../photos/MerchShop/Beanie/image6.jpg';
-import pic7 from '../../photos/MerchShop/Beanie/image7.jpg';
-import pic8 from '../../photos/MerchShop/Beanie/image8.jpg';
-import pic9 from '../../photos/MerchShop/Beanie/image9.jpg';
-import pic10 from '../../photos/MerchShop/Beanie/image10.jpg';
-import pic11 from '../../photos/MerchShop/Beanie/image11.jpg';
+import pic1 from '../../Photos/MerchShop/Beanie/image1.jpg';
+import pic2 from '../../Photos/MerchShop/Beanie/image2.jpg';
+import pic3 from '../../Photos/MerchShop/Beanie/image3.jpg';
+import pic4 from '../../Photos/MerchShop/Beanie/image4.jpg';
+import pic5 from '../../Photos/MerchShop/Beanie/image5.jpg';
+import pic6 from '../../Photos/MerchShop/Beanie/image6.jpg';
+import pic7 from '../../Photos/MerchShop/Beanie/image7.jpg';
+import pic8 from '../../Photos/MerchShop/Beanie/image8.jpg';
+import pic9 from '../../Photos/MerchShop/Beanie/image9.jpg';
+import pic10 from '../../Photos/MerchShop/Beanie/image10.jpg';
+import pic11 from '../../Photos/MerchShop/Beanie/image11.jpg';
 
 import { withAuthorization } from '../Session';
 

@@ -13,7 +13,7 @@ import { withAuthorization } from '../Session';
 ///////////////////////////////////////////////////////////////
 /* CSS Imports */
 
-import './Admin.css';
+import './admin.css';
 
 
 

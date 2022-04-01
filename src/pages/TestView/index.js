@@ -11,7 +11,7 @@ import { withAuthorization } from '../Session';
 
 import '../TestBank/hubStyle.css';
 import '../TestSubmit/submit.css';
-import sun from '../../photos/Icons/sunblue.png';
+import sun from '../../Photos/Icons/sunblue.png';
 
 
 class TestBankView extends Component {

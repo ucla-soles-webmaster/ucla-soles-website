@@ -20,8 +20,8 @@ import './AlumNetCSS.css';
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
-import rightsun from '../../photos/Icons/rightsun.png'
-import leftsun from '../../photos/Icons/leftsun.png';
+import rightsun from '../../Photos/Icons/rightsun.png'
+import leftsun from '../../Photos/Icons/leftsun.png';
 
 
 

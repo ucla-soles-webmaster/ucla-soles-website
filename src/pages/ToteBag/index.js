@@ -10,14 +10,14 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import 'react-vertical-timeline-component/style.min.css';
 
-import pic1 from '../../photos/MerchShop/ToteBag/image1.png';
-import pic2 from '../../photos/MerchShop/ToteBag/image2.png';
-import pic3 from '../../photos/MerchShop/ToteBag/image3.jpg';
-import pic4 from '../../photos/MerchShop/ToteBag/image4.jpg';
-import pic5 from '../../photos/MerchShop/ToteBag/image5.jpg';
-import pic6 from '../../photos/MerchShop/ToteBag/image6.jpg';
-import pic7 from '../../photos/MerchShop/ToteBag/image7.jpg';
-import pic8 from '../../photos/MerchShop/ToteBag/image8.jpg';
+import pic1 from '../../Photos/MerchShop/ToteBag/image1.png';
+import pic2 from '../../Photos/MerchShop/ToteBag/image2.png';
+import pic3 from '../../Photos/MerchShop/ToteBag/image3.jpg';
+import pic4 from '../../Photos/MerchShop/ToteBag/image4.jpg';
+import pic5 from '../../Photos/MerchShop/ToteBag/image5.jpg';
+import pic6 from '../../Photos/MerchShop/ToteBag/image6.jpg';
+import pic7 from '../../Photos/MerchShop/ToteBag/image7.jpg';
+import pic8 from '../../Photos/MerchShop/ToteBag/image8.jpg';
 
 import { withAuthorization } from '../Session';
 

@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../photos/Covers/About.jpg';
+import coverPhoto from '../../Photos/Covers/About.jpg';
 import Footer from '../../components/Footer';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 

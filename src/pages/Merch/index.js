@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 import { withAuthorization } from '../Session';
 
 import './merchStyle.css';
-import sun from '../../photos/Icons/sunblue.png';
+import sun from '../../Photos/Icons/sunblue.png';
 
 
 class Merch extends Component {
