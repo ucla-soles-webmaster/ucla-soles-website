@@ -250,7 +250,7 @@ class Sticker extends Component {
                             <b>SOLES Sticker No. 1</b>
                         </div>
                         <div style={{fontSize: "1.55em"}}>
-                            $3 (BOGO)
+                            $3 (Members $2)
                         </div>
                         <div style={{fontSize: "1.3em", color: "green", marginTop: "0.5vh", marginBottom: "-1.5vh"}}>
                             In Stock.

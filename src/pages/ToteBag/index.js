@@ -239,7 +239,7 @@ class ToteBag extends Component {
                             <b>SOLES Tote Bag</b>
                         </div>
                         <div style={{fontSize: "1.55em"}}>
-                            $10
+                            $10 (Members $5)
                         </div>
                         <div style={{fontSize: "1.3em", color: "green", marginTop: "0.5vh", marginBottom: "-1.5vh"}}>
                             In Stock.

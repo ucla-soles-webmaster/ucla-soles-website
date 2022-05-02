@@ -20,13 +20,10 @@ import './index.css'
 // NOTE: for Carousel, images can only be links (not saved on disk) to images, thats why we upload to our Firebase or another website
     const data = [
         {
-            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Winter%20Drop.png?alt=media&token=4ed9a7eb-115e-4bc3-9d4e-66bb579e7a51'
+            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSpring-Drop-Banner.png?alt=media&token=85a6d215-5141-4587-a09a-3fb7f0fa9ca2'
         },
         {
             image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Membership%20Shirts.png?alt=media&token=29edfbb7-9d0b-42a9-b7af-3214a8fb75f1"
-        },
-        {
-            image: "https://www.linkpicture.com/q/sticker_slide.png"
         },
     ];
     const captionStyle = {
@@ -126,19 +123,28 @@ class Shop extends Component {
         // Determine link/route per item SUPER SCUFFED PLEASE CHANGE SOON
         var link_item = ''
         switch(idx) {
-            case 0: // Beanie
+            case 0:
+                link_item = ROUTES.BUCKET_HAT
+                break;
+            case 1:
+                link_item = ROUTES.SWOLES
+                break;
+            case 2:
+                link_item = ROUTES.STICKER2
+                break;
+            case 3: // Beanie
                 link_item = ROUTES.BEANIE
                 break;
-            case 1: // Logo shirt
+            case 4: // Logo shirt
                 link_item = ROUTES.LOGO_SHIRT
                 break;
-            case 2: // ToteBag
+            case 5: // ToteBag
                 link_item = ROUTES.TOTEBAG
                 break;
-            case 3: // Shirt
+            case 6: // Shirt
                 link_item = ROUTES.SHIRT
                 break;
-            case 4: // Sticker
+            case 7: // Sticker
                 link_item = ROUTES.STICKER
                 break;
             default:

@@ -21,7 +21,6 @@ import AccountPage from '../Account';
 import TestBank from '../TestBank';
 import TestBankView from '../TestView';
 import TestBankSubmit from '../TestSubmit';
-import Merch from '../Merch';
 import AlumNet from '../AlumNet';
 import Shirt from '../Shirt';
 import Sticker from '../Sticker';
@@ -30,6 +29,9 @@ import Thank_You from '../Thank_You';
 import ToteBag from '../ToteBag';
 import Beanie from '../Beanie';
 import LogoShirt from '../LogoShirt';
+import BucketHat from '../BucketHat';
+import SWOLES from '../SWOLES';
+import Sticker2 from '../Sticker2';
 import TestBankContestSubmit from '../TestBankContestSubmit';
 import Lunabotics from '../lunabotics'
 
@@ -74,6 +76,9 @@ const App = () => (
       <Route path={ROUTES.TOTEBAG} component={ToteBag} />
       <Route path={ROUTES.BEANIE} component={Beanie} />
       <Route path={ROUTES.LOGO_SHIRT} component={LogoShirt} />
+      <Route path={ROUTES.BUCKET_HAT} component={BucketHat} />
+      <Route path={ROUTES.SWOLES} component={SWOLES} />
+      <Route path={ROUTES.STICKER2} component={Sticker2} />
       <Route path={ROUTES.THANK_YOU} component={Thank_You} />
       <Route path={ROUTES.TESTBANK_CONTEST_SUBMIT} component={TestBankContestSubmit} />
       <Route path={ROUTES.LUNABOTICS} component={Lunabotics} />
@@ -83,7 +88,6 @@ const App = () => (
       <Route path={ROUTES.TESTBANK} component={TestBank} />
       <Route path={ROUTES.TESTBANK_SUBMIT} component={TestBankSubmit} />
       <Route path={ROUTES.TESTBANK_VIEW} component={TestBankView} />
-      <Route path={ROUTES.MERCH} component={Merch} />
       <Route path={ROUTES.ALUMNET} component={AlumNet} />
 
       

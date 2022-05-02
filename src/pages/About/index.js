@@ -129,21 +129,21 @@ class About extends Component {
                     <br/>
                     <div id='award'>
                         <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
-                            2020 Runner Up for Bruin Development Award<br/>
+                            Blue Chip Chapter Award 2021, 2020, 2017, 2016, 2015<br/>
                         </div>
                         <div style={{fontSize: '1.1vw', fontFamily: 'Poppins', textAlign:'center', lineHeight:'1.4vw', color: '#001d3a', marginLeft:'30%',marginRight:'30%'}}>
-                            Recognized by UCLA's Engineering Society for our commitment to developing our
-                            members.
+                            Awarded during the annual SHPE Regional Leadership Development Conference to chapters 
+                            shown to provide outstanding metrics throughout the year, exhibiting growth and success.
                         </div>
                     </div>
                     <br/>
                     <div id='award'>
                         <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
-                            Blue Chip Chapter Award 2015-2017 & 2020<br/>
+                            2020 Runner Up for Bruin Development Award<br/>
                         </div>
                         <div style={{fontSize: '1.1vw', fontFamily: 'Poppins', textAlign:'center', lineHeight:'1.4vw', color: '#001d3a', marginLeft:'30%',marginRight:'30%'}}>
-                            Awarded during the annual SHPE Regional Leadership Development Conference to chapters 
-                            shown to provide outstanding metrics throughout the year, exhibiting growth and success.
+                            Recognized by UCLA's Engineering Society for our commitment to developing our
+                            members.
                         </div>
                     </div>
                     <br/>

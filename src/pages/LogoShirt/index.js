@@ -295,7 +295,7 @@ class LogoShirt extends Component {
                             <b>Logo Competition Shirt</b>
                         </div>
                         <div style={{fontSize: "1.55em"}}>
-                            $20
+                            $20 (Members $10)
                         </div>
                         <div style={{fontSize: "1.3em", color: "green", marginTop: "0.7vh", marginBottom: "-1.5vh"}}>
                             In Stock.

@@ -301,7 +301,7 @@ class Shirt extends Component {
                             <b>SOLES Membership Shirt</b>
                         </div>
                         <div style={{fontSize: "1.55em"}}>
-                            $20 (BOGO)
+                            $20 (Members $10)
                         </div>
                         <div style={{fontSize: "1.2em"}}>
                             Members get first shirt for free!
