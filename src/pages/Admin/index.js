@@ -471,7 +471,7 @@ class AdminPage extends Component {
 
 
   // Upload image of item
-  uploadImage(e) {
+    uploadImage(e) {
     var that = this;
     var file = e.target.files;
     var reader = new FileReader();
@@ -491,18 +491,57 @@ class AdminPage extends Component {
   // Add item to shop (firestore/firebase-storage)
   addItem(new_item) {
 
+    const f = document.getElementById('files');
+
     var that = this;
 
     var d = new Date();
     var item_image_name = "item" + d.getMonth() + d.getDate() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds() + ".jpg"
-
-    // Add to firestore database
-    this.props.firebase.getFirestore().collection("merchItems").doc(new_item[0]).set({
+    if (new_item[4] == "One Size" || new_item[4] == null)
+    {
+      if (new_item[4] == null) new_item[4] = "One Size";
+      if (new_item[5] == null) new_item[5] = 0;
+      // Add to firestore database
+      this.props.firebase.getFirestore().collection("merchItems").doc(new_item[0]).set({
         itemName: new_item[0],
         cost: new_item[1],
-        stock_status: that.state.newMerchItem_status,
+        stock_status: new_item[3],
+        // storage_image_name: 'resumes/' + item_image_name,
+        storage_image_name: 'resumes/' + new_item[0],
+        image_URL: '',
+        url_ext: '/item?item={' + new_item[2] + '}',
+        oneSize: true,
+        count: new_item[5]
+        })
+      .then(function() {
+        console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+        console.error("Error writing document: ", error);
+      });
+    }
+    else
+    {
+      if (new_item[6] == null) new_item[6] = 0;
+      if (new_item[7] == null) new_item[7] = 0;
+      if (new_item[8] == null) new_item[8] = 0;
+      if (new_item[9] == null) new_item[9] = 0;
+      if (new_item[10] == null) new_item[10] = 0;
+      
+      // Add to firestore database
+      this.props.firebase.getFirestore().collection("merchItems").doc(new_item[0]).set({
+        itemName: new_item[0],
+        cost: new_item[1],
+        stock_status: new_item[3],
         storage_image_name: 'resumes/' + item_image_name,
-        image_URL: ''
+        image_URL: '',
+        url_ext: '/item?item={' + new_item[2] + '}',
+        oneSize: false,
+        count_S: new_item[6],
+        count_M: new_item[7],
+        count_L: new_item[8],
+        count_XL: new_item[9],
+        count_XXL: new_item[10]
       })
       .then(function() {
         console.log("Document successfully written!");
@@ -510,6 +549,7 @@ class AdminPage extends Component {
       .catch(function(error) {
         console.error("Error writing document: ", error);
       });
+    }
 
     // Upload item image to firebase storage
     var storageRef = this.props.firebase.storage.ref();
@@ -547,7 +587,7 @@ class AdminPage extends Component {
         // Unknown error occurred, inspect error.serverResponse
             break;
         default:
-            // Idk if this should even happe 
+            // Idk if this should even happen
             break;
     }
     }, function() {
@@ -614,7 +654,9 @@ class AdminPage extends Component {
               <p><b>Add a new item: </b><i>(note on image: get highest resolution, transparent or white background only, 1:1 photo ratio only - add white square background for this if needed)</i></p>
               <input type = "text" placeholder="Item name (no slashes)" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_name: e.target.value}) }/>
               &nbsp;&nbsp;&nbsp;
-              $<input type = "text" placeholder="Cost" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_cost: e.target.value}) }/>
+              $<input type = "number" min = "1" placeholder="Cost" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_cost: e.target.value}) }/>
+              &nbsp;&nbsp;&nbsp;
+              <input type = "text" placeholder="URL extension" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_url_ext: e.target.value}) }/>
               &nbsp;&nbsp;&nbsp;
               <label>Upload image of item:</label><input type="file" onChange={(e)=>this.uploadImage(e)} /> 
               <Form.Control as="select" onChange={this.selectStockStatus.bind(this)}>
@@ -623,12 +665,39 @@ class AdminPage extends Component {
                   <option value="Coming Soon.">Coming Soon.</option>                             
               </Form.Control>
               &nbsp;&nbsp;&nbsp;
+              <Form.Control as="select" onChange={e => this.setState({newMerchItem_sizetype: e.target.value})}>
+                  <option value="One Size">One Size</option>
+                  <option value="Multiple Sizes">Multiple Sizes</option>                          
+              </Form.Control>
+              
+              <br/><br/>
+              <p><b> Add size counts:</b> <i>Leave blank to initialize as 0</i></p>
+
+              <input disabled={(this.state.newMerchItem_sizetype == "Multiple Sizes")} 
+                type = "number" min = "0"
+                placeholder="Count" 
+                id="mentorTeamName" 
+                onChange={ e => this.setState({newMerchItem_count: e.target.value}) }/>
+              
+              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)} 
+                type = "number" min = "0" placeholder="Small count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_S: e.target.value}) }/>
+              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+                type = "number" min = "0" placeholder="Medium count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_M: e.target.value}) }/>
+              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+                type = "number" min = "0" placeholder="Large count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_L: e.target.value}) }/>
+              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+                type = "number" min = "0" placeholder="XL count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_XL: e.target.value}) }/>
+              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+                type = "number" min = "0" placeholder="XXL count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_name_XXL: e.target.value}) }/>
+              &nbsp;&nbsp;&nbsp;
               <input 
                 type ="submit" 
                 disabled={(this.state.newMerchItem_cost == '' || this.state.newMerchItem_name == '' || this.state.file_data == '')} 
                 className="btn btn-info" 
                 value="ADD MERCH ITEM" 
-                onClick={()=>this.addItem( [this.state.newMerchItem_name, this.state.newMerchItem_cost, this.state.newMerchItem_status] )}>
+                onClick={()=>this.addItem( [this.state.newMerchItem_name, this.state.newMerchItem_cost, this.state.newMerchItem_url_ext, this.state.newMerchItem_status, 
+                  this.state.newMerchItem_sizetype, this.state.newMerchItem_count, this.state.newMerchItem_count_S, this.state.newMerchItem_count_M, this.state.newMerchItem_count_L, 
+                  this.state.newMerchItem_count_XL, this.state.newMerchItem_count_XXL] )}>
               </input>
               
               <br/><br/><br/>

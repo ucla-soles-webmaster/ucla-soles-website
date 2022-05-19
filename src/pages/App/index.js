@@ -34,6 +34,7 @@ import SWOLES from '../SWOLES';
 import Sticker2 from '../Sticker2';
 import TestBankContestSubmit from '../TestBankContestSubmit';
 import Lunabotics from '../lunabotics'
+import Item from '../ItemTemplate'
 
 
 import * as ROUTES from '../../constants/routes';
@@ -44,9 +45,7 @@ import { withAuthentication } from '../Session';
 const App = () => (
   <Router>
     <div>
-
-
-
+      
       {/*
         These Route components not shown visually.
         Only used behind the scenes with routing the DOM.
@@ -82,7 +81,7 @@ const App = () => (
       <Route path={ROUTES.THANK_YOU} component={Thank_You} />
       <Route path={ROUTES.TESTBANK_CONTEST_SUBMIT} component={TestBankContestSubmit} />
       <Route path={ROUTES.LUNABOTICS} component={Lunabotics} />
-      
+      <Route path={ROUTES.ITEM} component={Item} />
 
       {/* Account Pages */}
       <Route path={ROUTES.TESTBANK} component={TestBank} />
