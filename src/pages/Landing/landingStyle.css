@@ -61,15 +61,194 @@
     animation: 9s ease-in-out 0s 1 slideup;
 }
 
+.MessageFromPresident
+{
+    width: 100%;
+    display: flex;
+    padding-left: 6.5%;
+    padding-right:6.5%;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
 .presidentPhoto {
-    float: left;
-    width: 30%;
-    
+    flex: 0.6;
+    padding: 2%;
 }
 
 .presidentMessage {
-    float: right;
-    width: 65%;
-    margin-left: 0%;
+    flex: 1.4;
+    padding: 2%;
+    font-family:'Poppins';
 }
 
+.presidentTitle
+{
+    margin-bottom: 1vh;
+    color: gray;
+    font-size:2vw;
+}
+
+.presidentSubMessage
+{
+    font-size: 1vw;
+    line-height: 1.4em;
+    color: #001d3a;
+}
+
+.presidentContactInfo{
+    color: gray;
+}
+
+.introMessage
+{
+    font-family: 'Poppins';
+    font-size: 2.4vw;
+    margin-top: -1.5%;
+    margin-bottom: -3%;
+    font-weight: 415;
+    margin-right: 18.5%;
+    margin-left: 18.5%;
+    color: gray;
+}
+.introSubMessage
+{
+    font-family: 'Poppins';
+    font-size: 1.2vw;
+    font-weight: normal;
+    color: #001d3a;
+}
+
+.calendarMessage {
+    margin-top: -1vh;
+    font-family: 'Poppins';
+    font-size: 2vw;
+    margin-bottom: 0.1vw;
+    font-weight: 420;
+    margin-left: 18.5%;
+    margin-right: 18.5%;
+    color: gray;
+}
+.calendarSubMessage
+{
+    font-size: 1.1vw;
+    font-family: 'Poppins';
+    line-height: 2.4vh;
+    display: block;
+    margin-bottom: -1vh;
+    color: #001d3a;
+}
+
+
+
+@media screen and (max-width: 1500px) {
+    .introMessage
+    {
+        font-size: 2.45vw;
+    }
+    .introSubMessage
+    {
+        font-size: 1.4vw;
+    }
+    .calendarMessage
+    {
+        font-size: 1.95vw;
+        line-height: 5vh;
+    }
+    .calendarSubMessage
+    {
+        font-size: 1.35vw;
+    }
+    .presidentTitle
+    {
+        font-size: 2.1vw;
+    }
+    .presidentSubMessage
+    {
+        font-size: 1.15vw;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .introMessage
+    {
+        font-size: 3.05vw;
+        margin-left: 16%;
+        margin-right: 16%;
+    }
+    .introSubMessage
+    {
+        font-size: 1.9vw;
+    }
+    .calendarMessage
+    {
+        font-size: 2.8vw;
+        line-height: 4vh;
+        margin-left: 16%;
+        margin-right: 16%;
+    }
+    .calendarSubMessage
+    {
+        font-size: 1.75vw;
+    }
+    .presidentTitle
+    {
+        font-size: 2.2vw;
+        margin-left: 16%;
+        margin-right: 16%;
+    }
+    .presidentSubMessage
+    {
+        font-size: 1.65vw;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .introMessage
+    {
+        font-size: 3.9vw;
+        margin-left: 13%;
+        margin-right: 13%;
+    }
+    .introSubMessage
+    {
+        font-size: 3.05vw;
+    }
+    .calendarMessage
+    {
+        font-size: 3.6vw;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 2%;
+        line-height: 4.2vh;
+    }
+    .calendarSubMessage
+    {
+        font-size: 2.75vw;
+    }
+
+    .MessageFromPresident
+    {
+        flex-direction: column;
+    }
+    .presidentPhoto
+    {
+        padding-left: 30%;
+        padding-right: 30%;
+    }
+    .presidentTitle
+    {
+        text-align: center;
+        font-size: 3.6vw;
+    }
+    .presidentSubMessage
+    {
+        font-size: 2.75vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .calendarMessage{
+        line-height: 2vh;
+    }
+}
