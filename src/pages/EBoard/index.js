@@ -14,22 +14,20 @@ import coverPhoto from '../../Photos/Covers/EBoard.jpg';
 import blank from '../../Photos/EBoard/blank.jpg'
 
 /* President */ import Kelly from '../../Photos/EBoard/Kelly.jpg'
-/* EVP */ import Mayra from '../../Photos/EBoard/Mayra.jpg'
-/* IVP */ import Aidan from '../../Photos/EBoard/Aidan.jpg'
+/* EVP */ import Kami from '../../Photos/EBoard/Kami.jpg' 
+/* IVP */ import Itzhary from '../../Photos/EBoard/Itzhary.jpg'
 
-/* Treasurer */ import Kami from '../../Photos/EBoard/Kami.jpg'
-/* Secretary */ import Fabrizio from '../../Photos/EBoard/Fabrizio.jpg'
-/* Transfer */ import Kent from '../../Photos/EBoard/Kent.jpg'
+/* PDC */ import Mat from '../../Photos/EBoard/Mat.jpg'
+/* Academic */ 
+/* Transfer */ 
 
-/* Tutoring */ import Marisa from '../../Photos/EBoard/Marisa.jpg'
-/* Academic */import Mat from '../../Photos/EBoard/Mat.jpg'
-/* Activities */ import Robert from '../../Photos/EBoard/Robert.jpg'
+/* Treasurer */ import Marisa from '../../Photos/EBoard/Marisa.jpg'
+/* Secretary */ 
+/* Activities */ 
 
-/* Ciencias */ import Itzhary from '../../Photos/EBoard/Itzhary.jpg'
-/* Tech */ import Trevor from '../../Photos/EBoard/Trevor.jpg'
-/* LeaderSHPE Jr */ import Benito from '../../Photos/EBoard/Benito.jpg'
-
-/* Intern 1 */ import Juan from '../../Photos/EBoard/Juan.jpg'
+/* Ciencias */
+/* LeaderSHPE Jr */ 
+/* Tech */ 
 
 /* CEED Staff */
 import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
