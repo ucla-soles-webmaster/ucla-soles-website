@@ -1,7 +1,5 @@
 import FlatList from 'flatlist-react';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../../constants/routes'
 
 import { withAuthorization } from '../Session';
 
@@ -301,32 +299,3 @@ class Orders extends Component {
 const condition = authUser => true;
  
 export default withAuthorization(condition)(Orders);
-
-
-
-const Field = ({
-  label,
-  id,
-  type,
-  placeholder,
-  required,
-  autoComplete,
-  value,
-  onChange,
-  formrowclass
-}) => (
-  <div>
-    <label >
-      {label}
-    </label>
-    <input
-      id={id}
-      type={type}
-      placeholder={placeholder}
-      required={required}
-      autoComplete={autoComplete}
-      value={value}
-      onChange={onChange}
-    />
-  </div>
-);

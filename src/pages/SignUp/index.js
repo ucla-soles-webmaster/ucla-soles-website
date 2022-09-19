@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import Form from 'react-bootstrap/Form'
-import { Grid } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -271,9 +269,6 @@ class SignUpFormBase extends Component {
             linkedin,
             first_year,
             newsletter,
-            signup_local,
-            signup_national,
-            no_membership,
             join_mentorship,
             mentor,
             mentee,
@@ -1001,17 +996,3 @@ const Field = ({
       />
     </div>
   );
-
- const FormRow = ({ item, national_check, local_check, row_height, padding_top, padding_top_label, check_height }) => (
-      <Grid container spacing={0}>
-        <Grid item xs={7} spacing={0} >
-          <Paper square elevation={2} style={{height: row_height, fontSize: "0.95vw", padding: "0.5vw" }} >{item}</Paper>
-        </Grid>
-        <Grid item xs={2} spacing={0}>
-          <Paper square style={{height: check_height, fontSize: "0.95vw", padding: "0.5vw", paddingTop: padding_top, textAlign: "center" }} >{national_check}</Paper>
-        </Grid>
-        <Grid item xs={2} spacing={0}>
-          <Paper square style={{ height: check_height, fontSize: "0.95vw", padding: "0.5vw", paddingTop: padding_top, textAlign: "center" }} >{local_check}</Paper>
-        </Grid>
-      </Grid>
-    );

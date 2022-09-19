@@ -11,7 +11,6 @@ import step1 from './step1.png'
 import step2 from './step2.png'
 
 import sun from '../../Photos/Icons/sun.png';
-import { Fab } from '@material-ui/core';
 
 
 class TutoringStudent extends Component {
@@ -49,8 +48,8 @@ class TutoringStudent extends Component {
     render() {
 
         const isInvalid = 
-            this.state.studentName == '' ||
-            this.state.guardianName == '';
+            this.state.studentName === '' ||
+            this.state.guardianName === '';
 
         return (
             <div className="addPoppins">
@@ -186,16 +185,16 @@ class TutoringStudent extends Component {
 
                                     <ol className="studentNextSteps">
                                         <li>
-                                            Click on this <a href='https://teams.microsoft.com/join/n6dz5soy00ws' target="_blank">link</a> in a new tab.
+                                            Click on this <a href='https://teams.microsoft.com/join/n6dz5soy00ws' target="_blank" rel="noopener noreferrer">link</a> in a new tab.
                                             <br/>
-                                            <img src={step1} className="step1Photo" />
+                                            <img src={step1} alt="step 1" className="step1Photo" />
                                             <br/>
                                             <br/>
                                         </li>
                                         <li>
                                             Fill out name and email to send a request for access to the Tutoring Platform.
                                             <br/>
-                                            <img src={step2} className="step1Photo" />
+                                            <img src={step2} alt="step 2" className="step1Photo" />
                                             <br/>
                                             <br/>
                                         </li>

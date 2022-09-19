@@ -64,7 +64,7 @@ class Lunabotics extends Component {
 
                 <div class="slack">
                     Interested? Join our&nbsp;
-                    <a href="https://join.slack.com/t/slack-cs75556/shared_invite/zt-whbw3kv4-bANzzCGegburAnj8tLwCRw" style={{textDecoration: 'none'}} target="_blank">Slack!</a>
+                    <a href="https://join.slack.com/t/slack-cs75556/shared_invite/zt-whbw3kv4-bANzzCGegburAnj8tLwCRw" rel="noopener noreferrer" style={{textDecoration: 'none'}} target="_blank">Slack!</a>
                 </div>
 
 

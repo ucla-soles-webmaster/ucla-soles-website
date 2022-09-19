@@ -1,8 +1,6 @@
 
-import React, { Component, useRef } from 'react';
-import { GoogleSpreadsheet } from "google-spreadsheet";
+import React, { Component } from 'react';
 import emailjs from 'emailjs-com';
-import { useHistory } from 'react-router-dom';
 
 import { Carousel } from 'react-carousel-minimal';
 
@@ -132,7 +130,7 @@ class ToteBag extends Component {
         var month = d.getMonth()+1
 
         //Add order to totebag Orders list
-        var order_date = "Ordered on - " + "Month: " + month + "   Day: " + d.getDate() + "   Year: " + d.getFullYear()
+        var order_date = "Ordered on - Month: " + month + "   Day: " + d.getDate() + "   Year: " + d.getFullYear()
         var order_doc_name = "order" + d.getMonth()+1 + d.getDate() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds()
         this.props.firebase.getFirestore().collection("misc").doc("orders").collection("orders_totes").doc(order_doc_name).set({
             name: that.state.name_form,
@@ -300,14 +298,14 @@ class ToteBag extends Component {
                             <br/>
 
                             {
-                                this.state.clicked_order == false 
+                                this.state.clicked_order === false 
                                     ?
                                         this.state.tote_count > 0
                                             ?
                                                 <input  type="submit" 
                                                     value="ORDER" 
                                                     class="itemOrderSubmitButton" 
-                                                    disabled={this.state.name_form == '' || this.state.email_form == ''} 
+                                                    disabled={this.state.name_form === '' || this.state.email_form === ''} 
                                                 />
                                             :
                                                 <input  type="submit" 
@@ -347,34 +345,3 @@ class ToteBag extends Component {
 const condition = authUser => true;
 
 export default withAuthorization(condition)(ToteBag);
-
-
-
-const Field = ({
-    label,
-    id,
-    type,
-    placeholder,
-    required,
-    autoComplete,
-    value,
-    onChange,
-    formrowclass
-  }) => (
-    <div>
-      <label htmlFor={id}>
-        {label}
-      </label>
-      &nbsp;
-      <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        autoComplete={autoComplete}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
-  );
-

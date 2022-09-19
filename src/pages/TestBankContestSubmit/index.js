@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
 
 import Navigation from '../../components/Navigation';
-import AccountNav from '../../components/AccountNav';
 import Progress from 'react-progressbar';
 import FlatList from 'flatlist-react';
 import Form from 'react-bootstrap/Form'
@@ -82,7 +81,6 @@ class TestBankContestSubmit extends Component {
         // Get all users from test submitters
         var that = this;
         that.setState({ submittersList: [] })
-        var that = this;
         this.props.firebase.getFirestore().collection("misc").doc("test_submitters").collection("test_submitters")
             .get()
             .then(function(querySnapshot) {
@@ -356,7 +354,7 @@ class TestBankContestSubmit extends Component {
             var submissions1 = 0;
             
             for(var i = 0; i < that.state.submittersList.length; i++) {
-                if(that.state.submittersList[i][0] == that.state.submitter_name) {
+                if(that.state.submittersList[i][0] === that.state.submitter_name) {
                     inCol = true;
                     submissions1 = that.state.submittersList[i][1]
                     console.log("found user")
@@ -365,7 +363,7 @@ class TestBankContestSubmit extends Component {
                 }
             }
 
-            if(inCol == true) {
+            if(inCol === true) {
                 // add it to existing doc
                 that.props.firebase.getFirestore().collection("misc").doc("test_submitters").collection("test_submitters").doc(that.state.submitter_name).set({
                     submissions: submissions1 + 1
@@ -409,7 +407,7 @@ class TestBankContestSubmit extends Component {
 
             //add test pass to user
             // find user ID of user provided email
-            if (that.state.submitter_email != '') {
+            if (that.state.submitter_email !== '') {
                 //get user id
                 that.props.firebase.getFirestore().collection("users")
                     .where("email", "==", that.state.submitter_email)

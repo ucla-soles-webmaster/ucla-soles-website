@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import AccountNav from '../../components/AccountNav';
 import Footer from '../../components/Footer';
-import STARLeaderboard from '../../components/STARLeaderboard';  // currently not doing STAR points (2021/22)
 import PasswordChangeForm from '../PasswordChange';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'

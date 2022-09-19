@@ -1,18 +1,29 @@
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
+
 import React, { Component } from 'react';
 import { Carousel } from 'react-carousel-minimal';
 import FlatList from 'flatlist-react';
 import { Link } from 'react-router-dom';
-
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import 'react-vertical-timeline-component/style.min.css';
-import sun from '../../Photos/Icons/sunblue.png';
-
 import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes'
 
+
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
+import 'react-vertical-timeline-component/style.min.css';
 import './index.css'
 
+
+
+///////////////////////////////////////////////////////////////
+/* Accent Photo Imports */
+
+import sun from '../../Photos/Icons/sunblue.png';
 
 
 
@@ -113,12 +124,9 @@ class Shop extends Component {
 
     // render item in merch list
     renderMerchItemShop = (item, idx) => {
-        var that = this;
-        var merchImageIndex = 0;
-        var image_url = '';
 
         var s = item[1]["stock_status"]
-        var status_color = s == "In Stock." ? "green" : (s == "Out of Stock." ? "red" : "#fcba03")
+        var status_color = s === "In Stock." ? "green" : (s === "Out of Stock." ? "red" : "#fcba03")
 
         // Determine link/route per item SUPER SCUFFED PLEASE CHANGE SOON
         var link_item = ''
@@ -252,16 +260,3 @@ class Shop extends Component {
 const condition = authUser => true;
 
 export default withAuthorization(condition)(Shop);
-
-
-
-function sortMerchItems(a, b) {
-    if (a[1]["order"] > b[1]["order"] === -1) {
-      return -1;
-    }
-    if (a[1]["order"] < b[1]["order"] === 1) {
-      return 1;
-    }
-    // a must be equal to b
-    return 0;
-  }
