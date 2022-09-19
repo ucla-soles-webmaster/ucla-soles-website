@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
 import { withAuthorization } from '../Session';
 
-
+import * as doc from 'firebase/firestore';
+import * as deleteDoc from 'firebase/firestore';
 
 ///////////////////////////////////////////////////////////////
 /* CSS Imports */
@@ -48,7 +49,14 @@ class AdminPage extends Component {
       newMerchItem_cost: '',
       newMerchItem_status: 'In Stock.',
       file_data: '',
-      url_cur: ''
+      url_cur: '',
+      currentGMSignInLink: '',
+      newGMSignInLink: '',
+      gmSlides: [],
+      newGMSlidesLink: '',
+      newGMSlidesName: '',
+      delGMSlidesLink: '',
+      delGMSlidesName: ''
     };
 
   }
@@ -164,6 +172,30 @@ class AdminPage extends Component {
         });
       });
 
+    that.props.firebase.getFirestore().collection("gmSlides")
+    .get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        var userData = doc.data();
+        var userID = doc.id;
+        that.setState({ gmSlides: [...that.state.gmSlides, userData] });
+      });
+    });
+
+
+    that.props.firebase.getFirestore().collection("misc").doc("gmSignInLink")
+      .get()
+      .then(function(doc) {
+        if (doc.exists) {
+          var gm_link_data = doc.data();
+          that.setState({ currentGMSignInLink: gm_link_data['link'] });
+          } else {
+              // doc.data() will be undefined in this case
+              console.log("Can't get GM sign in link from firebase inventory!");
+          }
+      }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
   }
 
 
@@ -445,6 +477,24 @@ class AdminPage extends Component {
       Merch Shop functions
     ****
   */
+  renderGMSlides = (item, idx) => {
+    var slideName = item["name"];
+    var slideLink = item["link"];
+    /*console.log("this is the name", slideName);
+    console.log("this is the link", slideLink);*/
+    
+    return(
+      <div class="adminUserCell">
+        <div class="adminUserName">
+          <b>Name: </b> &nbsp;
+          { item["name"] } &nbsp;&nbsp;&nbsp; Link: {item["link"]} &nbsp;&nbsp;&nbsp;
+        </div>
+        
+        &nbsp;&nbsp;
+      </div>
+
+    )
+  }
 
   // render item in merch list
   renderMerchItem = (item, idx) => {
@@ -487,7 +537,45 @@ class AdminPage extends Component {
     }
   }
 
-    
+  //Update GM Sign In Link (firestore/firebase-storage)
+  updateSignInLink(new_link) {
+    var that = this;
+    this.props.firebase.getFirestore().collection("misc").doc("gmSignInLink").update({
+      link: new_link
+    })
+    .then(function() {
+      console.log("GM Sign In Link successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document for GM Sign In Link: ", error);
+    });
+  }
+
+  addSlidesLink(new_link){
+    var that = this;
+    this.props.firebase.getFirestore().collection("gmSlides").doc(new_link[0]).set({
+      name: new_link[0],
+      link: new_link[1]
+    })
+    .then(function() {
+      console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+    });
+  }
+
+  deleteGMSlide(del_link){
+    var that = this;
+    this.props.firebase.getFirestore().collection("gmSlides").doc(del_link).delete()
+    .then(function() {
+      console.log("Document successfully deleted!");
+    })
+    .catch(function(error) {
+      console.error("Error deleting document: ", error);
+    });
+  }
+
   // Add item to shop (firestore/firebase-storage)
   addItem(new_item) {
 
@@ -607,6 +695,7 @@ class AdminPage extends Component {
     });
 
     this.setState({merchItems: [] })
+    this.setState({gmSlides: [] })
     this.componentDidMount()
   }
 
@@ -647,6 +736,68 @@ class AdminPage extends Component {
                 This page is only viewable to admins (EBoard and Web Team).
               </p>
               <br/>
+
+              <h1>GM Sign In Link</h1>
+              <p><i>Refresh page to view updated link</i></p>
+              <input 
+                type = "text"
+                placeholder="Sign In Form Link"
+                id="mentorTeamName"
+                onChange={ e => this.setState({newGMSignInLink: e.target.value}) }
+              />
+              &nbsp;&nbsp;&nbsp;
+
+              <input
+                type= "submit" 
+                value="Update Link"
+                disabled = {this.state.newGMSignInLink == ''}
+                className="btn btn-info" 
+                onClick={()=>this.updateSignInLink(this.state.newGMSignInLink)}
+              />
+
+              <h2><b>Current Link: </b>{this.state.currentGMSignInLink}</h2>
+
+              <br/><br/>
+
+              <h1>GM Slides</h1>
+              <p><i>Refresh page to view added/deleted slides</i></p>
+              <p><b>Add a new slide</b></p>
+              <input type="text" placeholder="Slide Name" id="mentorTeamName" onChange={ e => this.setState({newGMSlidesName: e.target.value})} />
+              &nbsp;&nbsp;&nbsp;
+              <input type= "text" placeholder="Slide Link" id="mentorTeamName" onChange={ e => this.setState({newGMSlidesLink: e.target.value})} />
+              &nbsp;&nbsp;&nbsp;
+
+              <input 
+                type="submit"
+                disabled={(this.state.newGMSlidesLink == '' || this.state.newGMSlidesName == '')}
+                className="btn btn-info" 
+                value="Add Slide" 
+                onClick={()=>this.addSlidesLink([this.state.newGMSlidesName, this.state.newGMSlidesLink])}
+              >
+              </input>
+
+
+              <p><b>Delete a slide</b></p>
+              <input type="text" placeholder="Slide Name" id="mentorTeamName" onChange={ e => this.setState({delGMSlidesName: e.target.value})} />
+              &nbsp;&nbsp;&nbsp;
+
+              <input 
+                type="submit"
+                disabled={(this.state.delGMSlidesName == '')}
+                className="btn btn-info" 
+                value="Delete Slide" 
+                onClick={()=>this.deleteGMSlide(this.state.delGMSlidesName)}
+              >
+              </input>
+              
+
+              <br/><br/><br/>
+              
+              <FlatList
+                list={this.state.gmSlides}
+                renderItem={this.renderGMSlides}
+              />
+
 
               <h1>Shop Items</h1>
               {/* Adding new item to shop */}

@@ -18,9 +18,6 @@ import { AuthUserContext, withAuthorization } from '../Session';
 
 import './Account.css'
 
-
-
-
 class AccountPage extends Component {
   
 
@@ -35,6 +32,7 @@ class AccountPage extends Component {
       userEmail: this.props.firebase.auth.currentUser.email,
       mentorTeam: "",
       points: 0,
+      /*gmSignInLink: '',*/
     }
   }
 
@@ -44,6 +42,26 @@ class AccountPage extends Component {
     window.scrollTo(0, 0)
     
     var that = this;  // must have this for the setState inside lamda
+
+
+    /*
+    this.props.firebase.getFirestore().collection("misc").doc("gmSignInLink")
+      .get()
+      .then(function(doc) {
+          if (doc.exists) {
+          var gm_link_data = doc.data();
+          that.setState({ gmSignInLink: gm_link_data['link'] })
+          console.log(that.state.gmSignInLink)
+          } else {
+              // doc.data() will be undefined in this case
+              console.log("Can't get GM sign in link from firebase inventory!");
+          }
+          
+      }).catch(function(error) {
+          console.log("Error getting document:", error);
+    });
+    */
+
     this.props.firebase.getFirestore().collection("users")
       .where("email", "==", this.state.userEmail)  // can have multiple .where calls
       .get()
@@ -156,6 +174,13 @@ class AccountPage extends Component {
               </div>
             )}
           </AuthUserContext.Consumer>
+          {/*
+          <div className="signInButton">
+            <a href= {this.state.gmSignInLink} target="_blank">
+                GM SIGN IN
+            </a>
+          </div>
+          */}
 
           {/*Link to admin dashboard */}
           { this.state.user["admin"] === true

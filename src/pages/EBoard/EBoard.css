@@ -270,7 +270,8 @@ margin: 1.2vw;
   text-align: center;
   bottom: .4vw;
   color: yellow;
-  margin-left: 2vw;
+  margin-left: 0.8vw;
+  white-space: pre-wrap;
 }
 
 .emailFontShort{
@@ -299,6 +300,9 @@ margin: 1.2vw;
 .flip-card-back {
   background-color: #001d3aa0;
   transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .titleFont1{

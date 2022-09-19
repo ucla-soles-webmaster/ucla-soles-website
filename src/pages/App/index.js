@@ -33,15 +33,12 @@ import BucketHat from '../BucketHat';
 import SWOLES from '../SWOLES';
 import Sticker2 from '../Sticker2';
 import TestBankContestSubmit from '../TestBankContestSubmit';
-import Lunabotics from '../lunabotics'
-import Item from '../ItemTemplate'
-
+import Lunabotics from '../lunabotics';
+import GeneralMeetings from '../GeneralMeetings';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
-
- 
 const App = () => (
   <Router>
     <div>
@@ -81,7 +78,7 @@ const App = () => (
       <Route path={ROUTES.THANK_YOU} component={Thank_You} />
       <Route path={ROUTES.TESTBANK_CONTEST_SUBMIT} component={TestBankContestSubmit} />
       <Route path={ROUTES.LUNABOTICS} component={Lunabotics} />
-      <Route path={ROUTES.ITEM} component={Item} />
+      <Route path={ROUTES.GENERAL_MEETINGS} component={GeneralMeetings} />
 
       {/* Account Pages */}
       <Route path={ROUTES.TESTBANK} component={TestBank} />

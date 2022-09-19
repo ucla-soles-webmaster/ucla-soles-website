@@ -11,6 +11,7 @@ import coverPhoto from '../../Photos/Covers/EBoard.jpg';
 
 ///////////////////////////////////////////////////////////////
 /* Individual Officer Photo Imports */
+import blank from '../../Photos/EBoard/blank.jpg'
 
 /* President */ import Kelly from '../../Photos/EBoard/Kelly.jpg'
 /* EVP */ import Mayra from '../../Photos/EBoard/Mayra.jpg'
@@ -52,17 +53,125 @@ import leftsun from '../../Photos/Icons/leftsun.png';
 import sun from '../../Photos/Icons/sun.png'
 
 
-
-
 class EBoard extends Component {
 
     // Add constructor here when necessary
     componentDidMount() {
         window.scrollTo(0, 0)
     }
-    
 
     render() {
+        const boardMembers = [
+            {
+                name: "Kelly Espino",
+                major: "4th Year | Civil Engineering",
+                image: Kelly,
+                role: "President",
+                memory: "My favorite SOLES memory is going to the LeaderSHPE Jr. Retreat. Seeing all of our hard work turn into such a fruitful experience for both the volunteers and attendees was absolutely incredible. Being able to make an impact on these young lives and give them a reason to smile, is the reason I wanted to continue it.",
+                email: "     uclasoles.president@gmail.com"
+            },
+            {
+                name: "Kami Kunes",
+                major: "3rd Year | Electrical Engineering",
+                image: Kami,
+                role: "External Vice President",
+                memory: "My favorite SOLES memory was when we had our first in-person meeting and I got to hand out pizza.",
+                email: "          uclasoles.evp@gmail.com"
+            },
+            {
+                name: "Itzhary Tamayo",
+                major: "4th Year | Civil Engineering",
+                image: Itzhary,
+                role: "Internal Vice President",
+                memory: "My favorite SOLES memory was the Xmas party because I enjoyed spending time with cool people and it made it feel like a home away from home.",
+                email: "          uclasoles.ivp@gmail.com"
+            },
+            {
+                name: "Matthew Ruiz",
+                major: "4th Year | Computer Science",
+                image: Mat,
+                role: "Professional Development Chair",
+                memory: "My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.",
+                email: "              uclasoles@gmail.com"
+            },
+            {
+                name: "Jasmine Raya",
+                major: "Idk Year | Idk",
+                image: blank,
+                role: "Academic Chair",
+                memory: "My favorite SOLES memory is...",
+                email: "uclasoles.academicchair@gmail.com"
+            },
+            {
+                name: "Angel",
+                major: "Idk Year | Idk",
+                image: blank,
+                role: "Transfer Representative",
+                memory: "My favorite SOLES memory is...",
+                email: "   uclasoles.transferrep@gmail.com"
+            },
+            {
+                name: "Marisa Duran",
+                major: "3rd Year | Computer Science",
+                image: Marisa,
+                role: "Treasurer",
+                memory: "My favorite SOLES memory is finally being able to meet everyone in person at the first general meeting after a year of zoom!",
+                email: "     uclasoles.treasurer@gmail.com"
+            },
+            {
+                name: "Emanuel Zavalza",
+                major: "2nd Year | Idk",
+                image: blank,
+                role: "Secretary",
+                memory: "My favorite SOLES memory is...",
+                email: "              uclasoles@gmail.com"
+            },
+            {
+                name: "Andrew Rojas",
+                major: "Idk Year | Idk",
+                image: blank,
+                role: "Activities Director",
+                memory: "My favorite SOLES memory is...",
+                email: "              uclasoles@gmail.com"
+            },
+            {
+                name: "Brianna Ceja",
+                major: "2nd Year | Idk",
+                image: blank,
+                role: "Ciencias Director",
+                memory: "My favorite SOLES memory is...",
+                email: "uclasoles.cienciasdirector@gmail.com"
+            },
+            {
+                name: "Sarah Mauricio",
+                major: "4th Year | Computer Science",
+                image: blank,
+                role: "Technical Chair",
+                memory: "My favorite SOLES memory is...",
+                email: "uclasoles.technicalchair@gmail.com"
+            },
+        ];
+
+        const listMembers = boardMembers.map((d) => 
+            <div className = "eBoardPerson">
+            <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img className = "BoardPageImages" src= {d.image} alt={d.name} ></img>
+                </div>
+                <div class="flip-card-back">
+                    {/* Name */} <div className = "backSideText">{d.name}</div>
+                    {/* Year | Major */} <div className = "majorFontLong">{d.major}</div>
+                    <div className = "backSideTextSmall">{d.memory}</div>
+                    <div className = "emailFont">{d.email}</div>    
+                </div>
+            </div>
+            </div>
+            <div className = "setFontSizeName">{d.name}</div>
+            <div className = "setFontSizePosition">{d.role}</div>
+        </div>
+        )
+
         return (
             <div>
                 <Navigation transparentNav={true} />
@@ -88,258 +197,12 @@ class EBoard extends Component {
                 <br/>
             
 
+
                 {/* Photo Grid */}
                 <body1 className = "eBoardPage">   
-
-                    {/* President */}           
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Kelly} alt="Kelly Espino" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Kelly Espino</div>
-                                {/* Year | Major */} <div className = "majorFontLong">3rd Year | Civil Engineering</div>
-                                <div className = "backSideTextSmall">My favorite SOLES memory is going to the LeaderSHPE Jr. Retreat. Seeing all of our hard work turn into such a fruitful experience for both the volunteers and attendees was absolutely incredible. Being able to make an impact on these young lives and give them a reason to smile, is the reason I wanted to continue it.</div>
-                                <div className = "emailFont">uclasoles.president@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Kelly Espino</div>
-                        <div className = "setFontSizePosition">President</div>
+                    <div>
+                        {listMembers}
                     </div>
-
-                    {/* EVP */}     
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Mayra} alt="Mayra Lara" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Mayra Lara</div>
-                                {/* Year | Major */} <div className = "majorFontLong">3rd Year | Civil Engineering</div>
-                                <div className = "backSideTextSmall">My favorite SOLES memory is the October mentorSHPE event my freshman year; I got to bond with my mentor by carving a pumpkin together and also got to meet a lot of other SOLES members, both my year and older.</div>
-                                <div className = "emailFontShort">uclasoles.evp@gmail.com</div>     
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Mayra Lara</div>
-                        <div className = "setFontSizePosition">External Vice President</div>
-                    </div>
-
-                    {/* IVP */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Aidan} alt="Aidan Hasegawa" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Aidan Hasegawa</div>
-                                {/* Year | Major */} <div className = "majorFontLong">4th Year | Civil Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is selling churros out on Bruin Walk.</div>
-                                <div className = "emailFontShort">uclasoles.ivp@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Aidan Hasegawa</div>
-                        <div className = "setFontSizePosition">Internal Vice President</div>
-                    </div>
-
-                    {/* Transfer Rep */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Kent} alt="Kent Bourgoing" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Kent Bourgoing</div>
-                                {/* Year | Major */} <div className = "majorFontLong">4th Year | Chemical Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory was the 1st General Meeting of the quarter and playing games. Even though I still wasn’t part of the board.</div>
-                                <div className = "emailFont">uclasoles.transferrep@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Kent Bourgoing</div>
-                        <div className = "setFontSizePosition">Transfer Representative</div>
-                    </div>
-
-                    {/* Treasurer */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Kami} alt="Kami Kunes" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Kami Kunes</div>
-                                {/* Year | Major */} <div className = "majorFont">2nd Year | Electrical Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory was when we had our first in-person meeting and I got to hand out pizza.</div>
-                                <div className = "emailFont">uclasoles.treasurer@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Kami Kunes</div>
-                        <div className = "setFontSizePosition">Treasurer</div>
-                    </div>
-
-                    {/* Secretary */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Fabrizio} alt="Fabrizio Castañeda" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Fabrizio Castañeda</div>
-                                {/* Year | Major */} <div className = "majorFontLong">3rd Year | Computer Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is when I attended the LeaderSHPE Jr. Retreat, and I got to play the fictional role of the owner of Rick's Steakhouse in an event planning workshop. 
-                                        It warmed my heart to see the kids having fun and gain confidence in their negotiating abilities. Also, we found out that the school we visited is where they filmed All American! What a day that was!</div>
-                                <div className = "emailFontShort">uclasoles@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Fabrizio Castañeda</div>
-                        <div className = "setFontSizePosition">Secretary</div>
-                    </div>
-
-                    {/* Tutoring Director */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Marisa} alt="Marisa Duran" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Marisa Duran</div>
-                                {/* Year | Major */} <div className = "majorFont">2nd Year | Computer Science</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is finally being able to meet everyone in person at the first general meeting after a year of zoom!</div>
-                                <div className = "emailFont">uclasoles.tutoring@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Marisa Duran</div>
-                        <div className = "setFontSizePosition">Tutoring Director</div>
-                    </div>
-
-                    {/* Academic Chair */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Mat} alt="Matthew Ruiz" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Matthew Ruiz</div>
-                                {/* Year | Major */} <div className = "majorFont">3rd Year | Computer Science</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.</div>
-                                <div className = "emailFontLong">uclasoles.academicchair@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Matthew Ruiz</div>
-                        <div className = "setFontSizePosition">Academic Chair</div>
-                    </div>
-
-                    {/* Activities Director */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Robert} alt="Robert Valencia" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Robert Valencia</div>
-                                {/* Year | Major */} <div className = "majorFontLong">4th Year | Mechanical Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is the 2019 Leadership Jr. Retreat. It was such a fun and rewarding experience to spend a day with 
-                                students interested in STEM that have a similar background as I do.</div>
-                                <div className = "emailFont">uclasoles.activities@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Robert Valencia</div>
-                        <div className = "setFontSizePosition">Activities Chair</div>
-                    </div>
-
-                    {/* Ciencias Director */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Itzhary} alt="Itzhary Tamayo" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Itzhary Tamayo</div>
-                                {/* Year | Major */} <div className = "majorFontLong">3rd Year | Civil Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory was the Xmas party because I enjoyed spending time with cool people and it made it feel like a home away from home.</div>
-                                <div className = "emailFontLong">uclasoles.cienciasdirector@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Itzhary Tamayo</div>
-                        <div className = "setFontSizePosition">Ciencias Director</div>
-                    </div>
-
-                    {/* Technical Chair */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Trevor} alt="Trevor Gomez" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Trevor Gomez</div>
-                                {/* Year | Major */} <div className = "majorFontLong">4th Year | Mechanical Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">My favorite SOLES memory is hanging out at the tailgates freshman year with the SOLES fam.</div>
-                                <div className = "emailFontLong">uclasoles.technicalchair@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Trevor Gomez</div>
-                        <div className = "setFontSizePosition">Technical Chair</div>
-                    </div>
-
-                    {/* LeaderSHPE Junior */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Benito} alt="Benito Garduno" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Benito Garduno</div>
-                                {/* Year | Major */} <div className = "majorFont">2nd Year | Civil Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall"></div>
-                                <div className = "emailFont">uclasoles.leadershpe@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Benito Garduno</div>
-                        <div className = "setFontSizePosition">LeaderSHPE Jr. Director</div>
-                    </div>
-
-                    {/* Intern 1 */}  
-                    <div className = "eBoardPerson">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img className = "BoardPageImages" src= {Juan} alt="Juan Banchs" ></img>
-                            </div>
-                            <div class="flip-card-back">
-                                {/* Name */} <div className = "backSideText">Juan Banchs</div>
-                                {/* Year | Major */} <div className = "majorFontLong">4th Year | Mechanical Engineering</div>
-                                {/* Fav SOLES Mem */} <div className = "backSideTextSmall">(I've been very little at SOLES, but) My favorite SOLES memory is the free chicken nuggets at the last Winter quarter meeting!</div>
-                                <div className = "emailFont">uclasoles.intern@gmail.com</div>    
-                            </div>
-                        </div>
-                        </div>
-                        <div className = "setFontSizeName">Juan Banchs</div>
-                        <div className = "setFontSizePosition">Intern</div>
-                    </div>
-
 
                     {/* Elections Disclaimer and CEED Title */}  
                     <div className = "titleFont1"> 
@@ -348,7 +211,7 @@ class EBoard extends Component {
                             Elections for SOLES Executive Board positions occur annually during Spring Quarter. 
                             All members are encouraged to run for positions!
                         </div>                               
-                        <hr ClassName = "BoardIntroBar" ></hr>
+                        <hr className = "BoardIntroBar" ></hr>
                         <img className = "BoardPageSun" src= {sun} alt="Yellow Sun" ></img>
                         <br/>
                         <div className = "staffMembersBoard">
