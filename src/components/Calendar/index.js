@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import FullCalendar, { formatDate } from '@fullcalendar/react'
+import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
@@ -131,7 +131,7 @@ class Calendar extends Component {
     var endDate = eD.toLocaleDateString('en-us', options)
     
     var date;
-    if(startDate == endDate) 
+    if(startDate === endDate) 
       date = startDate;
     else{
       date = startDate + " to " + endDate;

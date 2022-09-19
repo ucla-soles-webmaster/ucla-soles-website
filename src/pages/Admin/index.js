@@ -167,7 +167,6 @@ class AdminPage extends Component {
       .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
           var userData = doc.data();
-          var userID = doc.id;
           that.setState({ merchItems: [...that.state.merchItems, userData] });
         });
       });
@@ -267,9 +266,6 @@ class AdminPage extends Component {
   */
 
   renderUser = (user, idx) => {
-
-    var adminString = '';
-    user[0]["admin"] === true ? adminString = 'Is Admin' : adminString = 'not Admin';
 
     return (
       <div>
@@ -579,16 +575,14 @@ class AdminPage extends Component {
   // Add item to shop (firestore/firebase-storage)
   addItem(new_item) {
 
-    const f = document.getElementById('files');
-
     var that = this;
 
     var d = new Date();
     var item_image_name = "item" + d.getMonth() + d.getDate() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds() + ".jpg"
-    if (new_item[4] == "One Size" || new_item[4] == null)
+    if (new_item[4] === "One Size" || new_item[4] == null)
     {
-      if (new_item[4] == null) new_item[4] = "One Size";
-      if (new_item[5] == null) new_item[5] = 0;
+      if (new_item[4] === null) new_item[4] = "One Size";
+      if (new_item[5] === null) new_item[5] = 0;
       // Add to firestore database
       this.props.firebase.getFirestore().collection("merchItems").doc(new_item[0]).set({
         itemName: new_item[0],
@@ -707,7 +701,7 @@ class AdminPage extends Component {
   */
 
   render() {
-    const { userList, loading, Industry } = this.state;
+    const loading = this.state.loading;
     this.state.userList.sort(sortNames);
     this.state.mentorshipUserList.sort(sortNamesMentorSHPE);
     this.state.waived_tutoring_students.sort(sortWaived);
@@ -824,26 +818,26 @@ class AdminPage extends Component {
               <br/><br/>
               <p><b> Add size counts:</b> <i>Leave blank to initialize as 0</i></p>
 
-              <input disabled={(this.state.newMerchItem_sizetype == "Multiple Sizes")} 
+              <input disabled={(this.state.newMerchItem_sizetype === "Multiple Sizes")} 
                 type = "number" min = "0"
                 placeholder="Count" 
                 id="mentorTeamName" 
                 onChange={ e => this.setState({newMerchItem_count: e.target.value}) }/>
               
-              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)} 
+              <input disabled={(this.state.newMerchItem_sizetype === "One Size" || this.state.newMerchItem_sizetype === null)} 
                 type = "number" min = "0" placeholder="Small count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_S: e.target.value}) }/>
-              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+              <input disabled={(this.state.newMerchItem_sizetype === "One Size" || this.state.newMerchItem_sizetype === null)}
                 type = "number" min = "0" placeholder="Medium count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_M: e.target.value}) }/>
-              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+              <input disabled={(this.state.newMerchItem_sizetype === "One Size" || this.state.newMerchItem_sizetype === null)}
                 type = "number" min = "0" placeholder="Large count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_L: e.target.value}) }/>
-              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+              <input disabled={(this.state.newMerchItem_sizetype === "One Size" || this.state.newMerchItem_sizetype === null)}
                 type = "number" min = "0" placeholder="XL count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_count_XL: e.target.value}) }/>
-              <input disabled={(this.state.newMerchItem_sizetype == "One Size" || this.state.newMerchItem_sizetype == null)}
+              <input disabled={(this.state.newMerchItem_sizetype === "One Size" || this.state.newMerchItem_sizetype === null)}
                 type = "number" min = "0" placeholder="XXL count" id="mentorTeamName" onChange={ e => this.setState({newMerchItem_name_XXL: e.target.value}) }/>
               &nbsp;&nbsp;&nbsp;
               <input 
                 type ="submit" 
-                disabled={(this.state.newMerchItem_cost == '' || this.state.newMerchItem_name == '' || this.state.file_data == '')} 
+                disabled={(this.state.newMerchItem_cost === '' || this.state.newMerchItem_name === '' || this.state.file_data === '')} 
                 className="btn btn-info" 
                 value="ADD MERCH ITEM" 
                 onClick={()=>this.addItem( [this.state.newMerchItem_name, this.state.newMerchItem_cost, this.state.newMerchItem_url_ext, this.state.newMerchItem_status, 
@@ -999,31 +993,3 @@ function sortWaived(a, b) {
   // a must be equal to b
   return 0;
 }
-
-
-const Field = ({
-  label,
-  id,
-  type,
-  placeholder,
-  required,
-  autoComplete,
-  value,
-  onChange,
-  formrowclass
-}) => (
-  <div>
-    <label >
-      {label}
-    </label>
-    <input
-      id={id}
-      type={type}
-      placeholder={placeholder}
-      required={required}
-      autoComplete={autoComplete}
-      value={value}
-      onChange={onChange}
-    />
-  </div>
-);

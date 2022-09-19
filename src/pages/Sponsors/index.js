@@ -7,14 +7,10 @@ import Footer from '../../components/Footer';
 /* Sponsor Logo Photo Imports */
 
 import Boeing from '../../Photos/SponsorLogos/boeing.jpg'
-import Chevron from '../../Photos/SponsorLogos/chevron.png'
 import Facebook from '../../Photos/SponsorLogos/facebook.jpeg'
-import Google from '../../Photos/SponsorLogos/google.jpg'
 import Lockheed from '../../Photos/SponsorLogos/lockheed-martin.png'
 import Northrup from '../../Photos/SponsorLogos/northrop-grumman.jpg'
-import Accenture from '../../Photos/SponsorLogos/accenture.jpg'
 import SCEdison from '../../Photos/SponsorLogos/socaledison.gif'
-import Twitter from '../../Photos/SponsorLogos/twitter.jpg'
 import Granite from '../../Photos/SponsorLogos/granite.jpeg'
 import Qualtrics from '../../Photos/SponsorLogos/qualtrics.jpeg'
 import Qualcomm from '../../Photos/SponsorLogos/qualcomm.png'
@@ -23,6 +19,10 @@ import VMware from '../../Photos/SponsorLogos/vmware.png'
 import Medtronic from '../../Photos/SponsorLogos/medtronic.jpeg'
 import Raytheon from '../../Photos/SponsorLogos/raytheon.jpeg'
 import LADWP from '../../Photos/SponsorLogos/ladwp.png'
+//import Chevron from '../../Photos/SponsorLogos/chevron.png'
+//import Twitter from '../../Photos/SponsorLogos/twitter.jpg'
+//import Accenture from '../../Photos/SponsorLogos/accenture.jpg'
+//import Google from '../../Photos/SponsorLogos/google.jpg'
 
 
 

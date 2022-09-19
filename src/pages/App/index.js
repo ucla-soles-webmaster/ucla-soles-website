@@ -79,6 +79,9 @@ const App = () => (
       <Route path={ROUTES.TESTBANK_CONTEST_SUBMIT} component={TestBankContestSubmit} />
       <Route path={ROUTES.LUNABOTICS} component={Lunabotics} />
       <Route path={ROUTES.GENERAL_MEETINGS} component={GeneralMeetings} />
+      {/*
+      <Route path={ROUTES.ITEM} component={Item} />
+      */}
 
       {/* Account Pages */}
       <Route path={ROUTES.TESTBANK} component={TestBank} />

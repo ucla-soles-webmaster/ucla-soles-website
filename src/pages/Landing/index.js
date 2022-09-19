@@ -1,21 +1,29 @@
-import React, { Component, useEffect, useState } from 'react';
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
+
+import React, { Component } from 'react';
+import * as ROUTES from '../../constants/routes'
 import { Link } from 'react-router-dom';
-
-import emailjs from 'emailjs-com';
-import 'react-vertical-timeline-component/style.min.css';
-
 import Navigation from '../../components/Navigation';
 import StaticCoverPhoto from '../../components/StaticCoverPhoto';
 import Footer from '../../components/Footer';
-
 import Calendar from '../../components/Calendar';
 
 
-import * as ROUTES from '../../constants/routes'
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
+import 'react-vertical-timeline-component/style.min.css';
+import './landingStyle.css'
+
+
+
+///////////////////////////////////////////////////////////////
+/* Accent Photo Imports */
+
 import presidentPhoto from '../../Photos/EBoard/Kelly.jpg'
 import presidentSig from '../../Photos/PresidentsMsg/signature.png'
-
-import './landingStyle.css'
 import coverPhoto from '../../Photos/Covers/Landing.jpeg';
 import rightsun from '../../Photos/Icons/rightsun.png'
 import leftsun from '../../Photos/Icons/leftsun.png';
@@ -119,7 +127,7 @@ class Landing extends Component {
                                     style={{width:'12em'}}
                                 ></img>
                                 <div className="presidentContactInfo"><p>President 2022-2023<br/>
-                                    <a href="mailto: uclasoles.president@gmail.com" target="_blank">uclasoles.president@gmail.com</a><br/>
+                                    <a href="mailto: uclasoles.president@gmail.com" target="_blank" rel="noopener noreferrer">uclasoles.president@gmail.com</a><br/>
                                     Civil Engineering B.S.<br/>
                                     UCLA Class of 2023 
                                 </p>

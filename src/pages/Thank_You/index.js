@@ -1,22 +1,9 @@
 
-import React, { Component, useRef } from 'react';
-import { GoogleSpreadsheet } from "google-spreadsheet";
-//import Item from "/ui/components/workspace/item.jsx";
-import ReactGridLayout from 'react-grid-layout';
-import FlatList from 'flatlist-react';
-import emailjs from 'emailjs-com';
-import { useHistory, Redirect } from 'react-router-dom';
-
-import { Carousel } from 'react-carousel-minimal';
+import React, { Component } from 'react';
 
 import Navigation from '../../components/Navigation';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-
-import { withAuthorization } from '../Session';
-
-import { colors } from '@material-ui/core';
 
 
 class Thank_You extends Component {
@@ -85,36 +72,5 @@ class Thank_You extends Component {
     
 }
 
-const condition = authUser => true;
 
 export default Thank_You;
-
-
-const Field = ({
-    label,
-    id,
-    type,
-    placeholder,
-    required,
-    autoComplete,
-    value,
-    onChange,
-    formrowclass
-  }) => (
-    <div>
-      <label htmlFor={id}>
-        {label}
-      </label>
-      &nbsp;
-      <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        autoComplete={autoComplete}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
-  );
-

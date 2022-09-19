@@ -1,5 +1,4 @@
-
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import emailjs from 'emailjs-com';
 
 import { Carousel } from 'react-carousel-minimal';
@@ -133,7 +132,7 @@ class Shirt extends Component {
         var month = d.getMonth()+1
 
         //Add order to Orders list
-        var order_date = "Ordered on - " + "Month: " + month + "   Day: " + d.getDate() + "   Year: " + d.getFullYear()
+        var order_date = "Ordered on - Month: " + month + "   Day: " + d.getDate() + "   Year: " + d.getFullYear()
         var order_doc_name = "order" + d.getMonth()+1 + d.getDate() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds()
         this.props.firebase.getFirestore().collection("misc").doc("orders").collection("orders").doc(order_doc_name).set({
             name: that.state.name_form,
@@ -152,19 +151,19 @@ class Shirt extends Component {
             
 
         //Update shirt size count in backend
-        if(this.state.size_form == "S") {
+        if(this.state.size_form === "S") {
             this.small()
         }
-        else if (this.state.size_form == "M") {
+        else if (this.state.size_form === "M") {
             this.medium()
         }
-        else if (this.state.size_form == "L") {
+        else if (this.state.size_form === "L") {
             this.large()
         }
-        else if (this.state.size_form == "XL") {
+        else if (this.state.size_form === "XL") {
             this.xl()
         }
-        else if (this.state.size_form == "2XL") {
+        else if (this.state.size_form === "2XL") {
             this.xl2()
         }
 
@@ -374,7 +373,7 @@ class Shirt extends Component {
                      
                             <br/>
                             {
-                                this.state.clicked_order == false ? <input type="submit" disabled={this.state.name_form == '' || this.state.size_form == '-' || this.state.email_form == '' || this.state.clicked_order == true} value="ORDER" class="itemOrderSubmitButton"/>
+                                this.state.clicked_order === false ? <input type="submit" disabled={this.state.name_form === '' || this.state.size_form === '-' || this.state.email_form === '' || this.state.clicked_order === true} value="ORDER" class="itemOrderSubmitButton"/>
                                     :
                                     <div class="loader"></div>
                             }
@@ -403,33 +402,3 @@ class Shirt extends Component {
 const condition = authUser => true;
 
 export default withAuthorization(condition)(Shirt);
-
-
-const Field = ({
-    label,
-    id,
-    type,
-    placeholder,
-    required,
-    autoComplete,
-    value,
-    onChange,
-    formrowclass
-  }) => (
-    <div>
-      <label htmlFor={id}>
-        {label}
-      </label>
-      &nbsp;
-      <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        autoComplete={autoComplete}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
-  );
-
