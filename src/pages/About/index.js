@@ -31,35 +31,32 @@ class About extends Component {
             <div style={{fontFamily: 'Poppins'}}>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"About Us"}></PagePhoto>
-                <br/><br/><br/><br/>
 
                 {/* Mission Statement and Vision */}
-                <div class="MissionVision" style={{marginLeft: '11%', marginRight: '12%'}}>
+                <div class="MissionVision">
 
                     {/* Mission Statement */}
-                    <div className="mission" style={{fontSize:'2.4vw', fontFamily:'Poppins', color:'#001d3a', marginBottom:'0.4vw'}}>
+                    <div className="mvBlock">
                             MISSION STATEMENT
-                            <p style={{fontSize:'1.2vw', fontFamily:'Poppins', color:'gray', marginLeft:'10%'}}>
+                            <p className="missionVisionDescription">
                             SOLES changes lives by empowering the Hispanic community to realize its fullest potential 
                             and to impact the world through STEM awareness, access, support, and development.
                             </p>
                     </div>
                     {/* Vision */}
-                    <div className="vision" style={{fontSize:'2.4vw', fontFamily:'Poppins', color:'#001d3a', marginBottom:'0.4vw'}}>
+                    <div className="mvBlock">
                         VISION
-                        <p style={{fontSize:'1.2vw', fontFamily:'Poppins', color:'gray', marginLeft:'10%'}}>
+                        <p className="missionVisionDescription">
                         SOLE's vision is a world where Hispanics are highly valued and influential as the leading
                         innovators, scientists, mathematicians and engineers. 
                         </p>
                     </div>
                     
                 </div>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
                 <div style={{backgroundColor: '#f3f3f3'}}>
-                    <br/><br/><br/>
 
-                    <div className="h1init" style={{fontSize:'3vw', color:'#001d3a', marginBottom:'0.4vw'}}>
+                    <div className="historyTitle" >
                        HISTORY
                     </div>
                     <br/>
@@ -116,39 +113,38 @@ class About extends Component {
                             //icon={<StarIcon />}
                         />
                     </VerticalTimeline>
-                    <br/><br/><br/><br/>
+                    <br/><br/>
                 </div>
 
 
                 {/* Awards Section */}
-                <br/><br/><br/><br/>
                 <div id="Awards" >
-                    <div className="h1init" style={{fontSize:'3.2vw', color:'#001d3a', marginBottom:'0.4vw'}}>
+                    <div className="aboutUsAward">
                         AWARDS
                     </div>
                     <br/>
                     <div id='award'>
-                        <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
-                            Blue Chip Chapter Award 2021, 2020, 2017, 2016, 2015<br/>
+                        <div className="awardName">
+                            Blue Chip Chapter Award <br/> 2022 • 2021 • 2020 • 2017 • 2016 • 2015<br/>
                         </div>
-                        <div style={{fontSize: '1.1vw', fontFamily: 'Poppins', textAlign:'center', lineHeight:'1.4vw', color: '#001d3a', marginLeft:'30%',marginRight:'30%'}}>
+                        <div className="awardDescription">
                             Awarded during the annual SHPE Regional Leadership Development Conference to chapters 
                             shown to provide outstanding metrics throughout the year, exhibiting growth and success.
                         </div>
                     </div>
                     <br/>
                     <div id='award'>
-                        <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
+                        <div className="awardName">
                             2020 Runner Up for Bruin Development Award<br/>
                         </div>
-                        <div style={{fontSize: '1.1vw', fontFamily: 'Poppins', textAlign:'center', lineHeight:'1.4vw', color: '#001d3a', marginLeft:'30%',marginRight:'30%'}}>
+                        <div className="awardDescription">
                             Recognized by UCLA's Engineering Society for our commitment to developing our
                             members.
                         </div>
                     </div>
                     <br/>
                     <div id='award'>
-                        <div style={{fontSize:'2vw', fontFamily:'Poppins', color:'gray', marginBottom:'0.4vw', textAlign:'center'}}>
+                        <div className="awardName">
                             Best Medium Engineering Student Organization at UCLA 2017<br/>
                         </div>
                     </div>
