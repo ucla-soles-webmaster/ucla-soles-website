@@ -90,11 +90,11 @@ class EBoard extends Component {
                 image: Mat,
                 role: "Professional Development Chair",
                 memory: "My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.",
-                email: "              uclasoles@gmail.com"
+                email: "              uclasoles.pdc@gmail.com"
             },
             {
                 name: "Jasmine Raya",
-                major: "Idk Year | Idk",
+                major: "5th Year | Mechanical Engineering",
                 image: blank,
                 role: "Academic Chair",
                 memory: "My favorite SOLES memory is...",
@@ -102,7 +102,7 @@ class EBoard extends Component {
             },
             {
                 name: "Angel",
-                major: "Idk Year | Idk",
+                major: "2nd Year Transfer | Mechanical Engineering",
                 image: blank,
                 role: "Transfer Representative",
                 memory: "My favorite SOLES memory is...",
@@ -118,7 +118,7 @@ class EBoard extends Component {
             },
             {
                 name: "Emanuel Zavalza",
-                major: "2nd Year | Idk",
+                major: "2nd Year | Computer Science",
                 image: blank,
                 role: "Secretary",
                 memory: "My favorite SOLES memory is...",
@@ -126,7 +126,7 @@ class EBoard extends Component {
             },
             {
                 name: "Andrew Rojas",
-                major: "Idk Year | Idk",
+                major: "2nd Year | Mechanical Engineering",
                 image: blank,
                 role: "Activities Director",
                 memory: "My favorite SOLES memory is...",
@@ -134,7 +134,7 @@ class EBoard extends Component {
             },
             {
                 name: "Brianna Ceja",
-                major: "2nd Year | Idk",
+                major: "2nd Year | Civil Engineering",
                 image: blank,
                 role: "Ciencias Director",
                 memory: "My favorite SOLES memory is...",
