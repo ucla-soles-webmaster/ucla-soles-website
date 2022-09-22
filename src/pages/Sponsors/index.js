@@ -14,16 +14,19 @@ import SCEdison from '../../Photos/SponsorLogos/socaledison.gif'
 import Granite from '../../Photos/SponsorLogos/granite.jpeg'
 import Qualtrics from '../../Photos/SponsorLogos/qualtrics.jpeg'
 import Qualcomm from '../../Photos/SponsorLogos/qualcomm.png'
-import Oracle from '../../Photos/SponsorLogos/oracle.png'
 import VMware from '../../Photos/SponsorLogos/vmware.png'
 import Medtronic from '../../Photos/SponsorLogos/medtronic.jpeg'
 import Raytheon from '../../Photos/SponsorLogos/raytheon.jpeg'
 import LADWP from '../../Photos/SponsorLogos/ladwp.png'
+import Cruise from '../../Photos/SponsorLogos/cruiseLogo.png'
+import Illumina from '../../Photos/SponsorLogos/illuminaLogo.png'
+import sponsorshipP from '../../Photos/SponsorLogos/sponsorshippacketsoles22-23.pdf'
+
 //import Chevron from '../../Photos/SponsorLogos/chevron.png'
 //import Twitter from '../../Photos/SponsorLogos/twitter.jpg'
 //import Accenture from '../../Photos/SponsorLogos/accenture.jpg'
 //import Google from '../../Photos/SponsorLogos/google.jpg'
-
+/*import Oracle from '../../Photos/SponsorLogos/oracle.png'*/
 
 
 ///////////////////////////////////////////////////////////////
@@ -95,7 +98,7 @@ class Sponsors extends Component {
                 </div>
                 <div className = "titleFont1">
                     <div className = "titleFont3Sponsor">
-                        We’d like to extend a special thanks to our corporate sponsors. If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!
+                        <p>We’d like to extend a special thanks to our corporate sponsors. Take a look at our <a href={sponsorshipP} target="_blank">SOLES Sponsorship Packet</a> to learn more! If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!</p>
                     </div>
                 </div>
                     
@@ -151,7 +154,7 @@ class Sponsors extends Component {
                                     <img className = "SponsorSilverImages" src={silver_bar} alt="Silver Level"></img>
                                 </div>
                                 <div class="flip-card3-back">
-                                    <div className = "titleFont5">
+                                    <div className = "titleFont5" style = {{marginBottom: '-40px'}}>
                                         Benefits: 
                                     </div>
                                     <ul className = "myList">
@@ -211,7 +214,7 @@ class Sponsors extends Component {
                         <img className = "BoardPageSun" src= {sun} alt="Yellow Sun" ></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        2021-2022 Sponsors
+                        2022-2023 Sponsors
                     </div>
                 </div>
                 </body1>
@@ -231,58 +234,24 @@ class Sponsors extends Component {
                         </figure>
                     </div>
 
+                    {/* Silver Level Sponsors */}
+                    {/*Illumina */}
+                    <div className = "eBoardPerson">
+                        <figure className = "eBoardPerson2">
+                        <img className = "SponsorPageImages" src={Illumina} alt="Illumina Logo"></img>
+                            <div className = "setFontSizeName">Illumina</div>
+                            <div className = "setFontSizeLevel">Silver Level Sponsor</div>
+                        </figure>
+                    </div>
+
+                    {/* Bronze Level Sponsors */}
+
                     {/* Lockheed */}
                     <div className = "eBoardPerson">
                         <figure className = "eBoardPerson2">
                         <img className = "SponsorPageImages" src={Lockheed} alt="Lockheed Martin Logo"></img>
                             <div className = "setFontSizeName">Lockheed Martin</div>
-                            <div className = "setFontSizeLevel">Gold Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* Qualcomm */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Qualcomm} alt="Qualcomm Logo"></img>
-                            <div className = "setFontSizeName">Qualcomm</div>
-                            <div className = "setFontSizeLevel">Gold Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* Granite Construction */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Granite} alt="Lockheed Martin Logo"></img>
-                            <div className = "setFontSizeName">Granite Construction</div>
-                            <div className = "setFontSizeLevel">Gold Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* Silver Level Sponsors */}
-                    {/* Oracle */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Oracle} alt="Oracle Logo"></img>
-                            <div className = "setFontSizeName">Oracle</div>
-                            <div className = "setFontSizeLevel">Silver Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* Facebook */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Facebook} alt="Facebook Logo"></img>
-                            <div className = "setFontSizeName">Facebook</div>
-                            <div className = "setFontSizeLevel">Silver Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* Boeing */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Boeing} alt="Boeing Logo"></img>
-                            <div className = "setFontSizeName">Boeing</div>
-                            <div className = "setFontSizeLevel">Silver Level Sponsor</div>
+                            <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
                         </figure>
                     </div>
 
@@ -291,58 +260,18 @@ class Sponsors extends Component {
                         <figure className = "eBoardPerson2">
                         <img className = "SponsorPageImages" src={SCEdison} alt="SoCal Edison Logo"></img>
                             <div className = "setFontSizeName">SoCal Edison</div>
-                            <div className = "setFontSizeLevel">Silver Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* Bronze Level Sponsors */}
-                    {/* Qualtrics */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Qualtrics} alt="Qualtrics Logo"></img>
-                            <div className = "setFontSizeName">Qualtrics</div>
                             <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
                         </figure>
                     </div>
 
-                    {/* LADWP NSBE */}
+                    {/* Cruise*/}
                     <div className = "eBoardPerson">
                         <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={LADWP} alt="LADWP NSBE Logo"></img>
-                            <div className = "setFontSizeName">LADWP NSBE</div>
+                        <img className = "SponsorPageImages" src={Cruise} alt="Crusie Logo"></img>
+                            <div className = "setFontSizeName">Cruise</div>
                             <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
                         </figure>
                     </div>
-
-                    {/* Medtronic */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Medtronic} alt="Medtronic Logo"></img>
-                            <div className = "setFontSizeName">Medtronic</div>
-                            <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* Raytheon */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Raytheon} alt="Raytheon Logo"></img>
-                            <div className = "setFontSizeName">Raytheon</div>
-                            <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    {/* VMware */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={VMware} alt="VMware Logo"></img>
-                            <div className = "setFontSizeName">VMware</div>
-                            <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
-                        </figure>
-                    </div>
-
-                    
-
 
                     <br/>
                     <br/>
