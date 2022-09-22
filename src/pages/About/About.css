@@ -1,15 +1,92 @@
-.headings{
-    text-align: center;
-    padding-bottom: 30px;
+.MissionVision {
+    display: flex;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    font-family: Poppins;
+    width: 90%;
+    margin-left: 8vw;
 }
 
-.mission {
-    float: left;
+.historyTitle {
+    margin-top: 0.1vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vw;
+    margin-bottom: 3.1vw;
+    color: #001d3a;
+    padding-top: 3vw;
+}
+
+.missionVisionDescription {
+    font-size: 1.2vw;
+    color: gray;
+    margin-left: 10%;
+}
+
+.mvBlock {
+    font-size: 2.4vw;
+    color: #001d3a;
     width: 45%;
 }
 
-.vision {
-    float: right;
-    margin-left: 2%;
-    width: 46.5%;
+.aboutUsAward {
+    font-size: 3.2vw;
+    color: '#001d3a';
+    margin-bottom: 0.5vh;
+    margin-top: 4vh;
+    text-align: center;
+}
+
+.awardName {
+    font-size: 2vw; 
+    color: gray;
+    margin-bottom: 0.4vw;
+    text-align: center;
+}
+
+.awardDescription {
+    font-size: 1.1vw;
+    text-align: center; 
+    color: #001d3a; 
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+
+
+/* Phones */
+@media screen and (max-width: 600px) {
+    .MissionVision {
+        font-size: 20.5vw;
+        display: grid;
+        width: 100%;
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+    }
+    .historyTitle{
+        font-size: 7vw;
+        padding-top: 8vw;
+    }
+    .mvBlock {
+        margin-left: 2%;
+        min-width: 80%;
+        font-size: 5vw;
+        padding-top: 1vw;
+    }
+    .missionVisionDescription{
+        font-size: 3.3vw;
+        padding-bottom: 2vw;
+    }
+    .aboutUsAward {
+        font-size: 7vw;
+    }  
+    .awardName {
+        font-size: 3.5vw;
+    }
+    .awardDescription {
+        font-size: 2.5vw;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

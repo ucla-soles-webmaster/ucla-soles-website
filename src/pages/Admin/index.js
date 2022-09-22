@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
 import { withAuthorization } from '../Session';
 
-import * as doc from 'firebase/firestore';
-import * as deleteDoc from 'firebase/firestore';
 
 ///////////////////////////////////////////////////////////////
 /* CSS Imports */
@@ -176,7 +174,6 @@ class AdminPage extends Component {
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
         var userData = doc.data();
-        var userID = doc.id;
         that.setState({ gmSlides: [...that.state.gmSlides, userData] });
       });
     });
@@ -474,8 +471,7 @@ class AdminPage extends Component {
     ****
   */
   renderGMSlides = (item, idx) => {
-    var slideName = item["name"];
-    var slideLink = item["link"];
+
     /*console.log("this is the name", slideName);
     console.log("this is the link", slideLink);*/
     
@@ -535,7 +531,6 @@ class AdminPage extends Component {
 
   //Update GM Sign In Link (firestore/firebase-storage)
   updateSignInLink(new_link) {
-    var that = this;
     this.props.firebase.getFirestore().collection("misc").doc("gmSignInLink").update({
       link: new_link
     })
@@ -548,7 +543,6 @@ class AdminPage extends Component {
   }
 
   addSlidesLink(new_link){
-    var that = this;
     this.props.firebase.getFirestore().collection("gmSlides").doc(new_link[0]).set({
       name: new_link[0],
       link: new_link[1]
@@ -562,7 +556,6 @@ class AdminPage extends Component {
   }
 
   deleteGMSlide(del_link){
-    var that = this;
     this.props.firebase.getFirestore().collection("gmSlides").doc(del_link).delete()
     .then(function() {
       console.log("Document successfully deleted!");
@@ -744,7 +737,7 @@ class AdminPage extends Component {
               <input
                 type= "submit" 
                 value="Update Link"
-                disabled = {this.state.newGMSignInLink == ''}
+                disabled = {this.state.newGMSignInLink === ''}
                 className="btn btn-info" 
                 onClick={()=>this.updateSignInLink(this.state.newGMSignInLink)}
               />
@@ -763,7 +756,7 @@ class AdminPage extends Component {
 
               <input 
                 type="submit"
-                disabled={(this.state.newGMSlidesLink == '' || this.state.newGMSlidesName == '')}
+                disabled={(this.state.newGMSlidesLink === '' || this.state.newGMSlidesName === '')}
                 className="btn btn-info" 
                 value="Add Slide" 
                 onClick={()=>this.addSlidesLink([this.state.newGMSlidesName, this.state.newGMSlidesLink])}
@@ -777,7 +770,7 @@ class AdminPage extends Component {
 
               <input 
                 type="submit"
-                disabled={(this.state.delGMSlidesName == '')}
+                disabled={(this.state.delGMSlidesName === '')}
                 className="btn btn-info" 
                 value="Delete Slide" 
                 onClick={()=>this.deleteGMSlide(this.state.delGMSlidesName)}

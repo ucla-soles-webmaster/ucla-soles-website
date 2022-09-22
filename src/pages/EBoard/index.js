@@ -14,22 +14,20 @@ import coverPhoto from '../../Photos/Covers/EBoard.jpg';
 import blank from '../../Photos/EBoard/blank.jpg'
 
 /* President */ import Kelly from '../../Photos/EBoard/Kelly.jpg'
-/* EVP */ import Mayra from '../../Photos/EBoard/Mayra.jpg'
-/* IVP */ import Aidan from '../../Photos/EBoard/Aidan.jpg'
+/* EVP */ import Kami from '../../Photos/EBoard/Kami.jpg' 
+/* IVP */ import Itzhary from '../../Photos/EBoard/Itzhary.jpg'
 
-/* Treasurer */ import Kami from '../../Photos/EBoard/Kami.jpg'
-/* Secretary */ import Fabrizio from '../../Photos/EBoard/Fabrizio.jpg'
-/* Transfer */ import Kent from '../../Photos/EBoard/Kent.jpg'
+/* PDC */ import Mat from '../../Photos/EBoard/Mat.jpg'
+/* Academic */ 
+/* Transfer */ 
 
-/* Tutoring */ import Marisa from '../../Photos/EBoard/Marisa.jpg'
-/* Academic */import Mat from '../../Photos/EBoard/Mat.jpg'
-/* Activities */ import Robert from '../../Photos/EBoard/Robert.jpg'
+/* Treasurer */ import Marisa from '../../Photos/EBoard/Marisa.jpg'
+/* Secretary */ 
+/* Activities */ 
 
-/* Ciencias */ import Itzhary from '../../Photos/EBoard/Itzhary.jpg'
-/* Tech */ import Trevor from '../../Photos/EBoard/Trevor.jpg'
-/* LeaderSHPE Jr */ import Benito from '../../Photos/EBoard/Benito.jpg'
-
-/* Intern 1 */ import Juan from '../../Photos/EBoard/Juan.jpg'
+/* Ciencias */
+/* LeaderSHPE Jr */ 
+/* Tech */ 
 
 /* CEED Staff */
 import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
@@ -92,11 +90,11 @@ class EBoard extends Component {
                 image: Mat,
                 role: "Professional Development Chair",
                 memory: "My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.",
-                email: "              uclasoles@gmail.com"
+                email: "              uclasoles.pdc@gmail.com"
             },
             {
                 name: "Jasmine Raya",
-                major: "Idk Year | Idk",
+                major: "5th Year | Mechanical Engineering",
                 image: blank,
                 role: "Academic Chair",
                 memory: "My favorite SOLES memory is...",
@@ -104,7 +102,7 @@ class EBoard extends Component {
             },
             {
                 name: "Angel",
-                major: "Idk Year | Idk",
+                major: "2nd Year Transfer | Mechanical Engineering",
                 image: blank,
                 role: "Transfer Representative",
                 memory: "My favorite SOLES memory is...",
@@ -120,7 +118,7 @@ class EBoard extends Component {
             },
             {
                 name: "Emanuel Zavalza",
-                major: "2nd Year | Idk",
+                major: "2nd Year | Computer Science",
                 image: blank,
                 role: "Secretary",
                 memory: "My favorite SOLES memory is...",
@@ -128,7 +126,7 @@ class EBoard extends Component {
             },
             {
                 name: "Andrew Rojas",
-                major: "Idk Year | Idk",
+                major: "2nd Year | Mechanical Engineering",
                 image: blank,
                 role: "Activities Director",
                 memory: "My favorite SOLES memory is...",
@@ -136,7 +134,7 @@ class EBoard extends Component {
             },
             {
                 name: "Brianna Ceja",
-                major: "2nd Year | Idk",
+                major: "2nd Year | Civil Engineering",
                 image: blank,
                 role: "Ciencias Director",
                 memory: "My favorite SOLES memory is...",

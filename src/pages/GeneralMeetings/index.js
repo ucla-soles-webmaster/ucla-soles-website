@@ -1,17 +1,32 @@
-import './GeneralMeetings.css';
-import * as ROUTES from '../../constants/routes'
-
-import rightsun from '../../Photos/Icons/rightsun.png';
-import leftsun from '../../Photos/Icons/leftsun.png';
-import sun from '../../Photos/Icons/sun.png';
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
 
 import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import coverPhoto from '../../Photos/Covers/Initiatives.png';
 import Footer from '../../components/Footer';
-import { AuthUserContext, withAuthorization } from '../Session';
+import { withAuthorization } from '../Session';
 import FlatList from 'flatlist-react';
+
+
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
+import './GeneralMeetings.css';
+
+
+
+///////////////////////////////////////////////////////////////
+/* Accent Photo Imports */
+
+import rightsun from '../../Photos/Icons/rightsun.png';
+import leftsun from '../../Photos/Icons/leftsun.png';
+import sun from '../../Photos/Icons/sun.png';
+
+
+
 
 class GeneralMeetings extends Component {
     constructor(props) {
@@ -51,7 +66,6 @@ class GeneralMeetings extends Component {
           querySnapshot.forEach(function(doc) {
             var userData = doc.data();
             console.log("dataaaaaa", userData);
-            var userID = doc.id;
             that.setState({ gmSlides: [...that.state.gmSlides, userData] });
           });
         });  
@@ -59,7 +73,7 @@ class GeneralMeetings extends Component {
 
     renderGMSlides = (item, idx) => {
         return(
-            <a href={item["link"]} target="_blank">
+            <a href={item["link"]} target="_blank" rel="noopener noreferrer">
                 <button class="gmSlideButton">
                     {item["name"]}
                 </button>
@@ -115,7 +129,7 @@ class GeneralMeetings extends Component {
                 </div>
 
                 <div className="signInForm">
-                    <iframe className="responsive-iframe" src={this.state.gmSignInLink}>Loading…</iframe>
+                    <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
                 </div>
                 
                 <div className = "titleFont1">
