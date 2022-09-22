@@ -1,13 +1,27 @@
+///////////////////////////////////////////////////////////////
+/* Component / ReactJS Library Imports */
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
 import SignOutButton from '../../pages/SignOut';
 import * as ROUTES from '../../constants/routes'
-
 import { AuthUserContext } from '../../pages/Session';
 
+
+
+///////////////////////////////////////////////////////////////
+/* CSS Imports */
+
 import './navStyle.css';
+
+
+
+///////////////////////////////////////////////////////////////
+/* Accent Photo Imports */
+
 import soles1 from './solesshpe.svg';
+
+
 
 
 // Choose Navigation type depending on if user is signed in or not
