@@ -45,6 +45,11 @@ class Landing extends Component {
                     <StaticCoverPhoto imageSource={coverPhoto}></StaticCoverPhoto>
 
                     <br/>
+
+                    <div className="awardsBox">
+                        <p>Our exemplary commitment to SHPE's core values: Familia, Service, Education, and Resilience have earned us the <b>2022 Regional and National Chapter Awards</b>!</p>
+                    </div>
+
                     <hr className="introBar" /> 
                     <div className="introbox" style={{textAlign: 'center'}}>
                             <div className="introMessage">
@@ -52,8 +57,7 @@ class Landing extends Component {
                             <div className="introSubMessage">
                                 The Society of Latinx Engineers and Scientists at UCLA (SOLES) is a student 
                                 organization in the Henry Samueli School of Engineering and Applied Science,
-                                and is a student chapter of the Society of Hispanic Professional Engineers (SHPE). 
-                                Our exemplary commitment to SHPE's core values: Familia, Service, Education, and Resilience have earned us the <b>2022 Regional and National Chapter Awards</b>!
+                                and is a student chapter of the Society of Hispanic Professional Engineers (SHPE).
                                 We center around empowering Latinx students in engineering and science both at the UCLA and at nearby K-12 schools. Learn more <Link to={ROUTES.ABOUT}>here.</Link>
                             </div>
                         </div>
@@ -69,7 +73,7 @@ class Landing extends Component {
                         <div className="calendarMessage">
                                 SOLES Calendar
                             <div className="calendarSubMessage">
-                                Take a look at our upcoming events!
+                                Click to learn more about an upcoming event!
                             </div>
                         </div>
                     </div>
