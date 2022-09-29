@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/Covers/Initiatives.png';
+import coverPhoto from '../../Photos/Covers/prom2021fun.jpeg';
 import Footer from '../../components/Footer';
 import { withAuthorization } from '../Session';
 import FlatList from 'flatlist-react';
