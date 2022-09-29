@@ -151,7 +151,10 @@ class Landing extends Component {
 
 
                 {/* Start up animation */}
+                
                 <div id="startupdiv" >
+            
+                
                 
                 </div>
                 <Footer/>

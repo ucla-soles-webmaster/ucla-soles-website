@@ -12,6 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     max-height: 100vh;
+    max-width: 100%;
 }
 
 .parallax2 {
