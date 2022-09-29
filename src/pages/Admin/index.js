@@ -471,15 +471,11 @@ class AdminPage extends Component {
     ****
   */
   renderGMSlides = (item, idx) => {
-
-    /*console.log("this is the name", slideName);
-    console.log("this is the link", slideLink);*/
-    
-    return(
+      return(
       <div class="adminUserCell">
         <div class="adminUserName">
           <b>Name: </b> &nbsp;
-          { item["name"] } &nbsp;&nbsp;&nbsp; Link: {item["link"]} &nbsp;&nbsp;&nbsp;
+          { item["name"] } &nbsp;&nbsp;&nbsp; <b>Link: </b>{item["link"]} &nbsp;&nbsp;&nbsp;
         </div>
         
         &nbsp;&nbsp;
@@ -737,7 +733,7 @@ class AdminPage extends Component {
               <input
                 type= "submit" 
                 value="Update Link"
-                disabled = {this.state.newGMSignInLink === ''}
+                disabled = {this.state.newGMSignInLink == ''}
                 className="btn btn-info" 
                 onClick={()=>this.updateSignInLink(this.state.newGMSignInLink)}
               />
@@ -747,7 +743,7 @@ class AdminPage extends Component {
               <br/><br/>
 
               <h1>GM Slides</h1>
-              <p><i>Refresh page to view added/deleted slides</i></p>
+              <p><i>Refresh page to view added/deleted slides. <br></br>Note: No forward slashes in Slide Name are allowed</i></p>
               <p><b>Add a new slide</b></p>
               <input type="text" placeholder="Slide Name" id="mentorTeamName" onChange={ e => this.setState({newGMSlidesName: e.target.value})} />
               &nbsp;&nbsp;&nbsp;
@@ -756,7 +752,7 @@ class AdminPage extends Component {
 
               <input 
                 type="submit"
-                disabled={(this.state.newGMSlidesLink === '' || this.state.newGMSlidesName === '')}
+                disabled={(this.state.newGMSlidesLink == '' || this.state.newGMSlidesName == '')}
                 className="btn btn-info" 
                 value="Add Slide" 
                 onClick={()=>this.addSlidesLink([this.state.newGMSlidesName, this.state.newGMSlidesLink])}
@@ -770,7 +766,7 @@ class AdminPage extends Component {
 
               <input 
                 type="submit"
-                disabled={(this.state.delGMSlidesName === '')}
+                disabled={(this.state.delGMSlidesName == '')}
                 className="btn btn-info" 
                 value="Delete Slide" 
                 onClick={()=>this.deleteGMSlide(this.state.delGMSlidesName)}

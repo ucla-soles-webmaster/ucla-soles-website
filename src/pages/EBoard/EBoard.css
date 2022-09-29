@@ -392,14 +392,43 @@ line-height: 1.8vw;
 padding-top: 5vw;
 padding-bottom: 2vw;
 }
+
 .staffMembersBoard{
-margin-top: 0.1vw;
+  margin-top: 0.1vh;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 3vw;
-  margin-bottom: 3.1vw;
+  /*margin-bottom: 3.1vw;*/
   color: #001d3a;
   font-weight: bold;
+}
+
+@media screen and (max-width: 1050px) {
+  .staffMembersBoard{
+    font-size: 4.2vw;
+    margin-top: 0.5vh;
+  }
+
+  .titleFont1{
+    margin-top: 6vh;
+  }
+
+  .titleFont2{
+    font-size: 1.8vw;
+    line-height: 2.2vw;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .staffMembersBoard{
+    font-size: 5.8vw;
+    margin-top: 2vh;
+  }
+
+  .titleFont2{
+    font-size: 2.7vw;
+    line-height: 3vw;
+  }
 }
 
 

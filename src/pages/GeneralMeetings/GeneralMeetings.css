@@ -1,28 +1,4 @@
-/*
 
-.signInButton a{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;   
-    background-color: #001d3a;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 4px;
-    text-align: center;
-    font-family: 'Poppins';
-    font-size: 20px;
-    height: 50px;
-    margin-left: 40%;
-    margin-right: 40%;
-}
-
-.signInButton:hover(){
-    cursor: pointer;
-}
-*/
 
 .signInForm{
     position: relative;
@@ -31,6 +7,7 @@
     padding-top: 100%;
     margin-left: 15%;
     margin-right: 15%;
+    margin-top: 3.8vh;
 }
 
 .responsive-iframe{
