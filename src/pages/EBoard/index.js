@@ -179,15 +179,15 @@ class EBoard extends Component {
                 {/* Page Title Header */}
                 <hr className="introBar" /> 
                     <div className="introbox" style={{textAlign: 'center'}}>
-                        <p className="initIntro" style={{textAlign: 'center', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
-                            <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
+                        <div className="introMessage">
                                 The Leaders of SOLES
-                            </p>
-                                These are the amazing individuals that help SOLES operate day to day! 
-                                Interested in working with or learning more about our
-                                Board members? Our Board will be more than happy! 
-                                Please feel free to reach out to them via their email.
-                        </p>
+                                <div className='introSubMessage'>
+                                    These are the amazing individuals that help SOLES operate day to day! 
+                                    Interested in working with or learning more about our
+                                    Board members? Our Board will be more than happy! 
+                                    Please feel free to reach out to them via their email.
+                                </div>
+                        </div>
                         <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
                         <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
                     </div>

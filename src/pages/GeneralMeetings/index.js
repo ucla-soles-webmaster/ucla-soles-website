@@ -50,7 +50,6 @@ class GeneralMeetings extends Component {
               if (doc.exists) {
               var gm_link_data = doc.data();
               that.setState({ gmSignInLink: gm_link_data['link'] })
-              console.log(that.state.gmSignInLink)
               } else {
                   // doc.data() will be undefined in this case
                   console.log("Can't get GM sign in link from firebase inventory!");
@@ -65,7 +64,6 @@ class GeneralMeetings extends Component {
         .then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
             var userData = doc.data();
-            console.log("dataaaaaa", userData);
             that.setState({ gmSlides: [...that.state.gmSlides, userData] });
           });
         });  
@@ -79,18 +77,6 @@ class GeneralMeetings extends Component {
                 </button>
             </a>
         )
-        /*
-        return (
-            <div class="adminUserCell">
-                <div class="adminUserName">
-                    <b>Name: </b> &nbsp;
-                    { item["name"] } &nbsp;&nbsp;&nbsp; Link: {item["link"]}
-                </div>
-                
-                &nbsp;&nbsp;
-            </div>
-        )
-        */
     }
 
     /*this.setState({gmSlides: [] }) */
@@ -104,15 +90,13 @@ class GeneralMeetings extends Component {
 
                 <hr className="introBar" /> 
                     <div className="introbox" style={{textAlign: 'center'}}>
-                        <p className="initIntro" style={{textAlign: 'center', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
-                            
-                            <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
-                                Sign In and Slides
-                            </p>
-                            
-                            Here you can find the SOLES GM sign in form and slides shown during meetings!
-                            
-                        </p>
+                        <div className="introMessage">
+                            Sign In and Slides
+                            <div className="introSubMessage">
+                                Here you can find the SOLES GM sign in form and slides shown during meetings!
+                            </div>
+                        </div>
+
                         <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
                         <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
                     </div>
@@ -120,7 +104,7 @@ class GeneralMeetings extends Component {
 
            
                 <div className = "titleFont1">
-                    <div style = {{width: '80%', margin: 'auto'}}>                                
+                    <div style = {{width: '80%', margin: 'auto', marginTop: '-50px'}}>                                
                         <img className = "BoardPageSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard">
@@ -158,17 +142,3 @@ class GeneralMeetings extends Component {
 const condition = authUser => true;
 
 export default withAuthorization(condition)(GeneralMeetings);
-
-/*
-const condition = authUser => !!authUser;
- 
-export default withAuthorization(condition)(GeneralMeetings);
-*/
-
-/*
-                <div className="signInButton">
-                    <a href={this.state.gmSignInLink} target="_blank">
-                        GM SIGN IN
-                    </a>
-                </div>
-*/
