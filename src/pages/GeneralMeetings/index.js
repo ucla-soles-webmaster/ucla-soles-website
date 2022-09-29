@@ -86,29 +86,15 @@ class GeneralMeetings extends Component {
             <div>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"General Meetings"}></PagePhoto>
-                <br/><br/><br/>
-
-                <hr className="introBar" /> 
-                    <div className="introbox" style={{textAlign: 'center'}}>
-                        <div className="introMessage">
-                            Sign In and Slides
-                            <div className="introSubMessage">
-                                Here you can find the SOLES GM sign in form and slides shown during meetings!
-                            </div>
-                        </div>
-
-                        <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
-                        <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
-                    </div>
-                <hr className="introBar" />   
+                <br/>
 
            
                 <div className = "titleFont1">
                     <div style = {{width: '80%', margin: 'auto', marginTop: '-50px'}}>                                
-                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun"></img>
+                        <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        GM Sign In Form
+                        GM #1 Sign-In Form
                     </div>
                 </div>
 
@@ -118,17 +104,30 @@ class GeneralMeetings extends Component {
                 
                 <div className = "titleFont1">
                     <div style = {{width: '80%', margin: 'auto'}}>                                
-                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun"></img>
+                        <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        GM Slides
+                        GM #1 Slides
                     </div>
                 </div>
                 <div className="gmSlides">
+                    
+                    {/* Comment out for first GM
                     <FlatList
                         list={this.state.gmSlides}
                         renderItem={this.renderGMSlides}
                     />
+                    */}
+                    <div style={{textAlign: "center"}}>
+                        <br/>
+                        Will be posted here tonight after meeting.
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
 
 

@@ -48,3 +48,11 @@
     pointer-events: none;
     -webkit-text-stroke-width: 0.0px;
 }
+
+
+@media screen and (max-width: 800px) {
+    .centered2 {
+        margin-top: 130%;
+        font-size: 9vw;
+    }
+}

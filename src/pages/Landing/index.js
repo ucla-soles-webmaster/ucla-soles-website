@@ -47,7 +47,7 @@ class Landing extends Component {
                     <br/>
 
                     <div className="awardsBox">
-                        <p>Our exemplary commitment to SHPE's core values: Familia, Service, Education, and Resilience have earned us the <b>2022 Regional and National Chapter Awards</b>!</p>
+                        <p>Our exemplary commitment to SHPE's core values: Familia, Service, Education, and Resilience have earned us the <b>2022 SHPE Regional and National Chapter Awards</b>!</p>
                     </div>
 
                     <hr className="introBar" /> 
@@ -69,14 +69,14 @@ class Landing extends Component {
                     <br/>
 
                     <div className="introbox" style={{textAlign: 'left'}}>
-                    <div id="MessageFromCalendar">
-                        <div className="calendarMessage">
-                                SOLES Calendar
-                            <div className="calendarSubMessage">
-                                Click to learn more about an upcoming event!
+                        <div id="MessageFromCalendar">
+                            <div className="calendarMessage">
+                                    SOLES Calendar
+                                <div className="calendarSubMessage">
+                                    Click to learn more about an upcoming event!
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                     {/*Calendar Imported from Calendar folder*/}
                     <Calendar/>

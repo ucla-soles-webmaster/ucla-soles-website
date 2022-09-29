@@ -8,6 +8,8 @@
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 3.8vh;
+    border-style: solid;
+    border-color: #001d3a;
 }
 
 .responsive-iframe{
@@ -22,6 +24,26 @@
     right: 0;
 
 }
+
+.gmIntro
+{
+    font-family: 'Poppins';
+    font-size: 2.4vw;
+    margin-top: 10%;
+    font-weight: 415;
+    margin-right: 18.5%;
+    margin-left: 18.5%;
+    color: #001d3a;
+}
+
+.gmSun {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5%;
+    padding: 1vw;
+    margin-top: 2vw;
+  }
 
 .gmSlideButton{
     background-color: rgba(254, 254, 84, 0.892);
@@ -44,6 +66,8 @@
 .gmSlides{
     margin-left: 15%;
     margin-right: 15%;
+    align-self: center;
+    text-align: center;
 }
 
 
@@ -53,10 +77,19 @@
         width: 90%;
         margin-left: 5%;
         margin-left: 5%;
+        border-width: medium;
     }
 
     .gmSlides{
         margin-left: 5%;
         margin-left: 5%;
+    }
+
+    .gmIntro {
+        font-size: 4vw;
+    }
+    .gmSun {
+        width: 20%;
+        padding-bottom: 5%;
     }
 }

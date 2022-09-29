@@ -18,7 +18,6 @@ body {
     -webkit-transition: 0.8s;
     overflow: hidden;
     z-index: 4;
-    max-width: 100%;
 }
 
 .navElse {
@@ -181,7 +180,6 @@ body {
     .navTop {
         color: white;
         z-index: 1;
-        max-width: 100%;
     }
     .navElse {
         color: white;
@@ -239,7 +237,7 @@ body {
         font-size: 1.9rem;
     }
     .navElse {
-        position: static;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -249,7 +247,7 @@ body {
         background-color: white;
     }
     .navTop {
-        position: static;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -257,7 +255,6 @@ body {
         padding: 15px 60px;
         box-sizing: border-box;
         background-color: white;
-        max-width: 100%;
     }
     .signin {
         list-style: none;
@@ -381,7 +378,6 @@ body {
         font-style: normal;
         font-size: 60px;
     }
-
     .navTop .ulNav {
         position: fixed;
         width: 100%;
@@ -403,7 +399,6 @@ body {
         align-items: center;
         display: block;
         text-align: center;
-
     }
     .navTop .ulNav {
         left: 0%;
