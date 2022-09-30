@@ -98,7 +98,7 @@ class GeneralMeetings extends Component {
                     </div>
                     <div style={{textAlign: "center"}} className="gmIntro">
                         <br/>
-                        Week 3 Thursday at Boelter 3400
+                        Week 3 Thursday 6pm at Boelter 3400
                     </div>
 
                 </div>
