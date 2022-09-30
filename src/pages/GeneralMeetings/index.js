@@ -93,11 +93,10 @@ class GeneralMeetings extends Component {
                     <div style = {{width: '80%', margin: 'auto', marginTop: '-50px'}}>                                
                         <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
-                    <div className = "staffMembersBoard">
+                    <div className = "staffMembersBoard" style={{paddingBottom: '0vw'}}>
                         See you at Week 3 GM!
                     </div>
                     <div style={{textAlign: "center"}} className="gmIntro">
-                        <br/>
                         Week 3 Thursday 6pm at Boelter 3400
                     </div>
 
