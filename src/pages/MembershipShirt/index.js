@@ -35,7 +35,7 @@ const slideNumberStyle = {
 
 
 
-class Shirt extends Component {
+class MembershipShirt extends Component {
     
     // Add constructor here when necessary
     constructor(props) {
@@ -116,7 +116,7 @@ class Shirt extends Component {
             quantity: that.state.quantity_form,
             size: that.state.size_form,
             date: order_date,
-            item: "Membership Shirt"
+            item: "22-23 Membership Shirt"
           })
             .then(function() {
               console.log("Document successfully written!");
@@ -178,7 +178,7 @@ class Shirt extends Component {
     small(new_code) {
         var that = this;
         this.props.firebase.getFirestore().collection("misc")
-        .doc('shirt_counts')  // can have multiple .where calls
+        .doc('shirt22-23_count')  // can have multiple .where calls
         .update({
           S: that.state.shirt_counts["S"] - that.state.quantity_form
         })
@@ -186,7 +186,7 @@ class Shirt extends Component {
     medium(new_code) {
         var that = this;
         this.props.firebase.getFirestore().collection("misc")
-        .doc('shirt_counts')  // can have multiple .where calls
+        .doc('shirt22-23_count')  // can have multiple .where calls
         .update({
           M: that.state.shirt_counts["M"] - that.state.quantity_form
         })
@@ -194,7 +194,7 @@ class Shirt extends Component {
     large(new_code) {
         var that = this;
         this.props.firebase.getFirestore().collection("misc")
-        .doc('shirt_counts')  // can have multiple .where calls
+        .doc('shirt22-23_count')  // can have multiple .where calls
         .update({
           L: that.state.shirt_counts["L"] - that.state.quantity_form
         })
@@ -202,7 +202,7 @@ class Shirt extends Component {
     xl(new_code) {
         var that = this;
         this.props.firebase.getFirestore().collection("misc")
-        .doc('shirt_counts')  // can have multiple .where calls
+        .doc('shirt22-23_count')  // can have multiple .where calls
         .update({
           XL: that.state.shirt_counts["XL"] - that.state.quantity_form
         })
@@ -273,7 +273,7 @@ class Shirt extends Component {
                     
                     <div class="itemPageFlex2" style={{marginRight: "0%", marginLeft: "5vw"}}>
                         <div className="haccountMerchItem">
-                            <b>22/23 Membership Shirt</b>
+                            <b>22-23 Membership Shirt</b>
                         </div>
                         <div style={{fontSize: "1.55em"}}>
                             $15 (Members FREE)
@@ -355,7 +355,7 @@ class Shirt extends Component {
                             }
                             
                             <br/>
-                            <input style={{fontSize: "0%", border: "none"}} name="item" value="SOLES Membership Shirt ($20 for 1, $30 for 2)"/>
+                            <input style={{fontSize: "0%", border: "none"}} name="item" value="22-23 SOLES Membership Shirt"/>
                         </form>
 
 
