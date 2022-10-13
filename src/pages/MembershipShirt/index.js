@@ -377,4 +377,4 @@ class MembershipShirt extends Component {
 
 const condition = authUser => true;
 
-export default withAuthorization(condition)(Shirt);
+export default withAuthorization(condition)(MembershipShirt);
