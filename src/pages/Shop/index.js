@@ -132,27 +132,30 @@ class Shop extends Component {
         var link_item = ''
         switch(idx) {
             case 0:
-                link_item = ROUTES.BUCKET_HAT
+                link_item = ROUTES.MEMBERSHIP_SHIRT
                 break;
             case 1:
-                link_item = ROUTES.SWOLES
+                link_item = ROUTES.BUCKET_HAT
                 break;
             case 2:
+                link_item = ROUTES.SWOLES
+                break;
+            case 3:
                 link_item = ROUTES.STICKER2
                 break;
-            case 3: // Beanie
+            case 4: // Beanie
                 link_item = ROUTES.BEANIE
                 break;
-            case 4: // Logo shirt
+            case 5: // Logo shirt
                 link_item = ROUTES.LOGO_SHIRT
                 break;
-            case 5: // ToteBag
+            case 6: // ToteBag
                 link_item = ROUTES.TOTEBAG
                 break;
-            case 6: // Shirt
+            case 7: // Shirt
                 link_item = ROUTES.SHIRT
                 break;
-            case 7: // Sticker
+            case 8: // Sticker
                 link_item = ROUTES.STICKER
                 break;
             default:

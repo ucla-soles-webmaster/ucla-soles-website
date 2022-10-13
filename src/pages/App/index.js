@@ -35,6 +35,7 @@ import Sticker2 from '../Sticker2';
 import TestBankContestSubmit from '../TestBankContestSubmit';
 import Lunabotics from '../lunabotics';
 import GeneralMeetings from '../GeneralMeetings';
+import MembershipShirt from '../MembershipShirt';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -79,6 +80,7 @@ const App = () => (
       <Route path={ROUTES.TESTBANK_CONTEST_SUBMIT} component={TestBankContestSubmit} />
       <Route path={ROUTES.LUNABOTICS} component={Lunabotics} />
       <Route path={ROUTES.GENERAL_MEETINGS} component={GeneralMeetings} />
+      <Route path={ROUTES.MEMBERSHIP_SHIRT} component={MembershipShirt} />
       {/*
       <Route path={ROUTES.ITEM} component={Item} />
       */}
