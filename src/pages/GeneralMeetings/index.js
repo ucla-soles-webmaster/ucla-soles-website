@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/Covers/Initiatives.png';
+import coverPhoto from '../../Photos/Covers/prom2021fun.jpeg';
 import Footer from '../../components/Footer';
 import { withAuthorization } from '../Session';
 import FlatList from 'flatlist-react';
@@ -86,49 +86,54 @@ class GeneralMeetings extends Component {
             <div>
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"General Meetings"}></PagePhoto>
-                <br/><br/><br/>
-
-                <hr className="introBar" /> 
-                    <div className="introbox" style={{textAlign: 'center'}}>
-                        <div className="introMessage">
-                            Sign In and Slides
-                            <div className="introSubMessage">
-                                Here you can find the SOLES GM sign in form and slides shown during meetings!
-                            </div>
-                        </div>
-
-                        <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
-                        <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
-                    </div>
-                <hr className="introBar" />   
+                <br/>
 
            
                 <div className = "titleFont1">
                     <div style = {{width: '80%', margin: 'auto', marginTop: '-50px'}}>                                
-                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun"></img>
+                        <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
-                    <div className = "staffMembersBoard">
-                        GM Sign In Form
+                    <div className = "staffMembersBoard" style={{paddingBottom: '0vw'}}>
+                        GM #2 Sign-in Form
                     </div>
+                    <div style={{textAlign: "center"}} className="gmIntro">
+                        Week 3 Thursday 6pm at Boelter 3400
+                    </div>
+
                 </div>
 
                 <div className="signInForm">
                     <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
                 </div>
-                
+
                 <div className = "titleFont1">
                     <div style = {{width: '80%', margin: 'auto'}}>                                
-                        <img className = "BoardPageSun" src= {sun} alt="Yellow Sun"></img>
+                        <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        GM Slides
+                        Fall GM Slides
                     </div>
                 </div>
                 <div className="gmSlides">
+                    
+                    
                     <FlatList
                         list={this.state.gmSlides}
                         renderItem={this.renderGMSlides}
                     />
+                    
+                    {/* Comment out for first GM
+                    <div style={{textAlign: "center"}}>
+                        <br/>
+                        Will be posted here tonight after meeting.
+                    </div>
+                    */}
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
 
 

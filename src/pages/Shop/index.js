@@ -31,11 +31,11 @@ import sun from '../../Photos/Icons/sunblue.png';
 // NOTE: for Carousel, images can only be links (not saved on disk) to images, thats why we upload to our Firebase or another website
     const data = [
         {
-            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSpring-Drop-Banner.png?alt=media&token=85a6d215-5141-4587-a09a-3fb7f0fa9ca2'
+            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Ffalldrop2022.png?alt=media&token=eb85fa16-89de-42a7-93d6-a425e03aeb5e'
         },
         {
-            image: "https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSOLES%20Membership%20Shirts.png?alt=media&token=29edfbb7-9d0b-42a9-b7af-3214a8fb75f1"
-        },
+            image: 'https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2FSpring-Drop-Banner.png?alt=media&token=85a6d215-5141-4587-a09a-3fb7f0fa9ca2'
+        }
     ];
     const captionStyle = {
         fontSize: '2em',
@@ -132,27 +132,30 @@ class Shop extends Component {
         var link_item = ''
         switch(idx) {
             case 0:
-                link_item = ROUTES.BUCKET_HAT
+                link_item = ROUTES.MEMBERSHIP_SHIRT
                 break;
             case 1:
-                link_item = ROUTES.SWOLES
+                link_item = ROUTES.BUCKET_HAT
                 break;
             case 2:
+                link_item = ROUTES.SWOLES
+                break;
+            case 3:
                 link_item = ROUTES.STICKER2
                 break;
-            case 3: // Beanie
+            case 4: // Beanie
                 link_item = ROUTES.BEANIE
                 break;
-            case 4: // Logo shirt
+            case 5: // Logo shirt
                 link_item = ROUTES.LOGO_SHIRT
                 break;
-            case 5: // ToteBag
+            case 6: // ToteBag
                 link_item = ROUTES.TOTEBAG
                 break;
-            case 6: // Shirt
+            case 7: // Shirt
                 link_item = ROUTES.SHIRT
                 break;
-            case 7: // Sticker
+            case 8: // Sticker
                 link_item = ROUTES.STICKER
                 break;
             default:

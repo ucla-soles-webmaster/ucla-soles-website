@@ -378,7 +378,6 @@ body {
         font-style: normal;
         font-size: 60px;
     }
-
     .navTop .ulNav {
         position: fixed;
         width: 100%;
@@ -400,7 +399,6 @@ body {
         align-items: center;
         display: block;
         text-align: center;
-
     }
     .navTop .ulNav {
         left: 0%;

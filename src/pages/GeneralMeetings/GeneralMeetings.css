@@ -8,6 +8,9 @@
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 3.8vh;
+    margin-top: 3.8vh;
+    border-style: solid;
+    border-color: #001d3a;
 }
 
 .responsive-iframe{
@@ -23,6 +26,25 @@
 
 }
 
+.gmIntro
+{
+    font-family: 'Poppins';
+    font-size: 2vw;
+    margin-top: 6vh;
+    font-weight: 415;
+    color: #001d3a;
+    line-height: 1.5vw;
+}
+
+.gmSun {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5%;
+    padding: 1vw;
+    margin-top: 2vw;
+  }
+
 .gmSlideButton{
     background-color: rgba(254, 254, 84, 0.892);
     color: black;
@@ -35,6 +57,7 @@
     font-size: 20px;
     margin: 20px;
     cursor: pointer;
+    font-family: Poppins;
 }
 
 .gmSlideButton:hover(){
@@ -44,6 +67,8 @@
 .gmSlides{
     margin-left: 15%;
     margin-right: 15%;
+    align-self: center;
+    text-align: center;
 }
 
 
@@ -53,10 +78,19 @@
         width: 90%;
         margin-left: 5%;
         margin-left: 5%;
+        border-width: medium;
     }
 
     .gmSlides{
         margin-left: 5%;
         margin-left: 5%;
+    }
+
+    .gmIntro {
+        font-size: 4vw;
+    }
+    .gmSun {
+        width: 20%;
+        padding-bottom: 5%;
     }
 }
