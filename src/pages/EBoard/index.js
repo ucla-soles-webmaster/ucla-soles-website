@@ -5,29 +5,27 @@ import React, { Component } from 'react';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/Covers/EBoard.jpg';
-
-
+import coverPhoto from '../../Photos/Covers/EBoard22_23.JPG';
 
 ///////////////////////////////////////////////////////////////
 /* Individual Officer Photo Imports */
-import blank from '../../Photos/EBoard/blank.jpg'
 
-/* President */ import Kelly from '../../Photos/EBoard/Kelly.jpg'
-/* EVP */ import Kami from '../../Photos/EBoard/Kami.jpg' 
-/* IVP */ import Itzhary from '../../Photos/EBoard/Itzhary.jpg'
+/* President */ import Kelly from '../../Photos/EBoard/Kelly22_23.png'
+/* EVP */ import Kami from '../../Photos/EBoard/Kami22_23.png' 
+/* IVP */ import Itzhary from '../../Photos/EBoard/Itzhary22_23.png'
 
-/* PDC */ import Mat from '../../Photos/EBoard/Mat.jpg'
-/* Academic */ 
-/* Transfer */ 
+/* PDC */ import Mat from '../../Photos/EBoard/Mat22_23.png'
+/* Academic */ import Raya from '../../Photos/EBoard/Raya22_23.png'
+/* Transfer */ import Angel from '../../Photos/EBoard/Angel22_23.png'
 
-/* Treasurer */ import Marisa from '../../Photos/EBoard/Marisa.jpg'
-/* Secretary */ 
-/* Activities */ 
+/* Treasurer */ import Marisa from '../../Photos/EBoard/Marisa22_23.png'
+/* Secretary */ import Emanuel from '../../Photos/EBoard/Emanuel22_23.png'
+/* Activities */ import Andrew from '../../Photos/EBoard/Andrew22_23.png'
 
-/* Ciencias */
-/* LeaderSHPE Jr */ 
-/* Tech */ 
+/* Ciencias */ import Bri from '../../Photos/EBoard/Bri22_23.png'
+/* LeaderSHPE Jr */ import Jennifer from '../../Photos/EBoard/Jennifer22_23.png'
+/* Tech */ import Sarah from '../../Photos/EBoard/Sarah22_23.png'
+/* Tech */ import Oscar from '../../Photos/EBoard/Oscar22_23.png'
 
 /* CEED Staff */
 import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
@@ -65,7 +63,7 @@ class EBoard extends Component {
                 major: "4th Year | Civil Engineering",
                 image: Kelly,
                 role: "President",
-                memory: "My favorite SOLES memory is going to the LeaderSHPE Jr. Retreat. Seeing all of our hard work turn into such a fruitful experience for both the volunteers and attendees was absolutely incredible. Being able to make an impact on these young lives and give them a reason to smile, is the reason I wanted to continue it.",
+                memory: "I’d have to split my favorite soles memories between getting voted back into presidency, regaining some faith that I am making a difference, being at SOLES prom and being everyone’s random guess for superlatives, and being present to win Regional and National Chapter of the year for all the work we did last year <3",
                 email: "     uclasoles.president@gmail.com"
             },
             {
@@ -73,7 +71,7 @@ class EBoard extends Component {
                 major: "3rd Year | Electrical Engineering",
                 image: Kami,
                 role: "External Vice President",
-                memory: "My favorite SOLES memory was when we had our first in-person meeting and I got to hand out pizza.",
+                memory: "Nothing trumps the time when Andrew, Marisa, and I splashed the seniors while kayaking at the transition retreat. Though they didn't look like they enjoyed getting soaked, we sure did.",
                 email: "          uclasoles.evp@gmail.com"
             },
             {
@@ -89,23 +87,23 @@ class EBoard extends Component {
                 major: "4th Year | Computer Science",
                 image: Mat,
                 role: "Professional Development Chair",
-                memory: "My favorite SOLES memory is making the last minute decision freshman year to go to the SHPE conference and spending the weekend getting to know all the SOLES people.",
+                memory: "My favorite SOLES memory is going to SHPE nationals in Arizona my freshman year!",
                 email: "              uclasoles.pdc@gmail.com"
             },
             {
                 name: "Jasmine Raya",
                 major: "5th Year | Mechanical Engineering",
-                image: blank,
+                image: Raya,
                 role: "Academic Chair",
-                memory: "My favorite SOLES memory is...",
+                memory: "",
                 email: "uclasoles.academicchair@gmail.com"
             },
             {
                 name: "Angel",
                 major: "2nd Year Transfer | Mechanical Engineering",
-                image: blank,
+                image: Angel,
                 role: "Transfer Representative",
-                memory: "My favorite SOLES memory is...",
+                memory: "My favorite SOLES memory was watching the GOAT Robs videos! They were hilarious even through stressful times! Also going to community college and speaking with other engineering students who are going to transition to the universities. Helping answer there questions and concerns and giving them advice felt good",
                 email: "   uclasoles.transferrep@gmail.com"
             },
             {
@@ -113,39 +111,55 @@ class EBoard extends Component {
                 major: "3rd Year | Computer Science",
                 image: Marisa,
                 role: "Treasurer",
-                memory: "My favorite SOLES memory is finally being able to meet everyone in person at the first general meeting after a year of zoom!",
+                memory: "My favorite SOLES memory is going to SOLES prom and spending time with everyone and eating tacos :)",
                 email: "     uclasoles.treasurer@gmail.com"
             },
             {
                 name: "Emanuel Zavalza",
                 major: "2nd Year | Computer Science",
-                image: blank,
+                image: Emanuel,
                 role: "Secretary",
-                memory: "My favorite SOLES memory is...",
+                memory: "My favorite SOLES memory is the bonfire my first year because its where I first felt welcomed when starting at UCLA",
                 email: "              uclasoles@gmail.com"
             },
             {
                 name: "Andrew Rojas",
-                major: "2nd Year | Mechanical Engineering",
-                image: blank,
+                major: "3nd Year | Mechanical Engineering",
+                image: Andrew,
                 role: "Activities Director",
-                memory: "My favorite SOLES memory is...",
+                memory: "My favorite SOLES memory is going up to Big Bear for the board retreat and kayaking",
                 email: "              uclasoles@gmail.com"
             },
             {
                 name: "Brianna Ceja",
                 major: "2nd Year | Civil Engineering",
-                image: blank,
+                image: Bri,
                 role: "Ciencias Director",
-                memory: "My favorite SOLES memory is...",
+                memory: "My favorite SOLES memory is SOLES Olympics!",
                 email: "uclasoles.cienciasdirector@gmail.com"
+            },
+            {
+                name: "Jennifer Juarez",
+                major: "2nd Year | Civil Engineering",
+                image: Jennifer,
+                role: "LeaderSHPE Jr Director",
+                memory: "My favorite SOLES memory is freshmen weekend. I got to meet the incoming freshmen as they shadowed our day. We went ice blocking, had a beach day, played volleyball...so much fun!",
+                email: "uclasoles.leadershpejr@gmail.com"
             },
             {
                 name: "Sarah Mauricio",
                 major: "4th Year | Computer Science",
-                image: blank,
+                image: Sarah,
                 role: "Technical Chair",
-                memory: "My favorite SOLES memory is...",
+                memory: "My favorite SOLES memory was the beach bonfire we had at the beginning of last year. It was great to see everyone in person after being online for so long!",
+                email: "uclasoles.technicalchair@gmail.com"
+            },
+            {
+                name: "Oscar Orantes",
+                major: "2nd Year | Eletrical Engineering",
+                image: Oscar,
+                role: "Technical Chair",
+                memory: "",
                 email: "uclasoles.technicalchair@gmail.com"
             },
         ];
@@ -179,15 +193,15 @@ class EBoard extends Component {
                 {/* Page Title Header */}
                 <hr className="introBar" /> 
                     <div className="introbox" style={{textAlign: 'center'}}>
-                        <p className="initIntro" style={{textAlign: 'center', marginRight: '18.5%', marginLeft: '18.5%', fontSize:'1.1vw',fontWeight:'10'}}>
-                            <p style={{fontSize: '2.3vw', color: 'gray', marginTop: '-2.2%', marginBottom: '1%', fontWeight:'300'}}>
+                        <div className="introMessage">
                                 The Leaders of SOLES
-                            </p>
-                                These are the amazing individuals that help SOLES operate day to day! 
-                                Interested in working with or learning more about our
-                                Board members? Our Board will be more than happy! 
-                                Please feel free to reach out to them via their email.
-                        </p>
+                                <div className='introSubMessage'>
+                                    These are the amazing individuals that help SOLES operate day to day! 
+                                    Interested in working with or learning more about our
+                                    Board members? Our Board will be more than happy! 
+                                    Please feel free to reach out to them via their email.
+                                </div>
+                        </div>
                         <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun" />
                         <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
                     </div>
