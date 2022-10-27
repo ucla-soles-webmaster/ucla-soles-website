@@ -97,15 +97,15 @@ class GeneralMeetings extends Component {
                         GM #3
                     </div>
                     <div style={{textAlign: "center"}} className="gmIntro">
-                        See you Week 5 Thursday 6pm at Boelter 3400 for GM #3!
+                        Sign-in below!                        {/*See you Week 5 Thursday 6pm at Boelter 3400 for GM #3!*/}
                     </div>
 
                 </div>
-                {/*}
+                {
                 <div className="signInForm">
                     <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
                 </div>
-                */}
+                }
 
                 <div className = "titleFont1">
                     <div style = {{width: '80%', margin: 'auto'}}>                                
