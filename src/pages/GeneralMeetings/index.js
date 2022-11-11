@@ -94,18 +94,18 @@ class GeneralMeetings extends Component {
                         <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard" style={{paddingBottom: '0vw'}}>
-                        GM #3
+                        General Meetings
                     </div>
                     <div style={{textAlign: "center"}} className="gmIntro">
-                        Sign-in below!                        {/*See you Week 5 Thursday 6pm at Boelter 3400 for GM #3!*/}
+                        {/*Sign-in below!*/}   See you next quarter :)
                     </div>
 
                 </div>
-                {
+                {/*
                 <div className="signInForm">
                     <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
                 </div>
-                }
+                */}
 
                 <div className = "titleFont1">
                     <div style = {{width: '80%', margin: 'auto'}}>                                
