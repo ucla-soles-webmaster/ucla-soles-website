@@ -97,7 +97,7 @@ class GeneralMeetings extends Component {
                         General Meetings
                     </div>
                     <div style={{textAlign: "center"}} className="gmIntro">
-                        {/*Sign-in below!*/}   See you next quarter :)
+                       {/* Sign-in below! */}   See you next quarter :) 
                     </div>
 
                 </div>
