@@ -16,7 +16,7 @@ import coverPhoto from '../../Photos/Covers/EBoard22_23.JPG';
 
 /* PDC */ import Mat from '../../Photos/EBoard/Mat22_23.png'
 /* Academic */ import Raya from '../../Photos/EBoard/Raya22_23.png'
-/* Transfer */ import Angel from '../../Photos/EBoard/Angel22_23.png'
+/* Transfer */ import Ben from '../../Photos/EBoard/Ben22_23.png'
 
 /* Treasurer */ import Marisa from '../../Photos/EBoard/Marisa22_23.png'
 /* Secretary */ import Emanuel from '../../Photos/EBoard/Emanuel22_23.png'
@@ -99,11 +99,11 @@ class EBoard extends Component {
                 email: "uclasoles.academicchair@gmail.com"
             },
             {
-                name: "Angel",
-                major: "2nd Year Transfer | Mechanical Engineering",
-                image: Angel,
+                name: "Ben Delgado",
+                major: "1st Year Transfer | Electrical Engineering",
+                image: Ben,
                 role: "Transfer Representative",
-                memory: "My favorite SOLES memory was watching the GOAT Robs videos! They were hilarious even through stressful times! Also going to community college and speaking with other engineering students who are going to transition to the universities. Helping answer there questions and concerns and giving them advice felt good",
+                memory: "",
                 email: "   uclasoles.transferrep@gmail.com"
             },
             {
