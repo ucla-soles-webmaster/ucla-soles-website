@@ -38,6 +38,7 @@ class GeneralMeetings extends Component {
         
     }
 
+
     // Add constructor here when necessary
     
     componentDidMount() {
@@ -97,13 +98,17 @@ class GeneralMeetings extends Component {
                         General Meetings
                     </div>
                     <div style={{textAlign: "center"}} className="gmIntro">
-                       {/* Sign-in below! */}   See you next quarter :) 
+                       {/* Sign-in below! See you next quarter :)*/}    
                     </div>
 
                 </div>
-                {/*
+                
                 <div className="signInForm">
                     <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
+                </div>
+                {/* Will add toggle function to admin page
+                <div className="gmIntro">
+                    <p>See you next meeting!</p>
                 </div>
                 */}
 
@@ -123,12 +128,6 @@ class GeneralMeetings extends Component {
                         renderItem={this.renderGMSlides}
                     />
                     
-                    {/* Comment out for first GM
-                    <div style={{textAlign: "center"}}>
-                        <br/>
-                        Will be posted here tonight after meeting.
-                    </div>
-                    */}
                     <br/>
                     <br/>
                     <br/>
