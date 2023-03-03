@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/Covers/Contact.jpg';
+import coverPhoto from '../../Photos/Covers/Lunabotic.jpg';
 import Footer from '../../components/Footer';
 import rightsun from '../../Photos/Icons/rightsun.png'
 import leftsun from '../../Photos/Icons/leftsun.png';

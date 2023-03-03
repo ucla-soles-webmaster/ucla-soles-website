@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/Covers/Contact.jpg';
+import coverPhoto from '../../Photos/Covers/Contact.JPG';
 import Footer from '../../components/Footer';
 import emailjs from 'emailjs-com';
 
