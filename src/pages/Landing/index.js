@@ -22,7 +22,7 @@ import './landingStyle.css'
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
-import presidentPhoto from '../../Photos/EBoard/Kelly.jpg'
+import presidentPhoto from '../../Photos/EBoard/Kelly22_23.png'
 import presidentSig from '../../Photos/PresidentsMsg/signature.png'
 import coverPhoto from '../../Photos/Covers/Landing.jpeg';
 import rightsun from '../../Photos/Icons/rightsun.png'

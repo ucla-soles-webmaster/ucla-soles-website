@@ -29,5 +29,8 @@
       "firebase-debug.log",
       "firebase-debug.*.log"
     ]
+  },
+  "database": {
+    "rules": "database.rules.json"
   }
 }

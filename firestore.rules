@@ -84,6 +84,9 @@ service cloud.firestore {
     match /misc/{anything=**} {
     	allow read, write: if true;
     }
+    match /gmSlides/{anything=**} {
+    	allow read, write: if true;
+    }
     
  }
 }

@@ -37,7 +37,7 @@ import silver_bar from '../../Photos/Icons/silver.jpg'
 import bronze_bar from '../../Photos/Icons/bronze.jpg'
 import sun from '../../Photos/Icons/sun.png'
 
-
+import '../../../src/pages/Sponsors/sponserStyle.css';
 
 
 class Sponsors extends Component {
@@ -105,98 +105,39 @@ class Sponsors extends Component {
                     
 
                 {/* Sponsorship Options (Flip Cards) */}
-                <div style = {{width: '80%', alignItems: 'center', margin: 'auto'}}>
-                    <div className = "eBoardPerson3">
-                        
-                        {/* Gold Level Option, Flip Card */}
-                        <div class="flip-card2" 
-                            onMouseEnter={() => this.setState({gold:true})}
-                            onMouseLeave={() => this.setState({gold:false})}
-                        >
-                            <div class="flip-card2-inner">
-                                <div class="flip-card2-front">
-                                    <div className = {this.state.gold ? "sponsorLevelsNoColor" : "sponsorLevels"}>
-                                        Gold Level ($2500+)
-                                    </div>
-                                    <img className = "SponsorGoldImages" src={gold_bar} alt="Gold Level"></img>
-                                </div>
-                                <div class="flip-card2-back">
-                                    <div className = "titleFont5">
-                                        Benefits: 
-                                    </div>
-                                    <ul className = "myList">
-                                        <li className = "titleFont4">Access to student resumes</li>
-                                        <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
-                                        <li className = "titleFont4">One company information session or event for up to 3 representatives quarterly and seating at the end-of-year Senior Banquet</li>
-                                        <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
-                                        <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
-                                        <li className = "titleFont4">Publication and advertising throughout the school of engineering</li>
-                                        <li className = "titleFont4">Recognition on our event shirts and logos branded on merchandise</li>
-                                    </ul> 
-                                </div>
-                            </div>
+                <div className="sponsorCards" style={{marginLeft: '18.5%'}}>
+
+                    {/*Bronze Level Option */}
+                    <div className="card">
+                    <div className = "sponsorLevels">
+                            Bronze Level 
+                            <br/> 
+                            ($1500)
                         </div>
+                        <img className ="SponsorBronzeImages" src={bronze_bar} alt="Bronze Level" ></img>
                     </div>
 
                     {/* Silver Level Option, Flip Card */}
-                    <div className = "eBoardPerson3">
-                        <div class="flip-card3"
-                            onMouseEnter={() => this.setState({silver:true})}
-                            onMouseLeave={() => this.setState({silver:false})}
-                        >
-                            <div class="flip-card3-inner">
-                                <div class="flip-card3-front">
-                                    <div className = {this.state.silver ? "sponsorLevelsNoColor" : "sponsorLevels"}>
-                                        Silver Level 
-                                        <br/> 
-                                        ($1001 - $2499)
-                                    </div>
-                                    <img className = "SponsorSilverImages" src={silver_bar} alt="Silver Level"></img>
-                                </div>
-                                <div class="flip-card3-back">
-                                    <div className = "titleFont5" style = {{marginBottom: '-40px'}}>
-                                        Benefits: 
-                                    </div>
-                                    <ul className = "myList">
-                                        <li className = "titleFont4">Access to student resumes</li>
-                                        <li className = "titleFont4">Up to $500 contributed toward student scholarships, upon request</li>
-                                        <li className = "titleFont4">One company information session or event for up to 3 representatives</li>
-                                        <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
-                                        <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
-                                    </ul>  
-                                </div>
-                            </div>
+                    <div className="card">
+                        <div className = "sponsorLevels">
+                            Silver Level 
+                            <br/> 
+                            ($2500)
                         </div>
+                        <img className = "SponsorSilverImages" src={silver_bar} alt="Silver Level" ></img>
+                    </div>
+                    
+                    {/* Gold Level Option, Flip Card */}
+                    <div className="card">
+                        <div className = "sponsorLevels">
+                            Gold Level 
+                            <br/> 
+                            ($3500+)
+                        </div>
+                        <img className = "SponsorGoldImages" src={gold_bar} alt="Gold Level" ></img>
                     </div>
 
-                    {/* Bronze Level Option, Flip Card */}
-                    <div className = "eBoardPerson3">
-                        <div class="flip-card4"
-                            onMouseEnter={() => this.setState({bronze:true})}
-                            onMouseLeave={() => this.setState({bronze:false})}
-                        >
-                            <div class="flip-card4-inner">
-                                <div class="flip-card4-front">
-                                    <div className = {this.state.bronze ? "sponsorLevelsNoColor" : "sponsorLevels"}>
-                                        Bronze Level 
-                                        <br/>
-                                        ($1 - $1000)
-                                    </div>
-                                    <img className = "SponsorBronzeImages" src={bronze_bar} alt="Bronze Level"></img>
-                                </div>
-                                <div class="flip-card4-back">
-                                    <div className = "titleFont5">
-                                        Benefits: 
-                                    </div>
-                                    <ul className = "myList">
-                                        <li className = "titleFont4">One company information session or event for up to 3 representatives</li>
-                                        <li className = "titleFont4">Industry recognition on the SOLES website, newsletters, and highly-visible SOLES board in Boelter Hall at UCLA</li>
-                                        <li className = "titleFont4">Publication of available job and internship openings in our weekly emails</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h1>Individual suns are available for $300 each</h1>
                 </div>
 
 
