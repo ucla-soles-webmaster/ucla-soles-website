@@ -733,7 +733,7 @@ class AdminPage extends Component {
               <input
                 type= "submit" 
                 value="Update Link"
-                disabled = {this.state.newGMSignInLink == ''}
+                disabled = {this.state.newGMSignInLink === ''}
                 className="btn btn-info" 
                 onClick={()=>this.updateSignInLink(this.state.newGMSignInLink)}
               />
@@ -752,7 +752,7 @@ class AdminPage extends Component {
 
               <input 
                 type="submit"
-                disabled={(this.state.newGMSlidesLink == '' || this.state.newGMSlidesName == '')}
+                disabled={(this.state.newGMSlidesLink === '' || this.state.newGMSlidesName === '')}
                 className="btn btn-info" 
                 value="Add Slide" 
                 onClick={()=>this.addSlidesLink([this.state.newGMSlidesName, this.state.newGMSlidesLink])}
@@ -766,7 +766,7 @@ class AdminPage extends Component {
 
               <input 
                 type="submit"
-                disabled={(this.state.delGMSlidesName == '')}
+                disabled={(this.state.delGMSlidesName === '')}
                 className="btn btn-info" 
                 value="Delete Slide" 
                 onClick={()=>this.deleteGMSlide(this.state.delGMSlidesName)}

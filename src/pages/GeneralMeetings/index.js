@@ -21,8 +21,8 @@ import './GeneralMeetings.css';
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
-import rightsun from '../../Photos/Icons/rightsun.png';
-import leftsun from '../../Photos/Icons/leftsun.png';
+//import rightsun from '../../Photos/Icons/rightsun.png';
+//import leftsun from '../../Photos/Icons/leftsun.png';
 import sun from '../../Photos/Icons/sun.png';
 
 
