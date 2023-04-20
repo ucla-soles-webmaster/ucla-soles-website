@@ -61,7 +61,7 @@ class Calendar extends Component {
     else{
       return (
         <div className='demo-app'>
-          <div className='bottom-calendar-main'>
+          <div className='bottom-calendar-main' style={{width: '100%'}}>
             <FullCalendar
               plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin, googleCalendarPlugin]}
               googleCalendarApiKey='AIzaSyDiELiu3A2AKFICy8JWJE6vWhs9Qg-lsms'

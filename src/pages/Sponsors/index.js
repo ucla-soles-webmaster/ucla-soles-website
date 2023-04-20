@@ -102,43 +102,6 @@ class Sponsors extends Component {
                     </div>
                 </div>
                     
-                    
-
-                {/* Sponsorship Options (Flip Cards) */}
-                <div className="sponsorCards" style={{marginLeft: '18.5%'}}>
-
-                    {/*Bronze Level Option */}
-                    <div className="card">
-                    <div className = "sponsorLevels">
-                            Bronze Level 
-                            <br/> 
-                            ($1500)
-                        </div>
-                        <img className ="SponsorBronzeImages" src={bronze_bar} alt="Bronze Level" ></img>
-                    </div>
-
-                    {/* Silver Level Option, Flip Card */}
-                    <div className="card">
-                        <div className = "sponsorLevels">
-                            Silver Level 
-                            <br/> 
-                            ($2500)
-                        </div>
-                        <img className = "SponsorSilverImages" src={silver_bar} alt="Silver Level" ></img>
-                    </div>
-                    
-                    {/* Gold Level Option, Flip Card */}
-                    <div className="card">
-                        <div className = "sponsorLevels">
-                            Gold Level 
-                            <br/> 
-                            ($3500+)
-                        </div>
-                        <img className = "SponsorGoldImages" src={gold_bar} alt="Gold Level" ></img>
-                    </div>
-
-                    <h1>Individual suns are available for $300 each</h1>
-                </div>
 
 
                 
@@ -233,3 +196,42 @@ class Sponsors extends Component {
 }
 
 export default Sponsors;
+
+
+/*
+                //Sponsorship Options (Flip Cards) 
+                <div className="sponsorCards" style={{marginLeft: '18.5%'}}>
+
+                    
+                    <div className="card">
+                    <div className = "sponsorLevels">
+                            Bronze Level 
+                            <br/> 
+                            ($1500)
+                        </div>
+                        <img className ="SponsorBronzeImages" src={bronze_bar} alt="Bronze Level" ></img>
+                    </div>
+
+                    
+                    <div className="card">
+                        <div className = "sponsorLevels">
+                            Silver Level 
+                            <br/> 
+                            ($2500)
+                        </div>
+                        <img className = "SponsorSilverImages" src={silver_bar} alt="Silver Level" ></img>
+                    </div>
+                    
+                    
+                    <div className="card">
+                        <div className = "sponsorLevels">
+                            Gold Level 
+                            <br/> 
+                            ($3500+)
+                        </div>
+                        <img className = "SponsorGoldImages" src={gold_bar} alt="Gold Level" ></img>
+                    </div>
+
+                    <h1>Individual suns are available for $300 each</h1>
+                </div>
+*/
