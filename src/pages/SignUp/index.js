@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import { compose } from 'recompose';
 import Form from 'react-bootstrap/Form'
 
@@ -11,6 +13,7 @@ import Footer from '../../components/Footer';
 
 import coverPhoto from '../../Photos/Covers/Signup.png';
 import './signUpStyle.css';
+
 // uyeras
 
 const SignUpPage = () => (

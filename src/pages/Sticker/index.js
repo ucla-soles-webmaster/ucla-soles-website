@@ -1,6 +1,7 @@
 import React, { Component, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { useHistory } from 'react-router-dom';
+//import {useNavigate} from 'react-router-dom';
 
 import { Carousel } from 'react-carousel-minimal';
 
@@ -18,7 +19,6 @@ import pic6 from '../../Photos/MerchShop/Sticker/pic6.jpg';
 import { withAuthorization } from '../Session';
 
 import "./style.css"
-
 
 
 // Carosel Data Initializations
@@ -57,6 +57,7 @@ const slideNumberStyle = {
 export const ContactUs = () => {
     const form = useRef();
     const history = useHistory();
+    //const navigate = useNavigate();
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -82,7 +83,8 @@ export const ContactUs = () => {
         var delayInMilliseconds = 2000; // 2 second
         setTimeout(function() {    
 
-            history.push('/merch_shop')    
+            history.push('/merch_shop') 
+            //navigate('/merch_shop');   
 
         }, delayInMilliseconds);
         
