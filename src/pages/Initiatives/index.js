@@ -6,7 +6,7 @@ import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
 import Footer from '../../components/Footer';
 
-import coverPhoto from '../../Photos/Covers/Initiatives.JPG';
+import coverPhoto from '../../Photos/Covers/Initiatives.png';
 import rightsun from '../../Photos/Icons/rightsun.png'
 import leftsun from '../../Photos/Icons/leftsun.png';
 import sun from '../../Photos/InitiativesPage/suny.png';
