@@ -103,7 +103,7 @@ class EBoard extends Component {
                 major: "1st Year Transfer | Electrical Engineering",
                 image: Ben,
                 role: "Transfer Representative",
-                memory: "",
+                memory: "My favorite SOLES memory was the Summer Bonfire. It was awesome to meet my engineering peers in a non-classroom setting and form friendships that are gonna last beyond our time at UCLA!! It was also really funny when we were all struggling trying to cook our hot dogs on a stick over the bonfire",
                 email: "   uclasoles.transferrep@gmail.com"
             },
             {

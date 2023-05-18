@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 import { compose } from 'recompose';
 import Form from 'react-bootstrap/Form'
