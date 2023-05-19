@@ -63,6 +63,7 @@ class PasswordChangeForm extends Component {
               onChange={this.onChange}
               type="password"
               placeholder="Confirm New Password"
+              
             />
           </div>
             <button disabled={isInvalid} type="submit" className="buttonRESET">
