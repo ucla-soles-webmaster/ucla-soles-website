@@ -98,14 +98,16 @@ class GeneralMeetings extends Component {
                         General Meetings
                     </div>
                     <div style={{textAlign: "center"}} className="gmIntro">
-                       {/* Sign-in below! See you next quarter :)*/}    
+                       Sign-in here once form is available :)  
                     </div>
 
                 </div>
                 
+                {/*
                 <div className="signInForm">
                     <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
                 </div>
+                */}
                 {/* Will add toggle function to admin page
                 <div className="gmIntro">
                     <p>See you next meeting!</p>
@@ -117,7 +119,7 @@ class GeneralMeetings extends Component {
                         <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        Spring GM Slides
+                        Fall GM Slides
                     </div>
                 </div>
                 <div className="gmSlides">

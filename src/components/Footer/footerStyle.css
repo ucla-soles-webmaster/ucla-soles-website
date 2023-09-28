@@ -37,3 +37,16 @@
     padding: '1vw';
     margin-top: -1vw;
 }
+
+.footerColumns {
+    display: flex;
+    justify-content: space-around; /* Adjust this as needed */
+ }
+ 
+ .footerColumn {
+    flex: 1;
+    margin: 0 1vw; /* Adjust the margin between columns */
+    text-align: center;
+    justify-content: center;
+ }
+ 
