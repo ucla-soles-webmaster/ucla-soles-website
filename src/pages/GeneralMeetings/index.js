@@ -97,17 +97,17 @@ class GeneralMeetings extends Component {
                     <div className = "staffMembersBoard" style={{paddingBottom: '0vw'}}>
                         General Meetings
                     </div>
-                    <div style={{textAlign: "center"}} className="gmIntro">
+                    {/* <div style={{textAlign: "center"}} className="gmIntro">
                        Sign-in here once form is available :)  
-                    </div>
+                    </div> */}
 
                 </div>
                 
-                {/*
+                
                 <div className="signInForm">
                     <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
                 </div>
-                */}
+               
                 {/* Will add toggle function to admin page
                 <div className="gmIntro">
                     <p>See you next meeting!</p>

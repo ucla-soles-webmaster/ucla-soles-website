@@ -18,8 +18,8 @@ class Footer extends Component {
                             <p stlye= {{fontSize: '1vw'}}><a style = {{color: 'white', textDecoration: 'none', fontSize: '1vw'}}href= "mailto:uclasoles.webmaster@gmail.com" >uclasoles.webmaster@gmail.com</a></p>
                         </div>
                         <div className="footerColumn" style={{textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-                            <a href="https://docs.google.com/forms/e/1FAIpQLSfQEJK9U-EvaBFuDpoJMEGbBifz0oydO-4CAhilCaZvir38Zg/viewform" className="btn btn-primary btn-lg active" style={{textDecoration: 'none', padding: '8px', marginTop: '15px', borderRadius: '8px', backgroundColor: '#717171', color: 'white', fontFamily: 'Poppins', fontSize: '1vw', border: '0px', cursor: 'pointer', display: 'inline-block'}} rel="noopener noreferrer" target="_blank">
-                                 Join our Slack
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5RMUQmm49WFRil8TEju7P_CU9-_rbMEPq_5uguAXKTN1yrA/viewform" className="btn btn-primary btn-lg active" style={{textDecoration: 'none', padding: '8px', marginTop: '15px', borderRadius: '8px', backgroundColor: '#717171', color: 'white', fontFamily: 'Poppins', fontSize: '1vw', border: '0px', cursor: 'pointer', display: 'inline-block'}} rel="noopener noreferrer" target="_blank">
+                                 Join our Newsletter
                             </a>
                             <div style={{textAlign: 'center', marginTop: '15px'}}>   
                                 <a href="https://www.facebook.com/uclasoles/ " rel="noopener noreferrer" target = "_blank" >
