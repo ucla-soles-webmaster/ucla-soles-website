@@ -10,21 +10,21 @@ import coverPhoto from '../../Photos/Covers/EBoard22_23.JPG';
 ///////////////////////////////////////////////////////////////
 /* Individual Officer Photo Imports */
 
-/* President */ import Kelly from '../../Photos/EBoard/Kelly22_23.png'
-/* EVP */ import Kami from '../../Photos/EBoard/Kami22_23.png' 
-/* IVP */ import Itzhary from '../../Photos/EBoard/Itzhary22_23.png'
+/* President */ import Emanuel from '../../NewBoard/Emanuel.png'
+/* EVP */ import Kami from '../../NewBoard/Marisa.png' 
+/* IVP */ import Itzhary from '../../NewBoard/Bri.png'
 
-/* PDC */ import Mat from '../../Photos/EBoard/Mat22_23.png'
-/* Academic */ import Raya from '../../Photos/EBoard/Raya22_23.png'
-/* Transfer */ import Ben from '../../Photos/EBoard/Ben22_23.png'
+/* PDC */ import Mat from '../../NewBoard/Mauricio.png'
+/* Academic */ import Raya from '../../NewBoard/Erick.png'
+/* Transfer */ import Ben from '../../NewBoard/Victor.png'
 
-/* Treasurer */ import Marisa from '../../Photos/EBoard/Marisa22_23.png'
-/* Secretary */ import Emanuel from '../../Photos/EBoard/Emanuel22_23.png'
-/* Activities */ import Andrew from '../../Photos/EBoard/Andrew22_23.png'
+/* Treasurer */ import Marisa from '../../NewBoard/Sebastian.png'
+/* Secretary */ import Emanuell from '../../NewBoard/Nicole.png'
+/* Activities */ import Andrew from '../../NewBoard/Andrew.png'
 
-/* Ciencias */ import Bri from '../../Photos/EBoard/Bri22_23.png'
-/* LeaderSHPE Jr */ import Jennifer from '../../Photos/EBoard/Jennifer22_23.png'
-/* Tech */ import Sarah from '../../Photos/EBoard/Sarah22_23.png'
+/* Ciencias */ import Bri from '../../NewBoard/Lali.png'
+/* LeaderSHPE Jr */ import Jennifer from '../../NewBoard/Sam.png'
+/* Tech */ import Sarah from '../../NewBoard/Oscar.png'
 /* Tech */ import Oscar from '../../Photos/EBoard/Oscar22_23.png'
 
 /* CEED Staff */
@@ -58,12 +58,12 @@ class EBoard extends Component {
 
     render() {
         const boardMembers = [
-            {
-                name: "Kelly Espino",
-                major: "4th Year | Civil Engineering",
-                image: Kelly,
+            {//Done
+                name: "Emanuel Zavalza",
+                major: "3rd Year | Computer Engineering",
+                image: Emanuel,
                 role: "President",
-                memory: "I’d have to split my favorite soles memories between getting voted back into presidency, regaining some faith that I am making a difference, being at SOLES prom and being everyone’s random guess for superlatives, and being present to win Regional and National Chapter of the year for all the work we did last year <3",
+                memory: "My favorite SOLES memory is the bonfire my first year because its where I first felt welcomed when starting at UCLA",
                 email: "     uclasoles.president@gmail.com"
             },
             {
@@ -117,7 +117,7 @@ class EBoard extends Component {
             {
                 name: "Emanuel Zavalza",
                 major: "2nd Year | Computer Science",
-                image: Emanuel,
+                image: Emanuell,
                 role: "Secretary",
                 memory: "My favorite SOLES memory is the bonfire my first year because its where I first felt welcomed when starting at UCLA",
                 email: "              uclasoles@gmail.com"
