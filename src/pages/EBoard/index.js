@@ -10,22 +10,25 @@ import coverPhoto from '../../Photos/Covers/EBoard22_23.JPG';
 ///////////////////////////////////////////////////////////////
 /* Individual Officer Photo Imports */
 
-/* President */ import Kelly from '../../Photos/EBoard/Kelly22_23.png'
-/* EVP */ import Kami from '../../Photos/EBoard/Kami22_23.png' 
-/* IVP */ import Itzhary from '../../Photos/EBoard/Itzhary22_23.png'
+/* President */ import Emanuel from '../../NewBoard/Emanuel.png'
+/* EVP */ import Kami from '../../NewBoard/Marisa.png' 
+/* IVP */ import Itzhary from '../../NewBoard/Bri.png'
 
-/* PDC */ import Mat from '../../Photos/EBoard/Mat22_23.png'
-/* Academic */ import Raya from '../../Photos/EBoard/Raya22_23.png'
-/* Transfer */ import Ben from '../../Photos/EBoard/Ben22_23.png'
+/* PDC */ import Mat from '../../NewBoard/Mauricio.png'
+/* Academic */ import Raya from '../../NewBoard/Erick.png'
+/* Transfer */ import Ben from '../../NewBoard/Victor.png'
 
-/* Treasurer */ import Marisa from '../../Photos/EBoard/Marisa22_23.png'
-/* Secretary */ import Emanuel from '../../Photos/EBoard/Emanuel22_23.png'
-/* Activities */ import Andrew from '../../Photos/EBoard/Andrew22_23.png'
 
-/* Ciencias */ import Bri from '../../Photos/EBoard/Bri22_23.png'
-/* LeaderSHPE Jr */ import Jennifer from '../../Photos/EBoard/Jennifer22_23.png'
-/* Tech */ import Sarah from '../../Photos/EBoard/Sarah22_23.png'
-/* Tech */ import Oscar from '../../Photos/EBoard/Oscar22_23.png'
+/* Treasurer */ import Sebastian from '../../NewBoard/Sebastian.png'
+/* Treasurer */ import Marisa from '../../NewBoard/Marisa.png'
+/* Secretary */ import Nicole from '../../NewBoard/Nicole.png'
+/* Activities */ import Andrew from '../../NewBoard/Andrew.png'
+
+/* Transfer */ import Lali from '../../NewBoard/Lali.png'
+/* Ciencias */ import Bri from '../../NewBoard/Bri.png'
+/* LeaderSHPE Jr */ import Sam from '../../NewBoard/Sam.png'
+/* Tech */ import Sarah from '../../NewBoard/Oscar.png'
+/* Tech */ import Oscar from '../../NewBoard/Oscar.png'
 
 /* CEED Staff */
 import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
@@ -59,109 +62,103 @@ class EBoard extends Component {
     render() {
         const boardMembers = [
             {
-                name: "Kelly Espino",
-                major: "4th Year | Civil Engineering",
-                image: Kelly,
+                name: "Emanuel Zavalza",
+                major: "3rd Year | Computer Engineering",
+                image: Emanuel,
                 role: "President",
-                memory: "I’d have to split my favorite soles memories between getting voted back into presidency, regaining some faith that I am making a difference, being at SOLES prom and being everyone’s random guess for superlatives, and being present to win Regional and National Chapter of the year for all the work we did last year <3",
+                memory: "My favorite SOLES memory is the bonfire my first year because its where I first felt welcomed when starting at UCLA",
+                memory: "My favorite SOLES memory is the bonfire my first year because its where I first felt welcomed when starting at UCLA",
                 email: "     uclasoles.president@gmail.com"
             },
             {
-                name: "Kami Kunes",
-                major: "3rd Year | Electrical Engineering",
-                image: Kami,
-                role: "External Vice President",
-                memory: "Nothing trumps the time when Andrew, Marisa, and I splashed the seniors while kayaking at the transition retreat. Though they didn't look like they enjoyed getting soaked, we sure did.",
+                name: "Brianna Ceja",
+                major: "3rd Year | Civil Engineering",
+                image: Bri,
+                role: "Internal Vice President",
+                memory: "My favorite SOLES memory is SOLES Olympics!",
                 email: "          uclasoles.evp@gmail.com"
             },
             {
-                name: "Itzhary Tamayo",
-                major: "4th Year | Civil Engineering",
-                image: Itzhary,
-                role: "Internal Vice President",
+                name: "Marisa Duran",
+                major: "4rd Year | Computer Science",
+                image: Marisa,
+                role: "External Vice President",
                 memory: "My favorite SOLES memory was the Xmas party because I enjoyed spending time with cool people and it made it feel like a home away from home.",
                 email: "          uclasoles.ivp@gmail.com"
             },
             {
-                name: "Matthew Ruiz",
-                major: "4th Year | Computer Science",
+                name: "Mauricio Deguchi",
+                major: "4th Year | Mechanical Engineering",
                 image: Mat,
                 role: "Professional Development Chair",
-                memory: "My favorite SOLES memory is going to SHPE nationals in Arizona my freshman year!",
+                memory: "Going to the SOLES retreat and getting closer with all the new and continuing board members.",
                 email: "              uclasoles.pdc@gmail.com"
             },
             {
-                name: "Jasmine Raya",
-                major: "5th Year | Mechanical Engineering",
+                name: "Erick Rosas",
+                major: "2nd Year | Computer Science ",
                 image: Raya,
                 role: "Academic Chair",
-                memory: "",
+                memory: "Favorite memory is being a soles intern. I got to bond with upper class men.",
                 email: "uclasoles.academicchair@gmail.com"
             },
             {
-                name: "Ben Delgado",
-                major: "1st Year Transfer | Electrical Engineering",
+                name: "Victor M. Lopez Cortes",
+                major: "2st Year Transfer | Electrical Engineering",
                 image: Ben,
                 role: "Transfer Representative",
-                memory: "My favorite SOLES memory was the Summer Bonfire. It was awesome to meet my engineering peers in a non-classroom setting and form friendships that are gonna last beyond our time at UCLA!! It was also really funny when we were all struggling trying to cook our hot dogs on a stick over the bonfire",
+                memory: "My fave memory would be when Andrew and I had to bust a mission to the store during the Big Bear Retreat at like 10pm to get super glue to fix the foosball table.",
                 email: "   uclasoles.transferrep@gmail.com"
             },
             {
-                name: "Marisa Duran",
-                major: "3rd Year | Computer Science",
-                image: Marisa,
+                name: "Sebastian Cervantes",
+                major: "3rd Year | Electrical Engineering",
+                image: Sebastian,
                 role: "Treasurer",
-                memory: "My favorite SOLES memory is going to SOLES prom and spending time with everyone and eating tacos :)",
+                memory: "Playing pool and beating Kami bc I thought I was gonna lose. But the whole big bear retreat was a highlight.",
                 email: "     uclasoles.treasurer@gmail.com"
             },
             {
-                name: "Emanuel Zavalza",
+                name: "Nicole Nunez-Sainz",
                 major: "2nd Year | Computer Science",
-                image: Emanuel,
+                image: Nicole,
                 role: "Secretary",
-                memory: "My favorite SOLES memory is the bonfire my first year because its where I first felt welcomed when starting at UCLA",
+                memory: "",
                 email: "              uclasoles@gmail.com"
             },
             {
                 name: "Andrew Rojas",
-                major: "3nd Year | Mechanical Engineering",
+                major: "4nd Year | Mechanical Engineering",
                 image: Andrew,
                 role: "Activities Director",
                 memory: "My favorite SOLES memory is going up to Big Bear for the board retreat and kayaking",
                 email: "              uclasoles@gmail.com"
             },
             {
-                name: "Brianna Ceja",
+                name: "Citlali Rodriguez",
                 major: "2nd Year | Civil Engineering",
-                image: Bri,
+                image: Lali,
                 role: "Ciencias Director",
-                memory: "My favorite SOLES memory is SOLES Olympics!",
+                memory: "My favorite SOLES memories has to be our white elephant MentorSHPE event. Seeing everyone's competitive side come out over silly $10 gifts was super fun and got everyone to really bond. I went from a box of fancy chocolates and a cute little mug to a bundle of tape with a happy face on it. The memory of that night brings me joy though, so that bundle of tape is now used as a decoration for my desk. ",
                 email: "uclasoles.cienciasdirector@gmail.com"
             },
             {
-                name: "Jennifer Juarez",
+                name: "Samantha Lopez",
                 major: "2nd Year | Civil Engineering",
-                image: Jennifer,
+                image: Sam,
                 role: "LeaderSHPE Jr Director",
-                memory: "My favorite SOLES memory is freshmen weekend. I got to meet the incoming freshmen as they shadowed our day. We went ice blocking, had a beach day, played volleyball...so much fun!",
+                memory: "My favorite memory was the beat 'sc tailgate it was so much fun getting to hang out with everyone . Also really loved the mentorshpe familia hangouts last year!",
                 email: "uclasoles.leadershpejr@gmail.com"
             },
             {
-                name: "Sarah Mauricio",
-                major: "4th Year | Computer Science",
-                image: Sarah,
-                role: "Technical Chair",
-                memory: "My favorite SOLES memory was the beach bonfire we had at the beginning of last year. It was great to see everyone in person after being online for so long!",
-                email: "uclasoles.technicalchair@gmail.com"
-            },
-            {
                 name: "Oscar Orantes",
-                major: "2nd Year | Eletrical Engineering",
+                major: "3rd Year | Eletrical Engineering",
                 image: Oscar,
                 role: "Technical Chair",
-                memory: "",
+                memory: "My favorite SOLES memory was my first ever SOLES GM, it was a warm welcome to UCLA. I got to meet many new people and form lifelong relationships, that mean the world to me today. Seeing complete strangers act like family and treat me like family changed me but eating burnt hotdogs at my first bonfire was cool too.",
                 email: "uclasoles.technicalchair@gmail.com"
-            },
+            }
+            
         ];
 
         const listMembers = boardMembers.map((d) => 
