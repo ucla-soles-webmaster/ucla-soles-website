@@ -24,9 +24,30 @@ class Lunabotics extends Component {
                 <Navigation transparentNav={true} />
                 <PagePhoto imageSource={coverPhoto} title={"Lunabotics"}></PagePhoto>
                 
-                <hr className="introBar" /> 
-                    <div className="introbox" style={{color:'#001d3a', textAlign:'center', marginBottom:'4%', marginTop:'-1%'}}>
+                <hr className="introBar" />
+                    <div className="introbox" style={{color:'#001d3b', textAlign:'center', marginBottom:'4%', marginTop:'-1%'}}>   
+
+                    <p style={{ 
+                     fontWeight: 'bold', 
+                     color: '#3788d8',
+                     margin: 0,
+                     padding: 0,
+                     fontFamily: "'Poppins', Arial, 'Helvetica Neue', Helvetica, sans-serif",
+                     fontSize: '1.05vw', // 14px
+                     height: '100%'
+                    }}> We will provide updates on this page as future projects progress and new developments arise!</p>
+                    
+                    <div className="introbox" style={{color:'#001d3b', textAlign:'center', marginBottom:'4%', marginTop:'-1%'}}></div>
+
+                    <hr className="introBar" /> {/* Added horizontal line here */} 
+
+
+
+
+
                         <div className="initIntro" style={{display: 'flex', marginLeft: '12%', marginRight: '12%', marginBottom:'-7%'}}>
+
+                         
                             <p className="about">
                                 <p class="header">
                                     About
@@ -50,6 +71,11 @@ class Lunabotics extends Component {
                                 program an autonomous mobile robot, and learn how to machine!
                                 
                             </p>
+
+
+
+
+
                         </div>
                         <img id="rightsunLanding" src={rightsun} alt="Right SOLES Sun"/>
                         <img id="leftsunLanding" src={leftsun} alt="Left SOLES Sun" />
@@ -82,3 +108,7 @@ class Lunabotics extends Component {
 
 
 export default Lunabotics;
+
+
+
+
