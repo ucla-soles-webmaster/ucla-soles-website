@@ -18,14 +18,17 @@ import coverPhoto from '../../Photos/Covers/EBoard22_23.JPG';
 /* Academic */ import Raya from '../../NewBoard/Erick.png'
 /* Transfer */ import Ben from '../../NewBoard/Victor.png'
 
-/* Treasurer */ import Marisa from '../../NewBoard/Sebastian.png'
-/* Secretary */ import Emanuell from '../../NewBoard/Nicole.png'
+
+/* Treasurer */ import Sebastian from '../../NewBoard/Sebastian.png'
+/* Treasurer */ import Marisa from '../../NewBoard/Marisa.png'
+/* Secretary */ import Nicole from '../../NewBoard/Nicole.png'
 /* Activities */ import Andrew from '../../NewBoard/Andrew.png'
 
-/* Ciencias */ import Bri from '../../NewBoard/Lali.png'
-/* LeaderSHPE Jr */ import Jennifer from '../../NewBoard/Sam.png'
+/* Transfer */ import Lali from '../../NewBoard/Lali.png'
+/* Ciencias */ import Bri from '../../NewBoard/Bri.png'
+/* LeaderSHPE Jr */ import Sam from '../../NewBoard/Sam.png'
 /* Tech */ import Sarah from '../../NewBoard/Oscar.png'
-/* Tech */ import Oscar from '../../Photos/EBoard/Oscar22_23.png'
+/* Tech */ import Oscar from '../../NewBoard/Oscar.png'
 
 /* CEED Staff */
 import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
@@ -110,7 +113,7 @@ class EBoard extends Component {
             {
                 name: "Sebastian Cervantes",
                 major: "3rd Year | Electrical Engineering",
-                image: Marisa,
+                image: Sebastian,
                 role: "Treasurer",
                 memory: "Playing pool and beating Kami bc I thought I was gonna lose. But the whole big bear retreat was a highlight.",
                 email: "     uclasoles.treasurer@gmail.com"
@@ -118,7 +121,7 @@ class EBoard extends Component {
             {
                 name: "Nicole Nunez-Sainz",
                 major: "2nd Year | Computer Science",
-                image: Emanuell,
+                image: Nicole,
                 role: "Secretary",
                 memory: "",
                 email: "              uclasoles@gmail.com"
@@ -134,7 +137,7 @@ class EBoard extends Component {
             {
                 name: "Citlali Rodriguez",
                 major: "2nd Year | Civil Engineering",
-                image: Bri,
+                image: Lali,
                 role: "Ciencias Director",
                 memory: "My favorite SOLES memories has to be our white elephant MentorSHPE event. Seeing everyone's competitive side come out over silly $10 gifts was super fun and got everyone to really bond. I went from a box of fancy chocolates and a cute little mug to a bundle of tape with a happy face on it. The memory of that night brings me joy though, so that bundle of tape is now used as a decoration for my desk. ",
                 email: "uclasoles.cienciasdirector@gmail.com"
@@ -142,7 +145,7 @@ class EBoard extends Component {
             {
                 name: "Samantha Lopez",
                 major: "2nd Year | Civil Engineering",
-                image: Jennifer,
+                image: Sam,
                 role: "LeaderSHPE Jr Director",
                 memory: "My favorite memory was the beat 'sc tailgate it was so much fun getting to hang out with everyone . Also really loved the mentorshpe familia hangouts last year!",
                 email: "uclasoles.leadershpejr@gmail.com"
