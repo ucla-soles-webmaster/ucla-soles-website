@@ -154,14 +154,6 @@ class EBoard extends Component {
                 memory: "My favorite SOLES memory was the beach bonfire we had at the beginning of last year. It was great to see everyone in person after being online for so long!",
                 email: "uclasoles.technicalchair@gmail.com"
             },
-            {
-                name: "Oscar Orantes",
-                major: "2nd Year | Eletrical Engineering",
-                image: Oscar,
-                role: "Technical Chair",
-                memory: "",
-                email: "uclasoles.technicalchair@gmail.com"
-            },
         ];
 
         const listMembers = boardMembers.map((d) => 
