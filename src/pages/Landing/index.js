@@ -22,7 +22,7 @@ import './landingStyle.css'
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
-import presidentPhoto from '../../Photos/EBoard/Kelly22_23.png'
+import presidentPhoto from '../../NewBoard/Emanuel.png'
 import presidentSig from '../../Photos/PresidentsMsg/signature.png'
 import coverPhoto from '../../Photos/Covers/Landing.jpeg';
 import rightsun from '../../Photos/Icons/rightsun.png'
@@ -90,7 +90,7 @@ class Landing extends Component {
                             <img 
                                 src= {presidentPhoto} 
                                 alt="SOLES President" 
-                                style={{width:'100%'}}
+                                style={{width:'100%', border: '5px solid black' }}
                             ></img>
                         </div>
 
@@ -101,29 +101,16 @@ class Landing extends Component {
                             </div>
                             {/* */}
                             <div className="presidentSubMessage">
-                                Saludos a todos, and welcome to our SOLES Familia, the recognized SHPE Regional and National Chapter of the Year! 
+                            Bienvenido todos and welcome to the SOLES familia, the current recognized top UCLA Engineering Organization.
                                 <div style={{marginBottom: '0.6em', display: 'block'}} />
-                                SOLES|SHPE at UCLA prides itself in being an organization that seeks to elevate its members to excel in all aspects of their lives.  We celebrate 
-                                the unique qualities and experiences Latinx individuals contribute in engineering, empowering our members to have confidence in their abilities, 
-                                regardless of individual circumstances.  We hold four chapter pillars: academic development, professional development, community outreach, and 
-                                recruitment/retention, which we align with our goals and mission in all of our endeavors.  Please use this site as a resource to explore how we
-                                reach our goals and how our members benefit from our interdisciplinary academic resources, community building events, community outreach initiatives, 
-                                and wide-spread industry partnerships!  With these tools and the connections they bring, we hope to pave the way for a future in which all Latinx/Hispanic 
-                                students are empowered, both at UCLA and in the greater Los Angeles community, to pursue a STEM degree and achieve high standards.
+                                SOLES|SHPE at UCLA prides itself in being an organization that seeks to elevate its members to excel in all aspects of their lives. We celebrate the unique qualities and experiences Latinx individuals contribute in engineering, empowering our members to have confidence in their abilities, regardless of individual circumstances. We hold four chapter pillars: academic development, professional development, community outreach, and recruitment/retention, which we align with our goals and mission in all of our endeavors. Please use this site as a resource to explore how we reach our goals and how our members benefit from our interdisciplinary academic resources, community building events, community outreach initiatives, and wide-spread industry partnerships! With these tools and the connections they bring, we hope to pave the way for a future in which all Latinx/Hispanic students are empowered, both at UCLA and in the greater Los Angeles community, to pursue a STEM degree and achieve high standards.
                                 <div style={{marginBottom: '0.6em', display: 'block'}} />
-                                Returning to my presidency, I plan to propel SOLES to new heights in all aspects of our missions and set new bars and expectations for generations to come.  
-                                My hard working board and I all see the potential for SOLES to grow within our community, professionally, and with SHPE at large; meanwhile, continuing to foster 
-                                our SOLECITOS FAMILIA feeling.  SOLES has been my home away from home, where I have been able to explore more of my own potential and passions, inspire myself to 
-                                prosper as a Latina in STEM, and lean on those who understand me as we grow together.  I wish to provide this feeling and more to each individual.  I aim to inspire 
-                                them to have pride in their cultural backgrounds and use it as a tool for their success.  I hope one day you may look back and appreciate what SOLES meant for each of you.  
-                                Born of two Mexican immigrants, diversity and inclusion are values I have held since I was a little girl, and I continue to believe everyone should have the opportunity to 
-                                explore his/her interests and grow as an individual no matter his/her background.  I plan to be a President who firmly stands for SOLES and all of its members, meanwhile 
-                                serving as an example of leadership and compassion when spreading love to her growing familia and community. 
+                                On starting my presidency, I aim to fortify the relationships within our familia to increase our impact on our communities. Ever since that first summer beach bonfire, I’ve witnessed the incredible amount of good SOLES produces for its members and its community, despite various obstacles.  If I’m being honest, if it weren’t for the connections I’ve made in SOLES, I’m unsure if I would be as successful as I am now.  I’m a first-generation Mexican college student as many of you are, both parents never passed 3rd grade, and I had little exposure to engineering before coming to UCLA.  Heck! If it weren’t for my inspiring high school teacher, who left the engineering workforce to inspire students, I wouldn’t be here today. I would love to continue to impact that kind of change as the next president of SOLES, leading my amazing team of like-minded individuals.
                                 <div style={{marginBottom: '0.6em', display: 'block'}} />
-                                With great excitement for the future, y mucho amor,
+                                Con mucho amor and lots of gratitude for the amazing mentors that have propelled me this far,
                                 <div style={{marginBottom: '0.9em', display: 'block'}} />
                                 <div style={{fontSize: '1.2em', lineHeight:'1.5em', color: 'gray', marginBottom: '0.3em'}}>
-                                    Kelly Espino
+                                    Emanuel Savalza
                                 </div>
                                 <img 
                                     src= {presidentSig} 
