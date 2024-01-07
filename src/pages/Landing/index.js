@@ -28,7 +28,7 @@ import coverPhoto from '../../Photos/Covers/Landing.jpeg';
 import rightsun from '../../Photos/Icons/rightsun.png'
 import leftsun from '../../Photos/Icons/leftsun.png';
 
-
+import presSig from '../../Photos/PresidentsMsg/sig.png';
 
 
 class Landing extends Component {
@@ -113,14 +113,14 @@ class Landing extends Component {
                                     Emanuel Savalza
                                 </div>
                                 <img 
-                                    src= {presidentSig} 
+                                    src= {presSig} 
                                     alt="President Signature" 
                                     style={{width:'12em'}}
                                 ></img>
-                                <div className="presidentContactInfo"><p>President 2022-2023<br/>
+                                <div className="presidentContactInfo"><p>President 2023-2024<br/>
                                     <a href="mailto: uclasoles.president@gmail.com" target="_blank" rel="noopener noreferrer">uclasoles.president@gmail.com</a><br/>
-                                    Civil Engineering B.S.<br/>
-                                    UCLA Class of 2023 
+                                    Computer Engineering B.S.<br/>
+                                    UCLA Class of 2025
                                 </p>
                                 </div>
                             </div>
