@@ -9,7 +9,6 @@ import Footer from '../../components/Footer';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 
 
-
 ///////////////////////////////////////////////////////////////
 /* CSS Imports */
 
@@ -24,7 +23,7 @@ class About extends Component {
     // Add constructor here when necessary
     componentDidMount() {
         window.scrollTo(0, 0)
-      }
+    }
 
     render() {
         return (
@@ -41,7 +40,11 @@ class About extends Component {
                             <p className="missionVisionDescription">
                             SOLES changes lives by empowering the Hispanic community to realize its fullest potential 
                             and to impact the world through STEM awareness, access, support, and development.
+                            Learn more about <a href="https://shpe.org/about-shpe/" rel="noopener noreferrer" target="_blank">SHPE's mission</a>.
                             </p>
+                            <a href="https://drive.google.com/file/d/0B9NZBo_zxsY2VFJHbnlrNmJ5Nm8/view?resourcekey=0-gUsAiQ5bKBeFpwRcxbnSqA" className="btn btn-primary btn-lg active" style={{textDecoration: 'none', padding: '8px', borderRadius: '8px', backgroundColor: '#717171', color: 'white', fontFamily: 'Poppins', fontSize: '1.5vw', border: '0px', cursor: 'pointer', display: 'inline-block', marginLeft: '4vw'}} rel="noopener noreferrer" target="_blank">
+                                View Bylaws of SOLES
+                            </a>
                     </div>
                     {/* Vision */}
                     <div className="mvBlock">
@@ -161,4 +164,3 @@ class About extends Component {
 
 
 export default About;
-

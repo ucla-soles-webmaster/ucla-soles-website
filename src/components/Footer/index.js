@@ -36,6 +36,9 @@ class Footer extends Component {
                             <p style={{fontSize: '1vw', color: 'white', textAlign: 'center'}}>
                                 <a style={{color: 'white', textDecoration: 'none', fontSize: '1vw'}} href="mailto:uclasoles.president@gmail.com">uclasoles.president@gmail.com</a>
                             </p>
+                            <p style={{fontSize: '1vw', color: 'white', textAlign: 'center'}}>
+                                <a style={{color: 'white', fontSize: '1vw'}} href="https://drive.google.com/file/d/0B9NZBo_zxsY2VFJHbnlrNmJ5Nm8/view?resourcekey=0-gUsAiQ5bKBeFpwRcxbnSqA">Bylaws of SOLES</a>
+                            </p>
                         </div>
                     </div>
                     {/*

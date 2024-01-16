@@ -57,7 +57,7 @@ class Landing extends Component {
                             <div className="introSubMessage">
                                 The Society of Latinx Engineers and Scientists at UCLA (SOLES) is a student 
                                 organization in the Henry Samueli School of Engineering and Applied Science,
-                                and is a student chapter of the Society of Hispanic Professional Engineers (SHPE).
+                                and is a student chapter of the Society of Hispanic Professional Engineers (<a href="https://shpe.org/" target="_blank" rel="noopener noreferrer">SHPE</a>).
                                 We center around empowering Latinx students in engineering and science both at the UCLA and at nearby K-12 schools. Learn more <Link to={ROUTES.ABOUT}>here.</Link>
                             </div>
                         </div>
@@ -110,7 +110,7 @@ class Landing extends Component {
                                 Con mucho amor and lots of gratitude for the amazing mentors that have propelled me this far,
                                 <div style={{marginBottom: '0.9em', display: 'block'}} />
                                 <div style={{fontSize: '1.2em', lineHeight:'1.5em', color: 'gray', marginBottom: '0.3em'}}>
-                                    Emanuel Savalza
+                                    Emanuel Zavalza
                                 </div>
                                 <img 
                                     src= {presSig} 
