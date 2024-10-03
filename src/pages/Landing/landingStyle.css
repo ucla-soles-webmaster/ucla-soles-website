@@ -75,6 +75,11 @@
     animation: 9s ease-in-out 0s 1 slideup;
 }
 
+.MessageFromCalendar{
+    display: flex;
+    flex-direction: row;
+}
+
 .MessageFromPresident
 {
     width: 100%;

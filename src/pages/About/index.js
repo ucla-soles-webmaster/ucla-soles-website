@@ -64,7 +64,7 @@ class About extends Component {
                     </div>
                     <br/>
         
-                    <VerticalTimeline >
+                    <VerticalTimeline layout='1-column-left'>
                         <VerticalTimelineElement
                             className="vertical-timeline-element--work"
                             date="1992"

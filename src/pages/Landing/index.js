@@ -69,14 +69,20 @@ class Landing extends Component {
                     <br/>
 
                     <div className="introbox" style={{textAlign: 'left'}}>
-                        <div id="MessageFromCalendar">
+                        <div className="MessageFromCalendar">
                             <div className="calendarMessage">
                                     SOLES Calendar
                                 <div className="calendarSubMessage">
                                     Click to learn more about an upcoming event!
                                 </div>
                             </div>
+                            <div>
+                                <a href="https://calendar.google.com/calendar/ical/uclasoles%40gmail.com/public/basic.ics" className="btn btn-primary btn-lg active" style={{textDecoration: 'none', marginTop: '25px', padding: '8px', borderRadius: '8px', backgroundColor: '#3788d8', color: 'white', fontFamily: 'Poppins', fontSize: '1vw', border: '0px', cursor: 'pointer', display: 'inline-block'}} rel="noopener noreferrer" target="_blank">
+                                    Import to Personal Calendar
+                                </a>                                 
+                            </div>
                         </div>
+
                     </div>
                     {/*Calendar Imported from Calendar folder*/}
                     <Calendar/>
