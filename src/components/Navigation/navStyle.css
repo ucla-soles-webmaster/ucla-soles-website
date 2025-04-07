@@ -46,14 +46,14 @@ body {
 }
 
 .navTop .logo img {
-    height: 70px;
+    height: 60px;
     padding-top: 3px;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     margin-left: -55px;
 }
 .navElse .logo img {
-    height: 66px;
+    height: 60px;
     padding-top: 3px;
     transition: 0.5s;
     -webkit-transition: 0.5s;
