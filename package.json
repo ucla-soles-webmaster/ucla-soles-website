@@ -54,8 +54,8 @@
     "video-react": "^0.14.1"
   },
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -83,6 +83,7 @@
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
     "@types/brainhubeu__react-carousel": "^2.0.4",
+    "cross-env": "^7.0.3",
     "css-loader": "^4.3.0",
     "html-webpack-plugin": "^4.5.0",
     "style-loader": "^2.0.0",
