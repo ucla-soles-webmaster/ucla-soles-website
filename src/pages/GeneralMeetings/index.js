@@ -119,7 +119,7 @@ class GeneralMeetings extends Component {
                         <img className = "gmSun" src= {sun} alt="Yellow Sun"></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        Fall GM Slides
+                        GM Slides
                     </div>
                 </div>
                 <div className="gmSlides">
