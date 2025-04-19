@@ -20,7 +20,7 @@ import SCEdison from '../../Photos/SponsorLogos/socaledison.gif'
 //import LADWP from '../../Photos/SponsorLogos/ladwp.png'
 import Cruise from '../../Photos/SponsorLogos/cruiseLogo.png'
 import Illumina from '../../Photos/SponsorLogos/illuminaLogo.png'
-import sponsorshipP from '../../Photos/SponsorLogos/sponsorshippacketsoles22-23.pdf'
+import sponsorshipP from '../../Photos/SponsorLogos/sponsorshippacketsoles24-25.pdf'
 
 //import Chevron from '../../Photos/SponsorLogos/chevron.png'
 //import Twitter from '../../Photos/SponsorLogos/twitter.jpg'
@@ -98,8 +98,11 @@ class Sponsors extends Component {
                 </div>
                 <div className = "titleFont1">
                     <div className = "titleFont3Sponsor">
-                        <p>We’d like to extend a special thanks to our corporate sponsors. Take a look at our <a href={sponsorshipP} target="_blank">SOLES Sponsorship Packet</a> to learn more! If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!</p>
+                        <p>We’d like to extend a special thanks to our corporate sponsors. Take a look at our <a href={sponsorshipP} target="_blank">SOLES Sponsorship Packet</a> to learn more! <br/> <b>If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!</b></p>
                     </div>
+                    <a href={sponsorshipP} className="btn btn-primary btn-lg active" style={{textDecoration: 'none', padding: '8px', borderRadius: '8px', backgroundColor: '#717171', color: 'white', fontFamily: 'Poppins', fontSize: '1.5vw', border: '0px', cursor: 'pointer', display: 'inline-block', marginLeft: '4vw'}} rel="noopener noreferrer" target="_blank">
+                        FY24-25 SOLES Sponsorship Packet
+                    </a>
                 </div>
                     
 
