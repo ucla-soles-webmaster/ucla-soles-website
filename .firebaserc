@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "soles-website-dev"
-  }
+    "default": "soles-website-dev-58009"
+  },
+  "targets": {},
+  "etags": {}
 }

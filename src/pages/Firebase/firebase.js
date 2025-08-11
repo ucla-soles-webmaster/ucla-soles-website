@@ -6,13 +6,14 @@ import 'firebase/firestore'
 
 
 var config = {
-    apiKey: "AIzaSyDD4ngWxZnLgn9sVO0TMlUw0iyCxs1ACJc",
-    authDomain: "soles-website-dev.firebaseapp.com",
-    databaseURL: "https://soles-website-dev.firebaseio.com",
-    projectId: "soles-website-dev",
-    storageBucket: "soles-website-dev.appspot.com",
-    messagingSenderId: "556961484501",
-    appId: "1:556961484501:web:c7b0bb678f64d130611c5c"
+    apiKey: "AIzaSyC2rYB-eBdIXb7fHCZ8KbLrD8L5HfPq-uc",
+    authDomain: "soles-website-dev-58009.firebaseapp.com",
+    databaseURL: "https://soles-website-dev-58009.firebaseio.com",
+    projectId: "soles-website-dev-58009",
+    storageBucket: "soles-website-dev-58009.firebasestorage.app",
+    messagingSenderId: "993878261407",
+    appId: "1:993878261407:web:d50629d363e6d3d22b2caa",
+    measurementId: "G-GNPR1V1BV8"
 };
 const firebase = require("firebase");
 // Required for side-effects

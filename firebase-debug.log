@@ -1,0 +1,45 @@
+[debug] [2025-08-11T06:59:50.643Z] ----------------------------------------------------------------------
+[debug] [2025-08-11T06:59:50.645Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\estra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-08-11T06:59:50.645Z] CLI Version:   14.1.0
+[debug] [2025-08-11T06:59:50.645Z] Platform:      win32
+[debug] [2025-08-11T06:59:50.645Z] Node Version:  v22.13.1
+[debug] [2025-08-11T06:59:50.645Z] Time:          Sun Aug 10 2025 23:59:50 GMT-0700 (Pacific Daylight Time)
+[debug] [2025-08-11T06:59:50.645Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-11T06:59:50.765Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"rulesFile"}
+[debug] [2025-08-11T06:59:50.770Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-11T06:59:50.770Z] > authorizing via signed-in user (uclasoles.webmaster@gmail.com)
+[debug] [2025-08-11T06:59:50.770Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"rulesFile"}
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\estra\OneDrive\Desktop\ucla-soles-website-8
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-08-11T07:00:02.039Z] Using project from CLI flag: soles-website-dev-58009
+[debug] [2025-08-11T07:00:02.040Z] Checked if tokens are valid: true, expires at: 1754898910278
+[debug] [2025-08-11T07:00:02.040Z] Checked if tokens are valid: true, expires at: 1754898910278
+[debug] [2025-08-11T07:00:02.041Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/soles-website-dev-58009 [none]
+[debug] [2025-08-11T07:00:32.045Z] *** [apiv2] error from fetch(https://firebase.googleapis.com/v1beta1/projects/soles-website-dev-58009, {"headers":{},"method":"GET","signal":{}}): AbortError: The user aborted a request.
+[debug] [2025-08-11T07:00:32.046Z] Timeout reached making request to https://firebase.googleapis.com/v1beta1/projects/soles-website-dev-58009 (original: The user aborted a request.)
+[debug] [2025-08-11T07:00:32.051Z] FirebaseError: Timeout reached making request to https://firebase.googleapis.com/v1beta1/projects/soles-website-dev-58009
+    at RetryOperation._fn (C:\Users\estra\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:257:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project soles-website-dev-58009. Please make sure the project exists and your account has permission to access it.
