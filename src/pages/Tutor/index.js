@@ -46,7 +46,7 @@ class Tutor extends Component {
                                 Act as you would want your own teacher to act.
                             </li>
                             <li>
-                                Potential danger? Report the incident to the <a href='https://www.thehotline.org/'>Child Protective Services</a> and then email <b>uclasoles.tutoring@gmail.com</b>.
+                                Potential danger? Report the incident to the <a href='https://www.thehotline.org/' rel="noopener noreferrer">Child Protective Services</a> and then email <b>uclasoles.tutoring@gmail.com</b>.
                             </li>
                             <li>
                                 Unfortunately, you cannot record tutoring sessions.

@@ -58,7 +58,7 @@ class Thank_You extends Component {
                     DM Mat Ruiz on GroupMe if no confirmation email is sent or for any technical errors.
                 </p>
                 <div className="haccountRe">
-                    <a href="/merch_shop">
+                    <a href="/merch_shop" rel="noopener noreferrer">
                         <button type="submit" className="itemOrderSubmitButtonRe">
                             Back to Merch Shop
                         </button>

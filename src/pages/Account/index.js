@@ -245,7 +245,7 @@ class AccountPage extends Component {
                               Our resume drive is an up-to-date ZIP file of all SOLES members who decided to submit their resumes.
                               The SOLES Web Dev team is currently working on making the resume drive better organized for your benefit.
                               <br/>
-                              Download <a href="https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Fresume_drive_zip%2FSOLES_Resume_Book_2020.zip?alt=media&token=0223b071-b533-4695-8b41-9a80734ffebb">here.</a>
+                              Download <a href="https://firebasestorage.googleapis.com/v0/b/soles-website-dev.appspot.com/o/resumes%2Fresume_drive_zip%2FSOLES_Resume_Book_2020.zip?alt=media&token=0223b071-b533-4695-8b41-9a80734ffebb" rel="noopener noreferrer">here.</a>
                             </div>
                           :
                             // BRONZE sponsors

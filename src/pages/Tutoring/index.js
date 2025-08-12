@@ -38,7 +38,7 @@ class Tutoring extends Component {
                         If you’ve already gone through all the steps below and have access to the Tutoring Platform, 
                         please click the link below to sign in.
                     </div>
-                    <a href="https://tinyurl.com/yb3e57d8" className="TutorPageButton">
+                    <a href="https://tinyurl.com/yb3e57d8" className="TutorPageButton" rel="noopener noreferrer">
                         Tutoring Platform
                     </a>
 

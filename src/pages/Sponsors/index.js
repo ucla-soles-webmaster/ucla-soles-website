@@ -32,9 +32,9 @@ import sponsorshipP from '../../Photos/SponsorLogos/sponsorshippacketsoles24-25.
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
-import gold_bar from '../../Photos/Icons/gold.jpg'
-import silver_bar from '../../Photos/Icons/silver.jpg'
-import bronze_bar from '../../Photos/Icons/bronze.jpg'
+// import gold_bar from '../../Photos/Icons/gold.jpg'
+// import silver_bar from '../../Photos/Icons/silver.jpg'
+// import bronze_bar from '../../Photos/Icons/bronze.jpg'
 import sun from '../../Photos/Icons/sun.png'
 
 import '../../../src/pages/Sponsors/sponserStyle.css';
