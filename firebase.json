@@ -1,10 +1,12 @@
 {
-  "rulesFile": "database.rules.json",
   "firestore": {
+    "database": "(default)",
+    "location": "us-west2",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
+    "site": "soles-website-dev-58009",
     "public": "build",
     "ignore": [
       "firebase.json",
