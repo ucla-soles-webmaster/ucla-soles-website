@@ -8,7 +8,7 @@ import 'firebase/firestore'
 var config = {
     apiKey: "AIzaSyC2rYB-eBdIXb7fHCZ8KbLrD8L5HfPq-uc",
     authDomain: "soles-website-dev-58009.firebaseapp.com",
-    databaseURL: "https://soles-website-dev-58009.firebaseio.com",
+    databaseURL: "https://soles-website-dev-58009-default-rtdb.firebaseio.com/",
     projectId: "soles-website-dev-58009",
     storageBucket: "soles-website-dev-58009.firebasestorage.app",
     messagingSenderId: "993878261407",

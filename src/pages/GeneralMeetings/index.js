@@ -73,7 +73,7 @@ class GeneralMeetings extends Component {
     renderGMSlides = (item, idx) => {
         return(
             <a href={item["link"]} target="_blank" rel="noopener noreferrer">
-                <button class="gmSlideButton">
+                <button className="gmSlideButton">
                     {item["name"]}
                 </button>
             </a>
@@ -105,7 +105,19 @@ class GeneralMeetings extends Component {
                 
                 
                 <div className="signInForm">
-                    <iframe className="responsive-iframe" title="Sign-in Form" src={this.state.gmSignInLink}>Loading…</iframe>
+                    {this.state.gmSignInLink && this.state.gmSignInLink.trim() !== "" ? (
+                        <iframe
+                            className="responsive-iframe"
+                            title="Sign-in Form"
+                            src={this.state.gmSignInLink}
+                        >
+                            Loading…
+                        </iframe>
+                    ) : (
+                        <p style={{ textAlign: "center", fontStyle: "italic", marginTop: "20px" }}>
+                            GM sign-in link is not available yet!
+                        </p>
+                    )}
                 </div>
                
                 {/* Will add toggle function to admin page
@@ -123,12 +135,16 @@ class GeneralMeetings extends Component {
                     </div>
                 </div>
                 <div className="gmSlides">
-                    
-                    
-                    <FlatList
-                        list={this.state.gmSlides}
-                        renderItem={this.renderGMSlides}
-                    />
+                    {this.state.gmSlides.length === 0 ? (
+                        <p style={{ textAlign: "center", fontStyle: "italic", marginTop: "20px" }}>
+                            No slides uploaded yet!
+                        </p>
+                    ) : (
+                        <FlatList
+                            list={this.state.gmSlides}
+                            renderItem={this.renderGMSlides}
+                        />
+                    )}
                     
                     <br/>
                     <br/>

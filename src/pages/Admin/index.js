@@ -713,7 +713,7 @@ class AdminPage extends Component {
           ?
             <div>
               <p>
-                Functionality will be added on a continous basis. Contact Mat Ruiz (949)547-0987
+                Functionality will be added on a continous basis. Contact Diana Estrada (310)642-8020
                 for immediate support or issues.
                 <br/><br/>
                 This page is only viewable to admins (EBoard and Web Team).
