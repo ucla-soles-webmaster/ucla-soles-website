@@ -23,10 +23,10 @@ class Footer extends Component {
                             </a>
                             <div style={{textAlign: 'center', marginTop: '15px'}}>   
                                 <a href="https://www.facebook.com/uclasoles/ " rel="noopener noreferrer" target = "_blank" >
-                                    <i style = {{padding: '1vw', paddingTop: '0vw', fontSize: '2vw', color: 'white'}} class="fa fa-facebook-square" aria-hidden="true"></i>
+                                    <i style = {{padding: '1vw', paddingTop: '0vw', fontSize: '2vw', color: 'white'}} className="fa fa-facebook-square" aria-hidden="true"></i>
                                 </a>
                                 <a href="https://www.instagram.com/uclasoles/?hl=en" rel="noopener noreferrer" target = "_blank" >
-                                    <i style = {{padding: '1vw', paddingTop: '0vw', fontSize: '2vw', color: 'white'}} class="fa fa-instagram" aria-hidden="true"></i>
+                                    <i style = {{padding: '1vw', paddingTop: '0vw', fontSize: '2vw', color: 'white'}} className="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ class Footer extends Component {
                     <div className = "gradient-line-hor"></div>
 
                     <div style={{color: 'white', textAlign: 'center', padding: '1vw', fontSize: '0.85vw'}}>
-                        Society of Latino Engineers and Scientists <i class="fa fa-copyright"></i> {(new Date().getFullYear())}
+                        Society of Latino Engineers and Scientists <i className="fa fa-copyright"></i> {(new Date().getFullYear())}
                     </div>
 
                 </div>

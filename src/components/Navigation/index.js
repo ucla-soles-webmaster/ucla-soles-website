@@ -76,7 +76,7 @@ class NavigationAuth extends Component {
           {/* Stuff for mobile devices */}
           <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           <input type="checkbox" id="check" />
-          <label for="check" className="checkbtn">
+          <label htmlFor="check" className="checkbtn">
             <i className="iEq" > = </i>
           </label>
 
@@ -167,7 +167,7 @@ class NavigationNonAuth extends Component {
           {/* Stuff for mobile devices */}
           <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           <input type="checkbox" id="check" />
-          <label for="check" class="checkbtn">
+          <label htmlFor="check" className="checkbtn">
             <i className="iEq"> = </i>
           </label>
 

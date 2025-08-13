@@ -579,7 +579,7 @@ class AdminPage extends Component {
         stock_status: new_item[3],
         // storage_image_name: 'resumes/' + item_image_name,
         storage_image_name: 'resumes/' + new_item[0],
-        image_URL: '',
+        image_url: '',
         url_ext: '/item?item={' + new_item[2] + '}',
         oneSize: true,
         count: new_item[5]
@@ -605,7 +605,7 @@ class AdminPage extends Component {
         cost: new_item[1],
         stock_status: new_item[3],
         storage_image_name: 'resumes/' + item_image_name,
-        image_URL: '',
+        image_url: '',
         url_ext: '/item?item={' + new_item[2] + '}',
         oneSize: false,
         count_S: new_item[6],
@@ -666,7 +666,7 @@ class AdminPage extends Component {
     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         console.log('File available at', downloadURL);
         that.props.firebase.getFirestore().collection("merchItems").doc(new_item[0]).update({
-          image_URL: downloadURL
+          image_url: downloadURL
         })
         .then(function() {
           console.log("URL Document successfully written!");
