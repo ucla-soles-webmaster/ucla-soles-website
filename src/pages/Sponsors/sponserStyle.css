@@ -18,3 +18,225 @@
 .card img{
     width: 20vw;
 }
+
+/* Sponsorship Tier Styles */
+.sponsor-tier-container {
+    margin: 4rem auto 3rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.sponsor-tier-header {
+    background-color: #4682B4;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.sponsor-tier-title {
+    color: white;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+}
+
+.sponsor-link {
+    text-decoration: none;
+}
+
+.sponsor-logo {
+    max-width: 300px;
+    max-height: 150px;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: none;
+    filter: none;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.05);
+}
+
+.bronze-grid .sponsor-logo {
+    max-width: 180px;
+    max-height: 120px;
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.gold-grid .sponsor-logo,
+.silver-grid .sponsor-logo {
+    max-width: 180px;
+    max-height: 120px;
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.sponsor-tier-container:nth-child(4) .sponsor-logo {
+    max-width: 180px;
+    max-height: 120px;
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.sponsor-tier-container:nth-child(5) .sponsor-logo {
+    max-width: 180px;
+    max-height: 120px;
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.bronze-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+}
+
+/* Laptop/Desktop specific styles to prevent overlapping */
+@media (min-width: 769px) and (max-width: 1400px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .bronze-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1401px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .bronze-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .sponsor-tier-container {
+        padding: 0 1rem;
+        margin: 3rem auto 2rem auto;
+    }
+    
+    .sponsor-tier-header {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .sponsor-tier-title {
+        font-size: 1.5rem;
+    }
+    
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .bronze-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .sponsor-logo {
+        max-width: 250px;
+        max-height: 120px;
+    }
+    
+    /* Tablet text spacing adjustments */
+    .titleFont3Sponsor {
+        padding-bottom: 1.2rem;
+        line-height: 1.5;
+    }
+    
+    .titleFont1 {
+        margin-top: 1.8rem;
+        padding-top: 1.2rem;
+    }
+    
+    .staffMembersBoard {
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsor-tier-container {
+        padding: 0 0.5rem;
+        margin: 2rem auto 1.5rem auto;
+    }
+    
+    .sponsor-tier-header {
+        padding: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .sponsor-tier-title {
+        font-size: 1.2rem;
+    }
+    
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .bronze-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .sponsor-logo {
+        max-width: 150px;
+        max-height: 80px;
+    }
+    
+    /* Mobile text spacing adjustments */
+    .titleFont3Sponsor {
+        padding-bottom: 1rem;
+        line-height: 1.4;
+    }
+    
+    .titleFont3Sponsor br {
+        line-height: 0.8;
+    }
+    
+    .titleFont1 {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    
+    .staffMembersBoard {
+        margin-bottom: 1.5rem;
+    }
+}

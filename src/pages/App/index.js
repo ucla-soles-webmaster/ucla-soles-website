@@ -1,12 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
  
 import LandingPage from '../Landing';
-import SignUpPage from '../SignUp';
-import SignInPage from '../SignIn';
-import PasswordForgetPage from '../PasswordForget';
-import HomePage from '../Home';
-import AdminPage from '../Admin';
+
 import About from '../About';
 import Initiatives from '../Initiatives' 
 import EBoard from '../EBoard'
@@ -15,30 +11,22 @@ import Sponsors from '../Sponsors'
 import Tutoring from '../Tutoring'
 import Tutor from '../Tutor'
 import TutoringStudent from '../TutStu'
-import Shop from '../Shop';
 
-import AccountPage from '../Account';
-import TestBank from '../TestBank';
-import TestBankView from '../TestView';
-import TestBankSubmit from '../TestSubmit';
-import AlumNet from '../AlumNet';
-import Shirt from '../Shirt';
-import Sticker from '../Sticker';
-import Orders from '../Orders';
-import Thank_You from '../Thank_You';
-import ToteBag from '../ToteBag';
-import Beanie from '../Beanie';
-import LogoShirt from '../LogoShirt';
-import BucketHat from '../BucketHat';
-import SWOLES from '../SWOLES';
-import Sticker2 from '../Sticker2';
-import TestBankContestSubmit from '../TestBankContestSubmit';
-import Lunabotics from '../lunabotics';
 import GeneralMeetings from '../GeneralMeetings';
-import MembershipShirt from '../MembershipShirt';
+
+
+
+
+import CopaLanding from '../CopaLanding';
+import CopaAbout from '../CopaAbout';
+import CopaTournaments from '../CopaTournaments';
+import CopaGuidelines from '../CopaGuidelines';
+import CopaSponsors from '../CopaSponsors';
+import CopaContact from '../CopaContact';
+import Projects from '../Projects';
 
 import * as ROUTES from '../../constants/routes';
-import { withAuthentication } from '../Session';
+
 
 const App = () => (
   <Router>
@@ -51,12 +39,7 @@ const App = () => (
       */}
 
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
-      <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-      <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-      <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-      <Route path={ROUTES.HOME} component={HomePage} />
-      <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-      <Route path={ROUTES.ADMIN} component={AdminPage} />
+
       {/* Added Pages */}
       <Route path={ROUTES.ABOUT} component={About} />
       <Route path={ROUTES.INITIATIVES} component={Initiatives} />
@@ -66,34 +49,26 @@ const App = () => (
       <Route path={ROUTES.TUTORING} component={Tutoring} />
       <Route path={ROUTES.TUTOR} component={Tutor} />
       <Route path={ROUTES.TUTORING_STUDENT} component={TutoringStudent} />
-      <Route path={ROUTES.SHOP} component={Shop} />
-      <Route path={ROUTES.SHIRT} component={Shirt} />
-      <Route path={ROUTES.STICKER} component={Sticker} />
-      <Route path={ROUTES.ORDERS} component={Orders} />
-      <Route path={ROUTES.TOTEBAG} component={ToteBag} />
-      <Route path={ROUTES.BEANIE} component={Beanie} />
-      <Route path={ROUTES.LOGO_SHIRT} component={LogoShirt} />
-      <Route path={ROUTES.BUCKET_HAT} component={BucketHat} />
-      <Route path={ROUTES.SWOLES} component={SWOLES} />
-      <Route path={ROUTES.STICKER2} component={Sticker2} />
-      <Route path={ROUTES.THANK_YOU} component={Thank_You} />
-      <Route path={ROUTES.TESTBANK_CONTEST_SUBMIT} component={TestBankContestSubmit} />
-      <Route path={ROUTES.LUNABOTICS} component={Lunabotics} />
+
+
       <Route path={ROUTES.GENERAL_MEETINGS} component={GeneralMeetings} />
-      <Route path={ROUTES.MEMBERSHIP_SHIRT} component={MembershipShirt} />
+
+      <Route exact path={ROUTES.COPA_DEL_SOL} component={CopaLanding} />
+      <Route path={ROUTES.COPA_ABOUT} component={CopaAbout} />
+      <Route path={ROUTES.COPA_TOURNAMENTS} component={CopaTournaments} />
+      <Route path={ROUTES.COPA_GUIDELINES} component={CopaGuidelines} />
+      <Route path={ROUTES.COPA_SPONSORS} component={CopaSponsors} />
+      <Route path={ROUTES.COPA_CONTACT} component={CopaContact} />
+      {/* <Route path={ROUTES.PROJECTS} component={Projects} /> */}
       {/*
       <Route path={ROUTES.ITEM} component={Item} />
       */}
 
-      {/* Account Pages */}
-      <Route path={ROUTES.TESTBANK} component={TestBank} />
-      <Route path={ROUTES.TESTBANK_SUBMIT} component={TestBankSubmit} />
-      <Route path={ROUTES.TESTBANK_VIEW} component={TestBankView} />
-      <Route path={ROUTES.ALUMNET} component={AlumNet} />
+
 
       
     </div>
   </Router>
 );
  
-export default withAuthentication(App);
+export default App;

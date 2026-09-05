@@ -28,7 +28,7 @@ class About extends Component {
     render() {
         return (
             <div style={{fontFamily: 'Poppins'}}>
-                <Navigation transparentNav={true} />
+                <Navigation transparentNav={false} />
                 <PagePhoto imageSource={coverPhoto} title={"About Us"}></PagePhoto>
 
                 {/* Mission Statement and Vision */}

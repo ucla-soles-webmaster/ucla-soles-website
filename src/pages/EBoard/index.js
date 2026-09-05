@@ -4,27 +4,28 @@
 import React, { Component } from 'react';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
-import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/EBoard/group24.jpg';
+import EBoardCoverPhoto from './EBoardCoverPhoto';
+import coverPhoto from '../../Photos/board_pictures/complete_board.jpg';
 
 ///////////////////////////////////////////////////////////////
 /* Individual Officer Photo Imports */
 
-/* President */ import Emanuel from '../../Photos/EBoard/Emanuel24.png'
-/* EVP */ import Nicole from '../../Photos/EBoard/Nicole24.png' 
-/* IVP */ import Sam from '../../Photos/EBoard/Sam24.png'
+/* President */ import Samantha from '../../Photos/board_pictures/samantha_lopez.jpg'
+/* EVP */ import Erick from '../../Photos/board_pictures/erick_rosas.jpg' 
+/* IVP */ import Andrew from '../../Photos/board_pictures/andrew_rubio.jpg'
 
-/* PDC */ import Oscar from '../../Photos/EBoard/Oscar24.png'
-/* Transfer */ import Adrian from '../../Photos/EBoard/Adrian24.png'
-/* Media & Merch */ import Sarah from '../../Photos/EBoard/Sarah24.png'
+/* PDC */ import Mark from '../../Photos/board_pictures/mark_diaz.jpg'
+/* Transfer */ import Kevin from '../../Photos/board_pictures/kevin_alvarez.jpg'
+/* Media & Merch */ import Joaquin from '../../Photos/board_pictures/joaquin_chun.jpg'
 
-/* Treasurer */ import Andrew from '../../Photos/EBoard/Andrew24.png'
-/* Secretary */ import Citlali from '../../Photos/EBoard/Citlali24.png'
-/* Activities */ import Erick from '../../Photos/EBoard/Erick24.png'
+/* Treasurer */ import Lorenzo from '../../Photos/board_pictures/lorenzo_cova.jpg'
+/* Secretary */ import Victoria from '../../Photos/board_pictures/victoria_lopez.jpg'
+/* SHPETina Director */ import Alexa from '../../Photos/board_pictures/alexa_medina.JPG'
+/* Activities */ import Jeremy from '../../Photos/board_pictures/jeremy_dimas.jpg'
 
-/* Ciencias */ import Gabe from '../../Photos/EBoard/Gabe24.png'
-/* LeaderSHPE Jr */ import Arnie from '../../Photos/EBoard/Arnie24.png'
-/* Tech */ import Diana from '../../Photos/EBoard/Diana24.png'
+/* Ciencias */ import Judas from '../../Photos/board_pictures/judas_lopez.jpg'
+/* LeaderSHPE Jr */ import Evelyn from '../../Photos/board_pictures/evelyn_garza.jpg'
+/* Tech */ import Christian from '../../Photos/board_pictures/christian_giron.jpg'
 
 /* CEED Staff */
 import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
@@ -58,99 +59,107 @@ class EBoard extends Component {
     render() {
         const boardMembers = [
             {
-                name: "Emanuel Zavalza",
-                major: "4th Year | Computer Engineering",
-                image: Emanuel,
+                name: "Samantha Lopez",
+                major: "4th Year | Electrical Engineering",
+                image: Samantha,
                 role: "President",
-                memory: "My favorite SOLES memory is the bonfire my first year because its where I first felt welcomed when starting at UCLA",
+                memory: "",
                 email: "     uclasoles.president@gmail.com"
             },
             {
-                name: "Samantha Lopez",
-                major: "3rd Year | Electrical Engineering",
-                image: Sam,
+                name: "Andrew Rubio",
+                major: "4th Year | Computer Science & Engineering",
+                image: Andrew,
                 role: "Internal Vice President",
-                memory: "My favorite memory was the beat 'sc tailgate it was so much fun getting to hang out with everyone . Also really loved the mentorshpe familia hangouts last year!",
+                memory: "",
                 email: "          uclasoles.ivp@gmail.com"
             },
             {
-                name: "Nicole Nunez-Sainz",
-                major: "3rd Year | Computer Science",
-                image: Nicole,
+                name: "Erick Rosas Gonzalez",
+                major: "4th Year | Computer Science",
+                image: Erick,
                 role: "External Vice President",
                 memory: "",
                 email: "          uclasoles.evp@gmail.com"
             },
             {
-                name: "Oscar Orantes",
-                major: "4th Year | Electrical Engineering",
-                image: Oscar,
+                name: "Mark Diaz",
+                major: "4th Year | Computer Engineering",
+                image: Mark,
                 role: "Professional Development Chair",
-                memory: "My favorite SOLES memory was my first ever SOLES GM, it was a warm welcome to UCLA. I got to meet many new people and form lifelong relationships, that mean the world to me today. Seeing complete strangers act like family and treat me like family changed me but eating burnt hotdogs at my first bonfire was cool too.",
+                memory: "",
                 email: "              uclasoles.pdc@gmail.com"
             },
             {
-                name: "Sarah Soto",
-                major: "2nd Year | Civil Engineering",
-                image: Sarah,
+                name: "Joaquin Chun",
+                major: "3rd Year | Computer Science",
+                image: Joaquin,
                 role: "Media & Merch Chair",
                 memory: "",
                 email: "uclasoles.mmc@gmail.com"
             },
             {
-                name: "Adrian Garcia",
-                major: "2nd Year Transfer | Electrical Engineering",
-                image: Adrian,
+                name: "Kevin Alvarez",
+                major: "2nd Year Transfer | Computer Engineering",
+                image: Kevin,
                 role: "Transfer Representative",
                 memory: "",
                 email: "   uclasoles.trep@gmail.com"
             },
             {
-                name: "Andrew Rubio",
-                major: "3rd Year | Computer Science & Engineering",
-                image: Andrew,
+                name: "Lorenzo Cova",
+                major: "3rd Year | Mechanical Engineering",
+                image: Lorenzo,
                 role: "Treasurer",
                 memory: "",
                 email: "     uclasoles.treasurer@gmail.com"
             },
             {
-                name: "Citlali Rodriguez",
-                major: "3rd Year | Civil Engineering",
-                image: Citlali,
+                name: "Victoria Lopez",
+                major: "",
+                image: Victoria,
                 role: "Secretary",
-                memory: "My favorite SOLES memories has to be our white elephant MentorSHPE event. Seeing everyone's competitive side come out over silly $10 gifts was super fun and got everyone to really bond. I went from a box of fancy chocolates and a cute little mug to a bundle of tape with a happy face on it. The memory of that night brings me joy though, so that bundle of tape is now used as a decoration for my desk.",
+                memory: "",
                 email: "              uclasoles@gmail.com"
             },
             {
-                name: "Erick Rosas",
-                major: "3rd Year | Computer Science",
-                image: Erick,
+                name: "Jeremy Dimas",
+                major: "4th Year | Computer Science & Engineering",
+                image: Jeremy,
                 role: "Activities Director",
-                memory: "Favorite memory is being a soles intern. I got to bond with upper class men.",
+                memory: "",
                 email: "              uclasoles.activities@gmail.com"
             },
             {
-                name: "Gabriel Centeno",
-                major: "2nd Year | Materials Engineering",
-                image: Gabe,
+                name: "Judas Lopez",
+                major: "3rd Year | Computer Science & Engineering",
+                image: Judas,
                 role: "Ciencias Director",
                 memory: "",
                 email: "uclasoles.cienciasdirector@gmail.com"
             },
             {
-                name: "Arnie Orozco",
-                major: "2nd Year | Mechanical Engineering",
-                image: Arnie,
+                name: "Evelyn Garza",
+                major: "2nd Year | Civil Engineering",
+                image: Evelyn,
                 role: "LeaderSHPE Jr Director",
                 memory: "",
                 email: "uclasoles.leadershpejr@gmail.com"
             },
             {
-                name: "Diana Estrada",
-                major: "4th Year | Computer Science",
-                image: Diana,
+                name: "Alexa Medina",
+                major: "",
+                image: Alexa,
+                role: "SHPETina Director",
+                memory: "",
+                email: ""
+            },
+            {
+                name: "Christian Giron-Michel",
+                major: "3rd Year | Electrical Engineering",
+                image: Christian,
                 role: "Technical Chair",
-                memory: "My favorite SOLES memory was the SHPE conference last year, I enjoyed traveling to a new state with everyone in SOLES.",
+                memory: "",
                 email: "uclasoles.technicalchair@gmail.com"
             }
             
@@ -178,8 +187,8 @@ class EBoard extends Component {
 
         return (
             <div>
-                <Navigation transparentNav={true} />
-                <PagePhoto imageSource={coverPhoto} title={"Executive Board"}></PagePhoto>
+                <Navigation transparentNav={false} />
+                <EBoardCoverPhoto imageSource={coverPhoto} title="Executive Board"></EBoardCoverPhoto>
                 
 
                 {/* Page Title Header */}

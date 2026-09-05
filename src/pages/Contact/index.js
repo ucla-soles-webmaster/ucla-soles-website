@@ -43,7 +43,7 @@ class Contact extends Component {
     render() {
         return (
             <div className="addPoppins">
-                <Navigation transparentNav={true} />
+                <Navigation transparentNav={false} />
                 <PagePhoto imageSource={coverPhoto} title={"Contact Us"}></PagePhoto>
                 <br/>
                 <h1 className = "contactTitle">Have any questions? Send them our way!</h1>

@@ -1,0 +1,159 @@
+.copa-landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.copa-landing-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.copa-landing-intro h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: #2E86AB;
+    margin: 0 0 16px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.copa-landing-intro p {
+    font-size: clamp(16px, 1.2vw, 20px);
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+.copa-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.copa-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.copa-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-color: #2E86AB;
+}
+
+.copa-card-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.copa-card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.copa-card h3 {
+    font-size: clamp(20px, 1.5vw, 26px);
+    font-weight: 700;
+    color: #2E86AB;
+    margin: 0 0 8px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.copa-card h4 {
+    font-size: clamp(14px, 1.1vw, 18px);
+    font-weight: 600;
+    color: #FF8C42;
+    margin: 0 0 16px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.copa-card p {
+    font-size: clamp(13px, 1vw, 16px);
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.copa-card-highlight {
+    background: linear-gradient(135deg, #2E86AB 0%, #FF8C42 100%);
+    color: white;
+}
+
+.copa-card-highlight h3,
+.copa-card-highlight h4,
+.copa-card-highlight p {
+    color: white;
+}
+
+.copa-card-highlight:hover {
+    border-color: #FF8C42;
+}
+
+.copa-stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.copa-stat {
+    text-align: center;
+}
+
+.copa-stat h3 {
+    font-size: clamp(24px, 2vw, 36px);
+    font-weight: 700;
+    color: #2E86AB;
+    margin: 0 0 8px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.copa-stat p {
+    font-size: clamp(14px, 1.1vw, 18px);
+    color: #666;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .copa-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .copa-card {
+        padding: 24px 20px;
+    }
+    
+    .copa-stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 32px 20px;
+    }
+}

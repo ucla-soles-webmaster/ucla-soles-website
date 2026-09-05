@@ -13,6 +13,45 @@
     background-size: cover;
     max-height: 100vh;
     max-width: 100%;
+    position: relative;
+}
+
+.container2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.container2-solid {
+    text-align: left;
+
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    position: relative;
+}
+
+.container2-solid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
 }
 
 .parallax2 {

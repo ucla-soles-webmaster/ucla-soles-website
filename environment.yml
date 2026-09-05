@@ -1,0 +1,7 @@
+name: ucla-soles-website
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - nodejs=16
+  - python=3.9

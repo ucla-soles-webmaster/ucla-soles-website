@@ -34,9 +34,10 @@ class PagePhoto extends Component {
     }
 
     render() {
+        const containerClass = this.props.solidNavbar ? "container2-solid" : "container2";
         return (
             <body>
-                <div className="container2" style={{backgroundImage: `url(${this.props.imageSource})`}}>
+                <div className={containerClass} style={{backgroundImage: `url(${this.props.imageSource})`}}>
                     <div className={this.state.scrolled ? "scrolled2" : "centered2"}>
                             &nbsp; &nbsp; {this.props.title}
                     </div>

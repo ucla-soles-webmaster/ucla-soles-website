@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.copa-content {
+    margin: 0 auto;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.copa-description {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(16px, 1.1vw, 20px);
+    color: #374151;
+    line-height: 1.7;
+    margin: 0 auto 40px;
+    max-width: 700px;
+    font-weight: 400;
+}
+
+.copa-section {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 32px;
+    overflow: hidden;
+    border: 1px solid #f3f4f6;
+}
+
+.copa-section-header {
+    background: linear-gradient(135deg, #2E86AB 0%, #1e5f7a 100%);
+    color: white;
+    padding: 24px 32px;
+    border-bottom: none;
+}
+
+.copa-section-header h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(20px, 1.8vw, 28px);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+.copa-section-content {
+    padding: 32px;
+}
+
+.copa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.copa-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.copa-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 40px 0;
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 8px;
+    flex-wrap: wrap;
+    gap: 4px;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.copa-tab {
+    background: transparent;
+    border: none;
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(14px, 1vw, 16px);
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.copa-tab:hover {
+    color: #374151;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.copa-tab.active {
+    color: white;
+    background: linear-gradient(135deg, #2E86AB 0%, #1e5f7a 100%);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.copa-tab-content {
+    min-height: 50vh;
+}
+
+.copa-text {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(14px, 1vw, 16px);
+    color: #374151;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.copa-list {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(14px, 1vw, 16px);
+    color: #374151;
+    line-height: 1.7;
+    padding-left: 20px;
+}
+
+.copa-list li {
+    margin-bottom: 8px;
+}
+
+.copa-button {
+    background: linear-gradient(135deg, #FF8C42 0%, #e07429 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.copa-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(13px, 0.9vw, 15px);
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.copa-table th {
+    background: linear-gradient(135deg, #2E86AB 0%, #1e5f7a 100%);
+    color: white;
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    border: none;
+}
+
+.copa-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+}
+
+
+
+.copa-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.copa-highlight {
+    background: linear-gradient(135deg, #FF8C42 0%, #e07429 100%);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/* Sponsor Grid Styles */
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sponsor-link {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-link:hover {
+    transform: scale(1.05);
+}
+
+.sponsor-logo {
+    max-width: 300px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .copa-content {
+        padding: 0 16px;
+    }
+    
+    .copa-section-content {
+        padding: 24px 20px;
+    }
+    
+    .copa-section-header {
+        padding: 20px 20px;
+    }
+    
+    .copa-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .copa-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        margin: 24px 0;
+    }
+    
+    .copa-tab {
+        text-align: center;
+        padding: 14px 20px;
+    }
+    
+    .copa-card {
+        padding: 20px;
+    }
+    
+    .sponsor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .sponsor-logo {
+        max-width: 150px;
+        max-height: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .copa-section-content {
+        padding: 20px 16px;
+    }
+    
+    .copa-section-header {
+        padding: 16px;
+    }
+    
+    .copa-card {
+        padding: 16px;
+    }
+    
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .sponsor-logo {
+        max-width: 120px;
+        max-height: 60px;
+    }
+}

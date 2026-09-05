@@ -6,27 +6,25 @@ import Footer from '../../components/Footer';
 ///////////////////////////////////////////////////////////////
 /* Sponsor Logo Photo Imports */
 
-//import Boeing from '../../Photos/SponsorLogos/boeing.jpg'
-//import Facebook from '../../Photos/SponsorLogos/facebook.jpeg'
-import Lockheed from '../../Photos/SponsorLogos/lockheed-martin.png'
-import Northrup from '../../Photos/SponsorLogos/northrop-grumman.jpg'
-import SCEdison from '../../Photos/SponsorLogos/socaledison.gif'
-//import Granite from '../../Photos/SponsorLogos/granite.jpeg'
-//import Qualtrics from '../../Photos/SponsorLogos/qualtrics.jpeg'
-//import Qualcomm from '../../Photos/SponsorLogos/qualcomm.png'
-//import VMware from '../../Photos/SponsorLogos/vmware.png'
-//import Medtronic from '../../Photos/SponsorLogos/medtronic.jpeg'
-//import Raytheon from '../../Photos/SponsorLogos/raytheon.jpeg'
-//import LADWP from '../../Photos/SponsorLogos/ladwp.png'
-import Cruise from '../../Photos/SponsorLogos/cruiseLogo.png'
-import Illumina from '../../Photos/SponsorLogos/illuminaLogo.png'
-import sponsorshipP from '../../Photos/SponsorLogos/sponsorshippacketsoles24-25.pdf'
 
-//import Chevron from '../../Photos/SponsorLogos/chevron.png'
-//import Twitter from '../../Photos/SponsorLogos/twitter.jpg'
-//import Accenture from '../../Photos/SponsorLogos/accenture.jpg'
-//import Google from '../../Photos/SponsorLogos/google.jpg'
-/*import Oracle from '../../Photos/SponsorLogos/oracle.png'*/
+import PPG from '../../Photos/SponsorLogos/ppg.png'
+import Visa from '../../Photos/SponsorLogos/visa.png'
+import CDMSmith from '../../Photos/SponsorLogos/cdm_smith.png'
+import Apple from '../../Photos/SponsorLogos/apple.png'
+import CoStar from '../../Photos/SponsorLogos/costar_group.png'
+import CapitalGroup from '../../Photos/SponsorLogos/capital_group.jpg'
+import SCE from '../../Photos/SponsorLogos/so_cal_edison.png'
+import Boeing from '../../Photos/SponsorLogos/boeing.png'
+import Amazon from '../../Photos/SponsorLogos/amazon.png'
+import FinconsGroup from '../../Photos/SponsorLogos/fincons_group.png'
+import Medtronic from '../../Photos/SponsorLogos/medtronic.png'
+import Google from '../../Photos/SponsorLogos/google.png'
+import HDR from '../../Photos/SponsorLogos/hdr.png'
+import MathWorks from '../../Photos/SponsorLogos/mathworks.png'
+import SpaceX from '../../Photos/SponsorLogos/space_x.png'
+import sponsorshipP from '../../Photos/SponsorLogos/soles_sponsorship_packet_2025-2026.pdf'
+
+
 
 
 ///////////////////////////////////////////////////////////////
@@ -76,7 +74,7 @@ class Sponsors extends Component {
                 {/* Why we need Sponsors */}
                 <div className = "titleFont3Sponsor">
                     SOLES|SHPE at UCLA relies on its industry partners and corporate relations to help elevate their efforts in empowering the Latinx engineering community
-                    at UCLA. Through generous contributions of monetary donations, technical supplies, and company merch, SOLES can help eliminate thr financial instability
+                    at UCLA. Through generous contributions of monetary donations, technical supplies, and company merch, SOLES can help eliminate financial instability
                     for its members and give back to the community that supports it. <br/><br/>
                     
                     In addition to uplifting community outreach efforts, professional and academic development, and recruitment initiatives, SOLES looks for Sponsorship to 
@@ -101,13 +99,10 @@ class Sponsors extends Component {
                         <p>We’d like to extend a special thanks to our corporate sponsors. Take a look at our <a href={sponsorshipP} target="_blank" rel="noopener noreferrer">SOLES Sponsorship Packet</a> to learn more! <br/> <b>If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!</b></p>
                     </div>
                     <a href={sponsorshipP} className="btn btn-primary btn-lg active" style={{textDecoration: 'none', padding: '8px', borderRadius: '8px', backgroundColor: '#717171', color: 'white', fontFamily: 'Poppins', fontSize: '1.5vw', border: '0px', cursor: 'pointer', display: 'inline-block', marginLeft: '4vw'}} rel="noopener noreferrer" target="_blank">
-                        FY24-25 SOLES Sponsorship Packet
+                        FY25-26 SOLES Sponsorship Packet
                     </a>
                 </div>
-                    
 
-
-                
                 {/* Sponsorship Disclaimer */}
                 <div className = "titleFont1">  
                     <div className = "titleFont3Sponsor">
@@ -116,74 +111,96 @@ class Sponsors extends Component {
                      logos are very much appreciated as well.  Some companies offer special services such as graphics and printing.  These services may also be donated for
                       the printing of materials throughout the year.  Note these services will also include complementary recognition in all such contributed products.
                      </div>                              
+                </div>
+                    
+
+
+                
+                {/* Current Sponsors */}
+                <div className = "titleFont1">
                     <hr ClassName = "BoardIntroBar" style = {{width: '80%'}}></hr>
                     <div style = {{width: '80%', margin: 'auto'}}>
                         <img className = "BoardPageSun" src= {sun} alt="Yellow Sun" ></img>
                     </div>
                     <div className = "staffMembersBoard">
-                        2022-2023 Sponsors
+                        Our Sponsors
                     </div>
                 </div>
-                </body1>
 
-
-
-                {/* Sponsors Grid */}
-                <body1 className = "eBoardPage">
-
-                    {/* Gold Level Sponsors */}
-                    {/* Northrup */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Northrup} alt="Northrop Grumman Logo"></img>
-                            <div className = "setFontSizeName">Northoup Grumman</div>
-                            <div className = "setFontSizeLevel">Gold Level Sponsor</div>
-                        </figure>
+                {/* Gold Tier */}
+                <div className="sponsor-tier-container">
+                    <div className="sponsor-tier-header">
+                        <h2 className="sponsor-tier-title">Gold Sponsors</h2>
                     </div>
-
-                    {/* Silver Level Sponsors */}
-                    {/*Illumina */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Illumina} alt="Illumina Logo"></img>
-                            <div className = "setFontSizeName">Illumina</div>
-                            <div className = "setFontSizeLevel">Silver Level Sponsor</div>
-                        </figure>
+                    <div className="sponsor-grid gold-grid">
+                        <a href="https://www.ppg.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={PPG} alt="PPG Industries" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.sce.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={SCE} alt="Southern California Edison" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={Amazon} alt="Amazon" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.capitalgroup.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={CapitalGroup} alt="Capital Group" className="sponsor-logo" />
+                        </a>
                     </div>
+                </div>
 
-                    {/* Bronze Level Sponsors */}
-
-                    {/* Lockheed */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Lockheed} alt="Lockheed Martin Logo"></img>
-                            <div className = "setFontSizeName">Lockheed Martin</div>
-                            <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
-                        </figure>
+                {/* Silver Tier */}
+                <div className="sponsor-tier-container">
+                    <div className="sponsor-tier-header">
+                        <h2 className="sponsor-tier-title">Silver Sponsors</h2>
                     </div>
-
-                    {/* SoCal Edison */}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={SCEdison} alt="SoCal Edison Logo"></img>
-                            <div className = "setFontSizeName">SoCal Edison</div>
-                            <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
-                        </figure>
+                    <div className="sponsor-grid silver-grid">
+                        <a href="https://www.boeing.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={Boeing} alt="Boeing" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.mathworks.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={MathWorks} alt="MathWorks" className="sponsor-logo mathworks-logo" />
+                        </a>
                     </div>
+                </div>
 
-                    {/* Cruise*/}
-                    <div className = "eBoardPerson">
-                        <figure className = "eBoardPerson2">
-                        <img className = "SponsorPageImages" src={Cruise} alt="Crusie Logo"></img>
-                            <div className = "setFontSizeName">Cruise</div>
-                            <div className = "setFontSizeLevel">Bronze Level Sponsor</div>
-                        </figure>
+                {/* Bronze Tier */}
+                <div className="sponsor-tier-container">
+                    <div className="sponsor-tier-header">
+                        <h2 className="sponsor-tier-title">Bronze Sponsors</h2>
                     </div>
+                    <div className="sponsor-grid bronze-grid">
+                        <a href="https://www.visa.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={Visa} alt="Visa" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.cdmsmith.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={CDMSmith} alt="CDM Smith" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={Apple} alt="Apple" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.costargroup.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={CoStar} alt="CoStar Group" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.finconsgroup.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={FinconsGroup} alt="Fincons Group" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.medtronic.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={Medtronic} alt="Medtronic" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={Google} alt="Google" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.hdrinc.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={HDR} alt="HDR" className="sponsor-logo" />
+                        </a>
+                        <a href="https://www.spacex.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">
+                            <img src={SpaceX} alt="SpaceX" className="sponsor-logo" />
+                        </a>
+                    </div>
+                </div>
 
-                    <br/>
-                    <br/>
-                    <br/>
-                
+
+
                 </body1>
                 </div>  
                 <br/>

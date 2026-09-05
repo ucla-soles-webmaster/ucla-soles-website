@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.copa-container2 {
+    text-align: left;
+    margin-top: 102px;
+    width: 100%;
+    height: 55vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 55vh;
+    max-width: 100%;
+    /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1); */
+}
+
+.copa-container2-solid {
+    text-align: left;
+    width: 100%;
+    height: calc(100vh - 102px);
+    margin-top: 102px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.05); */
+}
+
+.copa-parallax2 {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.copa-centered2 {
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    font-family: Poppins;
+    font-size: 4vw;
+    letter-spacing: 0.05rem;
+    width: 100%;
+    color: white;
+    transition: 0.3s;
+    pointer-events: none;
+    -webkit-text-stroke-width: 0.15vw;
+    -webkit-text-stroke-color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.copa-scrolled2 {
+    position: absolute;
+    margin-top: 20%;
+    /* font-family: Georgia,Times,Times New Roman,serif; */
+    font-family: Poppins;
+    font-size: 6.2vw;
+    width: 100%;
+    color: rgba(255, 255, 255, 0);
+    transition: 0.3s;
+    pointer-events: none;
+    -webkit-text-stroke-width: 0.0px;
+}
+
+
+/* Mobile and Tablet */
+@media screen and (max-width: 768px) {
+    .copa-centered2 {
+        top: 25%;
+        left: 5px;
+        transform: translateY(0);
+        text-align: left;
+        font-size: clamp(24px, 8vw, 48px);
+        padding: 0;
+        -webkit-text-stroke-width: 0.1vw;
+    }
+    
+    .copa-container2 {
+        height: 38vh;
+        max-height: 38vh;
+        background-attachment: scroll;
+        background-position: center 30%;
+        margin-top: 115px;
+    }
+    
+    .copa-container2-solid {
+        height: calc(100vh - 115px);
+        margin-top: 115px;
+        background-attachment: scroll;
+    }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1400px) {
+    .copa-centered2 {
+        font-size: clamp(48px, 4vw, 72px);
+        top: 38%;
+        transform: translateY(-50%);
+    }
+    
+    .copa-container2 {
+        height: 65vh;
+        max-height: 65vh;
+    }
+}

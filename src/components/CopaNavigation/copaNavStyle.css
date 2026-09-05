@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.copaNavTop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 102px;
+    padding: 15px 60px;
+    box-sizing: border-box;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
+    overflow: hidden;
+    z-index: 1000;
+    background-color: #2E86AB;
+}
+
+.copaNavElse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115px;
+    padding: 15px 60px;
+    box-sizing: border-box;
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+    background-color: #2E86AB;
+    box-shadow: 0vw 0.01vw 1.3vw -0.75vw rgba(0, 0, 0, 0.865);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.copaNavTop .logo {
+    position: absolute;
+    float: left;
+}
+.copaNavElse .logo {
+    position: absolute;
+    float: left;
+}
+
+.copa-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copaNavTop .logo img {
+    height: 50px;
+    padding-top: 3px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    margin-left: -55px;
+}
+.copaNavElse .logo img {
+    height: 50px;
+    padding-top: 3px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    margin-left: -55px;
+}
+
+.copaNavTop .ulNav {
+    float: right;
+    margin: 0;
+    margin-top: 4px;
+    padding: 0;
+    display: flex;
+    margin-right: -30px;
+    z-index: 10;
+}
+.copaNavElse .ulNav {
+    float: right;
+    margin: 0;
+    margin-top: 4px;
+    padding: 0;
+    display: flex;
+    margin-right: -30px;
+    z-index: 10;
+}
+
+.copaNavTop .ulNav .liNav {
+    list-style: none;
+    line-height: 36px;
+    padding: 10px 0.3vw;
+    margin-left: 16px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border-radius: 50px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+.copaNavElse .ulNav .liNav {
+    list-style: none;
+    line-height: 36px;
+    padding: 10px 0.3vw;
+    margin-left: 16px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border-radius: 50px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+
+.copaNavTop .ulNav .liNav:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    font-size: 18px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+.copaNavElse .ulNav .liNav:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    font-size: 18px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    height: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+}
+
+.iEq {
+    color: black;
+    font-style: normal;
+    font-size: 60px;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .copa-title {
+        display: none;
+    }
+}
+
+@media (max-width: 1250px) {
+    .copaNavTop .logo img {
+        height: 30px;
+        padding-top: 30px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        margin-left: -40px;
+    }
+    .copaNavElse .logo img {
+        height: 30px;
+        padding-top: 30px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        margin-left: -40px;
+    }
+    .copa-title {
+        display: none;
+    }
+    .checkbtn {
+        display: block;
+    }
+    .copaNavTop {
+        color: white;
+        z-index: 3;
+    }
+    .copaNavElse {
+        color: white;
+        z-index: 3;
+    }
+    .copaNavTop .ulNav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2E86AB;
+        top: 115px;
+        left: -100%;
+        align-items: center;
+        display: block;
+        text-align: center;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        z-index: 999;
+    }
+    .copaNavElse .ulNav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2E86AB;
+        top: 115px;
+        left: -100%;
+        align-items: center;
+        display: block;
+        text-align: center;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        z-index: 999;
+    }
+    .copaNavTop .ulNav .liNav {
+        font-size: 1.8rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
+        margin-left: 0;
+    }
+    .copaNavTop .ulNav .liNav a {
+        color: white !important;
+    }
+    .copaNavElse .ulNav .liNav {
+        font-size: 1.8rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
+        margin-left: 0;
+        position: relative;
+    }
+    .copaNavElse .ulNav .liNav a {
+        color: white !important;
+    }
+    .copaNavTop .ulNav .liNav:hover {
+        font-size: 1.9rem;
+    }
+    .copaNavElse .ulNav .liNav:hover {
+        font-size: 1.9rem;
+    }
+    .copaNavElse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 115px;
+        padding: 15px 60px;
+        box-sizing: border-box;
+        background-color: #2E86AB;
+        z-index: 1000;
+    }
+    .copaNavTop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 115px;
+        padding: 15px 60px;
+        box-sizing: border-box;
+        background-color: #2E86AB;
+        z-index: 1000;
+    }
+    #check:checked ~ .ulNav {
+        left: 0;
+        -webkit-text-stroke-width: 0.0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .copaNavTop .logo img {
+        height: 40px;
+        padding-top: 27px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+    }
+    .copaNavElse .logo img {
+        height: 40px;
+        padding-top: 27px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+    }
+    .iEq {
+        color: black;
+        font-style: normal;
+        font-size: 40px;
+        margin-right: -50px;
+        margin-left: 50px;
+    }
+    #check:checked ~ .ulNav {
+        left: 0;
+        -webkit-text-stroke-width: 0.0px;
+    }
+}
+
+@media (max-width: 300px) {
+    .copaNavTop .logo img {
+        height: 25px;
+        padding-top: 25px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        margin-left: -40px;
+    }
+    .copaNavElse .logo img {
+        height: 25px;
+        padding-top: 25px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        margin-left: -40px;
+    }
+    .iEq {
+        color: black;
+        font-style: normal;
+        font-size: 60px;
+        margin-right: -30px;
+    }
+    .copaNavTop .ulNav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 97px;
+        left: -100%;
+        align-items: center;
+        display: block;
+        text-align: center;
+    }
+    .copaNavElse .ulNav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 97px;
+        left: -100%;
+        align-items: center;
+        display: block;
+        text-align: center;
+    }
+}

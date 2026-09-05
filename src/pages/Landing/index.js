@@ -22,13 +22,20 @@ import './landingStyle.css'
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
+<<<<<<< Updated upstream
 import presidentPhoto from '../../NewBoard/Emanuel.png'
 // import presidentSig from '../../Photos/PresidentsMsg/signature.png'
 import coverPhoto from '../../Photos/Covers/Landing.jpeg';
+=======
+import presidentPhoto from '../../Photos/board_pictures/samantha_lopez.jpg'
+import presSig from '../../Photos/PresidentsMsg/president_signature.jpg'
+
+import coverPhoto from '../../components/StaticCoverPhoto/royce2.jpeg';
+>>>>>>> Stashed changes
 import rightsun from '../../Photos/Icons/rightsun.png'
 import leftsun from '../../Photos/Icons/leftsun.png';
 
-import presSig from '../../Photos/PresidentsMsg/sig.png';
+
 
 
 class Landing extends Component {
@@ -41,8 +48,8 @@ class Landing extends Component {
             <div>
                 {/* Actual Landing Page */}
                 <div id="landingactual">
-                    <Navigation transparentNav={true} />
-                    <StaticCoverPhoto imageSource={coverPhoto}></StaticCoverPhoto>
+                    <Navigation transparentNav={false} />
+                    <StaticCoverPhoto imageSource={coverPhoto} title="Society of Latinx Engineers and Scientists" subtitle="University of California, Los Angeles"></StaticCoverPhoto>
 
                     <br/>
 
@@ -116,17 +123,17 @@ class Landing extends Component {
                                 Con mucho amor and lots of gratitude for the amazing mentors that have propelled me this far,
                                 <div style={{marginBottom: '0.9em', display: 'block'}} />
                                 <div style={{fontSize: '1.2em', lineHeight:'1.5em', color: 'gray', marginBottom: '0.3em'}}>
-                                    Emanuel Zavalza
+                                    Samantha Lopez
                                 </div>
                                 <img 
                                     src= {presSig} 
                                     alt="President Signature" 
                                     style={{width:'12em'}}
                                 ></img>
-                                <div className="presidentContactInfo"><p>President 2023-2024<br/>
+                                <div className="presidentContactInfo"><p>President 2025-2026<br/>
                                     <a href="mailto: uclasoles.president@gmail.com" target="_blank" rel="noopener noreferrer">uclasoles.president@gmail.com</a><br/>
-                                    Computer Engineering B.S.<br/>
-                                    UCLA Class of 2025
+                                    Electrical Engineering B.S.<br/>
+                                    UCLA Class of 2026
                                 </p>
                                 </div>
                             </div>

@@ -34,12 +34,15 @@ class StaticCoverPhoto extends Component {
     }
 
     render() {
+        const containerStyle = this.props.imageSource ? 
+            { backgroundImage: `url(${this.props.imageSource})` } : {};
+        
         return (
-            <div className="container">
+            <div className="container" style={containerStyle}>
                 <div className={this.state.scrolled ? "scrolled" : "centered"}>
-                        Society of Latinx Engineers and Scientists
+                        {this.props.title || "Society of Latinx Engineers and Scientists"}
                         <hr className={this.state.scrolled ? "HRscrolled" : "HRcentered"}/>
-                        <div className={this.state.scrolled ? "bottomscrolled" : "bottom"}>University of California, Los Angeles</div>
+                        <div className={this.state.scrolled ? "bottomscrolled" : "bottom"}>{this.props.subtitle || "University of California, Los Angeles"}</div>
                 </div>
             </div>
 

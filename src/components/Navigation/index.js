@@ -3,9 +3,7 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SignOutButton from '../../pages/SignOut';
 import * as ROUTES from '../../constants/routes'
-import { AuthUserContext } from '../../pages/Session';
 
 
 
@@ -24,6 +22,7 @@ import soles1 from './solesshpe.svg';
 
 
 
+<<<<<<< Updated upstream
 // Choose Navigation type depending on if user is signed in or not
 const Navigation = (props) => (
   <div>
@@ -133,6 +132,10 @@ class NavigationAuth extends Component {
 
 // When user not Signed In
 class NavigationNonAuth extends Component {
+=======
+// Simplified Navigation component
+class Navigation extends Component {
+>>>>>>> Stashed changes
     constructor(props) {
       super();
       this.state = {
@@ -162,7 +165,7 @@ class NavigationNonAuth extends Component {
 
     render () {
       return (
-        <nav className={ (this.state.scrolled) || ( (this.state.scrolled || !this.props.noTopNav) && (this.props.noTopNav ? false : true) ) ? "navElse" : "navTop"}>
+        <nav className={ (this.state.scrolled) || ( (this.state.scrolled || !this.props.transparentNav) && (this.props.transparentNav ? false : true) ) ? "navElse" : "navTop"}>
 
           {/* Stuff for mobile devices */}
           <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -174,7 +177,7 @@ class NavigationNonAuth extends Component {
           {/* Logo */}
           <div className="logo">
             <Link to={ROUTES.LANDING} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >
-              <img src={this.state.scrolled ? soles1 : soles1} alt="SOLES Logo" className="soleLog"/>
+              <img src={soles1} alt="SOLES Logo" className="soleLog"/>
             </Link>
           </div>
 
@@ -188,10 +191,14 @@ class NavigationNonAuth extends Component {
               </li>
               <li className="liNav">
                 <Link to={ROUTES.INITIATIVES} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Initiatives</Link>
-              </li>   
-              <li className="liNav">
-                <Link to={ROUTES.LUNABOTICS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Lunabotics</Link>
               </li>
+              {/* <li className="liNav">
+                <Link to={ROUTES.PROJECTS} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Projects</Link>
+              </li> */}
+              {/* <li className="liNav">
+                <Link to={ROUTES.COPA_DEL_SOL} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Copa del Sol</Link>
+              </li> */}   
+
               <li className="liNav">
                 <Link to={ROUTES.EBOARD} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Board</Link>
               </li>
@@ -200,16 +207,10 @@ class NavigationNonAuth extends Component {
               </li>
               <li className="liNav">
                 <Link to={ROUTES.CONTACT} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Contacts</Link>
-              </li>  
-              <li className="liNav">
-                <Link to={ROUTES.SHOP} style={linkStyle} >Merch</Link>
               </li>      
               <li className='liNav'>
                 <Link to={ROUTES.GENERAL_MEETINGS} style={linkStyle} >GMs</Link>
               </li>     
-              <li className="signin">
-                <Link to={ROUTES.SIGN_IN} style={this.state.scrolled ? linkStyleScrolled : linkStyle} >Sign In</Link>
-              </li>
           </ul>
         </nav>
       );

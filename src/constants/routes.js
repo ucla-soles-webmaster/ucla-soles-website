@@ -1,12 +1,7 @@
 // Constants to make page navigation in code more readable
 
 export const LANDING = '/';
-export const SIGN_UP = '/signup';
-export const SIGN_IN = '/signin';
-export const HOME = '/home';
-export const ACCOUNT = '/account';
-export const ADMIN = '/admin';
-export const PASSWORD_FORGET = '/pw-forget';
+
 
 // Added Pages
 export const ABOUT = '/about';
@@ -15,33 +10,19 @@ export const EBOARD = '/eboard';
 export const CONTACT = '/contact';
 export const SPONSORS = '/sponsors';
 export const SHOP = '/merch_shop';
-export const LUNABOTICS = '/lunabotics';
+
 export const GENERAL_MEETINGS = '/gm';
+export const COPA_DEL_SOL = '/copa-del-sol';
+export const COPA_ABOUT = '/copa-del-sol/about';
+export const COPA_TOURNAMENTS = '/copa-del-sol/tournaments';
+export const COPA_GUIDELINES = '/copa-del-sol/guidelines';
+export const COPA_SPONSORS = '/copa-del-sol/sponsors';
+export const COPA_CONTACT = '/copa-del-sol/contact';
+export const PROJECTS = '/projects';
 
 // Tutoring Pages
 export const TUTORING = '/tutoring';
 export const TUTOR = '/tutor';
 export const TUTORING_STUDENT = '/tutoring_student'
 
-// Account Pages
-export const TESTBANK = '/testbank';
-export const TESTBANK_SUBMIT = '/testbank_submit';
-export const TESTBANK_VIEW = '/testbank_view';
-export const MERCH = '/merch';
-export const ALUMNET = '/alumni';
-export const TESTBANK_CONTEST = '/testbank_contest';
-export const TESTBANK_CONTEST_SUBMIT = '/contest';
 
-// Merch pages
-export const STICKER = '/sticker'
-export const SHIRT = '/shirt'
-export const BEANIE = '/beanie'
-export const LOGO_SHIRT = '/logo_shirt'
-export const TOTEBAG = '/tote_bag'
-export const BUCKET_HAT = '/bucket_hat'
-export const SWOLES = '/swoles'
-export const STICKER2 = '/sticker2'
-export const ORDERS = '/orders_for_store'
-export const THANK_YOU = '/thank_you'
-export const MEMBERSHIP_SHIRT = '/membership_shirt'
-export const ITEM = '/item'

@@ -4,9 +4,9 @@
 import React, { Component } from 'react';
 import Navigation from '../../components/Navigation';
 import PagePhoto from '../../components/PagePhoto';
-import coverPhoto from '../../Photos/Covers/prom2021fun.jpeg';
+import coverPhoto from '../../Photos/Covers/About.jpg';
 import Footer from '../../components/Footer';
-import { withAuthorization } from '../Session';
+
 import FlatList from 'flatlist-react';
 
 
@@ -43,31 +43,6 @@ class GeneralMeetings extends Component {
     
     componentDidMount() {
         window.scrollTo(0, 0)
-
-        var that = this;
-        this.props.firebase.getFirestore().collection("misc").doc("gmSignInLink")
-          .get()
-          .then(function(doc) {
-              if (doc.exists) {
-              var gm_link_data = doc.data();
-              that.setState({ gmSignInLink: gm_link_data['link'] })
-              } else {
-                  // doc.data() will be undefined in this case
-                  console.log("Can't get GM sign in link from firebase inventory!");
-              }
-              
-          }).catch(function(error) {
-              console.log("Error getting document:", error);
-        });
-
-        that.props.firebase.getFirestore().collection("gmSlides")
-        .get()
-        .then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-            var userData = doc.data();
-            that.setState({ gmSlides: [...that.state.gmSlides, userData] });
-          });
-        });  
     }
 
     renderGMSlides = (item, idx) => {
@@ -85,7 +60,7 @@ class GeneralMeetings extends Component {
     render(){
         return (
             <div>
-                <Navigation transparentNav={true} />
+                <Navigation transparentNav={false} />
                 <PagePhoto imageSource={coverPhoto} title={"General Meetings"}></PagePhoto>
                 <br/>
 
@@ -162,6 +137,4 @@ class GeneralMeetings extends Component {
     }
 }
 
-const condition = authUser => true;
-
-export default withAuthorization(condition)(GeneralMeetings);
+export default GeneralMeetings;
