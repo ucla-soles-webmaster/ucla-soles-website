@@ -124,6 +124,8 @@ margin: 1.2vw;
   margin-left: auto;
   margin-right: auto;
   background-color: black;
+  object-fit: cover;
+  object-position: 50% 10%;
 }
 
 .SponsorPageImages {

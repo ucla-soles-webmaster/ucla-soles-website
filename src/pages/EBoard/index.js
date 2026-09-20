@@ -5,27 +5,30 @@ import React, { Component } from 'react';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 import EBoardCoverPhoto from './EBoardCoverPhoto';
-import coverPhoto from '../../Photos/board_pictures/complete_board.jpg';
-
+import coverPhoto from '../../JudeBoard/group26.png'; 
 ///////////////////////////////////////////////////////////////
 /* Individual Officer Photo Imports */
 
-/* President */ import Samantha from '../../Photos/board_pictures/samantha_lopez.jpg'
-/* EVP */ import Erick from '../../Photos/board_pictures/erick_rosas.jpg' 
-/* IVP */ import Andrew from '../../Photos/board_pictures/andrew_rubio.jpg'
+/* President */ import Judas from '../../JudeBoard/kingJude.JPG'
+/* EVP */ import Alexa from '../../JudeBoard/alexa26.jpg'
+/* IVP */ import Evelyn from '../../JudeBoard/ev26.JPG'
 
-/* PDC */ import Mark from '../../Photos/board_pictures/mark_diaz.jpg'
-/* Transfer */ import Kevin from '../../Photos/board_pictures/kevin_alvarez.jpg'
-/* Media & Merch */ import Joaquin from '../../Photos/board_pictures/joaquin_chun.jpg'
+/* PDC */ import Arnie from '../../JudeBoard/arnie26.jpg'
+/* Transfer */ import Adrian from '../../JudeBoard/adrian26.JPG'
+/* Media & Merch */ import Isa from '../../JudeBoard/iceman26.JPG'
 
-/* Treasurer */ import Lorenzo from '../../Photos/board_pictures/lorenzo_cova.jpg'
-/* Secretary */ import Victoria from '../../Photos/board_pictures/victoria_lopez.jpg'
-/* SHPETina Director */ import Alexa from '../../Photos/board_pictures/alexa_medina.JPG'
-/* Activities */ import Jeremy from '../../Photos/board_pictures/jeremy_dimas.jpg'
+/* Treasurer */ import Nick from '../../JudeBoard/nick26.jpg'
+/* Secretary */ import Gero from '../../JudeBoard/gero26.JPG'
+/* Activities */ import Leslie from '../../JudeBoard/les26.JPG'
 
-/* Ciencias */ import Judas from '../../Photos/board_pictures/judas_lopez.jpg'
-/* LeaderSHPE Jr */ import Evelyn from '../../Photos/board_pictures/evelyn_garza.jpg'
-/* Tech */ import Christian from '../../Photos/board_pictures/christian_giron.jpg'
+/* Ciencias */ import Alan from '../../JudeBoard/alan26.jpg'
+/* LeaderSHPE Jr */ import Victoria from '../../JudeBoard/vic26.JPG'
+/*SHPE+ina's */ import Heidi from '../../JudeBoard/heidi26.JPG'
+/*Academic Development Chair*/ import Arlene from '../../JudeBoard/arlene26.JPG'
+
+/* Racing Lead */ import Daniel from '../../JudeBoard/dani26.jpg'
+/* AI Lead */ import Aaron from '../../JudeBoard/aaron26.JPG'
+/* Web Dev Lead */ import Javier from '../../JudeBoard/jav26.JPG'
 
 /* CEED Staff */
 import Sherry from '../../Photos/EBoard/CEED/sherry.jpg'
@@ -59,110 +62,133 @@ class EBoard extends Component {
     render() {
         const boardMembers = [
             {
-                name: "Samantha Lopez",
-                major: "4th Year | Electrical Engineering",
-                image: Samantha,
+                name: "Judas Lopez",
+                major: "4th Year | Computer Science & Engineering",
+                image: Judas,
                 role: "President",
                 memory: "",
                 email: "     uclasoles.president@gmail.com"
             },
             {
-                name: "Andrew Rubio",
-                major: "4th Year | Computer Science & Engineering",
-                image: Andrew,
+                name: "Alexa Medina Velazquez",
+                major: "3rd Year | Civil & Environmental Engineering",
+                image: Alexa,
                 role: "Internal Vice President",
                 memory: "",
                 email: "          uclasoles.ivp@gmail.com"
             },
             {
-                name: "Erick Rosas Gonzalez",
-                major: "4th Year | Computer Science",
-                image: Erick,
+                name: "Evelyn Garza",
+                major: "3rd Year | Civil Engineering",
+                image: Evelyn,
                 role: "External Vice President",
                 memory: "",
                 email: "          uclasoles.evp@gmail.com"
             },
             {
-                name: "Mark Diaz",
-                major: "4th Year | Computer Engineering",
-                image: Mark,
+                name: "Arnie Orozco Jr",
+                major: "4th Year | Mechanical Engineering",
+                image: Arnie,
                 role: "Professional Development Chair",
                 memory: "",
                 email: "              uclasoles.pdc@gmail.com"
             },
             {
-                name: "Joaquin Chun",
-                major: "3rd Year | Computer Science",
-                image: Joaquin,
+                name: "Isaias Ramirez",
+                major: "2nd Year | Mechanical Engineering",
+                image: Isa,
                 role: "Media & Merch Chair",
                 memory: "",
                 email: "uclasoles.mmc@gmail.com"
             },
             {
-                name: "Kevin Alvarez",
-                major: "2nd Year Transfer | Computer Engineering",
-                image: Kevin,
+                name: "Adrian Luna",
+                major: "2nd Year Transfer | Mechanical Engineering",
+                image: Adrian,
                 role: "Transfer Representative",
                 memory: "",
                 email: "   uclasoles.trep@gmail.com"
             },
             {
-                name: "Lorenzo Cova",
-                major: "3rd Year | Mechanical Engineering",
-                image: Lorenzo,
+                name: "Nicholas Equihua",
+                major: "3rd Year | Electrical Engineering",
+                image: Nick,
                 role: "Treasurer",
                 memory: "",
                 email: "     uclasoles.treasurer@gmail.com"
             },
             {
-                name: "Victoria Lopez",
-                major: "",
-                image: Victoria,
+                name: "Geronimo Avila Martinez",
+                major: "3rd Year | Mechanical Engineering",
+                image: Gero,
                 role: "Secretary",
                 memory: "",
                 email: "              uclasoles@gmail.com"
             },
             {
-                name: "Jeremy Dimas",
-                major: "4th Year | Computer Science & Engineering",
-                image: Jeremy,
+                name: "Leslie Sosa",
+                major: "4th Year | Civil & Environmental Engineering",
+                image: Leslie,
                 role: "Activities Director",
                 memory: "",
                 email: "              uclasoles.activities@gmail.com"
             },
             {
-                name: "Judas Lopez",
-                major: "3rd Year | Computer Science & Engineering",
-                image: Judas,
+                name: "Alan Alfaro",
+                major: "3rd Year | Mechanical Engineering",
+                image: Alan,
                 role: "Ciencias Director",
                 memory: "",
                 email: "uclasoles.cienciasdirector@gmail.com"
             },
             {
-                name: "Evelyn Garza",
-                major: "2nd Year | Civil Engineering",
-                image: Evelyn,
+                name: "Victoria Lopez",
+                major: "3rd Year | Civil Engineering",
+                image: Victoria,
                 role: "LeaderSHPE Jr Director",
                 memory: "",
                 email: "uclasoles.leadershpejr@gmail.com"
             },
             {
-                name: "Alexa Medina",
-                major: "",
-                image: Alexa,
-                role: "SHPETina Director",
-                memory: "",
-                email: ""
-            },
-            {
-                name: "Christian Giron-Michel",
-                major: "3rd Year | Electrical Engineering",
-                image: Christian,
-                role: "Technical Chair",
+                name: "Heidi Benitez",
+                major: "2nd Year | Mechanical Engineering",
+                image: Heidi,
+                role: "SHPE+ina's Director",
                 memory: "",
                 email: "uclasoles.technicalchair@gmail.com"
-            }
-            
+            }, 
+            {
+                name: "Arlene Cazares",
+                major: "4th Year | Mechanical Engineering",
+                image: Arlene,
+                role: "Academic Development Chair",
+                memory: "",
+                email: ""
+            }, 
+            {
+                name: "Daniel Murillo",
+                major: "2nd Year Transfer | Mechanical Engineering",
+                image: Daniel,
+                role: "Racing Lead",
+                memory: "",
+                email: "uclasoles.technicalchair@gmail.com"
+            }, 
+            {
+                name: "Aaron Cervantes",
+                major: "2nd Year | Computer Science & Engineering",
+                image: Aaron,
+                role: "AI Lead",
+                memory: "",
+                email: "uclasoles.aichair@gmail.com"
+            }, 
+            {
+                name: "Javier Castaneda",
+                major: "4th Year | Computer Science & Linguistics",
+                image: Javier,
+                role: "Web Dev Lead",
+                memory: "",
+                email: "uclasoles.webmaster@gmail.com"
+            }, 
         ];
 
         const listMembers = boardMembers.map((d) => 

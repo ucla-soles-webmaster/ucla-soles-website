@@ -31,14 +31,13 @@ class EBoardCoverPhoto extends Component {
 
     render() {
         return (
-            <body>
-                <div className="eboard-container" style={{backgroundImage: `url(${this.props.imageSource})`}}>
+                <div className="eboard-container" >
+                    <img className="eboard-background" src={this.props.imageSource} alt="EBoard Cover" />
                     <div className={this.state.scrolled ? "scrolled2" : "centered2"}>
-                            &nbsp; &nbsp; {this.props.title}
+                            {this.props.title}
                     </div>
                     
                 </div>
-            </body>
 
         );
     }
