@@ -2,7 +2,7 @@ import React from 'react';
 import rulesImage1 from '../../Photos/CopaDelSol/photo_gallery/ref_table.jpg';
 import rulesImage2 from '../../Photos/CopaDelSol/photo_gallery/11 action 1.JPG';
 import rulesImage3 from '../../Photos/CopaDelSol/photo_gallery/10 Action 4.JPG';
-import rulesImage4 from '../../Photos/CopaDelSol/photo_gallery/attack.jpg';
+import rulesImage4 from '../../Photos/CopaDelSol/photo_gallery/attack.JPG';
 import rulesImage5 from '../../Photos/CopaDelSol/photo_gallery/7 Male Golden Boot-Ball Trophies.JPG';
 import rulesImage6 from '../../Photos/CopaDelSol/photo_gallery/DSCN2477.JPG';
 
