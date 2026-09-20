@@ -163,7 +163,7 @@ class EBoard extends Component {
                 image: Arlene,
                 role: "Academic Development Chair",
                 memory: "",
-                email: ""
+                email: "uclasoles.academicchair@gmail.com"
             }, 
             {
                 name: "Daniel Murillo",
