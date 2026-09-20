@@ -22,19 +22,11 @@ import './landingStyle.css'
 ///////////////////////////////////////////////////////////////
 /* Accent Photo Imports */
 
-<<<<<<< Updated upstream
-import presidentPhoto from '../../NewBoard/Emanuel.png'
-// import presidentSig from '../../Photos/PresidentsMsg/signature.png'
-import coverPhoto from '../../Photos/Covers/Landing.jpeg';
-=======
-import presidentPhoto from '../../Photos/board_pictures/samantha_lopez.jpg'
-import presSig from '../../Photos/PresidentsMsg/president_signature.jpg'
-
+import presidentPhoto from '../../JudeBoard/kingJude.JPG'; 
 import coverPhoto from '../../components/StaticCoverPhoto/royce2.jpeg';
->>>>>>> Stashed changes
 import rightsun from '../../Photos/Icons/rightsun.png'
 import leftsun from '../../Photos/Icons/leftsun.png';
-
+import presSig from '../../JudeBoard/judeSig.png';
 
 
 
@@ -114,21 +106,27 @@ class Landing extends Component {
                             </div>
                             {/* */}
                             <div className="presidentSubMessage">
-                            Bienvenido todos and welcome to the SOLES familia, the current recognized top UCLA Engineering Organization.
-                                <div style={{marginBottom: '0.6em', display: 'block'}} />
-                                SOLES|SHPE at UCLA prides itself in being an organization that seeks to elevate its members to excel in all aspects of their lives. We celebrate the unique qualities and experiences Latinx individuals contribute in engineering, empowering our members to have confidence in their abilities, regardless of individual circumstances. We hold four chapter pillars: academic development, professional development, community outreach, and recruitment/retention, which we align with our goals and mission in all of our endeavors. Please use this site as a resource to explore how we reach our goals and how our members benefit from our interdisciplinary academic resources, community building events, community outreach initiatives, and wide-spread industry partnerships! With these tools and the connections they bring, we hope to pave the way for a future in which all Latinx/Hispanic students are empowered, both at UCLA and in the greater Los Angeles community, to pursue a STEM degree and achieve high standards.
-                                <div style={{marginBottom: '0.6em', display: 'block'}} />
-                                On starting my presidency, I aim to fortify the relationships within our familia to increase our impact on our communities. Ever since that first summer beach bonfire, I’ve witnessed the incredible amount of good SOLES produces for its members and its community, despite various obstacles.  If I’m being honest, if it weren’t for the connections I’ve made in SOLES, I’m unsure if I would be as successful as I am now.  I’m a first-generation Mexican college student as many of you are, both parents never passed 3rd grade, and I had little exposure to engineering before coming to UCLA.  Heck! If it weren’t for my inspiring high school teacher, who left the engineering workforce to inspire students, I wouldn’t be here today. I would love to continue to impact that kind of change as the next president of SOLES, leading my amazing team of like-minded individuals.
-                                <div style={{marginBottom: '0.6em', display: 'block'}} />
-                                Con mucho amor and lots of gratitude for the amazing mentors that have propelled me this far,
+                            Bienvenidos and welcome to the SOLES familia!
                                 <div style={{marginBottom: '0.9em', display: 'block'}} />
+                                When I first came to UCLA, I was looking for a place where I could find community and learn how to navigate engineering. I found that in SOLES. What started as me going to a few events like beach days and resume workshops quickly became one of the most meaningful parts of my college experience. Through SOLES, I found mentors, lifelong friends, leadership opportunities, and a community that pushed me to grow both personally and professionally.  
+                                <div style={{marginBottom: '0.6em', display: 'block'}} />
+                                Over the past few years, I’ve had the opportunity to give back to that community as a member, intern, and later Director of Noche de Ciencias. Those experiences showed me how much of a difference it can make when students feel supported, valued, and connected to a community that believes in them. I’ve also seen that impact through our outreach, where a little encouragement can turn a student who is hesitant to participate into someone excited about building, experimenting, and seeing themselves in STEM.
+                                <div style={{marginBottom: '0.6em', display: 'block'}} />
+                                As President, my goal is to continue building the kind of community that made such a difference in my own life. Guided by our core pillars of academic development, professional development, community outreach, and recruitment and retention, I want every student who joins SOLES to feel like they belong here, whether they’re attending their first general meeting, preparing for an internship interview, traveling to SHPE Nationals, or just looking for people who understand what they’re going through.
+                                <div style={{marginBottom: '0.6em', display: 'block'}} />
+                                Most importantly, I want SOLES to remain a place where students can grow, take chances, make mistakes, celebrate successes, and build friendships that last long after graduation. I’m incredibly grateful for everyone who has helped make SOLES what it is today, and I’m excited to see what we can build together this year.
+                                <div style={{marginBottom: '0.6em', display: 'block'}} />
+                                Thank you for believing in our members and in the future we are working to build together. We hope that through your partnership, you will not only support SOLES, but become part of our familia.
+                                <div style={{marginBottom: '0.9em', display: 'block'}} />
+                                Con gratitud,
+                                <div style={{marginBottom: '1.2em', display: 'block'}} />
                                 <div style={{fontSize: '1.2em', lineHeight:'1.5em', color: 'gray', marginBottom: '0.3em'}}>
-                                    Samantha Lopez
+                                    Judas Lopez
                                 </div>
                                 <img 
                                     src= {presSig} 
                                     alt="President Signature" 
-                                    style={{width:'12em'}}
+                                    style={{width:'14em', height: '6em', objectFit: 'cover', objectPosition: '70% 10%'}}
                                 ></img>
                                 <div className="presidentContactInfo"><p>President 2025-2026<br/>
                                     <a href="mailto: uclasoles.president@gmail.com" target="_blank" rel="noopener noreferrer">uclasoles.president@gmail.com</a><br/>
