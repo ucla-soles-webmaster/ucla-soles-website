@@ -1,5 +1,4 @@
 import React from 'react';
-import coverPhoto from '../../Photos/CopaDelSol/copa_del_sol_cover.jpeg';
 
 const HostingEvent = () => {
     return (

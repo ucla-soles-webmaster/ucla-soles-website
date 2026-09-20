@@ -1,5 +1,4 @@
 import React from 'react';
-import coverPhoto from '../../Photos/CopaDelSol/copa_del_sol_cover.jpeg';
 
 // Team logos imports
 import ucsbLogo from '../../Photos/CopaDelSol/team_icons/ucsb_logo.png';

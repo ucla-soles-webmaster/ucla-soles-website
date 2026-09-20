@@ -70,15 +70,6 @@ class CopaNavigation extends Component {
 
 export default CopaNavigation;
 
-const linkStyle = {
-    textDecoration: "none",
-    color: "black",
-};
-
-const linkStyleScrolled = {
-    textDecoration: "none",
-    color: "#001d3a",
-};
 
 const linkStyleWhite = {
     textDecoration: "none",

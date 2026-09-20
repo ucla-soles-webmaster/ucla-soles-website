@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
  
 import LandingPage from '../Landing';
 
@@ -23,7 +23,6 @@ import CopaTournaments from '../CopaTournaments';
 import CopaGuidelines from '../CopaGuidelines';
 import CopaSponsors from '../CopaSponsors';
 import CopaContact from '../CopaContact';
-import Projects from '../Projects';
 
 import * as ROUTES from '../../constants/routes';
 

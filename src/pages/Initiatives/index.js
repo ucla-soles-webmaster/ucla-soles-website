@@ -15,22 +15,19 @@ import jrOp from '../../Photos/InitiativesPage/jrOp.png';
 import jrCol from '../../Photos/InitiativesPage/jrCol.png';
 import cienciasOp from '../../Photos/InitiativesPage/CienciasOp.png';
 import cienciasCol from '../../Photos/InitiativesPage/CienciasCol.png';
-import tutoringOp from '../../Photos/InitiativesPage/TutoringOp.png';
-import tutoringCol from '../../Photos/InitiativesPage/TutoringCol.png';
+
 import eitOp from '../../Photos/InitiativesPage/eitOp.png';
 import eitCol from '../../Photos/InitiativesPage/eitCol.png';
 
 import studynightOp from '../../Photos/InitiativesPage/studynightOp.png';
 import studynightCol from '../../Photos/InitiativesPage/studynightCol.png';
-import lunarOp from '../../Photos/InitiativesPage/lunarOp.png';
-import lunarCol from '../../Photos/InitiativesPage/lunarCol.png';
+
 import ExpEduOp from '../../Photos/InitiativesPage/ExpEduOp.png';
 import ExpEduCol from '../../Photos/InitiativesPage/ExpEduCol.png';
 
 import natConOp from '../../Photos/InitiativesPage/NatConOp.png';
 import natConCol from '../../Photos/InitiativesPage/NatConCol.png';
-import RLDCOp from '../../Photos/InitiativesPage/RLDCOp.png';
-import RLDCCol from '../../Photos/InitiativesPage/RLDCCol.png';
+
 import IndWorkOp from '../../Photos/InitiativesPage/IndWorkOp.png';
 import IndWorkCol from '../../Photos/InitiativesPage/IndWorkCol.png';
 

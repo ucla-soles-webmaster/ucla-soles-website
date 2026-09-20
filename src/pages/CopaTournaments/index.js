@@ -10,8 +10,7 @@ import Awards from './Awards';
 import History from './History';
 import PastTeams from './PastTeams';
 import PhotoGallery from './PhotoGallery';
-import Waiver from './Waiver';
-import Directions from './Directions';
+
 
 class CopaTournaments extends Component {
     constructor(props) {
