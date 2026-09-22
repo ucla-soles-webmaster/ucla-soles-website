@@ -115,8 +115,6 @@ class Landing extends Component {
                                 As President, my goal is to continue building the kind of community that made such a difference in my own life. Guided by our core pillars of academic development, professional development, community outreach, and recruitment and retention, I want every student who joins SOLES to feel like they belong here, whether they’re attending their first general meeting, preparing for an internship interview, traveling to SHPE Nationals, or just looking for people who understand what they’re going through.
                                 <div style={{marginBottom: '0.6em', display: 'block'}} />
                                 Most importantly, I want SOLES to remain a place where students can grow, take chances, make mistakes, celebrate successes, and build friendships that last long after graduation. I’m incredibly grateful for everyone who has helped make SOLES what it is today, and I’m excited to see what we can build together this year.
-                                <div style={{marginBottom: '0.6em', display: 'block'}} />
-                                Thank you for believing in our members and in the future we are working to build together. We hope that through your partnership, you will not only support SOLES, but become part of our familia.
                                 <div style={{marginBottom: '0.9em', display: 'block'}} />
                                 Con gratitud,
                                 <div style={{marginBottom: '1.2em', display: 'block'}} />
