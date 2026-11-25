@@ -23,7 +23,7 @@ class CopaLanding extends Component {
         return (
             <div>
                 <CopaNavigation />
-                <CopaPagePhoto imageSource={coverPhoto} title="Copa del Sol 2025" />
+                <CopaPagePhoto imageSource={coverPhoto} title="Copa del Sol" />
                 
                 <div className="copa-landing-container">
                     <div className="copa-landing-intro">
@@ -89,15 +89,15 @@ class CopaLanding extends Component {
 
                     <div className="copa-stats-section">
                         <div className="copa-stat">
-                            <h3>2025</h3>
+                            <h3>2026</h3>
                             <p>Latest Tournament</p>
                         </div>
                         <div className="copa-stat">
-                            <h3>2nd</h3>
+                            <h3>3rd</h3>
                             <p>Completed Event</p>
                         </div>
                         <div className="copa-stat">
-                            <h3>TBD</h3>
+                            <h3>2027</h3>
                             <p>Next Tournament</p>
                         </div>
                     </div>

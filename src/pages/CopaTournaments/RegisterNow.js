@@ -11,13 +11,13 @@ const RegisterNow = () => {
             <div style={{maxWidth: '900px', margin: '0 auto', padding: '0 20px'}}>
                 <div style={{backgroundColor: '#2E86AB', padding: '24px', borderRadius: '12px', color: 'white', marginBottom: '24px'}}>
                     <p style={{fontSize: 'clamp(18px, 1.3vw, 24px)', lineHeight: '1.6', textAlign: 'center', margin: 0, fontWeight: '600', fontFamily: 'Inter, sans-serif'}}>
-                        The 2nd annual SHPE R2 Copa del Sol soccer tournament has concluded. Thank you to all participants!
+                        The 3rd annual SHPE R2 Copa del Sol soccer tournament has concluded. Thank you to all participants!
                     </p>
                 </div>
                 
                 <div style={{backgroundColor: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)', border: '1px solid #e0e0e0', marginBottom: '24px'}}>
                     <p style={{fontSize: 'clamp(16px, 1.1vw, 20px)', lineHeight: '1.6', color: '#2E86AB', margin: '0 0 20px 0', fontWeight: '500', fontFamily: 'Inter, sans-serif'}}>
-                        <strong>Date:</strong> April 2025 (Completed)<br/>
+                        <strong>Date:</strong> April 2026 (Completed)<br/>
                         <strong>Time:</strong> 8 am - 5 pm<br/>
                         <strong>Location:</strong> UCLA
                     </p>
